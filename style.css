@@ -1,0 +1,4 @@
+/* Change to text color of heading 1 to red */
+	h1 {
+		color: red;
+	}
