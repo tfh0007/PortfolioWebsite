@@ -1,6 +1,61 @@
-/* Change to text color of heading 1 to red */
+/*
+ * Thomas Hansknecht
+ * tfh0007
+ */
+
+
+/* The *{ seems to affect the entire webpage style */
+	*{
+
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: 'Algerian','sans-serif';
+
+		
+
+	}
+
+	/* Change the default setting for our menu object */
+		.navbar {
+			background: #EB5713;
+			height:100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		/* 1 Rem is equivalent to about 16 pixels */
+		font-size: 1.7rem;
+		position: sticky;
+		top: 0;
+		/* We want the menu to stay at top of screen regardless of what we are looking at */
+		z-index: 999;		
+
+		}
+
+	/* Change the default settings within the menu object */
+		.navbar__menu {
+			display: flex;
+			align-items: center;
+			list-style: none;
+			text-align: center;	
+		}
+
+	/* Change the default settings for the menu object links */
+		.navbar__links {
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			/* padding uses top, bottom, right, left. We only want to change right and left */
+			padding: 0 3rem;
+			height: 100%;
+
+
+		}
+
+	/* Change to text color of heading 1 to red */
 	h1 {
 		color: red;
 		margin-bottom;
-		font-style: "Algerian";
+		font-style: 'Arial','sans-serif';
 	}
