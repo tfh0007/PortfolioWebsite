@@ -10,7 +10,7 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-		font-family: 'Algerian','sans-serif';
+		
 
 		
 
@@ -18,7 +18,7 @@
 
 	/* Change the default setting for our menu object */
 		.navbar {
-			background: #EB5713;
+			background: #E87722;
 			height:100px;
 			display: flex;
 			justify-content: center;
@@ -48,6 +48,7 @@
 			justify-content: center;
 			/* padding uses top, bottom, right, left. We only want to change right and left */
 			padding: 0 3rem;
+			font-family: 'Algerian','sans-serif';
 			height: 100%;
 
 
@@ -58,4 +59,5 @@
 		color: red;
 		margin-bottom;
 		font-style: 'Arial','sans-serif';
+		font-size: 2.7rem;
 	}
