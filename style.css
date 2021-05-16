@@ -94,30 +94,13 @@
 
 			.navbar {
 
-				background: #111;
-
-				height:500px;
-				/* flex forces items to the same length, regardless of content */
-				display: grid;
-
-				/* 1 Rem is equivalent to about 16 pixels */
-				font-size: 4rem;
-
-				/* The element is positioned based on the user's scroll position */
-				position: sticky;
-
-				/* The top property affects the vertical position of a positioned 
-				 * element. This property has no effect on non-positioned elements. */
-				top: 0;
-
-				/* We want the menu to stay at top of screen regardless of what we are looking at 
-				 * The z-index property specifies the stack order of an element.*/
-				z-index: 999;		
+				display: block;
+				opacity: 0;
 
 		}
 			.navbar__menu {
 				background: #111;
-				display: flex;
+				display: block;
 				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
 				overflow: auto;
 				height: 500px;
@@ -130,7 +113,7 @@
 
 		/* Set unique setting for our menu object given we are using mobile version */
 			.navbar_links {
-				display grid;
+				display: block;
 				
 				
 				width: 100%;
