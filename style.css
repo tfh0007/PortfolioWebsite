@@ -49,6 +49,9 @@
 	/* Change the default settings within the menu object */
 		.navbar__menu {
 			display: flex;
+			z-index: 1;
+			width: 100%;
+			padding: 0;
 			align-items: center;
 			list-style: none;
 			text-align: center;	
@@ -87,12 +90,37 @@
 		/* Make a different layout for mobile users with a small screen *
 		 * First set a max display size to have the mobile version of the site */
 		@media screen and (max-width: 860px) {
+
+
+			.navbar {
+
+				background: #111;
+
+				height:500px;
+				/* flex forces items to the same length, regardless of content */
+				display: grid;
+
+				/* 1 Rem is equivalent to about 16 pixels */
+				font-size: 4rem;
+
+				/* The element is positioned based on the user's scroll position */
+				position: sticky;
+
+				/* The top property affects the vertical position of a positioned 
+				 * element. This property has no effect on non-positioned elements. */
+				top: 0;
+
+				/* We want the menu to stay at top of screen regardless of what we are looking at 
+				 * The z-index property specifies the stack order of an element.*/
+				z-index: 999;		
+
+		}
 			.navbar__menu {
 				background: #111;
 				display: flex;
 				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
 				overflow: auto;
-				height: 400px;
+				height: 500px;
 				z-index: 1;
 				width: 100%;
 				max-width: 860px;
@@ -112,7 +140,7 @@
 
 				/* vh means view port height */
 
-				z-index: -1;
+
 			}
 		}
 
