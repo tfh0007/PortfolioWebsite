@@ -84,6 +84,39 @@
 
 		}
 
+		/* Make a different layout for mobile users with a small screen *
+		 * First set a max display size to have the mobile version of the site */
+		@media screen and (max-width: 860px) {
+			.navbar__menu {
+				background: #111;
+				display: flex;
+				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
+				overflow: auto;
+				height: 400px;
+				z-index: 1;
+				width: 100%;
+				max-width: 860px;
+				padding: 0;
+			}
+		
+
+		/* Set unique setting for our menu object given we are using mobile version */
+			.navbar_links {
+				display grid;
+				
+				
+				width: 100%;
+				margin-left: -100%;
+				padding: 0;
+			
+
+				/* vh means view port height */
+
+				z-index: -1;
+			}
+		}
+
+
 	/* Change to text color of heading 1 to red */
 	h1 {
 		color: red;
