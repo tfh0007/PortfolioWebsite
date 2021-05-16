@@ -6,6 +6,10 @@
 
 /* The *{ seems to affect the entire webpage style */
 	*{
+		/* The box-sizing property defines how the width and height of an 
+		 * element are calculated: should they include padding and borders, or not. 
+		 * Border-box tells that the width and height properties (and min/max properties) 
+		 * includes content, padding and border */
 
 		box-sizing: border-box;
 		margin: 0;
@@ -17,14 +21,27 @@
 		.navbar {
 			background: #E87722;
 			height:100px;
+		/* flex forces items to the same length, regardless of content */
 			display: flex;
+		/* justify-content property aligns the flexible container's items when 
+		 * the items do not use all available space on the main-axis (horizontally). */
 			justify-content: center;
+
+		/* Center the alignments for all the items of the flexible <div> element. */	
 			align-items: center;
+
 		/* 1 Rem is equivalent to about 16 pixels */
 		font-size: 2rem;
+
+		/* The element is positioned based on the user's scroll position */
 		position: sticky;
+
+		/* The top property affects the vertical position of a positioned 
+		 * element. This property has no effect on non-positioned elements. */
 		top: 0;
-		/* We want the menu to stay at top of screen regardless of what we are looking at */
+
+		/* We want the menu to stay at top of screen regardless of what we are looking at 
+		 * The z-index property specifies the stack order of an element.*/
 		z-index: 999;		
 
 		}
@@ -43,11 +60,13 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
 			/* Gets rid of the underlines on each menu item */
 			text-decoration: none;
 
 			/* padding uses top, bottom, right, left. We only want to change right and left */
 			padding: 0 3rem;
+			/* Note this font only shows if it exists in the browser */
 			font-family: 'Algerian','sans-serif';
 			height: 100%;
 			width: 100%;
@@ -56,7 +75,7 @@
 			
 
 		}
-
+		/* Creates a hover effect when the cursor hovers over a menu item */
 		.navbar__links:hover {
 			background: #000080;
 			transition: all 0.2s ease;
