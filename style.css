@@ -24,7 +24,7 @@
 			justify-content: center;
 			align-items: center;
 		/* 1 Rem is equivalent to about 16 pixels */
-		font-size: 1.7rem;
+		font-size: 2rem;
 		position: sticky;
 		top: 0;
 		/* We want the menu to stay at top of screen regardless of what we are looking at */
@@ -46,11 +46,25 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			/* Gets rid of the underlines on each menu item */
+			text-decoration: none;
+
 			/* padding uses top, bottom, right, left. We only want to change right and left */
 			padding: 0 3rem;
 			font-family: 'Algerian','sans-serif';
 			height: 100%;
+			width: 100%;
+			/* make the links more circular instead of square */
+			border-radius: 10px;
+			
 
+		}
+
+		.navbar__links:hover {
+			background: #000080;
+			transition: all 0.2s ease;
+
+			padding: 10 3rem;
 
 		}
 
