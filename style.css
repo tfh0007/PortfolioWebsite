@@ -86,13 +86,13 @@
 			padding: 10 3rem;
 
 		}
-
-		.mobileMenu
+		/*We want the drop down menu to become invisible when not viewing the mobile version of the site */
+		.dropdown
 		{
-
-			display: block;
+			opacity: 0;
 		}
 
+		
 		/* Make a different layout for mobile users with a small screen *
 		 * First set a max display size to have the mobile version of the site */
 		@media screen and (max-width: 860px) {
@@ -100,8 +100,12 @@
 
 			.navbar {
 
+				margin:0;
+				padding: 0;
 				display: block;
+				height: 0px;
 				opacity: 0;
+				/* Make opacity 0 to make the navbar invisible */
 
 		}
 			.navbar__menu {
@@ -109,7 +113,7 @@
 				display: block;
 				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
 				overflow: auto;
-				height: 500px;
+				height: 0px;
 				z-index: 1;
 				width: 100%;
 				max-width: 860px;
@@ -134,68 +138,53 @@
 
 
 			/* Lets make a mobile drop down menu */
-
-			.mobileMenu
+			.dropdown
 			{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+
+				opacity: 100;
+				height:100px;
+			/* flex forces items to the same length, regardless of content */
+				display: flex;
+		
+
+			/* We want the menu to stay at top of screen regardless of what we are looking at 
+			 * The z-index property specifies the stack order of an element.*/
+			z-index: 999;		
+
 			}
 
 			button
 			{
-				position: relative;
-				width: 200px;
-				height: 60px;
-				font-size: 24px;
-				background: #2196f3;
+				color: #fff;
+				background: #E87722;
+				width: 100%;
+				height: 100px;
+			/* Note this font only shows if it exists in the browser */
+				font-family: 'Algerian','sans-serif';
+				height: 100%;
+				width: 100%;
+			/* 1 Rem is equivalent to about 16 pixels */
+				font-size: 3rem;
 				border: none;
-				box-shadow: none;
-				outline: none;
+			/* Make a cursor icon when the user hovers the mouse over the button */
 				cursor: pointer;
-				color: #fff
 
 			}
-			ul
-			{
 
-				position: absolute;
-				margin:	0;
-				padding: 0;
-				width: 100%
-				background: #ccc;
-				transform-origin: top;
-				transform: perspective(1000px) rotateX(-90deg);
-				transition: 0.5s;
+			/* Creates a hover effect when the cursor hovers over a menu item */
+		button:hover {
+			background: #000080;
+			/* color changes the color of the actual text within the button */
+			transition: all 0.2s ease;
 
-			}
-			ul.active
-			{
-				transform: perspective(1000px) rotateX(0deg);
-			}
+			padding: 10 3rem;
 
-			ul li 
-			{
-				list-style: none;
+		}
 
-			}
-			ul li a
-			{
-				display: block;
-				padding: 10px;
-				text-align: center;
-				text-decoration: none;
-				background: #262626;
-				color:#fff;
-				border-bottom: 1px solid rgba(0,0,0,.2);
-				transition: 0.5s;
-			}
+		
 
-			ul li a:hover 
-			{
-				background: #0d7ad0
-			}
+
+			
 					
 		}
 
