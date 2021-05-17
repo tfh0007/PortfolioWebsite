@@ -52,7 +52,13 @@
 
 		/* We want the menu to stay at top of screen regardless of what we are looking at 
 		 * The z-index property specifies the stack order of an element.*/
-		z-index: 999;		
+		z-index: 999;	
+
+		/* This transition will occur when the size is switched from mobile to desktop */
+		transform-origin: top;
+				transform: perspective(1000px);
+				/* This transition will cause the transform animation to happen */
+				transition: all 0.9s ease;	
 
 		}
 
