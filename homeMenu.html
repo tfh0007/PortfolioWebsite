@@ -61,8 +61,19 @@
 		<script src="app.js"></script>
 		<div class="dropdown">
 			<! The button will be called home because we are at the home page>
-			<button>Home</button>
+			<button>Menu</button>
 		</div>
+		<! We want to toggle states for our mobile menu>
+		<script
+		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		  	<script type="text/javascript">
+		  		$(document).ready(function(){
+		  			$('button').click(function() {
+		  				$('.navbar').toggleClass('active')
+
+		  			})
+		  		})
+		  		</script>
 
 	</body>
 
