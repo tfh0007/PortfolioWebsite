@@ -15,6 +15,7 @@
 		margin: 0;
 		padding: 0;
 
+
 	}
 /* Default properties of all of the icons we are using */
 	.icon::before {
@@ -164,6 +165,7 @@
 				height: 0px;
 				z-index: 1;
 				font-size: 2.5rem;
+				overflow: hidden;
 
 				/* Make opacity 0 to make the navbar invisible */
 
@@ -391,43 +393,39 @@
 
 		/* Mobile support for the cover page */
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1300px) {
 
 
 		.main {
-
 			overflow: hidden;
 
 		}
-		
 		.main__container {
-			
+			grid-template-columns: 1fr;
+			margin: 0 0 0 0;
+			padding: 0;
+			height: 100vh;
 
-			display: grid;
-		/* we want the space to the right and left as well as top and bottom to be the same */
-		grid-template-columns: auto;
-		align-items: center;
-		justify-self: center;
-		/* background-image: linear-gradient(#43cea2 , #185a9d); */
-	
-
-
-		margin: 0 auto;
-		
-		height: 90vh;
-		
-		padding: 0 50px;
 		}
 
-		.main__content h1 {
+	/* Change the style for the h1 text */
+		.main__content h1{
 
-			font-size: 3rem;
-			width: auto;
-			text-align: center;
-			word-wrap: break-word;
-			
-			
+			margin-top: 130px;
+			padding-right: 100px;
+			padding-left: 100px;
+
 		}
+
+
+		.main__content h2{
+
+			padding-right: 100px;
+			padding-left: 100px;
+
+		}
+
+
 
 		.main__img--container {
 
