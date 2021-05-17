@@ -325,4 +325,94 @@
 					
 		}
 
+		/* Style for the main area with the picture of me */
+
+
+		.main {
+			background-color: #141414;
+
+		}
+		.main__container {
+		
+		display: grid;
+		/* we want the space to the right and left as well as top and bottom to be the same */
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		justify-self: center;
+		/* background-image: linear-gradient(#43cea2 , #185a9d); */
+		
+		margin: 0 auto;
+		/* the height specifies how much of the page should be taken up by this section */
+		height: 90vh;
+		background-color: #141414;
+		
+		z-index: 1;
+		width: 100%
+		max-width: 1300px;
+		padding: 0 100px;
+		
+		
+		}
+		/* Change the style for the h1 text */
+		.main__content h1{
+
+			font-size: 3.9rem;
+			background-color: #ff8177;
+			background-image: linear-gradient(#43cea2 , #185a9d);
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+
+		}
+
+		/* Change the style for the h2 text */
+		.main__content h2{
+
+			font-size: 2rem;
+			background-color: #ff8177;
+			background-image: linear-gradient(#c33764 , #1d2671);
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+
+		}
+
+		.main__img--container {
+
+/*			transform: rotate(90deg); */
+	padding: 100px;
+			text-align: center;
+			object-fit: cover;
+
+		}
+
+		/* Mobile support for the cover page */
+
+	@media screen and (max-width: 768px) {
+		.main__container {
+
+			display: grid;
+		/* we want the space to the right and left as well as top and bottom to be the same */
+		grid-template-columns: auto;
+		align-items: center;
+		justify-self: center;
+		/* background-image: linear-gradient(#43cea2 , #185a9d); */
+	
+		width: 100%
+		margin: 0 auto;
+		height: 90vh;
+		max-width: 1300px;
+		padding: 0 100px;
+		}
+
+		.main__content h1 {
+
+			font-size: 2rem;
+			margin-top: 1.5rem;
+		}
+	}
+		
+
 
