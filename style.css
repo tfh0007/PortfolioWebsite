@@ -16,6 +16,16 @@
 		padding: 0;
 
 	}
+/* Default properties of all of the icons we are using */
+	.icon::before {
+		font-family: "Font Awesome 5 Free"; 
+		display: inline-block;
+    	font-style: normal;
+    	font-variant: normal;
+    	text-rendering: auto;
+    	-webkit-font-smoothing: antialiased;
+
+	}
 
 	/* Change the default setting for our menu object */
 		.navbar {
@@ -92,6 +102,37 @@
 
 			opacity: 0;
 		}
+
+		/* Create a home icon */
+		.navbar__item1::before {
+			
+			font-weight: 900; 
+			content: "\f015";
+
+		}
+
+		/* Create a user icon */
+		.navbar__item2::before {
+			/* Font weight can be used to adjust which icon is used from the selection */
+			font-weight: 900; 
+			content: "\f007";
+		}
+
+		/* Create a code icon */
+		.navbar__item3::before {
+			/* Font weight can be used to adjust which icon is used from the selection */
+			font-weight: 900; 
+			content: "\f1c9";
+		}
+
+		/* Create a contact me icon */
+		.navbar__item4::before {
+			/* Font weight can be used to adjust which icon is used from the selection */
+			font-weight: 900; 
+			content: "\f095";
+		}		
+
+
 
 		
 		/* Make a different layout for mobile users with a small screen *
