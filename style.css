@@ -229,6 +229,7 @@
 			/* We need a seprate state to transition the items under the menu into moving the right amount  down*/
 			h1.active {
 				margin-top: 0px;
+				transition: all 0.3s ease;
 				
 			}
 
