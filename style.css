@@ -101,7 +101,6 @@
 
 			.navbar {
 
-				
 				margin-top: 100px;
 				padding: 0;
 				display: flex;
@@ -117,7 +116,7 @@
 				transform-origin: top;
 				transform: perspective(1000px) rotateX(-90deg);
 				/* This transition will cause the transform animation to happen */
-				transition: all 1.0s ease;
+				transition: all 0.7s ease;
 				
 
 		}
@@ -192,8 +191,9 @@
 
 			/* We want the menu to stay at top of screen regardless of what we are looking at 
 			 * The z-index property specifies the stack order of an element.*/
-			z-index: 999;		
+			z-index: 999;	
 
+			
 			}
 
 			button
@@ -216,6 +216,14 @@
 				border: none;
 			/* Make a cursor icon when the user hovers the mouse over the button */
 				cursor: pointer;
+
+				/* This creates an outward box closing transition */
+				
+				transform-origin: top;
+				transform: perspective(5000px);
+				/* This transition will cause the transform animation to happen */
+				transition: all 0.8s ease;	
+
 
 			}
 
