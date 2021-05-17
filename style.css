@@ -134,7 +134,15 @@
 		}		
 
 
-
+		/* We are changing the properties for heading 1 while we are looking at desktop version */
+		h1 {
+			margin-top: 0px;
+			/* Change to text color of heading 1 to red */
+			color: red;
+			margin-bottom;
+			font-style: 'Arial','sans-serif';
+			font-size: 2.7rem;
+		}
 		
 		/* Make a different layout for mobile users with a small screen *
 		 * First set a max display size to have the mobile version of the site */
@@ -147,7 +155,7 @@
 				padding: 0;
 				display: flex;
 				/* This height adjusts the size of the entire dropdown menu */
-				height: 700px;
+				height: 0px;
 				z-index: 1;
 				font-size: 2.5rem;
 
@@ -159,7 +167,7 @@
 				transform-origin: top;
 				transform: perspective(1000px) rotateX(-90deg);
 				/* This transition will cause the transform animation to happen */
-				transition: all 0.7s ease;
+				transition: all 0.9s ease;
 				
 
 		}
@@ -187,7 +195,8 @@
 				z-index: 1;
 
 				width: 100%;
-				height: 100px;
+				/* This height adjust the vertical spacing of the items in the menu */
+				height: 80px;
 				
 				padding: 0;
 
@@ -212,8 +221,15 @@
 			/* We need a seprate state to transition the menu objects into becoming visible */
 			.navbar.active
 			{
+				height: 700px;
 
 				transform: perspective(1000px) rotateX(0deg);
+			}
+
+			/* We need a seprate state to transition the items under the menu into moving the right amount  down*/
+			h1.active {
+				margin-top: 0px;
+				
 			}
 
 
@@ -228,9 +244,8 @@
 
 				position: fixed;
 				width: 100%;
-				top: 50px;
+				top: 0px;
 				left:0;
-				z-index: 3000;
 			/* flex forces items to the same length, regardless of content */
 				display: flex;
 		
@@ -290,16 +305,17 @@
 
 		}
 
-
-			
-					
-		}
-
-
-	/* Change to text color of heading 1 to red */
+	/* We are changing the properties for heading 1 while we are looking at mobile version */
 	h1 {
+		margin-top: 90px;
+		/* Change to text color of heading 1 to red */
 		color: red;
 		margin-bottom;
 		font-style: 'Arial','sans-serif';
 		font-size: 2.7rem;
 	}
+			
+					
+		}
+
+
