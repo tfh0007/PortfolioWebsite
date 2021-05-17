@@ -30,7 +30,7 @@
 	/* Change the default setting for our menu object */
 		.navbar {
 			background: #E87722;
-			height:100px;
+			height:130px;
 		/* flex forces items to the same length, regardless of content */
 			display: flex;
 		/* justify-content property aligns the flexible container's items when 
@@ -41,7 +41,7 @@
 			align-items: center;
 
 		/* 1 Rem is equivalent to about 16 pixels */
-		font-size: 2rem;
+		font-size: 1.8rem;
 
 		/* The element is positioned based on the user's scroll position */
 		position: sticky;
@@ -108,6 +108,7 @@
 			
 			font-weight: 900; 
 			content: "\f015";
+			
 
 		}
 
@@ -142,10 +143,11 @@
 
 			.navbar {
 
-				margin-top: 100px;
+				
 				padding: 0;
 				display: flex;
-				height: 400px;
+				/* This height adjusts the size of the entire dropdown menu */
+				height: 700px;
 				z-index: 1;
 				font-size: 2.5rem;
 
@@ -165,12 +167,14 @@
 
 				display: flex;
 				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
-				height: 400px;
+				/* The height here adjusts the pulldown menu box and where it starts on the screen */
+				height: 540px;
 				z-index: 1;
 				width: 100%;
-				padding: 0;
-
-				display: block;
+				padding: .5em;
+				
+				
+				display: inline-block;
 
 				
 			}
@@ -191,7 +195,8 @@
 				
 
 				display: block;
-				padding: 10px;
+
+				
 				text-align: center;
 				text-decoration: none;
 
@@ -248,7 +253,7 @@
 				color: #fff;
 				background: #E87722;
 				width: 100%;
-				height: 100px;
+				height: 90px;
 			/* Note this font only shows if it exists in the browser */
 				font-family: 'Algerian','sans-serif';
 				width: 100%;
