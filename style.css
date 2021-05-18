@@ -111,6 +111,13 @@
 			padding: 10 3rem;
 
 		}
+
+		/* We want an effect that lets us know we are currently at the home screen */
+		.navbar__item1 {
+			text-decoration: solid underline 4px;
+		}
+
+
 		/*We want the drop down menu to become invisible when not viewing the mobile version of the site */
 		.dropdown
 		{
@@ -414,94 +421,44 @@
 
 
 		/* Favorite projects styling */
-		.projects {
-			background: #141414;
-			display:flex;
-			flex-direction: column;
-			align-items:center;
-			height: 100vh;
-		}
 
-		.projects h3{
 
+		.projects__heading {
+
+			display: grid;
+			grid-template-columns: auto;
+			justify-content: space-around;
+			text-align: center
 			background-color: #ff8177;
-			background-image: linear-gradient(to right, #ff8177 0%,
-				#ff867a 0%, #ff8c7f 100%);
-			background-size: 100%;
-			margin-bottom: 5rem;
-			font-size: 2.5rem;
+			background-image: linear-gradient(to right, #00c9ff 0%,
+				#92fe9d 100%);
+
+
+			font-size: 3.5rem;
 			-webkit-background-clip: text;
 			-moz-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			-moz-text-fill-color: transparent;
-		}
 
-		/* When the screen gets to small the pages overlap so we need to fix this */
-		@media screen and (max-height: 1000px) {
-
-			.projects {
-			margin-top: 12rem;
-			}
 
 		}
-
-		/* When the screen gets to small the pages overlap so we need to fix this */
-		@media screen and (max-height: 800px) {
-
-			.projects {
-			margin-top: 20rem;
-			margin-bottom: 20rem;
-			}
-
-		}		
-
-		/* When the screen gets to small the pages overlap so we need to fix this */
-		@media screen and (max-height: 600px) {
-
-			.projects {
-			margin-top: 32rem;
-			margin-bottom: 32rem;
-			}
-
-		}		
-
-			/* When the screen gets to small the pages overlap so we need to fix this */
-		@media screen and (max-height: 400px) {
-
-			.projects {
-			margin-top: 39rem;
-			margin-bottom: 39rem;
-			}
-
-		}		
-
-				/* When the screen gets to small the pages overlap so we need to fix this */
-		@media screen and (max-height: 250px) {
-
-			.projects {
-			margin-top: 45rem;
-			margin-bottom: 45rem;
-			}
-
-		}		
-
-		/* Make the picture a little smaller when screen gets smaller 
-		 * to avoid any overflow from happening */
-
-	@media screen and (max-width: 1500px) {
-
-		 	.main__img--container {
-
+		.projects {
+			padding: 0 0 50px 50px;
+			background: #141414;
+			display:grid;
+			grid-template-columns: 3fr 3fr;
 			
-			padding: 0px;
-			text-align: center;
-			transform: scale(0.8, 0.8);
-			-ms-transform: scale(0.8, 0.8);
-			-webkit-transform: scale(0.8, 0.8);
-
+			align-items:center;
+			height: 160vh;
 		}
 
-	}
+		
+
+
+
+
+
+		
 
 		/* Large Mobile support for the cover page */
 
@@ -565,6 +522,7 @@
 			padding: 0;
 			overflow: visible;
 
+
 		}
 		.main__container {
 			grid-template-columns: 1fr;
@@ -618,3 +576,203 @@
 		
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* When the screen gets to small part 1. the pages overlap so we need to fix this */
+		
+		@media screen and (max-height: 1200px) and (min-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 12rem;
+			}
+
+			h3 {
+			margin-top: 12rem;
+
+			}
+
+		}		
+
+
+		@media screen and (max-height: 1000px) and (min-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 20rem;
+			}
+
+			h3 {
+			margin-top: 20rem;
+
+			}
+
+		}	
+
+		@media screen and (max-height: 800px) and (min-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 32rem;
+			}
+
+			h3 {
+			margin-top: 32rem;
+
+			}
+
+		}		
+
+
+		@media screen and (max-height: 600px) and (min-width: 1500px) {
+
+			.projects {
+			margin-bottom: 41rem;
+
+			}
+
+			h3 {
+			margin-top: 41rem;
+
+			}
+
+		}
+
+		@media screen and (max-height: 450px) and (min-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 51rem;
+			}
+
+			h3 {
+			margin-top: 51rem;
+
+			}
+
+		}
+
+		@media screen and (max-height: 300px) and (min-width: 1500px) {
+
+			.projects {
+			margin-bottom: 60rem;
+
+			}
+
+			h3 {
+			margin-top: 60rem;
+
+			}
+
+		}
+
+
+
+
+		/* When the screen gets to small part 2. the pages overlap so we need to fix this */
+		@media screen and (max-height: 1000px) and (max-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 12rem;
+			}
+
+			h3 {
+			margin-top: 12rem;
+
+			}
+
+
+		}
+
+	
+		@media screen and (max-height: 800px) and (max-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 20rem;
+			}
+
+			h3 {
+			margin-top: 20rem;
+
+			}
+
+		}		
+
+	
+		@media screen and (max-height: 600px) and (max-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 32rem;
+			}
+
+
+			h3 {
+			margin-top: 32rem;
+
+			}
+
+		}		
+
+		
+		@media screen and (max-height: 400px) and (max-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 39rem;
+			}
+
+			h3 {
+			margin-top: 39rem;
+
+			}
+
+		}		
+
+		
+		@media screen and (max-height: 250px) and (max-width: 1500px) {
+
+			.projects {
+
+			margin-bottom: 45rem;
+			}
+
+			h3 {
+			margin-top: 45rem;
+
+			}
+
+		}		
