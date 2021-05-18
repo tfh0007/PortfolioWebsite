@@ -1,0 +1,24 @@
+/*Lets select the body tag from our html index file */
+body {
+    background-color: black;
+    /*color basically means text color */
+    color: white;
+    font-size: 3rem;
+
+}
+
+/* Lets change our paragraph stuff. Using p will 
+change everything in our html file that uses the <p> tag */
+p {
+    color: teal;
+}
+
+/* Use h1 to change everything in our html file that uses the <h1> tag.
+And so on and so forth */
+h1 {
+    font-size: 5rem;
+    color: rgb(243, 86, 13);
+}
+
+/* Note that we can use the same style sheet for multiple diffrent html files 
+Never mix styling external css files and html files*/
