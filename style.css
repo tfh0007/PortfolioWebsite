@@ -150,7 +150,7 @@
 
 
 		/* We are changing the properties for heading 1 while we are looking at desktop version */
-		h1 {
+		.main h1 {
 			margin-top: 0px;
 			/* Change to text color of heading 1 to red */
 			color: red;
@@ -243,6 +243,7 @@
 			.navbar.active
 			{
 				height: 700px;
+				z-index: 999;
 
 				transform: perspective(1000px) rotateX(0deg);
 			}
@@ -328,7 +329,7 @@
 		}
 
 	/* We are changing the properties for heading 1 while we are looking at mobile version */
-	h1 {
+	.main h1 {
 		margin-top: 90px;
 		/* Change to text color of heading 1 to red */
 		color: red;
@@ -345,6 +346,8 @@
 
 		.main {
 			background-color: #141414;
+			padding: 0 10rem 0 0;
+			z-index: 4;
 
 		}
 		.main__container {
@@ -392,6 +395,7 @@
 			-webkit-text-fill-color: transparent;
 			-moz-text-fill-color: transparent;
 			overflow: hidden;
+			z-index: 4;
 
 		}
 
@@ -401,7 +405,46 @@
 			padding: 100px;
 			text-align: center;
 			object-fit: cover;
+			z-index: 4;
 
+		}
+
+
+		/* Favorite projects styling */
+		.projects {
+
+			z-index: 1;
+			background-color: #141414;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+
+			
+
+
+		}
+
+		.projects h1 {
+			
+			position: relative;
+			background-size: 100%;
+			margin-bottom: 5rem;
+			font-size: 4rem;
+			background-color: #ff8177;
+			background-image: linear-gradient(#de6262 , #ffb88c);
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+
+		}
+
+		.projects__container {
+			display: flex;
+			justify-content: center;
+			flex-wrap;
 		}
 
 
