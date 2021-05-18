@@ -1,0 +1,509 @@
+/*
+ * Thomas Hansknecht
+ * tfh0007
+ */
+
+
+/* The *{ seems to affect the entire webpage style */
+	*{
+		/* The box-sizing property defines how the width and height of an 
+		 * element are calculated: should they include padding and borders, or not. 
+		 * Border-box tells that the width and height properties (and min/max properties) 
+		 * includes content, padding and border */
+
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+
+
+
+	}
+
+
+/* Default properties of all of the icons we are using */
+	.icon::before {
+		font-family: "Font Awesome 5 Free"; 
+		display: inline-block;
+    	font-style: normal;
+    	font-variant: normal;
+    	text-rendering: auto;
+    	-webkit-font-smoothing: antialiased;
+
+	}
+
+	/* Change the default setting for our menu object */
+		.navbar {
+			background: #E87722;
+			height:130px;
+		/* flex forces items to the same length, regardless of content */
+			display: flex;
+		/* justify-content property aligns the flexible container's items when 
+		 * the items do not use all available space on the main-axis (horizontally). */
+			justify-content: center;
+
+		/* Center the alignments for all the items of the flexible <div> element. */	
+			align-items: center;
+
+		/* 1 Rem is equivalent to about 16 pixels */
+		font-size: 1.8rem;
+
+		/* The element is positioned based on the user's scroll position */
+		position: sticky;
+
+		/* The top property affects the vertical position of a positioned 
+		 * element. This property has no effect on non-positioned elements. */
+		top: 0;
+		overflow: hidden; 
+
+		/* We want the menu to stay at top of screen regardless of what we are looking at 
+		 * The z-index property specifies the stack order of an element.*/
+		z-index: 999;	
+
+		/* This transition will occur when the size is switched from mobile to desktop */
+		transform-origin: top;
+				transform: perspective(1000px);
+				/* This transition will cause the transform animation to happen */
+				transition: all 0.9s ease;	
+
+		}
+
+	/* Change the default settings within the menu object */
+		.navbar__menu {
+			display: flex;
+			z-index: 1;
+			width: 100%;
+			padding: 0;
+			align-items: center;
+			list-style: none;
+			text-align: center;	
+		}
+
+	/* Change the default settings for the menu object links */
+		.navbar__links {
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			/* Gets rid of the underlines on each menu item */
+			text-decoration: none;
+
+			/* padding uses top, bottom, right, left. We only want to change right and left */
+			padding: 0 3rem;
+			/* Note this font only shows if it exists in the browser */
+			font-family: 'Algerian','sans-serif';
+			height: 100%;
+			width: 100%;
+			/* make the links more circular instead of square */
+			border-radius: 10px;
+			
+
+		}
+		/* Creates a hover effect when the cursor hovers over a menu item */
+		.navbar__links:hover {
+			background: #000080;
+			transition: all 0.2s ease;
+
+			padding: 10 3rem;
+
+		}
+
+		/* We want an effect that lets us know we are currently at the Projects screen */
+		.navbar__item3 {
+			text-decoration: solid underline 4px;
+		}
+
+
+		/*We want the drop down menu to become invisible when not viewing the mobile version of the site */
+		.dropdown
+		{
+
+			opacity: 0;
+		}
+
+		/* Create a home icon */
+		.navbar__item1::before {
+			
+			font-weight: 900; 
+			content: "\f015";
+			
+
+		}
+
+		/* Create a user icon */
+		.navbar__item2::before {
+			/* Font weight can be used to adjust which icon is used from the selection */
+			font-weight: 900; 
+			content: "\f007";
+		}
+
+		/* Create a code icon */
+		.navbar__item3::before {
+			/* Font weight can be used to adjust which icon is used from the selection */
+			font-weight: 900; 
+			content: "\f1c9";
+		}
+
+		/* Create a contact me icon */
+		.navbar__item4::before {
+			/* Font weight can be used to adjust which icon is used from the selection */
+			font-weight: 900; 
+			content: "\f095";
+		}		
+
+
+		/* We are changing the properties for heading 1 while we are looking at desktop version */
+		.main h1 {
+			margin-top: 0px;
+			/* Change to text color of heading 1 to red */
+			color: red;
+			margin-bottom;
+			font-style: 'Arial','sans-serif';
+			font-size: 2.7rem;
+
+		}
+
+
+
+		
+		
+		/* Make a different layout for mobile users with a small screen *
+		 * First set a max display size to have the mobile version of the site */
+		@media screen and (max-width: 860px) {
+
+
+			.navbar {
+
+				
+				padding: 0;
+				display: flex;
+				/* This height adjusts the size of the entire dropdown menu */
+				height: 0px;
+				z-index: 1;
+				font-size: 2.5rem;
+				overflow: hidden;
+
+				/* Make opacity 0 to make the navbar invisible */
+
+
+				/* This creates an outward box closing transition */
+				
+				transform-origin: top;
+				transform: perspective(1000px) rotateX(-90deg);
+				/* This transition will cause the transform animation to happen */
+				transition: all 0.9s ease;
+				
+
+		}
+			.navbar__menu {
+
+				display: flex;
+				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
+				/* The height here adjusts the pulldown menu box and where it starts on the screen */
+				height: 440px;
+				z-index: 1;
+				width: 100%;
+				padding: .5em;
+				
+				
+				display: inline-block;
+
+				
+			}
+		
+
+		/* Set unique setting for our menu object given we are using mobile version */
+			.navbar__links {
+
+				display: flex;
+				z-index: 1;
+
+				width: 100%;
+				/* This height adjust the vertical spacing of the items in the menu */
+				height: 80px;
+				
+				padding: 0;
+
+				
+				
+
+				display: block;
+
+				
+				text-align: center;
+				text-decoration: none;
+
+			
+
+				/* vh means view port height */
+
+
+			}
+
+			
+
+			/* We need a seprate state to transition the menu objects into becoming visible */
+			.navbar.active
+			{
+				height: 625px;
+				z-index: 999;
+
+				transform: perspective(1000px) rotateX(0deg);
+			}
+
+			/* We need a seprate state to transition the items under the menu into moving the right amount  down*/
+			h1.active {
+				margin-top: 0px;
+				transition: all 0.3s ease;
+				
+			}
+
+
+
+			/* Lets make a mobile drop down menu */
+			.dropdown
+			{
+
+				display: block;
+
+				opacity: 100;
+
+				position: fixed;
+				width: 100%;
+				top: 0px;
+				left:0;
+			/* flex forces items to the same length, regardless of content */
+				display: flex;
+		
+
+			/* We want the menu to stay at top of screen regardless of what we are looking at 
+			 * The z-index property specifies the stack order of an element.*/
+			z-index: 999;	
+
+			
+			}
+
+			button
+			{
+
+				align-items: center;
+				list-style: none;
+				text-align: center;	
+				z-index: 999;
+				top: 0px;
+				color: #fff;
+				background: #E87722;
+				width: 100%;
+				height: 90px;
+			/* Note this font only shows if it exists in the browser */
+				font-family: 'Algerian','sans-serif';
+				width: 100%;
+			/* 1 Rem is equivalent to about 16 pixels */
+				font-size: 3.4rem;
+				border: none;
+			/* Make a cursor icon when the user hovers the mouse over the button */
+				cursor: pointer;
+
+				/* This creates an outward box closing transition */
+				
+				transform-origin: top;
+				transform: perspective(5000px);
+				/* This transition will cause the transform animation to happen */
+				transition: all 0.5s ease;	
+
+
+			}
+
+			/* Creates a hover effect when the cursor hovers over a menu item */
+		button:hover {
+			background: #000080;
+			/* color changes the color of the actual text within the button */
+			transition: all 0.2s ease;
+
+			padding: 10 3rem;
+
+		}
+
+		.navbar__links {
+
+		opacity: 100;
+			
+
+		}
+
+	/* We are changing the properties for heading 1 while we are looking at mobile version */
+	.main h1 {
+		margin-top: 90px;
+		/* Change to text color of heading 1 to red */
+		color: red;
+		margin-bottom;
+		font-style: 'Arial','sans-serif';
+		font-size: 2.7rem;
+		z-index: 10;
+	}
+			
+					
+		}
+
+		/* Style for the main area with the picture of me */
+
+
+		.main {
+			background-color: #141414;
+			padding: 0 20rem 0 0;
+			z-index: 10;
+
+		}
+		.main__container {
+		
+		display: flex;
+		z-index: 10;
+		/* we want the space to the right and left as well as top and bottom to be the same */
+		align-items: center;
+		justify-self: center;
+		/* background-image: linear-gradient(#43cea2 , #185a9d); */
+		
+		margin: 0 auto;
+		/* the height specifies how much of the page should be taken up by this section */
+		height: 90vh;
+		background-color: #141414;
+		
+		z-index: 1;
+		width: 100%
+		max-width: 1300px;
+		padding: 0 100px;
+		
+		
+		}
+		/* Change the style for the h1 text */
+		.main__content h1{
+
+			font-size: 3.9rem;
+			z-index: 10;
+			background-color: #ff8177;
+			background-image: linear-gradient(#43cea2 , #185a9d);
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+
+		}
+
+		/* Change the style for the h2 text */
+		.main__content h2{
+
+			font-size: 2rem;
+			background-color: #ff8177;
+			background-image: linear-gradient(#c33764 , #1d2671);
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+			overflow: hidden;
+			z-index: 10;
+
+		}
+
+
+		/* Large Mobile support for the cover page */
+
+	@media screen and (max-width: 1300px) {
+
+
+		.main {
+
+		}
+		.main__container {
+			grid-template-columns: 1fr;
+			margin: 0 0 0 0;
+			padding: 0;
+			height: 100vh;
+
+		}
+
+	/* Change the style for the h1 text */
+		.main__content h1{
+
+			
+			padding-right: 100px;
+			padding-left: 100px;
+
+		}
+
+
+		.main__content h2{
+
+			padding-right: 100px;
+			padding-left: 100px;
+
+		}
+
+
+
+		.main__img--container {
+
+			
+			padding: 0px;
+			text-align: center;
+			transform: scale(0.8, 0.8);
+			-ms-transform: scale(0.8, 0.8);
+			-webkit-transform: scale(0.8, 0.8);
+
+		}
+		
+	}
+
+	/* Small Mobile support for the cover page */
+
+	@media screen and (max-width: 700px) {
+
+
+		.navbar {
+		overflow: visible;
+
+		}
+		.main {
+
+			padding: 0;
+			overflow: visible;
+
+
+		}
+		.main__container {
+			grid-template-columns: 1fr;
+			margin: 0 0 0 0;
+			padding: 0;
+			height: 100vh;
+
+		}
+
+	/* Change the style for the h1 text */
+		.main__content h1{
+
+			
+			padding-right: 100px;
+			padding-left: 100px;
+			transform: scale(0.85, 0.85);
+			-ms-transform: scale(0.85, 0.85);
+			-webkit-transform: scale(0.85, 0.85);
+
+		}
+
+
+		.main__content h2{
+
+			padding-right: 100px;
+			padding-left: 100px;
+			padding-bottom: 0px;
+			transform: scale(0.85, 0.85);
+			-ms-transform: scale(0.85, 0.85);
+			-webkit-transform: scale(0.85, 0.85);
+
+		}
+
+
+
+		
+		
+	}
+
