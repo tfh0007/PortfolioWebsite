@@ -336,6 +336,7 @@
 		margin-bottom;
 		font-style: 'Arial','sans-serif';
 		font-size: 2.7rem;
+		z-index: 10;
 	}
 			
 					
@@ -347,12 +348,13 @@
 		.main {
 			background-color: #141414;
 			padding: 0 10rem 0 0;
-			z-index: 4;
+			z-index: 10;
 
 		}
 		.main__container {
 		
 		display: grid;
+		z-index: 10;
 		/* we want the space to the right and left as well as top and bottom to be the same */
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
@@ -375,6 +377,7 @@
 		.main__content h1{
 
 			font-size: 3.9rem;
+			z-index: 10;
 			background-color: #ff8177;
 			background-image: linear-gradient(#43cea2 , #185a9d);
 			-webkit-background-clip: text;
@@ -395,7 +398,7 @@
 			-webkit-text-fill-color: transparent;
 			-moz-text-fill-color: transparent;
 			overflow: hidden;
-			z-index: 4;
+			z-index: 10;
 
 		}
 
@@ -405,21 +408,21 @@
 			padding: 100px;
 			text-align: center;
 			object-fit: cover;
-			z-index: 4;
+			z-index: 10;
 
 		}
 
 
 		/* Favorite projects styling */
 		.projects {
-
+			margin-top: 1000px;
 			z-index: 1;
 			background-color: #141414;
-			position: relative;
+
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			height: 100vh;
+			height: 90vh;
 
 			
 
@@ -428,9 +431,10 @@
 
 		.projects h1 {
 			
-			position: relative;
+
 			background-size: 100%;
-			margin-bottom: 5rem;
+			z-index: 1;
+			margin-bottom: 20rem;
 			font-size: 4rem;
 			background-color: #ff8177;
 			background-image: linear-gradient(#de6262 , #ffb88c);
@@ -473,7 +477,6 @@
 
 
 		.main {
-			overflow: hidden;
 
 		}
 		.main__container {
