@@ -19,11 +19,7 @@
 
 	}
 
-	div .main{
 
-		/* This background is the main background of the entire page */
-		background-color: #141414;
-	}
 /* Default properties of all of the icons we are using */
 	.icon::before {
 		font-family: "Font Awesome 5 Free"; 
@@ -112,8 +108,8 @@
 
 		}
 
-		/* We want an effect that lets us know we are currently at the home screen */
-		.navbar__item1 {
+		/* We want an effect that lets us know we are currently at the About screen */
+		.navbar__item2 {
 			text-decoration: solid underline 4px;
 		}
 
@@ -360,10 +356,9 @@
 		}
 		.main__container {
 		
-		display: grid;
+		display: flex;
 		z-index: 10;
 		/* we want the space to the right and left as well as top and bottom to be the same */
-		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		justify-self: center;
 		/* background-image: linear-gradient(#43cea2 , #185a9d); */
@@ -409,56 +404,6 @@
 
 		}
 
-		.main__img--container {
-
-			
-			padding: 100px;
-			text-align: center;
-			object-fit: cover;
-			z-index: 10;
-
-		}
-
-
-		/* Favorite projects styling */
-
-
-		.projects__heading {
-
-			display: grid;
-			grid-template-columns: auto;
-			justify-content: space-around;
-			text-align: center
-			background-color: #ff8177;
-			background-image: linear-gradient(to right, #00c9ff 0%,
-				#92fe9d 100%);
-
-
-			font-size: 3.5rem;
-			-webkit-background-clip: text;
-			-moz-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			-moz-text-fill-color: transparent;
-
-
-		}
-		.projects {
-			padding: 0 0 50px 50px;
-			background: #141414;
-			display:grid;
-			grid-template-columns: 3fr 3fr;
-			
-			align-items:center;
-			height: 160vh;
-		}
-
-		
-
-
-
-
-
-		
 
 		/* Large Mobile support for the cover page */
 
@@ -558,221 +503,7 @@
 
 
 
-		.main__img--container {
-
-			
-			padding: 0px;
-			text-align: center;
-			transform: scale(0.6, 0.6);
-			transform-origin: 300px;
-			-ms-transform: scale(0.6, 0.6);
-			-webkit-transform: scale(0.6, 0.6);
-
-		}
+		
 		
 	}
 
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* When the screen gets to small part 1. the pages overlap so we need to fix this */
-		
-		@media screen and (max-height: 1200px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 12rem;
-			}
-
-			h3 {
-			margin-top: 12rem;
-
-			}
-
-		}		
-
-
-		@media screen and (max-height: 1000px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 20rem;
-			}
-
-			h3 {
-			margin-top: 20rem;
-
-			}
-
-		}	
-
-		@media screen and (max-height: 800px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 32rem;
-			}
-
-			h3 {
-			margin-top: 32rem;
-
-			}
-
-		}		
-
-
-		@media screen and (max-height: 600px) and (min-width: 1500px) {
-
-			.projects {
-			margin-bottom: 41rem;
-
-			}
-
-			h3 {
-			margin-top: 41rem;
-
-			}
-
-		}
-
-		@media screen and (max-height: 450px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 51rem;
-			}
-
-			h3 {
-			margin-top: 51rem;
-
-			}
-
-		}
-
-		@media screen and (max-height: 300px) and (min-width: 1500px) {
-
-			.projects {
-			margin-bottom: 60rem;
-
-			}
-
-			h3 {
-			margin-top: 60rem;
-
-			}
-
-		}
-
-
-
-
-		/* When the screen gets to small part 2. the pages overlap so we need to fix this */
-		@media screen and (max-height: 1000px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 12rem;
-			}
-
-			h3 {
-			margin-top: 12rem;
-
-			}
-
-
-		}
-
-	
-		@media screen and (max-height: 800px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 20rem;
-			}
-
-			h3 {
-			margin-top: 20rem;
-
-			}
-
-		}		
-
-	
-		@media screen and (max-height: 600px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 32rem;
-			}
-
-
-			h3 {
-			margin-top: 32rem;
-
-			}
-
-		}		
-
-		
-		@media screen and (max-height: 400px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 39rem;
-			}
-
-			h3 {
-			margin-top: 39rem;
-
-			}
-
-		}		
-
-		
-		@media screen and (max-height: 250px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 45rem;
-			}
-
-			h3 {
-			margin-top: 45rem;
-
-			}
-
-		}		
