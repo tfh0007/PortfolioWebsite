@@ -1,6 +1,6 @@
 /*Lets select the body tag from our html index file */
 body {
-    background-color: black;
+    background-color: lightblue;
     /*color basically means text color */
     color: white;
     font-size: 3rem;
@@ -21,4 +21,49 @@ h1 {
 }
 
 /* Note that we can use the same style sheet for multiple diffrent html files 
-Never mix styling external css files and html files*/
+Never mix styling external css files and html files.
+NOte that divs take up the amount of space that the content uses. Divs will grow when the content
+becomes bigger*/
+
+
+
+div {
+    background:yellowgreen;
+    max-width: 50rem;
+    padding-left: 5ch;
+    padding-right: 5ch;
+}
+
+span {
+
+    color: rgb(248, 2, 2);
+    font-size: 1.9em;
+}
+
+/* We can access our class specific divs like this. We can also access tags within our choosen class */
+.top-section {
+    background: pink;
+}
+
+.top-section span {
+    color:rgb(0, 255, 85);
+    font-size: 1.5em;
+}
+
+/* Note that we can also add classes for other tags such as headers and paragraphs. This introduction is attached to an h1 object */
+.introduction {
+    color: thistle;
+    text-decoration: underline;
+}
+
+/* Lets say we want to hilight some specific text we declared in a class nammed span within our html file. Notice here that changing the font size does nothing because we already changed that property for span objects in our top section div which we are curently in. Have to be careful when changing lots of properties or else adding properties will change absolutely nothing if another area is overwriting the changes elsewhere */
+.hilight-text {
+    background: yellow;
+
+}
+/* Instead of a class we can use an id. An id is similar to a class but an ID IS ALWAYS UNIQUE. In general you should just use class since you can use the same class over and over again. To use an id instead of a class we use the # symbol instead of the .*/
+
+#hilight-text-special {
+    background: orange;
+
+}

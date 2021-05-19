@@ -155,6 +155,14 @@
 			content: "\f095";
 		}		
 
+		/* We want to trigger this when we load the second page */
+		.navbar.scrolledDown {
+			background: #cc00ff;
+			color: tomato;
+
+
+		}
+
 
 		/* We are changing the properties for heading 1 while we are looking at desktop version */
 		.main h1 {
