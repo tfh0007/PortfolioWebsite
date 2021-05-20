@@ -20,16 +20,65 @@
 
 }
 
-/* This box contains all of our links */
-.navbar__menu {
+/* This box contains all of our middle links */
+.navbar__menu-middle {
 
+    display: flex;
+    /* Applying this property will stack our items on top of each other */
+    flex-direction: column;
+
+    /* Applying this property will move our items to the center. 
+    This only works when flex is column based */
+    align-items: center;
     border: solid 1ch;
     border-color: lightpink;
+    list-style: none;
+    font-size: 2.5rem;
+    /* This property will decrease the space between the middle links and the right links */
+    margin-bottom: 0px;
+     /* This property will decrease the space between the logo/menu links and middle links */
+     margin-top: 0px;
+    
+
+
     
 }
 
+/* This box contains all of our right links and their icons*/
+.navbar__menu-right-mobile {
+
+    display: flex;
+    /* Applying this property will stack our items on top of each other */
+    flex-direction: column;
+
+    /* Applying this property will move our items to the center. 
+    This only works when flex is column based */
+    align-items: center;
+    border: solid 1ch;
+    border-color: orange;
+    list-style: none;
+    font-size: 2.5rem;
+    /* This property will decrease the space between the middle links and the right links */
+    margin-top: 0px;
+/* This property will decrease the space between the right links and the right icons 
+    which are not visible in mobile version */
+    margin-bottom: 0px;
+
+
+}
+
+/* This will be a line above our navbar-menu-right*/
+.navbar__menu-right-mobile::before {
+    content: "";
+    outline: dashed gray;
+    width: 90%;
+    
+    
+
+}
 /* This box contains the links that should be centered on the screen */
 .navbar__item-center {
+    padding: 0;
     border: solid 1ch;
     border-color: lightgreen;
 
@@ -40,5 +89,21 @@
     border: solid 1ch;
     border-color: lightgrey;
 
+
 }
+
+/* This box contains the icons that should be on the right of the screen. 
+For Mobile this will be hidden */
+.navbar__menu-right-desktop {
+    list-style: none;
+    opacity: 1;
+    border: solid 1ch;
+    border-color: lightgreen;
+    /* The links are still clickable even though they are invisible so we need to fix this */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
 
