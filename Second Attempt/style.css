@@ -1,0 +1,96 @@
+
+/* Default properties of all of the icons we are using */
+.icon::before {
+    font-family: "Font Awesome 5 Free"; 
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+.navbar {
+    display: flex;
+    position:absolute;
+    width: 100%;
+    height: 6.2rem;
+    background: #02C294;
+    margin: 0px;
+    top: 0px;
+    z-index: 999;
+
+  
+
+}
+
+.navbar__container {
+    width: 100%;
+    height: 6.2rem;
+     /* This creates an outward box closing transition */
+				
+   transform-origin: top;
+   transform: perspective(1000px) rotateX(-0deg);
+   /* This transition will cause the transform animation to happen */
+   transition: all 0.9s ease;
+
+}
+
+.mainLogo {
+
+    padding-left: 5ch;
+    transform: perspective(1000px) rotateX(0deg);
+    font-size: 2.1rem;
+    top:0px;
+    display:inline-block;
+    align-content: center;
+}
+
+/* Create a hamburger icon */
+.menuIcon::after {
+    font-family: "Font Awesome 5 Free"; 
+    display: inline-block;
+    color: white;
+    
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    background-color: transparent;
+    padding-left: 90%;
+    font-size:3.4rem;		
+    font-weight: 900; 
+    content: "\f0c9";
+    position: absolute;
+    justify-content: left;
+    top: 1.1rem;
+
+
+}
+
+/* Change the default settings within the menu object */
+.navbar__menu {
+display:flex;
+width: 100%;
+padding:0;
+height: 6rem;
+display:inline-block;
+}
+
+.navbar__links {
+
+    font-size: 2.3rem;
+    padding-top: 0px;
+    color: black;
+    width: 100%;
+    height:6rem;
+    display:block;
+    text-align: center;
+    text-decoration: none;
+
+
+}
+
