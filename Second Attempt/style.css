@@ -1,27 +1,41 @@
 /*This navbar represents the container for our navbar */
 .navbar {
-    display: flex;
+    display: flex;   
     border: solid 1ch;
     background-color: lightgoldenrodyellow;
+    /*Applying this property will stack our navbar__container on top of our navbar__menu */
+    flex-direction: column;
 }
 
+/* This box contains our menu and logo */
 .navbar__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    display: flex;
+    /* Applying this property will space the logo and menu as far apart as possible */
+    justify-content: space-between;
     border: solid 1ch;
     border-color: lightblue;  
+    
+    
+
 }
 
+/* This box contains all of our links */
 .navbar__menu {
 
     border: solid 1ch;
     border-color: lightpink;
+    
 }
 
+/* This box contains the links that should be centered on the screen */
 .navbar__item-center {
     border: solid 1ch;
     border-color: lightgreen;
 
 }
 
+/* This box contains the links that should be on the right of the screen */
 .navbar__item-right {
     border: solid 1ch;
     border-color: lightgrey;
