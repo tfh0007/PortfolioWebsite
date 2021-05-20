@@ -51,7 +51,7 @@
     align-content: center;
 }
 
-/* Create a close icon 
+/* Create a menu icon 
 .menuIcon::after {
     font-family: "Font Awesome 5 Free"; 
     
@@ -75,13 +75,26 @@
     
     
     
+    .menuButton {
+
+        font-size: 2rem;
+        top: 0px;
+        transform: translateY(-5.5rem);
+        justify-content: right;
+        display: flex;
+        align-items: center;
+        padding-left: 80%;
+        padding-right: 7.8%;
+        border: none;
+        background: none;
+        justify-content: space-around;
+        
+
+    }
 
 
-}
 
-.menuIcon {
-    cursor: pointer;
-}
+
 
 /* Change the default settings within the menu object */
 .navbar__menu {
@@ -102,7 +115,7 @@ transition: all 0.9s ease;
     font-size: 2.3rem;
     padding-top: 2px;
     color: black;
-    width: 100%;
+    
     height:6rem;
     display:block;
     text-align: center;
