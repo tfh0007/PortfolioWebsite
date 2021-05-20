@@ -107,7 +107,7 @@ display:inline-block;
 
 		/* Create a home icon */
 		.navbar__item1::before {
-			
+			color: orange;
 			font-weight: 900; 
 			content: "\f015";
 			
@@ -118,7 +118,7 @@ display:inline-block;
 		.navbar__item2::before {
 			/* Font weight can be used to adjust which icon is used from the selection */
 			font-weight: 900; 
-			content: "\f007";
+			content: "\f2bb";
 		}
 
 		/* Create a code icon */
@@ -133,6 +133,7 @@ display:inline-block;
 			/* Font weight can be used to adjust which icon is used from the selection */
 			font-weight: 900; 
 			content: "\f095";
+            color: green;
 		}	
 
         /* Create a Handshake icon */
@@ -140,28 +141,31 @@ display:inline-block;
 			/* Font weight can be used to adjust which icon is used from the selection */
 			font-weight: 900; 
 			content: "\f2b5";
+            color: red;
 		}	
 
-        /* Create a contact me icon 
-		.navbar__item6::before {
-			/* Font weight can be used to adjust which icon is used from the selection 
-			font-weight: 900; 
-			content: "\f095";
-		}	
+       
 
-        /* Create a LinkedIn icon */
-		.navbar__item6::before {
-			/* Font weight can be used to adjust which icon is used from the selection 
-			font-weight: 900; 
-			content: "\f0e1";
-		}	
         
-        /* Create a Github icon *
-		.navbar__item7::before {
-			/* Font weight can be used to adjust which icon is used from the selection 
-			font-weight: 900; 
-			content: "\f09b";
-            
-		}	
-        */	
+        /* Unfortunately I was unable to get brand icons to work. So I am using a longer workaround */
+        .fab {
+            display: block;
+            font-style: normal;
+            padding-left: 1.5rem;
+        
+        
+            font-size: 2rem;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            transform: translate(0%,110%)
+        }
+
+
+
+
+
+
+
+        
 
