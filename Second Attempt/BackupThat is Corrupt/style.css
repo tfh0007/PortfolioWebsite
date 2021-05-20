@@ -21,13 +21,13 @@
     display: flex;
     position:absolute;
     width: 100%;
-    
     height: 6.2rem;
     background: #02C294;
     margin: 0px;
     top: 0px;
     z-index: 999;
 
+   
   
 
 }
@@ -44,63 +44,51 @@
 .mainLogo {
 
     padding-left: 5ch;
-    
+    transform: perspective(1000px) rotateX(0deg);
     font-size: 2.1rem;
     top:0px;
     display:inline-block;
     align-content: center;
 }
 
-/* Create a close icon 
+/* Create a hamburger icon */
 .menuIcon::after {
     font-family: "Font Awesome 5 Free"; 
+    display: inline-block;
+    color: white;
     
-    color: black;
-
+    border: none;
+    outline: none;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     background-color: transparent;
-    
+    padding-left: 90%;
     font-size:3.4rem;		
     font-weight: 900; 
-    content: "\f00d";
-    position: relative;
-    top:0px;
-
-    */
-    
-    
-    
-    
-    
+    content: "\f0c9";
+    position: absolute;
+    justify-content: left;
+    top: 1.1rem;
 
 
-}
-
-.menuIcon {
-    cursor: pointer;
 }
 
 /* Change the default settings within the menu object */
 .navbar__menu {
-list-style: none;
 display:flex;
 width: 100%;
 padding:0;
 height: 6rem;
 display:inline-block;
-transform-origin: top;
-transform: perspective(1000px) rotateX(-90deg);
-/* This transition will cause the transform animation to happen */
-transition: all 0.9s ease;
+
 }
 
 .navbar__links {
 
     font-size: 2.3rem;
-    padding-top: 2px;
+    padding-top: 0px;
     color: black;
     width: 100%;
     height:6rem;
@@ -172,28 +160,6 @@ transition: all 0.9s ease;
             transform: translate(0%,110%)
         }
 
-
-    /* Creates a hover effect when the cursor hovers over a menu item */
-		.navbar__links:hover {
-			background: #adadad;
-			transition: all 0.2s ease;
-
-			
-
-		}
-
-
-        /* We need a seprate state to transition the menu objects into becoming visible */
-        .navbar__menu.active
-			{
-				height: 100%;
-				z-index: 999;
-				transform: perspective(1000px) rotateX(0deg);
-			}
-
-        .navbar.active {
-            height: 100%;
-        }
 
 
 
