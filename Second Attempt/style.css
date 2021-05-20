@@ -15,8 +15,20 @@
     justify-content: space-between;
     border: solid 1ch;
     border-color: lightblue;  
+    /* Applying this property gives some space between the left of the screen and my logo */
+    padding-left: 3ch;
+    font-size: 1.5rem;
     
     
+
+}
+
+/* This box is only the menu icom and menu text */
+.menuButton {
+  font-size: 2rem; 
+  background: none; 
+  border: none;
+  cursor: pointer;
 
 }
 
@@ -103,6 +115,8 @@ For Mobile this will be hidden */
     margin-top: 0;
     margin-bottom: 0;
 }
+
+
 
 
 
