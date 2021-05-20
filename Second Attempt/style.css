@@ -201,11 +201,125 @@ transition: all 0.9s ease;
         /* We need a seprate state to transition the menu objects into becoming visible */
         .navbar__menu.active
 			{
-				height: 100%;
+				
 				z-index: 999;
 				transform: perspective(1000px) rotateX(0deg);
 			}
 
+        /* Now we need to transition the menu into the desktop version */
+
+        @media screen and (min-width: 1428px) {
+            
+            .navbar {
+               
+                height: 6.5rem;
+            /* flex forces items to the same length, regardless of content */
+                display: flex;
+            /* justify-content property aligns the flexible container's items when 
+             * the items do not use all available space on the main-axis (horizontally). */
+                justify-content: center;
+    
+            /* Center the alignments for all the items of the flexible <div> element. */	
+                align-items: center;
+    
+           
+    
+            /* The element is positioned based on the user's scroll position */
+            position: sticky;
+    
+            /* The top property affects the vertical position of a positioned 
+             * element. This property has no effect on non-positioned elements. */
+            top: 0;
+    
+            /* We want the menu to stay at top of screen regardless of what we are looking at 
+             * The z-index property specifies the stack order of an element.*/
+            z-index: 999;	
+    
+        }
+
+
+        .navbar__menu {
+            list-style: none;
+            display:flex;
+            width: 100%;
+            transform: translateY(5rem)
+            
+            
+            
+            
+            transform-origin: top;
+            transform: perspective(1000px) rotateX(-0deg);
+            /* This transition will cause the transform animation to happen */
+            }
+
+            .navbar__links {
+
+                font-size: 1.125rem;
+                transform: translateY(-8.8rem) rotateX(-0deg);
+                color: black;
+                
+                height:6rem;
+                display:inline-block;
+                
+                text-decoration: none;
+                margin-left: 4rem;
+                padding-right: 0;
+                
+            
+            
+            }
+
+            /* The first item needs to have a further margin so that it does not overlap with our logo */
+
+
+            .navbar__item1 {
+                margin-left: 40rem;
+                
+    
+            }
+            /* The last 3 items we do not want to keep the text for */
+            .navbar__item5::before {
+                margin-top: -4.5ch;
+                margin-left: 4ch;  
+    
+            }
+
+            .navbar__item6 {
+                margin-top: -8.7rem;
+                padding-right: 0;
+                margin-right: 0;
+                
+    
+            }
+
+            .navbar__item7 {
+                margin-top: -8.7rem;
+                transform: translateX(-10ch) rotateX(-0deg);
+                
+
+    
+            }
+                /* We no longer need the menu so hide it */
+            .menuButton {
+                transform: translateY(-5000px) rotateX(-0deg);  
+                opacity: 0; 
+            }
+
+            .mainLogo {
+
+                padding-left: 4ch;
+                
+                font-size: 1.375rem;
+                top:0px;
+                display:inline-block;
+                align-content: center;
+                transform: translateY(1rem);
+            }
+
+
+
+
+    }
 
 
 
