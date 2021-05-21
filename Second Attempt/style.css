@@ -613,32 +613,33 @@ flex-wrap: wrap;
         }
 
 /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
-.page1sentance1 {
+    .page1sentance1 {
 
-    font-size: 2.6rem; 
+        font-size: 2.6rem; 
 
-}
-/* This class is the paragraph page 1 text that says "How about a Web Designer?" */
-.page1sentance2 {
+    }
+    /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+    .page1sentance2 {
 
-    font-size: 2.6rem;
-
-}
-/* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
-.page1sentance3 {
-
-    font-size: 2.6rem;
+        font-size: 2.6rem;
 
 }
-/* This class is the paragraph page 1 text that says "I am the person you are looking for" */
-.page1sentance4 {
+    /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+    .page1sentance3 {
 
-    font-size: 2.9rem;
-
-}
-
+        font-size: 2.6rem;
 
 }
+    /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+    .page1sentance4 {
+
+        font-size: 2.9rem;
+
+
+    }
+
+}
+}   
 
 
 
