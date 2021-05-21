@@ -4,6 +4,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    /* Using a high index value ensures that nothing will overlap with the header */
     z-index: 999;
     display: flex;
     justify-content: space-between;
@@ -81,6 +82,8 @@ header {
 				transform: perspective(1000px) rotateX(90deg);
 				/* This transition will cause the transform animation to happen */
 				transition: transform 0.9s ease;
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: none;
  
 }
 /* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
@@ -89,6 +92,8 @@ header {
     transform: perspective(1000px) rotateX(0deg);
     /* This transition will cause the transform animation to happen */
     transition: transform 0.9s ease; 
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: flex;
 }
 
 /* This box contains all of our right links and their icons*/
@@ -120,6 +125,8 @@ Unfortunately this also destroys the animation as well */
 				transform: perspective(1000px) rotateX(-90deg);
 				/* This transition will cause the transform animation to happen */
 				transition: transform 0.9s ease;
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: none;
 }
 
 /* Lets create a state for calling .navbar__menu-right-mobile once the menu button is pressed */
@@ -128,6 +135,9 @@ Unfortunately this also destroys the animation as well */
     transform: perspective(1000px) rotateX(0deg);
     /* This transition will cause the transform animation to happen */
     transition: transform 0.9s ease; 
+
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: flex;
 }
 
 /* This will be a line above our navbar-menu-right*/
@@ -166,6 +176,8 @@ Unfortunately this also destroys the animation as well */
 /* This box contains the icons that should be on the right of the screen. 
 For Mobile this will be hidden */
 .navbar__menu-right-desktop {
+    
+
     list-style: none;
     border: solid 1ch;
     border-color: lightgreen;
@@ -236,10 +248,13 @@ For Mobile this will be hidden */
 .navbar__menu-middle {
 
         /* We need to make our content visible even if it was previously hidden */
-				
+		
         transform-origin: top;
         transform: perspective(1000px) rotateX(0deg);
         transition: 1ms;
+
+        /* For now we are getting rid of the menu animations because they break the layout */
+    display: flex;
         /* This transition will cause the transform animation to happen */
 
     /* Applying this property will put our items side to side of each other */
@@ -272,13 +287,16 @@ For Mobile this will be hidden */
     /* We need to make our content visible even if it was previously hidden */
 				
     transform-origin: top;
-    transform: perspective(1000px) rotateX(0deg);
     /* This transition will cause the transform animation to happen */
     transition: transform 0.9s ease;
     /* We want to disable the text while we are using the desktop version */
     display: none;
-    display: none;
+
    
+}
+.navbar__menu-right-mobile.active {
+        /* We want to disable the text while we are using the desktop version */
+        display: none;
 }
 
 
@@ -363,13 +381,16 @@ so we can not simply change all of the icons at once*/
 }
 
 /* Now we can move on to the first page main content */
+
+/* This class contains the entirety of the content found in page 1 */
+.page1container {
+border: solid black 8px;
+margin-top: 8rem;
+
+}
 /* This class contains all of the text that will be on the first page */
 .page1Text {
     border: solid red 6px;
-}
-.page1container {
-border: solid black 8px;
-
 }
 /* This class is the paragraph page 1 text that says "Hi There, I am Thomas Hansknecht" */
 .page1heading {
