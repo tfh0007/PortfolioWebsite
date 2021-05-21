@@ -387,6 +387,7 @@ so we can not simply change all of the icons at once*/
 /* This class contains the entirety of the content found in page 1 */
 .page1container {
 border: solid black 8px;
+background-color: rgb(94, 110, 139);
 margin-top: 8rem;
 padding-top: 1rem;
 padding-bottom: 0;
@@ -398,11 +399,17 @@ flex-wrap: wrap;
 }
 /* This class contains all of the text that will be on the first page */
 .page1Text {
+    /* We want the text here to be both in a column and justified to the center */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: solid red 6px;
+    
 }
 /* This class is the paragraph page 1 text that says "Hi There, I am Thomas Hansknecht" */
 .page1heading {
     border: solid pink 4px;  
+    
 }
 /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
 .page1sentance1 {
@@ -463,6 +470,12 @@ flex-wrap: wrap;
 
         
     }
+    /* The page 1 heading text should be more towards to top of the picture in desktop version */
+    .page1heading {
+        padding-bottom: 6ch;
+    }
+
+
 }
 
 
