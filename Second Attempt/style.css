@@ -5,6 +5,7 @@
     background-color: lightgoldenrodyellow;
     /*Applying this property will stack our navbar__container on top of our navbar__menu */
     flex-direction: column;
+    
 }
 
 /* This box contains our menu and logo */
@@ -16,8 +17,10 @@
     border: solid 1ch;
     border-color: lightblue;  
     /* Applying this property gives some space between the left of the screen and my logo */
-    padding-left: 3ch;
-    font-size: 1.5rem;
+    padding-left: 1.5ch;
+    font-size: 1.4rem;
+    
+    
     
     
 
@@ -50,6 +53,8 @@
     margin-bottom: 0px;
      /* This property will decrease the space between the logo/menu links and middle links */
      margin-top: 0px;
+     
+     
     
 
 
@@ -75,6 +80,7 @@
 /* This property will decrease the space between the right links and the right icons 
     which are not visible in mobile version */
     margin-bottom: 0px;
+    
 
 
 }
@@ -94,12 +100,14 @@
     border: solid 1ch;
     border-color: lightgreen;
 
+
 }
 
 /* This box contains the links that should be on the right of the screen */
 .navbar__item-right {
     border: solid 1ch;
     border-color: lightgrey;
+    
 
 
 }
@@ -114,6 +122,13 @@ For Mobile this will be hidden */
     /* The links are still clickable even though they are invisible so we need to fix this */
     margin-top: 0;
     margin-bottom: 0;
+}
+
+/* navbar links is how we can remove the style of our links */
+.navbar__links {
+    text-decoration: none;
+    color: black;
+
 }
 
 
