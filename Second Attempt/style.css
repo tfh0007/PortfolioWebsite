@@ -95,6 +95,12 @@ header {
     transition: transform 0.9s ease; 
     /* For now we are getting rid of the menu animations because they break the layout */
     display: flex;
+    /*Lets blur and dim the content behind our menu when it is active */
+    background-color: black;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    backdrop-filter: brightness(20%);
+    backdrop-filter: grayscale(80%); 
 }
 
 /* This box contains all of our right links and their icons*/
@@ -139,6 +145,13 @@ Unfortunately this also destroys the animation as well */
 
     /* For now we are getting rid of the menu animations because they break the layout */
     display: flex;
+
+    /*Lets blur and dim the content behind our menu when it is active */
+    background-color: black;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    backdrop-filter: brightness(20%);
+    backdrop-filter: grayscale(80%);   
 }
 
 /* This will be a line above our navbar-menu-right*/
