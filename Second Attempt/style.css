@@ -234,6 +234,14 @@ For Mobile this will be hidden */
 
 }
 
+/* The menu links are very difficult to see on mobile so we will make them white */
+.fas {
+    color: white;
+}
+.fab {
+    color: white;
+}
+
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
 /* First we will load the middle icons and leave the right icons in the menu */
 
@@ -301,14 +309,6 @@ For Mobile this will be hidden */
     align-items: center;
     padding-left: 0px;
     
-
-
-
-
-    
-
-    
-
 
     /* This property makes our content inside not take up any space to the left */
 
@@ -382,19 +382,23 @@ so we can not simply change all of the icons at once*/
 
 .fa-home {
     font-size: 1.8rem;
+    color: orangered;
 
 }
 
 
 .fa-address-card {
     font-size: 1.8rem; 
+    color: red;
 }
 
 .fa-code {
     font-size: 1.8rem; 
+    color: rgb(0, 255, 0);
 }
 .fa-phone-alt {
     font-size: 1.8rem;
+    color: rgb(94, 8, 151);
 }
 
 
@@ -416,11 +420,13 @@ so we can not simply change all of the icons at once*/
 
 .fa-github {
     font-size: 3.8rem;
+    color: black;
 }
 
 
 
 }
+
 
 /* Now we can move on to the first page main content */
 
