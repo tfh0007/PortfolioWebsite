@@ -1,3 +1,17 @@
+/* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
 /*This navbar represents the container for our navbar */
 .navbar {
     display: flex;   
@@ -9,6 +23,7 @@
     to move items off screen those items will cause the window to be bigger 
     than it should and thus the website will go off of the page. */
     overflow: hidden;
+    flex-grow: 1;
     
 }
 
@@ -344,6 +359,7 @@ so we can not simply change all of the icons at once*/
 }
 
 
+
 }
 
 /* Now we can move on to the first page main content */
@@ -378,6 +394,8 @@ border: solid black 8px;
 .pictureOfMe__container {
     border: solid cyan 6px;
 }
+
+
 
 
 
