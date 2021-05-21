@@ -17,7 +17,7 @@ header {
 .navbar {
     display: flex;   
     border: solid 1ch;
-    background-color: lightgoldenrodyellow;
+    
     /*Applying this property will stack our navbar__container on top of our navbar__menu */
     flex-direction: column;
     /* Overflow must be hidden otherwise when we apply the transition 
@@ -39,6 +39,7 @@ header {
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 1.5ch;
     font-size: 1.4rem;
+    background-color: #02C294; 
     
     
     
@@ -207,7 +208,8 @@ For Mobile this will be hidden */
     border: solid 1ch;
     /*We need to make our navigation bar smaller */
     max-height: 200px;
-    background-color: lightgoldenrodyellow;
+    background-color: #02C294;
+    
     /*Applying this property will put  our navbar__container to the left of our navbar__menu */
     flex-direction: row;
     /* Overflow must be hidden otherwise when we apply the transition 
@@ -386,6 +388,12 @@ so we can not simply change all of the icons at once*/
 .page1container {
 border: solid black 8px;
 margin-top: 8rem;
+padding-top: 1rem;
+padding-bottom: 0;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
 
 }
 /* This class contains all of the text that will be on the first page */
@@ -414,7 +422,51 @@ margin-top: 8rem;
 }
 .pictureOfMe__container {
     border: solid cyan 6px;
+    
+    /* On mobile the picture of me is a little too big so we will scale it down a bit */
+    
+    transform: scale(0.8, 0.8);
+			-ms-transform: scale(0.7, 0.7);
+			-webkit-transform: scale(0.7, 0.7);
+    /* On mobile the picture of me becomes to low after the scale transformation so we need to move the picture up slightly in mobile */
+    margin-top: -8.96rem;
+
 }
+
+
+    
+
+
+
+
+
+@media screen and (min-width: 1150px) {
+
+    /* The desktop version navbar is slightly smaller in height 
+    so the margin-top of page 1 will be slightly less in desktop version */
+    .page1container {
+    margin-top: 6.5rem;
+        /* On Destop the page does not extend below the picture of me so lets extend it further so lets extend it */
+        padding-top: 4.96rem;
+        padding-bottom: 4.96rem;
+    }
+
+    .pictureOfMe__container {
+        border: solid cyan 6px;
+        /* On Desktop the picture of me should be bigger */
+        transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -webkit-transform: scale(1, 1);
+        /* Once the picture is transformed back to normal size our previous margin-top that applied to mobile 
+        becomes inaccurate and we need to fix it */
+        margin-top: 0;
+
+        
+    }
+}
+
+
+
 
 
 
