@@ -17,6 +17,7 @@ header {
 .navbar {
     display: flex;   
     border: solid 1ch;
+    border-color: #02C294;
     
     /*Applying this property will stack our navbar__container on top of our navbar__menu */
     flex-direction: column;
@@ -26,6 +27,7 @@ header {
     overflow: hidden;
     flex-grow: 1;
     
+    
 }
 
 /* This box contains our menu and logo */
@@ -34,8 +36,11 @@ header {
     display: flex;
     /* Applying this property will space the logo and menu as far apart as possible */
     justify-content: space-between;
+
+    /*Borders for testing can be removed now
     border: solid 1ch;
-    border-color: lightblue;  
+    border-color: lightblue;  */
+    
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 1.5ch;
     font-size: 1.4rem;
@@ -66,8 +71,13 @@ header {
     /* Applying this property will move our items to the center. 
     This only works when flex is column based */
     align-items: center;
+
+
+
+    /*Borders for testing can be removed now
     border: solid 1ch;
     border-color: lightpink;
+    */
     list-style: none;
     font-size: 2.5rem;
     /* This property will decrease the space between the middle links and the right links */
@@ -98,9 +108,10 @@ header {
     /*Lets blur and dim the content behind our menu when it is active */
     background-color: black;
     background: transparent;
-    backdrop-filter: blur(50px);
-    backdrop-filter: brightness(20%);
-    backdrop-filter: grayscale(80%); 
+
+    backdrop-filter: brightness(40%);
+     
+    
 }
 
 /* This box contains all of our right links and their icons*/
@@ -113,8 +124,13 @@ header {
     /* Applying this property will move our items to the center. 
     This only works when flex is column based */
     align-items: center;
+
+    /*Borders for testing can be removed now
     border: solid 1ch;
     border-color: orange;
+
+    */
+
     list-style: none;
     font-size: 2.5rem;
     /* This property will decrease the space between the middle links and the right links */
@@ -149,9 +165,9 @@ Unfortunately this also destroys the animation as well */
     /*Lets blur and dim the content behind our menu when it is active */
     background-color: black;
     background: transparent;
-    backdrop-filter: blur(50px);
-    backdrop-filter: brightness(20%);
-    backdrop-filter: grayscale(80%);   
+
+    backdrop-filter: brightness(40%);
+
 }
 
 /* This will be a line above our navbar-menu-right*/
@@ -172,20 +188,24 @@ Unfortunately this also destroys the animation as well */
 /* This box contains the links that should be centered on the screen */
 .navbar__item-center {
     padding: 0;
+
+    /*Borders for testing can be removed now
     border: solid 1ch;
     border-color: lightgreen;
+    */
 
 
 }
 
 /* This box contains the links that should be on the right of the screen */
+/*Borders for testing can be removed now
 .navbar__item-right {
+     
     border: solid 1ch;
     border-color: lightgrey;
-    
-
 
 }
+*/
 
 /* This box contains the icons that should be on the right of the screen. 
 For Mobile this will be hidden */
@@ -193,8 +213,11 @@ For Mobile this will be hidden */
     
 
     list-style: none;
+    /*Borders for testing can be removed now
+
     border: solid 1ch;
     border-color: lightgreen;
+    */
     /* The links are still clickable even though they are invisible so we need to fix this */
     margin-top: 0;
     margin-bottom: 0;
@@ -206,19 +229,20 @@ For Mobile this will be hidden */
 .navbar__links {
     font-size: 2rem;
     text-decoration: none;
-    color: black;
+    color: white;
+    padding: 1ch;
 
 }
 
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
 /* First we will load the middle icons and leave the right icons in the menu */
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1405px) {
 
  /*This navbar represents the container for our navbar */
 .navbar {
     display: flex;   
-    border: solid 1ch;
+
     /*We need to make our navigation bar smaller */
     max-height: 200px;
     background-color: #02C294;
@@ -240,8 +264,7 @@ For Mobile this will be hidden */
     display: flex;
     /* Applying this property will space the logo and menu as far apart as possible */
     
-    border: solid 1ch;
-    border-color: lightblue;  
+    
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 4ch;
     padding-right: 4ch;
@@ -320,8 +343,12 @@ For Mobile this will be hidden */
 For Desktop this will be visible */
 .navbar__menu-right-desktop {
     list-style: none;
+
+    /*Borders for testing can be removed now
     border: solid 1ch;
     border-color: lightgreen;
+
+    */
     /* The links are still clickable even though they are invisible so we need to fix this */
 
     /* We want to disable these icons while we are using the mobile version */
@@ -414,7 +441,7 @@ rgba(112, 0, 255, 0.57) 200.63deg,
 rgba(250, 0, 255, 0.22) 345.5deg, 
 rgba(2, 194, 148, 0.47) 360.34deg);
 
-margin-top: 8rem;
+margin-top: 6.4rem;
 padding-top: 1rem;
 padding-bottom: 0;
 display: flex;
@@ -500,12 +527,12 @@ flex-wrap: wrap;
 
 
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1405px) {
 
     /* The desktop version navbar is slightly smaller in height 
     so the margin-top of page 1 will be slightly less in desktop version */
     .page1container {
-    margin-top: 6.5rem;
+        margin-top: 4.2rem;
         /* On Destop the page does not extend below the picture of me so lets extend it further so lets extend it */
         padding-top: 4.96rem;
         padding-bottom: 4.96rem;
