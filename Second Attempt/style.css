@@ -400,7 +400,20 @@ so we can not simply change all of the icons at once*/
 /* This class contains the entirety of the content found in page 1 */
 .page1container {
 border: solid black 8px;
-background-color: rgb(94, 110, 139);
+/* Lets add a slow fading background to experiment with 
+background-image: linear-gradient(90deg,rgba(43, 141, 206, 0.63),rgb(230, 210, 173),lightpink,rgba(204, 68, 68, 0.705),rgb(210, 146, 221));
+background-size: 400%;
+animation: page1Bg__animation 1s infinite alternative; */
+
+/*THis is the background we made in our figma template */
+background:conic-gradient(from 180deg at 50% 50%, 
+rgba(250, 0, 255, 0.22) -14.5deg, 
+rgba(2, 194, 148, 0.47) 0.34deg, 
+rgba(1, 141, 201, 0.456406) 89.05deg, 
+rgba(112, 0, 255, 0.57) 200.63deg, 
+rgba(250, 0, 255, 0.22) 345.5deg, 
+rgba(2, 194, 148, 0.47) 360.34deg);
+
 margin-top: 8rem;
 padding-top: 1rem;
 padding-bottom: 0;
@@ -410,6 +423,17 @@ justify-content: space-around;
 flex-wrap: wrap;
 
 }
+/*We need to set the actual animation for our background on page 1 
+@keyframes page1Bg__animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+*/
+
 /* This class contains all of the text that will be on the first page */
 .page1Text {
     /* We want the text here to be both in a column and justified to the center */
