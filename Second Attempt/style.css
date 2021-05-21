@@ -245,7 +245,7 @@ For Mobile this will be hidden */
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
 /* First we will load the middle icons and leave the right icons in the menu */
 
-@media screen and (min-width: 1405px) {
+@media screen and (min-width: 1367px) {
 
  /*This navbar represents the container for our navbar */
 .navbar {
@@ -432,7 +432,12 @@ so we can not simply change all of the icons at once*/
 
 /* This class contains the entirety of the content found in page 1 */
 .page1container {
-border: solid black 8px;
+
+/*Borders for testing can be removed now
+    border: solid black 8px;
+*/
+
+
 /* Lets add a slow fading background to experiment with 
 background-image: linear-gradient(90deg,rgba(43, 141, 206, 0.63),rgb(230, 210, 173),lightpink,rgba(204, 68, 68, 0.705),rgb(210, 146, 221));
 background-size: 400%;
@@ -474,47 +479,76 @@ flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+     /*Borders for testing can be removed now
     border: solid red 6px;
+    */
     
     
 }
 /* This class is the paragraph page 1 text that says "Hi There, I am Thomas Hansknecht" */
 .page1heading {
+
+     /*Borders for testing can be removed now
     border: solid pink 4px; 
+    */
+
+
     color: #303079;
     font-size: 2.5rem;
     
 }
 /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
 .page1sentance1 {
+
+     /*Borders for testing can be removed now
     border: solid darkgreen 4px;
+    */
+
+
     color: #2F2D2D;
     font-size: 1.6rem; 
     margin-top: -1.1ch;
 }
 /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
 .page1sentance2 {
+
+     /*Borders for testing can be removed now
     border: solid darkblue 4px; 
+    */
+
     color: #2F2D2D;
     font-size: 1.6rem;
     margin-top: -1.1ch;
 }
 /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
 .page1sentance3 {
+
+     /*Borders for testing can be removed now
     border: solid darkorange 4px; 
+    */
+    
     color: #2F2D2D;
     font-size: 1.6rem;
     margin-top: -1.1ch;
 }
 /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
 .page1sentance4 {
+
+     /*Borders for testing can be removed now
     border: solid yellowgreen 4px; 
+    */
+
     color: #c01f1f;
     font-size: 1.9rem;
     margin-top: -1.1ch;
 }
 .pictureOfMe__container {
+
+     /*Borders for testing can be removed now
     border: solid cyan 6px;
+
+    */
     
     /* On mobile the picture of me is a little too big so we will scale it down a bit */
     
@@ -533,7 +567,7 @@ flex-wrap: wrap;
 
 
 
-@media screen and (min-width: 1405px) {
+@media screen and (min-width: 1367px) {
 
     /* The desktop version navbar is slightly smaller in height 
     so the margin-top of page 1 will be slightly less in desktop version */
@@ -545,7 +579,10 @@ flex-wrap: wrap;
     }
 
     .pictureOfMe__container {
+        /*Borders for testing can be removed now
         border: solid cyan 6px;
+
+        */
         /* On Desktop the picture of me should be bigger */
         transform: scale(1, 1);
                 -ms-transform: scale(1, 1);
@@ -559,10 +596,18 @@ flex-wrap: wrap;
     /*The font size on desktop becomes too small so lets make it bigger in all areas */
     /* The page 1 heading text should be more towards to top of the picture in desktop version */
     .page1heading {
-        padding-bottom: 6ch;
+
+       
         margin-top: -.1rem;
         font-size: 3.5rem;
     }
+/* We want the gap between the heading sentance and paragraph underneath to increase after the display
+     width increases to a certain size */
+    @media screen and (min-width: 1629px) {
+        .page1heading {
+        padding-bottom: 6ch;
+
+        }
 
 /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
 .page1sentance1 {
