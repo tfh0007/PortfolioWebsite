@@ -59,6 +59,7 @@
      margin-top: 0px;
 
 
+
      /* This creates an outward box closing transition */
 				
 				transform-origin: top;
@@ -201,6 +202,7 @@ For Mobile this will be hidden */
     border-color: lightblue;  
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 4ch;
+    padding-right: 4ch;
     
     font-size: 0.8rem; 
     /* Applying this property puts our logo in the center of the Y main axis  */
@@ -229,6 +231,7 @@ For Mobile this will be hidden */
 
     flex-direction: row;
     align-items: center;
+    padding-left: 0px;
     
 
 
@@ -275,7 +278,9 @@ For Desktop this will be visible */
 
     /* We want to disable these icons while we are using the mobile version */
     display: flex;
+    padding-left: 0px;
 }
+
 /* NOW WE NEED TO GET RID OF THE DASHED LINES THAT WERE DIVIDERS 
 IN THE MOBILE VERSION */
 
