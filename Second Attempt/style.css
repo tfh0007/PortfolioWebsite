@@ -53,12 +53,22 @@
     margin-bottom: 0px;
      /* This property will decrease the space between the logo/menu links and middle links */
      margin-top: 0px;
-     
-     
-    
 
 
-    
+     /* This creates an outward box closing transition */
+				
+				transform-origin: top;
+				transform: perspective(1000px) rotateX(90deg);
+				/* This transition will cause the transform animation to happen */
+				transition: transform 0.9s ease;
+ 
+}
+/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
+.navbar__menu-middle.active {
+    transform-origin: top;
+    transform: perspective(1000px) rotateX(0deg);
+    /* This transition will cause the transform animation to happen */
+    transition: transform 0.9s ease; 
 }
 
 /* This box contains all of our right links and their icons*/
@@ -80,9 +90,20 @@
 /* This property will decrease the space between the right links and the right icons 
     which are not visible in mobile version */
     margin-bottom: 0px;
-    
 
+/* This creates an inward box closing transition */
+    transform-origin: bottom;
+				transform: perspective(1000px) rotateX(-90deg);
+				/* This transition will cause the transform animation to happen */
+				transition: transform 0.9s ease;
+}
 
+/* Lets create a state for calling .navbar__menu-right-mobile once the menu button is pressed */
+.navbar__menu-right-mobile.active {
+    transform-origin: bottom;
+    transform: perspective(1000px) rotateX(0deg);
+    /* This transition will cause the transform animation to happen */
+    transition: transform 0.9s ease; 
 }
 
 /* This will be a line above our navbar-menu-right*/
