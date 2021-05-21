@@ -162,6 +162,7 @@ For Mobile this will be hidden */
 
 /* navbar links is how we can remove the style of our links */
 .navbar__links {
+    font-size: 2rem;
     text-decoration: none;
     color: black;
 
@@ -170,7 +171,7 @@ For Mobile this will be hidden */
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
 /* First we will load the middle icons and leave the right icons in the menu */
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
 
  /*This navbar represents the container for our navbar */
 .navbar {
@@ -221,11 +222,10 @@ For Mobile this will be hidden */
 				
         transform-origin: top;
         transform: perspective(1000px) rotateX(0deg);
+        transition: 1ms;
         /* This transition will cause the transform animation to happen */
 
     /* Applying this property will put our items side to side of each other */
-
-    
 
     flex-direction: row;
     align-items: center;
@@ -296,6 +296,47 @@ NOTE: MAKING THE OUTLINE NONE DOES NOT GET RID OF IT. TOOK MY ABOUT 2 HOURS TO F
 
 }
 
+/* Now our icons are to small so we need to make them bigger. 
+But the right icons need to be bigger than the middle icons 
+so we can not simply change all of the icons at once*/
+
+.fa-home {
+    font-size: 1.8rem;
+
+}
+
+
+.fa-address-card {
+    font-size: 1.8rem; 
+}
+
+.fa-code {
+    font-size: 1.8rem; 
+}
+.fa-phone-alt {
+    font-size: 1.8rem;
+}
+
+
+/* Since fas affects one of our right icons we need to overide this with a bigger font size */
+.fa-handshake {
+    font-size: 3.8rem;
+    color: red;
+
+
+}
+
+
+.fa-linkedin-in {
+    color: white;
+    background: #0077B5;
+    border-radius: 18px;
+    font-size: 3.8rem;
+}
+
+.fa-github {
+    font-size: 3.8rem;
+}
 
 
 }
