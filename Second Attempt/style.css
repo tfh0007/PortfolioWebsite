@@ -346,6 +346,43 @@ so we can not simply change all of the icons at once*/
 
 }
 
+/* Now we can move on to the first page main content */
+/* This class contains all of the text that will be on the first page */
+.page1Text {
+    border: solid red 6px;
+}
+.page1container {
+border: solid black 8px;
+
+}
+/* This class is the paragraph page 1 text that says "Hi There, I am Thomas Hansknecht" */
+.page1heading {
+    border: solid pink 4px;  
+}
+/* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+.page1sentance1 {
+    border: solid darkgreen 4px; 
+}
+/* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+.page1sentance2 {
+    border: solid darkblue 4px; 
+}
+/* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+.page1sentance3 {
+    border: solid darkorange 4px; 
+}
+/* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+.page1sentance4 {
+    border: solid yellowgreen 4px; 
+}
+.pictureOfMe__container {
+    border: solid cyan 6px;
+}
+
+
+
+
+
 
 
 
