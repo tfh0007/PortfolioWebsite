@@ -5,6 +5,10 @@
     background-color: lightgoldenrodyellow;
     /*Applying this property will stack our navbar__container on top of our navbar__menu */
     flex-direction: column;
+    /* Overflow must be hidden otherwise when we apply the transition 
+    to move items off screen those items will cause the window to be bigger 
+    than it should and thus the website will go off of the page. */
+    overflow: hidden;
     
 }
 
@@ -92,6 +96,10 @@
     margin-bottom: 0px;
 
 /* This creates an inward box closing transition */
+/* We are making the display none because we do not want the 
+elements to take up space outside of our window even though the items are invisible. 
+Unfortunately this also destroys the animation as well */
+    
     transform-origin: bottom;
 				transform: perspective(1000px) rotateX(-90deg);
 				/* This transition will cause the transform animation to happen */
@@ -110,9 +118,15 @@
 .navbar__menu-right-mobile::before {
     content: "";
     outline: dashed gray;
-    width: 90%;
-    
-    
+    width: 90%;  
+
+}
+
+/* This will be a line below our navbar__menu-middle*/
+.navbar__menu-middle::after {
+    content: "";
+    outline: dashed gray;
+    width: 90%;  
 
 }
 /* This box contains the links that should be centered on the screen */
@@ -143,6 +157,8 @@ For Mobile this will be hidden */
     /* The links are still clickable even though they are invisible so we need to fix this */
     margin-top: 0;
     margin-bottom: 0;
+    /* We want to disable these icons while we are using the mobile version */
+    display: none;
 }
 
 /* navbar links is how we can remove the style of our links */
@@ -151,6 +167,9 @@ For Mobile this will be hidden */
     color: black;
 
 }
+
+/* Now that the mobile version of navigation is finished we need to build the desktop version */
+
 
 
 
