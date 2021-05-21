@@ -151,7 +151,6 @@ Unfortunately this also destroys the animation as well */
 For Mobile this will be hidden */
 .navbar__menu-right-desktop {
     list-style: none;
-    opacity: 1;
     border: solid 1ch;
     border-color: lightgreen;
     /* The links are still clickable even though they are invisible so we need to fix this */
@@ -169,9 +168,137 @@ For Mobile this will be hidden */
 }
 
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
+/* First we will load the middle icons and leave the right icons in the menu */
+
+@media screen and (min-width: 800px) {
+
+ /*This navbar represents the container for our navbar */
+.navbar {
+    display: flex;   
+    border: solid 1ch;
+    /*We need to make our navigation bar smaller */
+    max-height: 200px;
+    background-color: lightgoldenrodyellow;
+    /*Applying this property will put  our navbar__container to the left of our navbar__menu */
+    flex-direction: row;
+    /* Overflow must be hidden otherwise when we apply the transition 
+    to move items off screen those items will cause the window to be bigger 
+    than it should and thus the website will go off of the page. */
+    overflow: hidden;
+    /*This property will make our right and left side hug the edge while the middle gets bigger */
+    justify-content: space-between;
+    
+}   
+
+/* This box contains our menu and logo */
+.navbar__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    display: flex;
+    /* Applying this property will space the logo and menu as far apart as possible */
+    
+    border: solid 1ch;
+    border-color: lightblue;  
+    /* Applying this property gives some space between the left of the screen and my logo */
+    padding-left: 4ch;
+    
+    font-size: 0.8rem; 
+    /* Applying this property puts our logo in the center of the Y main axis  */
+    align-items: center; 
+
+}
+
+/* This box is only the menu icom and menu text */
+.menuButton {
+    /* We need to disable the menu */
+    display: none;
+  
+  }
+
+/* This box contains all of our middle links */
+.navbar__menu-middle {
+
+        /* We need to make our content visible even if it was previously hidden */
+				
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(0deg);
+        /* This transition will cause the transform animation to happen */
+
+    /* Applying this property will put our items side to side of each other */
+
+    
+
+    flex-direction: row;
+    align-items: center;
+    
 
 
 
+
+    
+
+    
+
+
+    /* This property makes our content inside not take up any space to the left */
+
+    font-size: 1.2rem; 
+
+}
+
+/* This box contains all of our right links and their icons*/
+.navbar__menu-right-mobile {
+
+    
+    font-size: 1.3rem;
+    
+    /* We need to make our content visible even if it was previously hidden */
+				
+    transform-origin: top;
+    transform: perspective(1000px) rotateX(0deg);
+    /* This transition will cause the transform animation to happen */
+    transition: transform 0.9s ease;
+    /* We want to disable the text while we are using the desktop version */
+    display: none;
+    display: none;
+   
+}
+
+
+
+/* This box contains the icons that should be on the right of the screen. 
+For Desktop this will be visible */
+.navbar__menu-right-desktop {
+    list-style: none;
+    border: solid 1ch;
+    border-color: lightgreen;
+    /* The links are still clickable even though they are invisible so we need to fix this */
+
+    /* We want to disable these icons while we are using the mobile version */
+    display: flex;
+}
+/* NOW WE NEED TO GET RID OF THE DASHED LINES THAT WERE DIVIDERS 
+IN THE MOBILE VERSION */
+
+/* This will be a line above our navbar-menu-right*/
+.navbar__menu-right-mobile::before {
+    outline: 0px;
+    outline: none; 
+    display: none;
+
+}
+
+/* This will be a line below our navbar__menu-middle that we put in the Mobile version of the site.
+NOTE: MAKING THE OUTLINE NONE DOES NOT GET RID OF IT. TOOK MY ABOUT 2 HOURS TO FIND THIS MISTAKE... A FAIR WARNING*/
+.navbar__menu-middle::after {
+    outline: 0px;
+    outline: none;
+    display: none;
+
+}
+
+
+
+}
 
 
 
