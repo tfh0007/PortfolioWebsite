@@ -648,6 +648,10 @@ flex-wrap: wrap;
     border: solid 8px; 
     display: flex;
     flex-direction: column;
+    background: linear-gradient(252.44deg, 
+    #FFE600 0%, 
+    rgba(255, 186, 53, 0.65) 16.67%, 
+    rgba(209, 21, 66, 0.807292) 100%);
 
     
 
@@ -677,8 +681,45 @@ flex-wrap: wrap;
     flex-direction: column;
     border: solid orange 4px;
     align-items: center;
+    padding-bottom: 4ch;
+
 
 }
+/* The project buttons are the buttons that say learn more under each project */
+.Project__button__1 {
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+}
+
+.Project__button__2 {
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+}
+
+.Project__button__3 {
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+}
+
+
 
 .page2footer {
     display: flex;
