@@ -755,6 +755,22 @@ flex-wrap: wrap;
     margin-top: -5ch;
 
 }
+/* This class represents the description of each project under every video */
+.Project__Description {
+    /*Borders for testing can be removed now
+    border: solid green 4px;
+    */
+    display: flex;
+    justify-content: space-around;
+    max-width: 500px;
+    font-size: 1.3rem;
+    /* The space above is a little bit too much so lets decrease the spacing a little */
+    margin-top: -0.3ch;
+
+    
+
+}
+
 /* This class controls the text for the project buttons */
 .remove__style {
 text-decoration: none;
@@ -784,6 +800,17 @@ Projects Can be Found Under the Projects Page" */
         height: 510px;
 
     }
+
+/* This class represents the description of each project under every video */
+/* On desktop the text here is too small and the max width is too small so lets increase both */
+.Project__Description {
+
+    max-width: 760px;
+    font-size: 1.9rem;
+
+    
+
+}
     /* This class contains the page 2 footer text which says "More of my
         Projects Can be Found Under the Projects Page" */
     .page2footer {
@@ -794,8 +821,20 @@ Projects Can be Found Under the Projects Page" */
 
 
 }
+/*Becasue of how our solution operates the buttons will not line up properly on the screen when the project descriptions are not the same length.
+One fix is to move the two buttons down since the last description is longer than the other two descriptions. This issue currently only happens when 
+all three descriptions are visible on the same row so lets fix this formatting. */
 
+@media screen and (min-width: 2297px) { 
+    /* The project buttons are the buttons that say learn more under each project */
+    .Project__button__1 {
+        margin-top: 7.4ch;
+    }
+    .Project__button__2 {
+        margin-top: 7.4ch;
+    }
 
+}
 
 
 
