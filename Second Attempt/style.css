@@ -1,0 +1,702 @@
+/* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Using a high index value ensures that nothing will overlap with the header */
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+/*This navbar represents the container for our navbar */
+.navbar {
+    display: flex;   
+    border: solid 1ch;
+    border-color: #02C294;
+    
+    /*Applying this property will stack our navbar__container on top of our navbar__menu */
+    flex-direction: column;
+    /* Overflow must be hidden otherwise when we apply the transition 
+    to move items off screen those items will cause the window to be bigger 
+    than it should and thus the website will go off of the page. */
+    overflow: hidden;
+    flex-grow: 1;
+    
+    
+}
+
+/* This box contains our menu and logo */
+.navbar__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    display: flex;
+    /* Applying this property will space the logo and menu as far apart as possible */
+    justify-content: space-between;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightblue;  */
+    
+    /* Applying this property gives some space between the left of the screen and my logo */
+    padding-left: 1.5ch;
+    font-size: 1.4rem;
+    background-color: #02C294; 
+    
+    
+    
+    
+
+}
+
+/* This box is only the menu icom and menu text */
+.menuButton {
+  font-size: 2rem; 
+  background: none; 
+  border: none;
+  cursor: pointer;
+
+}
+
+/* This box contains all of our middle links */
+.navbar__menu-middle {
+
+    display: flex;
+    /* Applying this property will stack our items on top of each other */
+    flex-direction: column;
+
+    /* Applying this property will move our items to the center. 
+    This only works when flex is column based */
+    align-items: center;
+
+
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightpink;
+    */
+    list-style: none;
+    font-size: 2.5rem;
+    /* This property will decrease the space between the middle links and the right links */
+    margin-bottom: 0px;
+     /* This property will decrease the space between the logo/menu links and middle links */
+     margin-top: 0px;
+
+
+
+     /* This creates an outward box closing transition */
+				
+				transform-origin: top;
+				transform: perspective(1000px) rotateX(90deg);
+				/* This transition will cause the transform animation to happen */
+				transition: transform 0.9s ease;
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: none;
+ 
+}
+/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
+.navbar__menu-middle.active {
+    transform-origin: top;
+    transform: perspective(1000px) rotateX(0deg);
+    /* This transition will cause the transform animation to happen */
+    transition: transform 0.9s ease; 
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: flex;
+    /*Lets blur and dim the content behind our menu when it is active */
+    background-color: black;
+    background: transparent;
+
+    backdrop-filter: brightness(40%);
+     
+    
+}
+
+/* This box contains all of our right links and their icons*/
+.navbar__menu-right-mobile {
+
+    display: flex;
+    /* Applying this property will stack our items on top of each other */
+    flex-direction: column;
+
+    /* Applying this property will move our items to the center. 
+    This only works when flex is column based */
+    align-items: center;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: orange;
+
+    */
+
+    list-style: none;
+    font-size: 2.5rem;
+    /* This property will decrease the space between the middle links and the right links */
+    margin-top: 0px;
+/* This property will decrease the space between the right links and the right icons 
+    which are not visible in mobile version */
+    margin-bottom: 0px;
+
+/* This creates an inward box closing transition */
+/* We are making the display none because we do not want the 
+elements to take up space outside of our window even though the items are invisible. 
+Unfortunately this also destroys the animation as well */
+    
+    transform-origin: bottom;
+				transform: perspective(1000px) rotateX(-90deg);
+				/* This transition will cause the transform animation to happen */
+				transition: transform 0.9s ease;
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: none;
+}
+
+/* Lets create a state for calling .navbar__menu-right-mobile once the menu button is pressed */
+.navbar__menu-right-mobile.active {
+    transform-origin: bottom;
+    transform: perspective(1000px) rotateX(0deg);
+    /* This transition will cause the transform animation to happen */
+    transition: transform 0.9s ease; 
+
+    /* For now we are getting rid of the menu animations because they break the layout */
+    display: flex;
+
+    /*Lets blur and dim the content behind our menu when it is active */
+    background-color: black;
+    background: transparent;
+
+    backdrop-filter: brightness(40%);
+
+}
+
+/* This will be a line above our navbar-menu-right*/
+.navbar__menu-right-mobile::before {
+    content: "";
+    outline: dashed gray;
+    width: 90%;  
+
+}
+
+/* This will be a line below our navbar__menu-middle*/
+.navbar__menu-middle::after {
+    content: "";
+    outline: dashed gray;
+    width: 90%;  
+
+}
+/* This box contains the links that should be centered on the screen */
+.navbar__item-center {
+    padding: 0;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightgreen;
+    */
+
+
+}
+
+/* This box contains the links that should be on the right of the screen */
+/*Borders for testing can be removed now
+.navbar__item-right {
+     
+    border: solid 1ch;
+    border-color: lightgrey;
+
+}
+*/
+
+/* This box contains the icons that should be on the right of the screen. 
+For Mobile this will be hidden */
+.navbar__menu-right-desktop {
+    
+
+    list-style: none;
+    /*Borders for testing can be removed now
+
+    border: solid 1ch;
+    border-color: lightgreen;
+    */
+    /* The links are still clickable even though they are invisible so we need to fix this */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* We want to disable these icons while we are using the mobile version */
+    display: none;
+}
+
+/* navbar links is how we can remove the style of our links */
+.navbar__links {
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    padding: 1ch;
+
+}
+
+/* The menu links are very difficult to see on mobile so we will make them white */
+.fas {
+    color: white;
+}
+.fab {
+    color: white;
+}
+
+/* Now that the mobile version of navigation is finished we need to build the desktop version */
+/* First we will load the middle icons and leave the right icons in the menu */
+
+@media screen and (min-width: 1293px) {
+
+ /*This navbar represents the container for our navbar */
+.navbar {
+    display: flex;   
+
+    /*We need to make our navigation bar smaller */
+    max-height: 200px;
+    background-color: #02C294;
+    
+    /*Applying this property will put  our navbar__container to the left of our navbar__menu */
+    flex-direction: row;
+    /* Overflow must be hidden otherwise when we apply the transition 
+    to move items off screen those items will cause the window to be bigger 
+    than it should and thus the website will go off of the page. */
+    overflow: hidden;
+    /*This property will make our right and left side hug the edge while the middle gets bigger */
+    justify-content: space-between;
+    
+}   
+
+/* This box contains our menu and logo */
+.navbar__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    display: flex;
+    /* Applying this property will space the logo and menu as far apart as possible */
+    
+    
+    /* Applying this property gives some space between the left of the screen and my logo */
+    padding-left: 4ch;
+    padding-right: 4ch;
+    
+    font-size: 0.8rem; 
+    /* Applying this property puts our logo in the center of the Y main axis  */
+    align-items: center; 
+
+}
+
+/* This box is only the menu icom and menu text */
+.menuButton {
+    /* We need to disable the menu */
+    display: none;
+  
+  }
+
+/* This box contains all of our middle links */
+.navbar__menu-middle {
+
+        /* We need to make our content visible even if it was previously hidden */
+		
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(0deg);
+        transition: 1ms;
+
+        /* For now we are getting rid of the menu animations because they break the layout */
+    display: flex;
+        /* This transition will cause the transform animation to happen */
+
+    /* Applying this property will put our items side to side of each other */
+
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0px;
+    
+
+    /* This property makes our content inside not take up any space to the left */
+
+    font-size: 1.2rem; 
+
+}
+
+/* This box contains all of our right links and their icons*/
+.navbar__menu-right-mobile {
+
+    
+    font-size: 1.3rem;
+    
+    /* We need to make our content visible even if it was previously hidden */
+				
+    transform-origin: top;
+    /* This transition will cause the transform animation to happen */
+    transition: transform 0.9s ease;
+    /* We want to disable the text while we are using the desktop version */
+    display: none;
+
+   
+}
+.navbar__menu-right-mobile.active {
+        /* We want to disable the text while we are using the desktop version */
+        display: none;
+}
+
+
+
+/* This box contains the icons that should be on the right of the screen. 
+For Desktop this will be visible */
+.navbar__menu-right-desktop {
+    list-style: none;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightgreen;
+
+    */
+    /* The links are still clickable even though they are invisible so we need to fix this */
+
+    /* We want to disable these icons while we are using the mobile version */
+    display: flex;
+    padding-left: 0px;
+}
+
+/* NOW WE NEED TO GET RID OF THE DASHED LINES THAT WERE DIVIDERS 
+IN THE MOBILE VERSION */
+
+/* This will be a line above our navbar-menu-right*/
+.navbar__menu-right-mobile::before {
+    outline: 0px;
+    outline: none; 
+    display: none;
+
+}
+
+/* This will be a line below our navbar__menu-middle that we put in the Mobile version of the site.
+NOTE: MAKING THE OUTLINE NONE DOES NOT GET RID OF IT. TOOK MY ABOUT 2 HOURS TO FIND THIS MISTAKE... A FAIR WARNING*/
+.navbar__menu-middle::after {
+    outline: 0px;
+    outline: none;
+    display: none;
+
+}
+
+/* Now our icons are to small so we need to make them bigger. 
+But the right icons need to be bigger than the middle icons 
+so we can not simply change all of the icons at once*/
+
+.fa-home {
+    font-size: 1.8rem;
+    color: orangered;
+
+}
+
+
+.fa-address-card {
+    font-size: 1.8rem; 
+    color: red;
+}
+
+.fa-code {
+    font-size: 1.8rem; 
+    color: rgb(0, 255, 0);
+}
+.fa-phone-alt {
+    font-size: 1.8rem;
+    color: rgb(94, 8, 151);
+}
+
+
+/* Since fas affects one of our right icons we need to overide this with a bigger font size */
+.fa-handshake {
+    font-size: 3.8rem;
+    color: red;
+
+
+}
+
+
+.fa-linkedin-in {
+    color: white;
+    background: #0077B5;
+    border-radius: 18px;
+    font-size: 3.8rem;
+}
+
+.fa-github {
+    font-size: 3.8rem;
+    color: black;
+}
+
+
+
+}
+
+
+/* Now we can move on to the first page main content */
+
+/* This class contains the entirety of the content found in page 1 */
+.page1container {
+
+/*Borders for testing can be removed now
+    border: solid black 8px;
+*/
+
+
+/* Lets add a slow fading background to experiment with 
+background-image: linear-gradient(90deg,rgba(43, 141, 206, 0.63),rgb(230, 210, 173),lightpink,rgba(204, 68, 68, 0.705),rgb(210, 146, 221));
+background-size: 400%;
+animation: page1Bg__animation 1s infinite alternative; */
+
+/*THis is the background we made in our figma template */
+background:conic-gradient(from 180deg at 50% 50%, 
+rgba(250, 0, 255, 0.22) -14.5deg, 
+rgba(2, 194, 148, 0.47) 0.34deg, 
+rgba(1, 141, 201, 0.456406) 89.05deg, 
+rgba(112, 0, 255, 0.57) 200.63deg, 
+rgba(250, 0, 255, 0.22) 345.5deg, 
+rgba(2, 194, 148, 0.47) 360.34deg);
+
+margin-top: 6.4rem;
+padding-top: 1rem;
+padding-bottom: 0;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+
+
+}
+/*We need to set the actual animation for our background on page 1 
+@keyframes page1Bg__animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+*/
+
+/* This class contains all of the text that will be on the first page */
+.page1Text {
+    /* We want the text here to be both in a column and justified to the center */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    /*Borders for testing can be removed now
+    border: solid red 6px;
+    */
+    
+    
+    
+}
+/* This class is the paragraph page 1 text that says "Hi There, I am Thomas Hansknecht" */
+.page1heading {
+
+     /*Borders for testing can be removed now
+    border: solid pink 4px; 
+    */
+
+
+    color: #303079;
+    font-size: 2.2rem;
+    
+}
+/* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+.page1sentance1 {
+
+     /*Borders for testing can be removed now
+    border: solid darkgreen 4px;
+    */
+
+
+    color: #2F2D2D;
+    font-size: 1.4rem; 
+    margin-top: -1.1ch;
+}
+/* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+.page1sentance2 {
+
+     /*Borders for testing can be removed now
+    border: solid darkblue 4px; 
+    */
+
+    color: #2F2D2D;
+    font-size: 1.4rem;
+    margin-top: -1.1ch;
+}
+/* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+.page1sentance3 {
+
+     /*Borders for testing can be removed now
+    border: solid darkorange 4px; 
+    */
+    
+    color: #2F2D2D;
+    font-size: 1.4rem;
+    margin-top: -1.1ch;
+}
+/* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+.page1sentance4 {
+
+     /*Borders for testing can be removed now
+    border: solid yellowgreen 4px; 
+    */
+
+    color: #c01f1f;
+    font-size: 1.7rem;
+    margin-top: -1.1ch;
+}
+.pictureOfMe__container {
+
+     /*Borders for testing can be removed now
+    border: solid cyan 6px;
+
+    */
+    
+    /* On mobile the picture of me is a little too big so we will scale it down a bit */
+    
+    transform: scale(0.8, 0.8);
+			-ms-transform: scale(0.7, 0.7);
+			-webkit-transform: scale(0.7, 0.7);
+    /* On mobile the picture of me becomes to low after the scale transformation so we need to move the picture up slightly in mobile */
+    margin-top: -8.96rem;
+
+}
+
+
+    
+
+
+
+
+
+@media screen and (min-width: 1293px) {
+
+    /* The desktop version navbar is slightly smaller in height 
+    so the margin-top of page 1 will be slightly less in desktop version */
+    .page1container {
+        margin-top: 4.2rem;
+        /* On Destop the page does not extend below the picture of me so lets extend it further so lets extend it */
+        padding-top: 4.96rem;
+        padding-bottom: 4.96rem;
+    }
+
+    .pictureOfMe__container {
+        /*Borders for testing can be removed now
+        border: solid cyan 6px;
+
+        */
+        /* On Desktop the picture of me should be bigger */
+        transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -webkit-transform: scale(1, 1);
+        /* Once the picture is transformed back to normal size our previous margin-top that applied to mobile 
+        becomes inaccurate and we need to fix it */
+        margin-top: 0;
+
+        
+    }
+    /*The font size on desktop becomes too small so lets make it bigger in all areas */
+    /* The page 1 heading text should be more towards to top of the picture in desktop version */
+    .page1heading {
+
+       
+        margin-top: -.1rem;
+        font-size: 3.5rem;
+    }
+/* We want the gap between the heading sentance and paragraph underneath to increase after the display
+     width increases to a certain size */
+    @media screen and (min-width: 1629px) {
+        .page1heading {
+        padding-bottom: 6ch;
+
+        }
+
+/* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+    .page1sentance1 {
+
+        font-size: 2.6rem; 
+
+    }
+    /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+    .page1sentance2 {
+
+        font-size: 2.6rem;
+
+}
+    /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+    .page1sentance3 {
+
+        font-size: 2.6rem;
+
+}
+    /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+    .page1sentance4 {
+
+        font-size: 2.9rem;
+
+
+    }
+
+}
+}   
+
+/* Now we are moving on to Page 2 */
+
+.page2container {
+   
+    border: solid 8px; 
+    display: flex;
+    flex-direction: column;
+
+    
+
+}
+
+.page2heading {
+    display: flex;
+    justify-content: center;
+
+    border: solid lightblue 4px;
+}
+
+.Projects {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: solid pink 4px;
+
+
+
+}
+
+.Project__container {
+    display: flex;
+    flex-direction: column;
+    border: solid orange 4px;
+    align-items: center;
+
+}
+
+.page2footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
