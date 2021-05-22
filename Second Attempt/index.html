@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Thomas H Site-Home </title>
+    <link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
+	
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+			<div class="navbar__container">
+                <!-- My logo will not be a clickable icon -->
+                    <h1 class="mainLogo">Thomas F Hansknecht</h1>
+					<h2> <button class="menuButton">Menu<i class="fa-fw fa fa-bars"></i></button></h2>
+				
+			</div>
+				<ul class="navbar__menu-middle">
+                    <!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+					the text-->
+					<li class="navbar__item-center icon">
+						<a href="index.html" class="navbar__links"><i class=" fas fa-home fa-fw"></i>Home</a></li>
+
+					<!-- Create a menu item About Me -->
+					<li class="navbar__item-center icon">
+						<a href="AboutMe.html" class="navbar__links"><i class=" fas fa-address-card fa-fw"></i>About Me</a></li>
+
+					<!-- Create a menu item Projects -->
+					<li class="navbar__item-center icon">
+                        <a href="Projects.html" class="navbar__links"><i class=" fas fa-code fa-fw"></i>Projects</a></li>
+
+					<!-- Create a menu item Contact Me -->
+					<li class="navbar__item-center icon">
+						<a href="ContactMe.html" class="navbar__links"><i class=" fas fa-phone-alt fa-fw"></i>Contact Information</a></li>
+
+				</ul>
+			<div>
+				<ul class="navbar__menu-right-mobile">
+					 <!-- Create a menu item Handshake Icon -->
+					<li class="navbar__item-right icon">
+						<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class=" fas fa-handshake fa-fw"></i>View my Handshake Profile</a></li>  
+                       
+					<!-- Create a menu item LinkedIn Icon -->
+					<li class="navbar__item-right icon">
+						<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class=" fab fa-linkedin-in fa-fw"></i>Check Out My LinkedIn Profile</a></li>  
+                    
+					<!-- Create a menu item Github Icon -->
+					<li class="navbar__item-right icon">
+						<a href="https://github.com/tfh0007" class="navbar__links"><i class=" fab fa-github fa-fw"></i>Visit My GitHub Page</a></li>  		
+					</ul>
+				<div>
+					<ul class="navbar__menu-right-desktop">
+								 <!-- Create a menu item Handshake Icon -->
+								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
+								<li class="navbar__item-right icon">
+									<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class="fas fa-handshake"></i></a></li>  
+								   
+								<!-- Create a menu item LinkedIn Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class="fab fa-linkedin-in"></i></a></li>  
+								
+								<!-- Create a menu item Github Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://github.com/tfh0007" class="navbar__links"><i class="fab fa-github"></i></a></li>  		
+							
+               </ul>
+			</div>
+			</div>
+		</nav>
+    </header>
+	<div class= "page1container">
+		<div class = "page1Text">
+		<h1 class= "page1heading">Hi There, I am Thomas Hansknecht</h1>
+		<p class= "page1sentance1">Are you looking for a Software Developer?</p>
+		<p class= "page1sentance2">How about a Web Designer?</p>
+		<p class= "page1sentance3">Maybe, a User Interface Designer?</p>
+		<p class= "page1sentance4"><strong>I am the person you are looking for</strong></p>
+	</div>
+		<div class ="pictureOfMe__container">
+			<img src="images/MeAtStoneMountain_cropped.svg" alt="A lovely picture of me that was taken at stone mountain">
+
+		</div>
+	</div>
+
+	<div class= "page2container">
+		<h1 class="page2heading"> Check out Some of my Favorite Projects</h1>
+
+		<div class="Projects">
+
+			<div class="Project__container">
+				<h2 class="Project__1__Name">Air Traffic Controller Application</h2>
+					<video class="Project1__video" width="480" height="360" controls muted>
+					<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
+		 			Unfortunately your browser does not support the video tag
+		  			</video>
+				<button class="Project1__button">Learn More</button>
+			</div>
+
+			<div class="Project__container">
+
+				<h2 class="Project__2">Mario With A Gun</h2>
+					<video class="Project2__video" width="480" height="360" controls muted>
+					<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
+		 			Unfortunately your browser does not support the video tag
+		  			</video>
+				<button class="Project2__button">Learn More</button>
+			</div>
+
+			<div class="Project__container">
+				<h2 class="Project__3">Word Search Game</h2>
+				<video class="Project2__video" width="480" height="360" controls muted>
+					<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
+		 			Unfortunately your browser does not support the video tag
+		  		</video>
+				<button class="Project3__button">Learn More</button>
+			</div>		
+		</div>
+		<p class= "page2footer"> More of my Projects Can be Found Under the Projects Page</p>
+			
+	</div>
+
+	
+
+
+
+
+
+
+	<!-- We want to toggle states for our mobile menu -->
+	<script
+		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		  	<script type="text/javascript">
+		  		$(document).ready(function(){
+		  			$('.menuButton').click(function() {
+						$('.navbar__menu-middle').toggleClass('active')
+		  				$('.navbar__menu-right-mobile').toggleClass('active')
+
+		  				
+
+		  			})
+		  		})
+
+		  	</script>
+</body>
+

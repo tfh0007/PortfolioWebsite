@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!- The language of the website is English>
+<html lang="en">
+	<head>
+		<!- The type of characters on the web page>
+		<meta charset="UTF-8" />
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1.0" />
+		<!- The name of the website>
+		<title> Thomas Hansknecht-About</title>
+		<! href is heading reference>
+		<link rel="stylesheet" href="styleAbout.css" />
+		<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
+	</head>
+	
+		
+	</body>
+	<! Create a menu at top of website>
+		<nav class="navbar">
+			<div class="navbar__container">
+				<a href="/" id="navbar__toggle" id="mobile-menu">
+			<! Adjust the website to show diffrent for mobile users. The id will be targeted by javascript>
+			<div class="navbar__toggle"	id="mobile-menu">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+			</div>
+				<ul class="navbar__menu">
+
+
+
+					<! Create a menu item Home. The icon phrase means an icon will be before or after 
+					the text>
+					<li class="navbar__item1 icon">
+						<a href="index.html" class="navbar__links">
+							Home
+						</a>
+					</li>
+
+					<! Create a menu item About Me>
+					<li class="navbar__item2 icon">
+						<a href="AboutMe.html" class="navbar__links">
+							About Me
+						</a>
+					</li>
+
+					<! Create a menu item Projects>
+					<li class="navbar__item3 icon">
+						<a href="Projects.html" class="navbar__links">
+							Projects
+						</a>
+					</li>
+
+					<! Create a menu item Contact Me>
+					<li class="navbar__item4 icon">
+						<a href="ContactMe.html" class="navbar__links">
+							Contact Information
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<! Front cover section>
+
+		<div class="main">
+			<div class="main__container">
+				<div class="main__content">
+
+
+		<!- h1 means heading 1>
+
+					<h1> The About Me page has not been developed yet. </h1>
+					<h2> Please come back later. </h2>
+				</div>
+				
+			</div>
+
+		
+		</div>
+
+
+
+		<!We want to be able to acess our java script instructions>
+		<script src="app.js"></script>
+		<div class="dropdown">
+			<! The button will be called home because we are at the home page>
+			<button>Menu</button>
+		</div>
+		<! We want to toggle states for our mobile menu>
+		<script
+		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		  	<script type="text/javascript">
+		  		$(document).ready(function(){
+		  			$('button').click(function() {
+		  				$('.navbar').toggleClass('active')
+		  				$('h1').toggleClass('active')
+
+		  			})
+		  		})
+
+		  	</script>
+
+	</body>
+
+
+		
+
+</html>
+
+
