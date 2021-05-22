@@ -644,8 +644,11 @@ flex-wrap: wrap;
 /* Now we are moving on to Page 2 */
 
 .page2container {
-   
+
+     /*Borders for testing can be removed now
     border: solid 8px; 
+    */
+    
     display: flex;
     flex-direction: column;
     background: linear-gradient(252.44deg, 
@@ -663,7 +666,9 @@ flex-wrap: wrap;
     font-size: 2.6rem;
     color: #3633C9;
 
+     /*Borders for testing can be removed now
     border: solid lightblue 4px;
+    */
 }
 
 /* This class contains the titles for the 3 diffrent projects */
@@ -678,7 +683,10 @@ flex-wrap: wrap;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+
+     /*Borders for testing can be removed now
     border: solid pink 4px;
+    */
 
 
 
@@ -687,7 +695,11 @@ flex-wrap: wrap;
 .Project__container {
     display: flex;
     flex-direction: column;
+
+     /*Borders for testing can be removed now
     border: solid orange 4px;
+    */
+
     align-items: center;
     padding-bottom: 4ch;
 
@@ -746,6 +758,8 @@ flex-wrap: wrap;
 /* This class contains the page 2 footer text which says "More of my 
 Projects Can be Found Under the Projects Page" */
 .page2footer {
+    padding-top: 2.5ch;
+    padding-bottom: 2.5ch;
     font-size: 1.4rem;
 }
 
