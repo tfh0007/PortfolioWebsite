@@ -102,7 +102,7 @@
 		<!-- This is for Project 1-->
 			<div class="Project__container">
 				<h2 class="Project__Name">Air Traffic Controller Application</h2>
-					<video class="Project__video" width="480" height="340" controls muted autoplay>
+					<video class="Project__video" width="480" height="340" controls muted autoplay loop>
 					<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
 		 			Unfortunately your browser does not support the video tag
 		  			</video>
@@ -117,7 +117,7 @@
 				<!-- Using the autoplay will make the video start playing as soon as it loads-->
 				<!-- Stating muted will mute the video when it is loaded-->
 				<!-- Using controls gives media controls to the user on the website-->
-					<video class="Project__video" width="480" height="340" controls muted autoplay>
+					<video class="Project__video" width="480" height="340" controls muted autoplay loop>
 					<source src="video/MarioWithGunsDemo_Trim.mp4" type="video/mp4">
 		 			Unfortunately your browser does not support the video tag
 		  			</video>
@@ -128,7 +128,7 @@
 		<!-- This is for Project 3-->
 			<div class="Project__container">
 				<h2 class="Project__Name">Word Search Game</h2>
-				<video class="Project__video" width="480" height="340" controls muted autoplay>
+				<video class="Project__video" width="480" height="340" controls muted autoplay loop >
 					<source src="video/JavaWordSearchEdit.mp4" type="video/mp4">
 		 			Unfortunately your browser does not support the video tag
 		  		</video>
@@ -165,5 +165,11 @@
 		  		})
 
 		  	</script>
+			  
+<!-- We want an intersection observer to monitor the page so we know when the user is looking at the projects. 
+				Afterwords we will play those projects-->
+<script src="javascript/observer.js"></script>
+
+
 </body>
 

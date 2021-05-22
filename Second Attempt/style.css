@@ -314,6 +314,7 @@ For Mobile this will be hidden */
 
     font-size: 1.2rem; 
 
+   
 }
 
 /* This box contains all of our right links and their icons*/
@@ -799,6 +800,7 @@ Projects Can be Found Under the Projects Page" */
         width: 720px; 
         height: 510px;
 
+
     }
 
 /* This class represents the description of each project under every video */
@@ -835,6 +837,8 @@ all three descriptions are visible on the same row so lets fix this formatting. 
     }
 
 }
+
+
 
 
 
