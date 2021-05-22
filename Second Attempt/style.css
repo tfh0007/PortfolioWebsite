@@ -648,7 +648,7 @@ flex-wrap: wrap;
      /*Borders for testing can be removed now
     border: solid 8px; 
     */
-    
+
     display: flex;
     flex-direction: column;
     background: linear-gradient(252.44deg, 
@@ -755,6 +755,12 @@ flex-wrap: wrap;
     margin-top: -5ch;
 
 }
+/* This class controls the text for the project buttons */
+.remove__style {
+text-decoration: none;
+color: #D61010;
+}
+
 /* This class contains the page 2 footer text which says "More of my 
 Projects Can be Found Under the Projects Page" */
 .page2footer {
