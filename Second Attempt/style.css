@@ -1,3 +1,11 @@
+/* Changing the body color will set a default background color for the entire website 
+Unfortunately it also overlaps in other areas as well*/
+body {
+
+  /*  background-color: #02C294; */
+    
+}
+
 /* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
 header {
     position: fixed;
@@ -556,7 +564,7 @@ flex-wrap: wrap;
     
     /* On mobile the picture of me is a little too big so we will scale it down a bit */
     
-    transform: scale(0.8, 0.8);
+    transform: scale(0.7, 0.7);
 			-ms-transform: scale(0.7, 0.7);
 			-webkit-transform: scale(0.7, 0.7);
     /* On mobile the picture of me becomes to low after the scale transformation so we need to move the picture up slightly in mobile */
@@ -969,9 +977,66 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 }
 
+/* Lets edit the style of page 3 now */
 
+.page3container {
+    border: solid 8px;
+    display: flex;
+    flex-direction: column;
+    background: -moz-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    background: linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+}
 
+/* This class contains the heading text of the page */
+.page3TextTop h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+}
 
+/* THis class contains the user form, heading, and ilustration */
+.page3TextTop {
+    border: solid lightblue 8px; 
+}
+
+.page3Words__And__illustration {
+    border: solid pink 8px;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    /* On desktop there is a brief size where the ilustration goes off the page by setting overflow as hidden 
+    for page 3 we ensure that no scrollbar becomes present when the illustration gets slightly clipped */
+    overflow-x: hidden;
+    justify-content: space-around;
+    
+}
+.page3Words__And__illustration form {
+    border: solid gray 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    font-size: 1.5rem;
+}
+
+.page3__image__container {
+
+    border: solid green 8px;
+    margin-top: 50px;
+    margin-left: -100px;
+    margin-right: -100px;
+    
+    
+    
+    /* On mobile the illustration is too big so we will scale it down a bit */
+    transform: scale(0.55, 0.55);
+			-ms-transform: scale(0.55, 0.55);
+			-webkit-transform: scale(0.55, 0.55);
+    
+
+}
 
 
 
@@ -983,6 +1048,33 @@ footer {
     padding: 1ch;
     color: white;
     font-size: 1.2rem;
+
+}
+
+
+/* Now lets adjust the size of everything on page 3 and footer to be bigger on desktop version */
+
+@media screen and (min-width: 1293px) {
+
+
+    /* This class contains the heading text of the page */
+    .page3TextTop h1 {
+        font-size: 3.2rem;
+
+    }
+
+    .page3Words__And__illustration form {
+
+    }
+
+    .page3__image__container {
+
+        transform: scale(1, 1);
+			-ms-transform: scale(1, 1);
+			-webkit-transform: scale(1, 1);
+            
+
+    }
 
 }
 
