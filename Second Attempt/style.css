@@ -494,21 +494,7 @@ flex-wrap: wrap;
 
 }
 
-@supports (conic-gradient) {
-    /*THis is the background we made in our figma template */
-    .page1container {
 
-    background:conic-gradient(from 180deg at 50% 50%, 
-    rgba(250, 0, 255, 0.22) -14.5deg, 
-    rgba(2, 194, 148, 0.47) 0.34deg, 
-    rgba(1, 141, 201, 0.456406) 89.05deg, 
-    rgba(112, 0, 255, 0.57) 200.63deg, 
-    rgba(250, 0, 255, 0.22) 345.5deg, 
-    rgba(2, 194, 148, 0.47) 360.34deg);
-
-    }
-
-}
 
 /*We need to set the actual animation for our background on page 1 
 @keyframes page1Bg__animation {

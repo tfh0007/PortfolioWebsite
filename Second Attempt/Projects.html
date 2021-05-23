@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Thomas H Site-About Me </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleProjects.css">
+	<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
+	
+
+
+</head>
+
+<body>
+
+<!-- NOW WE ARE AT NAVIGATION MENU-->
+    <header>
+        <nav class="navbar">
+			<div class="navbar__container">
+                <!-- My logo will not be a clickable icon -->
+                    <h1 class="mainLogo">Thomas F Hansknecht</h1>
+					<h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
+				
+			</div>
+				<ul class="navbar__menu-middle">
+                    <!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+					the text-->
+					<li class="navbar__item-center icon">
+						<a href="index.html" class="navbar__links"><i class=" fas fa-home fa-fw"></i>&nbsp; Home</a></li>
+
+					<!-- Create a menu item About Me -->
+					<li class="navbar__item-center icon">
+						<a href="AboutMe.html" class="navbar__links"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About Me</a></li>
+
+					<!-- Create a menu item Projects -->
+					<li class="navbar__item-center icon">
+                        <a href="Projects.html" class="navbar__links"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects</a></li>
+
+					<!-- Create a menu item Contact Me -->
+					<li class="navbar__item-center icon">
+						<a href="ContactMe.html" class="navbar__links"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information</a></li>
+
+				</ul>
+			<div>
+				<ul class="navbar__menu-right-mobile">
+					 <!-- Create a menu item Handshake Icon -->
+					<li class="navbar__item-right icon">
+						<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class=" fas fa-handshake fa-fw"></i>&nbsp; View my Handshake Profile</a></li>  
+                       
+					<!-- Create a menu item LinkedIn Icon -->
+					<li class="navbar__item-right icon">
+						<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; Check Out My LinkedIn Profile</a></li>  
+                    
+					<!-- Create a menu item Github Icon -->
+					<li class="navbar__item-right icon">
+						<a href="https://github.com/tfh0007" class="navbar__links"><i class=" fab fa-github fa-fw"></i>&nbsp; Visit My GitHub Page</a></li>  		
+					</ul>
+				<div>
+					<ul class="navbar__menu-right-desktop">
+								 <!-- Create a menu item Handshake Icon -->
+								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
+								<li class="navbar__item-right icon">
+									<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class="fas fa-handshake"></i></a></li>  
+								   
+								<!-- Create a menu item LinkedIn Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class="fab fa-linkedin-in"></i></a></li>  
+								
+								<!-- Create a menu item Github Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://github.com/tfh0007" class="navbar__links"><i class="fab fa-github"></i></a></li>  		
+							
+               </ul>
+			</div>
+			</div>
+		</nav>
+    </header>
+
+
+
+
+    <!--Scripts for Navigation -->
+	<!-- We want to toggle states for our mobile menu -->
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.menuButton').click(function() {
+				$('.navbar__menu-middle').toggleClass('active')
+					$('.navbar__menu-right-mobile').toggleClass('active')
+
+					
+
+				})
+			})
+
+		</script>
