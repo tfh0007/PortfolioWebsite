@@ -996,6 +996,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     display: flex;
     justify-content: center;
     font-size: 2.2rem;
+    color: #303079;
 }
 
 /* THis class contains the user form, heading, and ilustration */
@@ -1090,9 +1091,8 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 .Page3TextBottom h1 {
     display: flex;
     justify-content: center;
-
-    
     font-size: 1.8rem;
+    color: #303079;
 
 }
 
@@ -1122,6 +1122,12 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     display: flex;
     font-size: 1.5rem;
     justify-content: center;
+}
+
+/* This class contains the final thank you statement at the bottom of page 3 */
+.page3container h2 {
+    color: #1f187c;
+    font-size: 1.6rem;
 }
 
 
@@ -1181,6 +1187,12 @@ footer {
         margin-left: 70px;
         padding-right: 70px;
     }
+
+    /* This class contains the final thank you statement at the bottom of page 3 */
+    .page3container h2 {
+    font-size: 1.8rem;
+}
+
 
    
 
