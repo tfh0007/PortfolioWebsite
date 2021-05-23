@@ -98,6 +98,8 @@
 
 <!-- We want a extended description on the right of the screen when the user clicks Learn More-->
 	<div class="Page2__and__extended__Description" id="page2">
+
+
 		<div class="extended__Description__Project1">
 			<button class="Project__button__1" id="closeWindowBtn__Project1">Close window</button>
 			<h1>More About Air Traffic Controller Application</h1>
@@ -125,6 +127,65 @@
 				<li><p>Implemented action listeners so the user can interact with objects</p></li>
 				<li><p>Made the experience unique to every user by gathering data on every customer</p></li>
 				<li><p>Used parsers for assigning format to date objects</p></li>
+			</ul>
+
+
+		</div>
+
+		<div class="extended__Description__Project2">
+			<button class="Project__button__2" id="closeWindowBtn__Project2">Close window</button>
+			<h1>More About Mario With A Gun</h1>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p>Was a project submitted for a hackathon competition.</p></li>
+				<li><p>Created with a group in Python using Pygame</p></li>
+			</ul>
+
+			<h2>What was Learned</h2>
+			<ul>
+				<li><p>Used Sprite sheets to animate the player and enemies</p></li>
+				<li><p>Learned more about Pygame and how you can use external platforms in conjunction with a programming language</p></li>
+				<li><p>Learned how to create logic for movement of player and develop in game collision physics for background obejcts and enemies</p></li>
+				<li><p>Worked with a team to complete the project</p></li>
+				<li><p>There was a limited deadline and the team was forced to make changes to cater to this deadline</p></li>
+				<li><p>Implemented external custom resources such as soundtracks and visuals</p></li>
+
+			</ul>
+
+
+		</div>
+
+		<div class="extended__Description__Project3">
+			<button class="Project__button__3" id="closeWindowBtn__Project3">Close window</button>
+			<h1>More About Word Search Game</h1>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p>This project is an extension to the Boogle Word Search game created for a Java II Class</p></li>
+				
+			</ul>
+
+			<h2>How the Project was Expanded and What was Learned</h2>
+
+			<ul>
+				<li><p>Learned how to create graphical interfaces using Jframes</p></li>
+				<li><p>Used action listeners to make the program interactable</p></li>
+				<li><p>Used exception handeling to deal with invalid user entries</p></li>
+				<li><p>Used visuals and sound effects to make the experience complete</p></li>
+				<li><p>Made the values in the word search table customizable</p></li>
+				<li><p>Allowed the user to choose different table sizes as well as use different Lexicon listings</p></li>
+			</ul>
+
+			<h2>What was Learned in the Original Class Project</h2>
+
+			<ul>
+				<li><p>Used Lexicon dictionaries and stored the values into a Sorted Set of strings</p></li>
+				<li><p>Used a depth first search algorithm to search for valid words on the generated board</p></li>
+				<li><p>Used 2 dimensional arrays to create the board</p></li>
+				<li><p>Used various functions for checking what neighbors existed near the current position</p></li>
+				<li><p>Used a scoreboard to keep track of the users correct responses</p></li>
+
 			</ul>
 
 
@@ -161,7 +222,7 @@
 						</video>
 						<p class="Project__Description"> A reimagining of the 1985 Super Mario Bros. The game incorporates guns and takes place in a nuclear apocalyptic setting.</p>
 					<button class="Project__button__2">
-						<a class="remove__style" href="https://github.com/tfh0007/Mario-With-A-Gun">Learn More</a></button>
+						<a class="remove__style" href="index.html#page2">Learn More</a></button>
 				</div>
 			<!-- This is for Project 3-->
 				<div class="Project__container">
@@ -174,7 +235,7 @@
 					<p class="Project__Description"> Game where the player creates a board consisting of whatever letters that player wants. Then, the program locates any word combinations possible on the board. The job of the players is to find all of the words on the board. The players can check if they are right or not by inputting the word they see in the entry box</p>
 					
 					<button class="Project__button__3">
-						<a class="remove__style" href="https://github.com/tfh0007/Word-Search-Game">Learn More</a></button>
+						<a class="remove__style" href="index.html#page2">Learn More</a></button>
 				</div>		
 			</div>
 			<p class= "page2footer"> More of my Projects Can be Found Under the Projects Page</p>
@@ -192,6 +253,25 @@
 <!--Scripts for page 1-->
 	<!-- We want to toggle states for our mobile menu -->
 	<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.menuButton').click(function() {
+				$('.navbar__menu-middle').toggleClass('active')
+					$('.navbar__menu-right-mobile').toggleClass('active')
+
+					
+
+				})
+			})
+
+		</script>
+
+
+
+<!--Scripts for page 2-->
+	<!-- We want to display more info about a project when the user clicks the Learn More button -->
+	<script
 		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		  	<script type="text/javascript">
 		  		$(document).ready(function(){
@@ -206,15 +286,13 @@
 
 		  	</script>
 
-<!--Scripts for page 2-->
-<!-- We want to display more info about a project when the user clicks the Learn More button -->
 	<script
 	src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('.menuButton').click(function() {
-				$('.navbar__menu-middle').toggleClass('active')
-					$('.navbar__menu-right-mobile').toggleClass('active')
+				$('.Project__button__2').click(function() {
+				$('.extended__Description__Project2').toggleClass('visible')
+					
 
 					
 
@@ -222,6 +300,24 @@
 			})
 
 		</script>
+	
+	<script
+		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		  	<script type="text/javascript">
+		  		$(document).ready(function(){
+		  			$('.Project__button__3').click(function() {
+						$('.extended__Description__Project3').toggleClass('visible')
+		  				
+
+		  				
+
+		  			})
+		  		})
+
+		</script>
+
+
+
 			  
 <!-- We want an intersection observer to monitor the page so we know when the user is looking at the projects. 
 				Afterwords we will play those projects-->

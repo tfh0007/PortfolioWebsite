@@ -775,12 +775,23 @@ flex-wrap: wrap;
 
 }
 
-/*When the Project 1 learn more button is not pressed we do not want to show any extra details */
+/*When a Project learn more button is not pressed we do not want to show any extra details */
 .extended__Description__Project1 {
     display: none;
     min-width: 80%;
     
 }
+.extended__Description__Project2 {
+    display: none;
+    min-width: 80%;
+    
+}
+.extended__Description__Project3 {
+    display: none;
+    min-width: 80%;
+    
+}
+
 /* This class holds the contents of both the extended Decription and Page 2 */
 .Page2__and__extended__Description {
     display: flex;
@@ -791,7 +802,7 @@ flex-wrap: wrap;
 
 }
 
-/*When the Project 1 learn more button is pressed we want an overlay to appear that gives more details on the project */
+/*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
 .extended__Description__Project1.visible {
 display: flex;
 padding-top: 100px;
@@ -803,10 +814,34 @@ This property will need to be modified for desktop and tablet environments */
 background: tan;
 
 }
+.extended__Description__Project2.visible {
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    flex-grow: 3;    
+    background: tan;
+    
+    }
+
+.extended__Description__Project3.visible {
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    flex-grow: 3;    
+    background: tan;
+        
+    }
+
 
 /* We want to make the Extended descriptions take up significatly less space when the screen is big enough */
 @media screen and (min-width: 850px) {
     .extended__Description__Project1.visible {
+        min-width: 20%;
+    }
+    .extended__Description__Project2.visible {
+        min-width: 20%;
+    }
+    .extended__Description__Project3.visible {
         min-width: 20%;
     }
  
@@ -882,9 +917,17 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
         margin-top: 7.4ch;
     }
     
-.extended__Description__Project1.visible {
-padding-top: 0px;
-}
+    .extended__Description__Project1.visible {
+        padding-top: 0px;
+    }
+
+    .extended__Description__Project2.visible {
+        padding-top: 0px;
+    }
+
+    .extended__Description__Project3.visible {
+         padding-top: 105px;
+    }
 
 }
 
