@@ -1043,8 +1043,9 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 /* THis class contains the email form and illistration */
 .page3Words__And__illustration {
 
-    
+    /*Borders for testing can be removed now
     border: solid pink 8px;
+    */
     
     display: flex;
     padding: 0;
@@ -1079,6 +1080,20 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     
     font-size: 2rem;
     max-width: 400px;
+}
+/* This class contains the submit button on the user form */
+.submit__btn {
+    display: inline-block;
+    color: black;
+    font-size: 1.4rem;
+    background: rgb(146, 135, 250);
+    padding: 1ch 1ch;
+    border: solid tan 5px;
+    border-radius: 20px;
+    margin: 0 100px;
+    cursor: pointer;
+    
+
 }
 
 /* THis class contains the further research and ilustration */
@@ -1205,11 +1220,21 @@ footer {
     }
 
     /* This class contains all of the form input boxes */
-.inputBox {
+    .inputBox {
     
-    font-size: 2rem;
-    max-width: 500px;
-}
+        font-size: 2rem;
+        max-width: 500px;
+    }
+
+    /* This class contains the submit button on the user form */
+    .submit__btn {
+
+    font-size: 1.9rem;
+    margin: 0 150px;
+
+    
+
+    }
 
     .page3Words__And__illustration form {
         font-size: 1.9rem;
