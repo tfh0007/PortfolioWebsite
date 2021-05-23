@@ -1000,6 +1000,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     border: solid lightblue 8px; 
 }
 
+/* THis class contains the email form and illistration */
 .page3Words__And__illustration {
     border: solid pink 8px;
     display: flex;
@@ -1011,6 +1012,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     justify-content: space-around;
     
 }
+/* THis class contains the email form*/
 .page3Words__And__illustration form {
     border: solid gray 8px;
     display: flex;
@@ -1021,12 +1023,29 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     font-size: 1.5rem;
 }
 
+/* THis class contains the further research and ilustration */
+.page3Words__And__illustration__bottom {
+    border: solid pink 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+    flex-wrap: wrap;
+    /* On desktop there is a brief size where the ilustration goes off the page by setting overflow as hidden 
+    for page 3 we ensure that no scrollbar becomes present when the illustration gets slightly clipped */
+    overflow-x: hidden;
+    justify-content: space-around;
+    
+}
+
+
 .page3__image__container {
 
     border: solid green 8px;
-    margin-top: 50px;
+
+    
     margin-left: -100px;
     margin-right: -100px;
+    
     
     
     
@@ -1038,6 +1057,53 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 }
 
+
+
+/* This class contains the paragraph text at the bottom of page 3 */
+.Page3TextBottom {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+
+}
+
+/* This class contains the heading text at the bottom of page 3 */
+.Page3TextBottom h1 {
+    display: flex;
+    justify-content: center;
+
+    
+    font-size: 1.8rem;
+
+}
+
+.Page3TextBottom p {
+
+    display: flex;
+    justify-content: center;   
+    
+    
+    font-size: 1.3rem;
+}
+/* This class contains the Learn more about me paragraph text */
+.page3LearnMore__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: solid cyan 4px;
+    margin-right: 0px;
+    max-width: 560px;
+}
+
+/* THis class contains the Thank you message at the very bottom of page 3 */
+.page3__ClosingRemarks{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+}
 
 
 /* This class contains the footer which will be at the very bottom of every page */
@@ -1064,8 +1130,26 @@ footer {
     }
 
     .page3Words__And__illustration form {
+        font-size: 1.9rem;
 
     }
+
+    /* This class contains the heading text at the bottom of page 3 */
+    .Page3TextBottom h1 {
+
+        
+        font-size: 2.2rem;
+    }
+
+/* This class contains the paragraph text at the bottom of page 3 */
+    .Page3TextBottom p {
+
+        font-size: 1.9rem;
+        margin-left: 70px;
+        padding-right: 70px;
+    }
+
+   
 
     .page3__image__container {
 
@@ -1075,7 +1159,37 @@ footer {
             
 
     }
+    
 
+}
+
+/*The learn more text starts to look a bit squished on a big screen so lets fix this */
+@media screen and (min-width: 1500px) {
+    
+    /* This class contains the paragraph text at the bottom of page 3 */
+    .Page3TextBottom p {
+
+        font-size: 1.9rem;
+        margin-left: -5%;
+        margin-right: -5%;
+        padding-right: 0px;
+        flex-grow: 1;
+
+    }
+}
+
+    /*The learn more text starts to look a bit squished on a big screen so lets fix this */
+@media screen and (min-width: 1700px) {
+    
+    /* This class contains the paragraph text at the bottom of page 3 */
+    .Page3TextBottom p {
+
+        margin-left: -20%;
+        margin-right: -20%;
+
+
+    }
+    
 }
 
 
