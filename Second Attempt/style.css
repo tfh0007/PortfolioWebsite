@@ -785,8 +785,7 @@ flex-wrap: wrap;
 .Page2__and__extended__Description {
     display: flex;
     flex-direction: row-reverse;
-    
-    border: solid 8px black;
+
     
     
 
@@ -810,8 +809,7 @@ background: tan;
     .extended__Description__Project1.visible {
         min-width: 20%;
     }
-
-    
+ 
 }
 
 
@@ -856,6 +854,8 @@ Projects Can be Found Under the Projects Page" */
     
 
 }
+
+
     /* This class contains the page 2 footer text which says "More of my
         Projects Can be Found Under the Projects Page" */
     .page2footer {
@@ -870,6 +870,9 @@ Projects Can be Found Under the Projects Page" */
 One fix is to move the two buttons down since the last description is longer than the other two descriptions. This issue currently only happens when 
 all three descriptions are visible on the same row so lets fix this formatting. */
 
+/* Another issue happens when three coloumns of projects are visible which is that the top padding of the
+extended__Description__Project1.visible becomes to large so we need to decrease that space */
+
 @media screen and (min-width: 2297px) { 
     /* The project buttons are the buttons that say learn more under each project */
     .Project__button__1 {
@@ -878,6 +881,10 @@ all three descriptions are visible on the same row so lets fix this formatting. 
     .Project__button__2 {
         margin-top: 7.4ch;
     }
+    
+.extended__Description__Project1.visible {
+padding-top: 0px;
+}
 
 }
 
