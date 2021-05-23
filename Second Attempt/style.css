@@ -1039,19 +1039,13 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 }
 
 /* THis class contains the user form, heading, and ilustration */
-.page3TextTop {
-    
-    /*Borders for testing can be removed now
-    border: solid lightblue 8px; 
-    */
-}
 
 /* THis class contains the email form and illistration */
 .page3Words__And__illustration {
 
-    /*Borders for testing can be removed now
+    
     border: solid pink 8px;
-    */
+    
     display: flex;
     padding: 0;
     flex-wrap: wrap;
@@ -1059,6 +1053,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     for page 3 we ensure that no scrollbar becomes present when the illustration gets slightly clipped */
     overflow-x: hidden;
     justify-content: space-around;
+    align-items: center;
     
 }
 /* THis class contains the email form*/
@@ -1073,6 +1068,17 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     flex-wrap: wrap;
 
     font-size: 1.5rem;
+}
+/* This class contains all of the form input boxes */
+.inputBox {
+    background: white;
+    color: white;
+    background: transparent;
+    border: solid black 4px;
+    border-radius: 20px;
+    
+    font-size: 2rem;
+    max-width: 400px;
 }
 
 /* THis class contains the further research and ilustration */
@@ -1197,6 +1203,13 @@ footer {
         margin-bottom: 3ch;
 
     }
+
+    /* This class contains all of the form input boxes */
+.inputBox {
+    
+    font-size: 2rem;
+    max-width: 500px;
+}
 
     .page3Words__And__illustration form {
         font-size: 1.9rem;
