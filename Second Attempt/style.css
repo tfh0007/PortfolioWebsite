@@ -975,7 +975,16 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 
 
+/* This class contains the footer which will be at the very bottom of every page */
 
+footer {
+
+    background: #02C294;
+    padding: 1ch;
+    color: white;
+    font-size: 1.2rem;
+
+}
 
 
 
