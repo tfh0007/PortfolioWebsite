@@ -778,11 +778,14 @@ flex-wrap: wrap;
 /*When the Project 1 learn more button is not pressed we do not want to show any extra details */
 .extended__Description__Project1 {
     display: none;
+    min-width: 80%;
+    
 }
 /* This class holds the contents of both the extended Decription and Page 2 */
 .Page2__and__extended__Description {
     display: flex;
     flex-direction: row-reverse;
+    
     border: solid 8px black;
     
     
@@ -793,14 +796,22 @@ flex-wrap: wrap;
 .extended__Description__Project1.visible {
 display: flex;
 padding-top: 100px;
-border: solid 8px;
 flex-direction: column;
-align-content: flex-end;
 flex-grow: 3;
+/* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+This property will need to be modified for desktop and tablet environments */
+
 background: tan;
-top: 140px;
 
+}
 
+/* We want to make the Extended descriptions take up significatly less space when the screen is big enough */
+@media screen and (min-width: 850px) {
+    .extended__Description__Project1.visible {
+        min-width: 20%;
+    }
+
+    
 }
 
 
