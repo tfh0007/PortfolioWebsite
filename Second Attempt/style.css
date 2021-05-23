@@ -980,7 +980,10 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 /* Lets edit the style of page 3 now */
 
 .page3container {
+
+    /*Borders for testing can be removed now
     border: solid 8px;
+    */
     display: flex;
     flex-direction: column;
     background: -moz-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
@@ -997,12 +1000,18 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 /* THis class contains the user form, heading, and ilustration */
 .page3TextTop {
+    
+    /*Borders for testing can be removed now
     border: solid lightblue 8px; 
+    */
 }
 
 /* THis class contains the email form and illistration */
 .page3Words__And__illustration {
+
+    /*Borders for testing can be removed now
     border: solid pink 8px;
+    */
     display: flex;
     padding: 0;
     flex-wrap: wrap;
@@ -1014,7 +1023,10 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 }
 /* THis class contains the email form*/
 .page3Words__And__illustration form {
+
+    /*Borders for testing can be removed now
     border: solid gray 8px;
+    */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1025,7 +1037,10 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 /* THis class contains the further research and ilustration */
 .page3Words__And__illustration__bottom {
+
+    /*Borders for testing can be removed now
     border: solid pink 8px;
+    */
     display: flex;
     flex-direction: row-reverse;
     padding: 0;
@@ -1040,7 +1055,9 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 .page3__image__container {
 
+    /*Borders for testing can be removed now
     border: solid green 8px;
+    */
 
     
     margin-left: -100px;
@@ -1093,7 +1110,9 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     flex-direction: column;
     justify-content: center;
 
+    /*Borders for testing can be removed now
     border: solid cyan 4px;
+    */
     margin-right: 0px;
     max-width: 560px;
 }
@@ -1123,9 +1142,14 @@ footer {
 @media screen and (min-width: 1293px) {
 
 
+    
     /* This class contains the heading text of the page */
     .page3TextTop h1 {
         font-size: 3.2rem;
+        /* The spacing on Desktop above and below the Page3Top heading is too small so lets increase the spacing here 
+    on desktop */
+        margin-top: 5ch;
+        margin-bottom: 3ch;
 
     }
 
@@ -1134,10 +1158,19 @@ footer {
 
     }
 
+
+    /* The spacing on Desktop above the Page3Bottom is too small so lets increase the spacing here 
+    on desktop */
+
+    .Page3TextBottom {
+        margin: 5ch 0;
+    }
     /* This class contains the heading text at the bottom of page 3 */
     .Page3TextBottom h1 {
 
-        
+        /* The spacing on Desktop below the Page3Bottom heading is too small so lets increase the spacing here 
+    on desktop */
+        margin-bottom: 5ch;
         font-size: 2.2rem;
     }
 
@@ -1173,7 +1206,6 @@ footer {
         margin-left: -5%;
         margin-right: -5%;
         padding-right: 0px;
-        flex-grow: 1;
 
     }
 }
