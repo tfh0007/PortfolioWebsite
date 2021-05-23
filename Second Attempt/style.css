@@ -656,6 +656,9 @@ flex-wrap: wrap;
     #FFE600 0%, 
     rgba(255, 186, 53, 0.65) 16.67%, 
     rgba(209, 21, 66, 0.807292) 100%);
+    /* By using flex grow we ensure that the page 2 container takes up all space not being used by another container.
+    Without this option the background would stop extending since we have 2 containers in our div which are .page2container and .extended_Description */
+    flex-grow: 1;
 
     
 
@@ -766,11 +769,40 @@ flex-wrap: wrap;
     max-width: 500px;
     font-size: 1.3rem;
     /* The space above is a little bit too much so lets decrease the spacing a little */
-    margin-top: -0.3ch;
+    margin-top: -0.1ch;
 
     
 
 }
+
+/*When the Project 1 learn more button is not pressed we do not want to show any extra details */
+.extended__Description__Project1 {
+    display: none;
+}
+/* This class holds the contents of both the extended Decription and Page 2 */
+.Page2__and__extended__Description {
+    display: flex;
+    flex-direction: row-reverse;
+    border: solid 8px black;
+    
+    
+
+}
+
+/*When the Project 1 learn more button is pressed we want an overlay to appear that gives more details on the project */
+.extended__Description__Project1.visible {
+display: flex;
+
+border: solid 8px;
+flex-direction: column;
+align-content: flex-end;
+flex-grow: 3;
+background: tan;
+top: 140px;
+
+
+}
+
 
 /* This class controls the text for the project buttons */
 .remove__style {
