@@ -775,6 +775,18 @@ flex-wrap: wrap;
 
 }
 
+/* This class contains the download source buttons which can be found in the extended description */
+.DownloadButton {
+
+    font-size: 1.4rem;
+    list-style: none;
+    text-decoration: none;
+    background: red;
+    border-radius: 20px;
+    padding: 6px;
+    color: white;
+}
+
 /* The p tag within the Page2__and__extended__Description is all of the statements in the extended description */
 .Page2__and__extended__Description p {
     font-size: 1.2rem;
@@ -812,6 +824,13 @@ flex-wrap: wrap;
 display: flex;
 padding-top: 100px;
 flex-direction: column;
+
+padding-left: 2ch;
+padding-right: 2ch;
+/* We want the items to stay in the center of the container */
+align-items: center;
+flex-wrap: wrap;
+
 flex-grow: 3;
 /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
 This property will need to be modified for desktop and tablet environments */
@@ -823,6 +842,13 @@ background: tan;
     display: flex;
     padding-top: 100px;
     flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+    flex-wrap: wrap;
+
     flex-grow: 3;    
     background: tan;
     
@@ -832,6 +858,13 @@ background: tan;
     display: flex;
     padding-top: 100px;
     flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+    flex-wrap: wrap;
+
     flex-grow: 3;    
     background: tan;
         
