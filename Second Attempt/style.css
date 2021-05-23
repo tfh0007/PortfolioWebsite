@@ -792,7 +792,7 @@ flex-wrap: wrap;
 /*When the Project 1 learn more button is pressed we want an overlay to appear that gives more details on the project */
 .extended__Description__Project1.visible {
 display: flex;
-
+padding-top: 100px;
 border: solid 8px;
 flex-direction: column;
 align-content: flex-end;
