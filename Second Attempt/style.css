@@ -5,6 +5,7 @@ body {
 
     margin:0px;
     height:100%;
+
     
 }
 
@@ -307,6 +308,7 @@ For Desktop this will be visible */
 
     /* We want to disable these icons while we are using the mobile version */
     display: flex;
+    padding-top: 1ch;
     padding-left: 0px;
 }
 
@@ -459,6 +461,9 @@ so we can not simply change all of the icons at once*/
 
     color: #303079;
     font-size: 2.2rem;
+    padding-top: 6px;
+    padding-left: 2ch;
+    padding-right: 2ch;
     
 }
 /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
@@ -566,9 +571,9 @@ so we can not simply change all of the icons at once*/
     }
 /* We want the gap between the heading sentance and paragraph underneath to increase after the display
      width increases to a certain size */
-    @media screen and (min-width: 1629px) {
+    @media screen and (min-width: 1741px) {
         .page1heading {
-        padding-bottom: 6ch;
+        padding-bottom: 5ch;
 
         }
 
@@ -627,6 +632,8 @@ so we can not simply change all of the icons at once*/
     display: flex;
     justify-content: center;
     font-size: 2.6rem;
+    padding-left: 2ch;
+    padding-right: 2ch;
     color: #3633C9;
 
      /*Borders for testing can be removed now
@@ -637,6 +644,8 @@ so we can not simply change all of the icons at once*/
 /* This class contains the titles for the 3 diffrent projects */
 .Project__Name {
     color: #353541;
+    padding-left: 2ch;
+    padding-right: 2ch;
 
 }
 
@@ -728,7 +737,9 @@ so we can not simply change all of the icons at once*/
     max-width: 500px;
     font-size: 1.3rem;
     /* The space above is a little bit too much so lets decrease the spacing a little */
-    margin-top: -0.1ch;
+    margin-top: -0.1ch; 
+    padding-left: 2ch;
+    padding-right: 2ch;
 
     
 
@@ -883,6 +894,10 @@ Projects Can be Found Under the Projects Page" */
     max-width: 760px;
     font-size: 1.9rem;
 
+    /* We want to give users as much space as possible for the flex container not to wrap */
+    padding-left: 0;
+    padding-right: 0;
+
     
 
 }
@@ -947,6 +962,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     display: flex;
     justify-content: center;
     font-size: 2.2rem;
+
     color: #303079;
 }
 
@@ -1054,6 +1070,8 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-left: 2ch;
+    padding-right: 2ch;
     
     
 
@@ -1065,6 +1083,8 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     justify-content: center;
     font-size: 1.8rem;
     color: #303079;
+    padding-left: 2ch;
+    padding-right: 2ch;
 
 }
 
@@ -1094,6 +1114,8 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     display: flex;
     font-size: 1.5rem;
     justify-content: center;
+    padding-left: 2ch;
+    padding-right: 2ch;
 }
 
 /* This class contains the final thank you statement at the bottom of page 3 */
