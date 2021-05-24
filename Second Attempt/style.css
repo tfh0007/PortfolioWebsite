@@ -12,11 +12,12 @@ body {
 /* This class will contain our custom warnning message container*/
 .notification__area {
     margin-top: 24px;
+    
 
     /* Because we are using fixed positioning setting right to 
     0 makes the window appear as for to the right as possible */
-    right: 0;
-    
+    right: 0px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column-reverse;
     max-width: 900px;
@@ -34,15 +35,6 @@ body {
     
 
     
-
-}
-/* When we are in mobile we need the notification to slide down with the menu and slide back up when the menu closes */
-@media screen and (max-width: 1292px) {
-    .notification__area {
-
-        transform: translateY(0px);
-    }
-
 
 }
 
@@ -227,6 +219,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     transform: translateY(08px);
  /*Lets blur and dim the content behind our menu when it is active */
  background: transparent;
+ border-radius: 20px;
     
  /* We need to use a fail safe here incase our current browser does not support backdrop effect */
  background-color: rgba(0, 0, 0, 0.726);
@@ -311,6 +304,7 @@ For Mobile this will be hidden */
 /*Our notification message appears a little bit too high in the desktop version so lets fix this */
 .notification__area {
     margin-top: 75px;
+    right: 20px;
 }
 
  /*This navbar represents the container for our navbar */
