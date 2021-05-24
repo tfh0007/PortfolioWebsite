@@ -9,6 +9,96 @@ body {
     
 }
 
+/* This class will contain our custom warnning message container*/
+.notification__area {
+    margin-top: 24px;
+
+    /* Because we are using fixed positioning setting right to 
+    0 makes the window appear as for to the right as possible */
+    right: 0;
+    
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 900px;
+    position: fixed;
+    background: transparent;
+    background-color: rgba(51, 50, 50, 0.794) ;
+    z-index: 999;
+    
+    opacity: 1;
+
+    
+    transition: transform 500ms ease-in-out;
+
+
+    
+
+    
+
+}
+/* When we are in mobile we need the notification to slide down with the menu and slide back up when the menu closes */
+@media screen and (max-width: 1292px) {
+    .notification__area {
+
+        transform: translateY(0px);
+    }
+
+
+}
+
+/* This class will contain our custom warnning message after the message has been dismissed*/
+.notification__area.inactive {
+
+    
+    
+    transform: translateY(-1170px);
+    opacity: 0;
+    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
+
+
+}
+
+/* When the navbar opens on moblie our notification overlaps with the menu so lets fix this issue */
+
+    .notification__area.moveDown {
+
+        transform: translateY(580px);
+        transition: transform 400ms ease-in-out;
+
+    }
+
+
+/* This class will contain our custom warning message heading*/
+.notification__heading__msg h1 {
+
+    color: rgba(255, 255, 255, 0.719);
+    padding-left: 2ch;
+}
+
+/* This class will contain our custom warning message body*/
+.notification__heading__msg p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.575);
+    padding-left: 5ch;
+}
+/* This class will contain our custom warning close button container*/
+.notification__close__button {
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* This class will contain our custom warning close button item*/
+.notification__btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+
+
 /* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
 header {
     position: fixed;
@@ -218,6 +308,11 @@ For Mobile this will be hidden */
 
 @media screen and (min-width: 1293px) {
 
+/*Our notification message appears a little bit too high in the desktop version so lets fix this */
+.notification__area {
+    margin-top: 75px;
+}
+
  /*This navbar represents the container for our navbar */
 .navbar {
     display: flex;   
@@ -379,6 +474,16 @@ so we can not simply change all of the icons at once*/
     color: black;
 }
 
+
+
+}
+/* When the navigation bar expands it gets slightly smaller so our notification message appears a bit lower than it should.
+So lets fix this issue */
+@media screen and (min-width:1500px) {
+
+    .notification__area {
+        margin-top: 38px;
+    }
 
 
 }

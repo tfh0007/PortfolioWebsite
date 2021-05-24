@@ -99,6 +99,28 @@
 		</nav>
     </header>
 
+<!-- Lets make a notification pane-->
+
+	<div class="notification__area">
+
+		
+
+		
+		
+		<div class="notification__heading__msg">
+			<h1><i class="fas fa-exclamation-triangle" style="color: gold;"></i>&nbsp; Warning:</h1>
+			<p>This site has not been fully developed yet and some areas may behave unresponsive or have issues. The pages About Me, Projects, and Contact Information are currently inaccessible.</p>
+		
+
+
+		</div>
+
+		<div class="notification__close__button">
+			<p><button class="notification__btn"><i class="far fa-times-circle"></i></button></p>
+		</div>
+
+	</div>
+
 
 <!-- NOW WE ARE AT PAGE 1-->
 
@@ -378,6 +400,7 @@
 				$('.menuButton').click(function() {
 					$('.navbar').toggleClass('active')
 					$('.navbar__menu-mobile').toggleClass('active')
+					$('.notification__area').toggleClass('moveDown')
 					
 
 
@@ -388,6 +411,21 @@
 
 		</script>
 
+<!-- Scripts for the notification area-->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.notification__btn').click(function() {
+				$('.notification__area').toggleClass('inactive')
+				
+
+
+				
+
+			})
+		})
+
+	</script>
 
 
 <!--Scripts for page 2-->
