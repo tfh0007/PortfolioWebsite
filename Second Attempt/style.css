@@ -1,8 +1,10 @@
 /* Changing the body color will set a default background color for the entire website 
 Unfortunately it also overlaps in other areas as well*/
+/* By setting the margin and height to max in the body we ensure that our div classes extend the entire screen */
 body {
 
-  /*  background-color: #02C294; */
+    margin:0px;
+    height:100%;
     
 }
 
