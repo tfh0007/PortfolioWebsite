@@ -120,7 +120,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
 }
 
 /* Check if backdrop is supported and if it is make the background transparent and blurred */
-@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur5em)) {
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur2em)) {
     .navbar__menu-mobile {
       background-color: rgba(0, 0, 0, 0.068);
       -webkit-backdrop-filter: blur(2em);
