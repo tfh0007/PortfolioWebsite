@@ -24,8 +24,13 @@ header {
 /*This navbar represents the container for our navbar */
 .navbar {
     display: flex;   
+
+    /* The border for the navbar will extend to show everything contained within even when we use a transition to push content off screen
+so we need to remove the ugly border when the nav bar is inactive and reapply the border when navbar is active */
     border: solid 1ch;
+
     border-color: #02C294;
+    
     
     /*Applying this property will stack our navbar__container on top of our navbar__menu */
     flex-direction: column;
@@ -73,6 +78,15 @@ header {
 .navbar__menu-middle {
 
     display: flex;
+    
+    min-width: 60%;
+    max-width: 80%;
+    
+
+    position: absolute;
+    /* Since our position is absolute set right to 0 will make this object always touching the far right side of the div */
+    right:0;
+
     /* Applying this property will stack our items on top of each other */
     flex-direction: column;
 
@@ -92,49 +106,52 @@ header {
     margin-bottom: 0px;
      /* This property will decrease the space between the logo/menu links and middle links */
      margin-top: 0px;
+       
+    z-index: 0;
+
+    transform: translateY(-670px);
+    transition: transform 500ms ease-in-out, background 750ms ease-in-out, max-height 0ms ease-in-out 600ms;
 
 
-
-     /* This creates an outward box closing transition */
-				
-				transform-origin: top;
-				transform: perspective(1000px) rotateX(90deg);
-				/* This transition will cause the transform animation to happen */
-				transition: transform 0.9s ease;
-    /* For now we are getting rid of the menu animations because they break the layout */
-    display: none;
  
-}
-/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
-.navbar__menu-middle.active {
-    transform-origin: top;
-    transform: perspective(1000px) rotateX(0deg);
-    /* This transition will cause the transform animation to happen */
-    transition: transform 0.9s ease; 
-    /* For now we are getting rid of the menu animations because they break the layout */
-    display: flex;
-    /*Lets blur and dim the content behind our menu when it is active */
-    background: transparent;
-    
-    /* We need to use a fail safe here incase our current browser does not support backdrop effect */
-    background-color: rgba(0, 0, 0, 0.726);
-     
-    
 }
 
 /* Check if backdrop is supported and if it is make the background transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(5em)) or (backdrop-filter: blur5em)) {
-    .navbar__menu-middle.active {
+    .navbar__menu-middle {
       background-color: rgba(0, 0, 0, 0.068);
       -webkit-backdrop-filter: blur(5em);
       backdrop-filter: blur(5em);
     }
   }
+/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
+.navbar__menu-middle.active {
+    max-height: 1000px;
 
+    transform: translateY(102px);
+ /*Lets blur and dim the content behind our menu when it is active */
+ background: transparent;
+    
+ /* We need to use a fail safe here incase our current browser does not support backdrop effect */
+ background-color: rgba(0, 0, 0, 0.726);
+   
+     
+    
+}
 /* This box contains all of our right links and their icons*/
 .navbar__menu-right-mobile {
 
     display: flex;
+
+    min-width: 60%;
+    max-width: 80%;
+    
+
+    position: absolute;
+    /* Since our position is absolute set right to 0 will make this object always touching the far right side of the div */
+    right:0;
+
+    position: absolute;
     /* Applying this property will stack our items on top of each other */
     flex-direction: column;
 
@@ -158,44 +175,42 @@ header {
 
 /* This creates an inward box closing transition */
 /* We are making the display none because we do not want the 
-elements to take up space outside of our window even though the items are invisible. 
-Unfortunately this also destroys the animation as well */
-    
-    transform-origin: bottom;
-				transform: perspective(1000px) rotateX(-90deg);
-				/* This transition will cause the transform animation to happen */
-				transition: transform 0.9s ease;
-    /* For now we are getting rid of the menu animations because they break the layout */
-    display: none;
+elements to take up space outside of our window even though the items are invisible. */
+
+    transform: translateY(-670px);
+    transition: transform 500ms ease-in-out, background 750ms ease-in-out;
+
+
+ 
 }
 
-/* Lets create a state for calling .navbar__menu-right-mobile once the menu button is pressed */
-.navbar__menu-right-mobile.active {
-    transform-origin: bottom;
-    transform: perspective(1000px) rotateX(0deg);
-    /* This transition will cause the transform animation to happen */
-    transition: transform 0.9s ease; 
-
-    /* For now we are getting rid of the menu animations because they break the layout */
-    display: flex;
-
-        /*Lets blur and dim the content behind our menu when it is active */
-        background: transparent;
-    
-        /* We need to use a fail safe here incase our current browser does not support backdrop effect */
-        background-color: rgba(0, 0, 0, 0.726);
-         
-        
+/* Check if backdrop is supported and if it is make the background transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(5em)) or (backdrop-filter: blur5em)) {
+    .navbar__menu-right-mobile {
+      background-color: rgba(0, 0, 0, 0.068);
+      -webkit-backdrop-filter: blur(5em);
+      backdrop-filter: blur(5em);
     }
+  }
+
+
     
-    /* Check if backdrop is supported and if it is make the background transparent and blurred */
-    @supports ((-webkit-backdrop-filter: blur(5em)) or (backdrop-filter: blur5em)) {
-        .navbar__menu-right-mobile.active {
-          background-color: rgba(0, 0, 0, 0.068);
-          -webkit-backdrop-filter: blur(5em);
-          backdrop-filter: blur(5em);
-        }
-      }
+/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
+.navbar__menu-right-mobile.active {
+
+    max-height: 1000px;
+    transform: translateY(339px);
+ /*Lets blur and dim the content behind our menu when it is active */
+ background: transparent;
+    
+ /* We need to use a fail safe here incase our current browser does not support backdrop effect */
+ background-color: rgba(0, 0, 0, 0.726);
+   
+     
+    
+}
+
+
 
 /* This will be a line above our navbar-menu-right*/
 .navbar__menu-right-mobile::before {
@@ -321,7 +336,7 @@ For Mobile this will be hidden */
 .navbar__menu-middle {
 
         /* We need to make our content visible even if it was previously hidden */
-		
+		position:relative;
         transform-origin: top;
         transform: perspective(1000px) rotateX(0deg);
         transition: 1ms;
@@ -335,6 +350,10 @@ For Mobile this will be hidden */
     flex-direction: row;
     align-items: center;
     padding-left: 0px;
+    /* We need to upadate our min width to not exist now that we do not require a min width like we did in the mobile version */
+    min-width: 0%;
+    /* Since the items here are not visible if we previously opened the mobile menu we need to fix this issue */
+    translateY: ;
     
 
     /* This property makes our content inside not take up any space to the left */

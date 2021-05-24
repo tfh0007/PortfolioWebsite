@@ -40,6 +40,7 @@
 						<a href="ContactMe.html" class="navbar__links"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information</a></li>
 
 				</ul>
+
 			<div>
 				<ul class="navbar__menu-right-mobile">
 					 <!-- Create a menu item Handshake Icon -->
@@ -54,6 +55,8 @@
 					<li class="navbar__item-right icon">
 						<a href="https://github.com/tfh0007" class="navbar__links"><i class=" fab fa-github fa-fw"></i>&nbsp; Visit My GitHub Page</a></li>  		
 					</ul>
+
+					
 				<div>
 					<ul class="navbar__menu-right-desktop">
 								 <!-- Create a menu item Handshake Icon -->
@@ -352,8 +355,10 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('.menuButton').click(function() {
-				$('.navbar__menu-middle').toggleClass('active')
+					$('.navbar').toggleClass('active')
+					$('.navbar__menu-middle').toggleClass('active')
 					$('.navbar__menu-right-mobile').toggleClass('active')
+
 
 					
 
