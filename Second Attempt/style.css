@@ -220,7 +220,7 @@ For Mobile this will be hidden */
     display: flex;   
 
     /*We need to make our navigation bar smaller */
-    max-height: 200px;
+   
     background-color: #02C294;
     
     /*Applying this property will put  our navbar__container to the left of our navbar__menu */
@@ -239,7 +239,7 @@ For Mobile this will be hidden */
     /* Applying this property wil place the logo and menu right next to each other */
     display: flex;
     /* Applying this property will space the logo and menu as far apart as possible */
-    
+
     
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 4ch;
@@ -262,23 +262,21 @@ For Mobile this will be hidden */
   .navbar__menu-mobile {
       display: none;
   }
+/* This class contains the middle links in the nav bar and the space that extends to the right and left
+of the navbar menu middle desktop */
+  .navbar__menu-middle-container {
+    display: flex;
+    justify-content: center;
+    /*THis flex grow makes the middle navigation menu way more centered on desktop */
+    flex-grow: 10;
+  }
 
 /* This box contains all of our middle links */
 .navbar__menu-middle-desktop {
 
         /* We need to make our content visible even if it was previously hidden */
 
-
-        /* For now we are getting rid of the menu animations because they break the layout */
     display: flex;
-        /* This transition will cause the transform animation to happen */
-
-    /* Applying this property will put our items side to side of each other */
-
-    flex-direction: row;
-    align-items: center;
-    padding-left: 0px;
-
 
     
 
@@ -289,26 +287,7 @@ For Mobile this will be hidden */
    
 }
 
-/* This box contains all of our right links and their icons*/
-.navbar__menu-right-mobile {
 
-    
-    font-size: 1.3rem;
-    
-    /* We need to make our content visible even if it was previously hidden */
-				
-    transform-origin: top;
-    /* This transition will cause the transform animation to happen */
-    transition: transform 0.9s ease;
-    /* We want to disable the text while we are using the desktop version */
-    display: none;
-
-   
-}
-.navbar__menu-right-mobile.active {
-        /* We want to disable the text while we are using the desktop version */
-        display: none;
-}
 
 
 
