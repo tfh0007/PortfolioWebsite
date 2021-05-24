@@ -74,8 +74,12 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
 
 }
 
-/* This box contains all of our middle links */
-.navbar__menu-middle {
+/* In mobile we do not want the desktop middle menu to be active */
+.navbar__menu-middle-desktop {
+    display: none;
+}
+/* This box contains all of our links */
+.navbar__menu-mobile {
 
     display: flex;
     
@@ -109,7 +113,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
        
     z-index: 0;
 
-    transform: translateY(-670px);
+    transform: translateY(-1170px);
     transition: transform 500ms ease-in-out, background 750ms ease-in-out, max-height 0ms ease-in-out 600ms;
 
 
@@ -118,88 +122,17 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
 
 /* Check if backdrop is supported and if it is make the background transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(5em)) or (backdrop-filter: blur5em)) {
-    .navbar__menu-middle {
+    .navbar__menu-mobile {
       background-color: rgba(0, 0, 0, 0.068);
       -webkit-backdrop-filter: blur(5em);
       backdrop-filter: blur(5em);
     }
   }
-/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
-.navbar__menu-middle.active {
+/* Lets create a state for calling .navbar__menu-mobile once the menu button is pressed */
+.navbar__menu-mobile.active {
     max-height: 1000px;
 
-    transform: translateY(102px);
- /*Lets blur and dim the content behind our menu when it is active */
- background: transparent;
-    
- /* We need to use a fail safe here incase our current browser does not support backdrop effect */
- background-color: rgba(0, 0, 0, 0.726);
-   
-     
-    
-}
-/* This box contains all of our right links and their icons*/
-.navbar__menu-right-mobile {
-
-    display: flex;
-
-    min-width: 60%;
-    max-width: 80%;
-    
-
-    position: absolute;
-    /* Since our position is absolute set right to 0 will make this object always touching the far right side of the div */
-    right:0;
-
-    position: absolute;
-    /* Applying this property will stack our items on top of each other */
-    flex-direction: column;
-
-    /* Applying this property will move our items to the center. 
-    This only works when flex is column based */
-    align-items: center;
-
-    /*Borders for testing can be removed now
-    border: solid 1ch;
-    border-color: orange;
-
-    */
-
-    list-style: none;
-    font-size: 4.5rem;
-    /* This property will decrease the space between the middle links and the right links */
-    margin-top: 0px;
-/* This property will decrease the space between the right links and the right icons 
-    which are not visible in mobile version */
-    margin-bottom: 0px;
-
-/* This creates an inward box closing transition */
-/* We are making the display none because we do not want the 
-elements to take up space outside of our window even though the items are invisible. */
-
-    transform: translateY(-670px);
-    transition: transform 500ms ease-in-out, background 750ms ease-in-out;
-
-
- 
-}
-
-/* Check if backdrop is supported and if it is make the background transparent and blurred */
-@supports ((-webkit-backdrop-filter: blur(5em)) or (backdrop-filter: blur5em)) {
-    .navbar__menu-right-mobile {
-      background-color: rgba(0, 0, 0, 0.068);
-      -webkit-backdrop-filter: blur(5em);
-      backdrop-filter: blur(5em);
-    }
-  }
-
-
-    
-/* Lets create a state for calling .navbar__menu-middle once the menu button is pressed */
-.navbar__menu-right-mobile.active {
-
-    max-height: 1000px;
-    transform: translateY(339px);
+    transform: translateY(08px);
  /*Lets blur and dim the content behind our menu when it is active */
  background: transparent;
     
@@ -212,16 +145,9 @@ elements to take up space outside of our window even though the items are invisi
 
 
 
-/* This will be a line above our navbar-menu-right*/
-.navbar__menu-right-mobile::before {
-    content: "";
-    outline: dashed gray;
-    width: 90%;  
-
-}
 
 /* This will be a line below our navbar__menu-middle*/
-.navbar__menu-middle::after {
+.navbar__menu-mobile::after {
     content: "";
     outline: dashed gray;
     width: 90%;  
@@ -229,6 +155,7 @@ elements to take up space outside of our window even though the items are invisi
 }
 /* This box contains the links that should be centered on the screen */
 .navbar__item-center {
+    list-style: none;
     padding: 0;
 
     /*Borders for testing can be removed now
@@ -332,14 +259,16 @@ For Mobile this will be hidden */
   
   }
 
+  /* In desktop version we do not want the mobile menu to be visible */
+  .navbar__menu-mobile {
+      display: none;
+  }
+
 /* This box contains all of our middle links */
-.navbar__menu-middle {
+.navbar__menu-middle-desktop {
 
         /* We need to make our content visible even if it was previously hidden */
-		position:relative;
-        transform-origin: top;
-        transform: perspective(1000px) rotateX(0deg);
-        transition: 1ms;
+
 
         /* For now we are getting rid of the menu animations because they break the layout */
     display: flex;
@@ -350,10 +279,8 @@ For Mobile this will be hidden */
     flex-direction: row;
     align-items: center;
     padding-left: 0px;
-    /* We need to upadate our min width to not exist now that we do not require a min width like we did in the mobile version */
-    min-width: 0%;
-    /* Since the items here are not visible if we previously opened the mobile menu we need to fix this issue */
-    translateY: ;
+
+
     
 
     /* This property makes our content inside not take up any space to the left */
@@ -416,7 +343,7 @@ IN THE MOBILE VERSION */
 
 /* This will be a line below our navbar__menu-middle that we put in the Mobile version of the site.
 NOTE: MAKING THE OUTLINE NONE DOES NOT GET RID OF IT. TOOK MY ABOUT 2 HOURS TO FIND THIS MISTAKE... A FAIR WARNING*/
-.navbar__menu-middle::after {
+.navbar__menu-mobile::after {
     outline: 0px;
     outline: none;
     display: none;
