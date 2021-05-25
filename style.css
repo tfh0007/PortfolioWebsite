@@ -645,6 +645,7 @@ So lets fix this issue */
 			-webkit-transform: scale(0.7, 0.7);
     /* On mobile the picture of me becomes to low after the scale transformation so we need to move the picture up slightly in mobile */
     margin-top: -8.96rem;
+    overflow-x: hidden;
 
 }
 
@@ -766,6 +767,7 @@ So lets fix this issue */
     color: #353541;
     padding-left: 2ch;
     padding-right: 2ch;
+    padding-bottom: 1.5ch;
 
 }
 
