@@ -1,143 +1,494 @@
 <!DOCTYPE html>
-<!-- Note: We have to specify that this is an html file. 
-	Othewise we will have issues when publishing the site-->
-<!- The language of the website is English>
-<html lang="en">
-	<head>
-		<!- The type of characters on the web page>
-		<meta charset="UTF-8" />
-		<meta name="viewport"
-			content="width=device-width,initial-scale=1.0" />
-		<!- The name of the website>
-		<title> Thomas Hansknecht-Home</title>
-		<! href is heading reference>
-		<link rel="stylesheet" href="style.css" />
-		<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
-	</head>
+
+<head>
+	<!-- The language of the website is English -->
+	<html lang="en">
+    <meta charset="utf-8">
+	<!-- We want to use a title, description, and tags to describe our website to others-->
+    <title> Thomas H Site-Home </title>
+
+	<meta name="description" content="All about Thomas F Hanskecht who is a software developer 
+	including how to contact me and projects I have / am currently working on">
+ 	<meta name="keywords" content="Developer, UI Design, Java, Python, Portfolio, Engineering, CSS, HTML, JavaScript">
+    <link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
 	
-		
-	</body>
-	<! Create a menu at top of website>
-		<nav class="navbar">
+
+
+</head>
+
+<body>
+
+<!-- NOW WE ARE AT NAVIGATION MENU-->
+    <header>
+        <nav class="navbar">
 			<div class="navbar__container">
-				<a href="/" id="navbar__toggle" id="mobile-menu">
-			<! Adjust the website to show diffrent for mobile users. The id will be targeted by javascript>
-			<div class="navbar__toggle"	id="mobile-menu">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
+                <!-- My logo will not be a clickable icon -->
+                    <h1 class="mainLogo">Thomas F Hansknecht</h1>
+					<h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
+				</div>
+	<!-- Lets make the mobile menu first-->			
+				<div>
+
+					<ul class="navbar__menu-mobile">
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+						the text-->
+						<li class="navbar__item-center icon">
+							<a href="index.html" class="navbar__links"><i class=" fas fa-home fa-fw"></i>&nbsp; Home</a></li>
+
+						<!-- Create a menu item About Me -->
+						<li class="navbar__item-center icon">
+							<a href="AboutMe.html" class="navbar__links"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About Me</a></li>
+
+						<!-- Create a menu item Projects -->
+						<li class="navbar__item-center icon">
+							<a href="Projects.html" class="navbar__links"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects</a></li>
+
+						<!-- Create a menu item Contact Me -->
+						<li class="navbar__item-center icon">
+							<a href="ContactMe.html" class="navbar__links"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information</a></li>
+					
+						<!-- Create a menu item Handshake Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class=" fas fa-handshake fa-fw"></i>&nbsp; View my Handshake Profile</a></li>  
+						
+						<!-- Create a menu item LinkedIn Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; Check Out My LinkedIn Profile</a></li>  
+						
+						<!-- Create a menu item Github Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://github.com/tfh0007" class="navbar__links"><i class=" fab fa-github fa-fw"></i>&nbsp; Visit My GitHub Page</a></li>  		
+					</ul>
+				</div>
+
+
+		<!-- Lets make the Desktop menu second-->
+				<div class="navbar__menu-middle-container">
+					<ul class="navbar__menu-middle-desktop">
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+						the text-->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="index.html" class="navbar__links"><i class=" fas fa-home fa-fw"></i>&nbsp; Home</a></li>
+
+						<!-- Create a menu item About Me -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="AboutMe.html" class="navbar__links"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About Me</a></li>
+
+						<!-- Create a menu item Projects -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="Projects.html" class="navbar__links"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects</a></li>
+
+						<!-- Create a menu item Contact Me -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="ContactMe.html" class="navbar__links"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information</a></li>
+				</div>
+				
+					
+				<div>
+					<ul class="navbar__menu-right-desktop">
+								 <!-- Create a menu item Handshake Icon -->
+								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
+								<li class="navbar__item-right icon">
+									<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class="fas fa-handshake"></i></a></li>  
+								   
+								<!-- Create a menu item LinkedIn Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class="fab fa-linkedin-in"></i></a></li>  
+								
+								<!-- Create a menu item Github Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://github.com/tfh0007" class="navbar__links"><i class="fab fa-github"></i></a></li>  		
+							
+               </ul>
 			</div>
-				<ul class="navbar__menu">
-
-
-
-					<! Create a menu item Home. The icon phrase means an icon will be before or after 
-					the text>
-					<li class="navbar__item1 icon">
-						<a href="index.html" class="navbar__links">
-							Home
-						</a>
-					</li>
-
-					<! Create a menu item About Me>
-					<li class="navbar__item2 icon">
-						<a href="AboutMe.html" class="navbar__links">
-							About Me
-						</a>
-					</li>
-
-					<! Create a menu item Projects>
-					<li class="navbar__item3 icon">
-						<a href="Projects.html" class="navbar__links">
-							Projects
-						</a>
-					</li>
-
-					<! Create a menu item Contact Me>
-					<li class="navbar__item4 icon">
-						<a href="ContactMe.html" class="navbar__links">
-							Contact Information
-						</a>
-					</li>
-				</ul>
 			</div>
 		</nav>
+    </header>
 
-		<! Front cover section>
+<!-- Lets make a notification pane-->
 
-		<div class="main">
-			<div class="main__container">
-				<div class="main__content">
+	<div class="notification__area">
+
+		
+
+		
+		
+		<div class="notification__heading__msg">
+			<h1><i class="fas fa-exclamation-triangle" style="color: gold;"></i>&nbsp; Warning:</h1>
+			<p>This site has not been fully developed yet and some areas may behave unresponsive or have issues. The pages About Me, Projects, and Contact Information are currently inaccessible.</p>
+		
 
 
-		<!- h1 means heading 1>
+		</div>
+<!-- The point of the aria label is to make visual elements have text associated for screen readers to have an understanding of the button-->
+		<div class="notification__close__button">
+			<p><button class="notification__btn" aria-label="Close the notification"><i class="far fa-times-circle"></i></button></p>
+		</div>
 
-					<h1> Hello, My Name is Thomas Hansknecht </h1>
-					<h2> Are you looking for a Software Developer? How about a Web Designer? Maybe, a User Interface designer? I am the person you are looking for. </h2>
+	</div>
+
+
+<!-- NOW WE ARE AT PAGE 1-->
+
+	<div class= "page1container">
+		<div class = "page1Text">
+		<h1 class= "page1heading">Hi There, I am Thomas Hansknecht</h1>
+		<p class= "page1sentance1">Are you looking for a Software Developer?</p>
+		<p class= "page1sentance2">How about a Web Designer?</p>
+		<p class= "page1sentance3">Maybe, a User Interface Designer?</p>
+		<p class= "page1sentance4"><strong>I am the person you are looking for</strong></p>
+	</div>
+		<div class ="pictureOfMe__container">
+			<img width="753px" height="942px" loading="lazy" src="images/MeAtStoneMountain_cropped.svg" alt="A lovely picture of me that was taken at stone mountain">
+
+		</div>
+	</div>
+
+
+	
+<!-- NOW WE ARE AT PAGE 2-->
+
+<!-- We want a extended description on the right of the screen when the user clicks Learn More-->
+	<div class="Page2__and__extended__Description" id="page2">
+
+
+		<div class="extended__Description__Project1">
+			<button class="Project__button__1" id="closeWindowBtn__Project1">Close window &nbsp;<i class="fa-fw fas fa-times-circle"></i></button>
+
+
+			<h1><strong>More About Air Traffic Controller Application</strong></h1>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p>A fully interactive application that allows users to create and view their tickets</p></li>
+				<li><p>The application stores and retrieves customers, tickets, and airports from different databases</p></li>
+				<li><p>The databases were made simple and used consistent formatting</p></li>
+				<li><p>Part of a Software Modeling and Design Semester Long Project</p></li>
+				<li><p>Created as a shared GitHub Project</p></li>
+				<li><p>Designed based on UML diagrams and GRASP Design patterns created by a team</p></li>
+			</ul>
+
+			<h2><strong>What was Learned</strong></h2>
+			<ul>
+
+				<li><p>Learned about creating menu objects and allowing interaction with them</p></li>
+				<li><p>Used custom Scanner classes to manage the transfer of data betwen the program and the databases</p></li>
+				<li><p>Created multiple threads to allow for asyncronous operations as well as unique visuals</p></li>
+				<li><p>Managed the development process and instructed team members on solutions</p></li>
+				<li><p>Handled and resolved merge conflicts between various git branches that were created</p></li>
+				<li><p>Used extensive debugging and error checking to find and test for issues with the logic</p></li>
+				<li><p>Used Exception handeling to prevent a user's invalid entries from corrupting the program</p></li>
+				<li><p>Implemented action listeners so the user can interact with objects</p></li>
+				<li><p>Made the experience unique to every user by gathering data on every customer</p></li>
+				<li><p>Used parsers for assigning format to date objects</p></li>
+			</ul>
+			<h2> 
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Air-Traffic-Controller-Application/archive/refs/heads/main.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+			</h2>
+
+		</div>
+
+		<div class="extended__Description__Project2">
+			<button class="Project__button__2" id="closeWindowBtn__Project2">Close window &nbsp;<i class="fa-fw fas fa-times-circle"></i></button>
+
+			<h1><strong>More About Mario With A Gun</strong></h1>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p>Was a project submitted for a hackathon competition.</p></li>
+				<li><p>Created with a group in Python using Pygame</p></li>
+			</ul>
+
+			<h2><strong>What was Learned</strong></h2>
+			<ul>
+				<li><p>Used Sprite sheets to animate the player and enemies</p></li>
+				<li><p>Learned more about Pygame and how you can use external platforms in conjunction with a programming language</p></li>
+				<li><p>Learned how to create logic for movement of player and develop in game collision physics for background obejcts and enemies</p></li>
+				<li><p>Worked with a team to complete the project</p></li>
+				<li><p>There was a limited deadline and the team was forced to make changes to cater to this deadline</p></li>
+				<li><p>Implemented external custom resources such as soundtracks and visuals</p></li>
+
+			</ul>
+			<h2> 
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Mario-With-A-Gun/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+			</h2>
+			
+
+
+		</div>
+
+		<div class="extended__Description__Project3">
+			<button class="Project__button__3" id="closeWindowBtn__Project3">Close window &nbsp;<i class="fa-fw fas fa-times-circle"></i></button>
+
+
+			<h1><strong>More About Word Search Game</strong></h1>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p>This project is an extension to the Boogle Word Search game created for a Java II Class</p></li>
+				
+			</ul>
+
+			<h2><strong>How the Project was Expanded and What was Learned</strong></h2>
+
+			<ul>
+				<li><p>Learned how to create graphical interfaces using Jframes</p></li>
+				<li><p>Used action listeners to make the program interactable</p></li>
+				<li><p>Used exception handeling to deal with invalid user entries</p></li>
+				<li><p>Used visuals and sound effects to make the experience complete</p></li>
+				<li><p>Made the values in the word search table customizable</p></li>
+				<li><p>Allowed the user to choose different table sizes as well as use different Lexicon listings</p></li>
+			</ul>
+
+			<h2><strong>What was Learned in the Original Class Project</strong></h2>
+
+			<ul>
+				<li><p>Used Lexicon dictionaries and stored the values into a Sorted Set of strings</p></li>
+				<li><p>Used a depth first search algorithm to search for valid words on the generated board</p></li>
+				<li><p>Used 2 dimensional arrays to create the board</p></li>
+				<li><p>Used various functions for checking what neighbors existed near the current position</p></li>
+				<li><p>Used a scoreboard to keep track of the users correct responses</p></li>
+
+			</ul>
+			<h2> 
+
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Word-Search-Game/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+			
+			</h2>
+
+
+
+		</div>
+	
+	
+
+		<div class= "page2container">
+			<h1 class="page2heading"> Some of my Favorite Projects</h1>
+
+			<div class="Projects">
+
+			<!-- This is for Project 1-->
+			<!-- Not the best to have heading 2 for the project name 
+				and description but it works when modifing the name and not the description. 
+				Our descriptions do have to have bold removed, however-->
+				<div class="Project__container">
+					<h2 class="Project__Name">Air Traffic Controller Application</h2>
+						<video class="Project__video" width="480" height="340" controls muted autoplay loop>
+						<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
+						Unfortunately your browser does not support the video tag
+						</video>
+						<h2 class="Project__Description"style="font-weight: normal"> JFrame application that allows new user and ticket creation as well as management of user and ticket data which is stored in several local databases.</h2>
+					<button class="Project__button__1">
+						<a class="remove__style" href="index.html#page2">Learn More</a></button>
 				</div>
-				<div class="main__img--container">
-					<img src="images/MeAtStoneMountain_cropped.svg" alt="" id="main__img">
+
+			<!-- This is for Project 2-->
+				<div class="Project__container">
+					<h2 class="Project__Name">Mario With A Gun</h2>
+					<!-- Using the autoplay will make the video start playing as soon as it loads-->
+					<!-- Stating muted will mute the video when it is loaded-->
+					<!-- Using controls gives media controls to the user on the website-->
+						<video class="Project__video" width="480" height="340" controls muted autoplay loop>
+						<source src="video/MarioWithGunsDemo_Trim.mp4" type="video/mp4">
+						Unfortunately your browser does not support the video tag
+						</video>
+						<h2 class="Project__Description" style="font-weight: normal"> A reimagining of the 1985 Super Mario Bros. The game incorporates guns and takes place in a nuclear apocalyptic setting.</h2>
+					<button class="Project__button__2">
+						<a class="remove__style" href="index.html#page2">Learn More</a></button>
 				</div>
+			<!-- This is for Project 3-->
+				<div class="Project__container">
+					<h2 class="Project__Name">Word Search Game</h2>
+					<video class="Project__video" width="480" height="340" controls muted autoplay loop >
+						<source src="video/JavaWordSearchEdit.mp4" type="video/mp4">
+						Unfortunately your browser does not support the video tag
+					</video>
+					
+					<h2 class="Project__Description"style="font-weight: normal"> Game where the player creates a board consisting of whatever letters that player wants. Then, the program locates any word combinations possible on the board. The job of the players is to find all of the words on the board. The players can check if they are right or not by inputting the word they see in the entry box</h2>
+					
+					<button class="Project__button__3">
+						<a class="remove__style" href="index.html#page2">Learn More</a></button>
+				</div>		
+			</div>
+			<p class= "page2footer"> More of my Projects Can be Found Under the Projects Page</p>
+				
+		</div>
+
+	</div>
+
+<!-- NOW WE ARE AT PAGE 3-->
+
+<div class = "page3container">
+
+	
+
+	<div class="page3TextTop">
+
+		<h1>Lets Connect With Each Other</h1>
+
+		<div class= "page3Words__And__illustration">
+
+		<!-- This might work once the website is live. Not sure Yet-->
+		<!-- We want a way for users of the site to easily be able to contact me-->
+			<form action="ghost34az@gmail.com" method="post" enctype="text/plain">
+				<label for="firstname">Your First name:</label>
+				<input class="inputBox" type="text" id="userFirst" name="userFirst"><br><br>
+				<label for="lastname">Your Last name:</label>
+				<input class="inputBox" type="text" id="userLast" name="userLast"><br><br>
+				<label for="email">Your Email Address:</label>
+				<input class="inputBox" type="email" id="userEmail" name="userEmail"><br><br>
+				<label for="comments">Ask Me Anything:</label>
+				<input class="inputBox" type="text" name="comment" size="50"><br><br>
+				<input class="submit__btn" type="submit" value="Submit">
+			</form>
+
+	
+			<!-- By using lazy loading of our ilustrations we speed up preformance of our site-->
+			<div class="page3__image__container">
+				<img width="951" height="428" loading = "lazy" src="images/team_goals_re_4a3t.svg" alt="An illustration explaining how we should unite together">
+
 			</div>
 
-		<!- Favorite Projects section>
-
-				<div class="projects__heading">
-
-					<h3> Check Out Some of my Favorite Projects </h3>
-
-				</div>
-
-				<div class="projects">
-
-						
-				<div class="project1__img--container">
-					<img src="images/MeAtStoneMountain_cropped.svg" alt="" id="main__img">
-				</div>
-
-				<div class="project2__img--container">
-					<img src="images/MeAtStoneMountain_cropped.svg" alt="" id="main__img">
-				</div>
-
-				<div class="project3__img--container">
-					<img src="images/MeAtStoneMountain_cropped.svg" alt="" id="main__img">
-				</div>
-
-				<div class="project4__img--container">
-					<img src="images/MeAtStoneMountain_cropped.svg" alt="" id="main__img">
-				</div>
-
-				</div>
 		</div>
 
+	</div>
 
 
-		<!We want to be able to acess our java script instructions>
-		<script src="app.js"></script>
-		<div class="dropdown">
-			<! The button will be called home because we are at the home page>
-			<button>Menu</button>
+<!-- This text will be our conluding remarks and explanation of where to find other content-->
+	<div class="Page3TextBottom">
+
+		
+		<h1> If you want to learn more about me, projects I have worked on, or more forms of communication visit my other pages</h1>
+		<div class="page3Words__And__illustration__bottom">
+
+			<div class="page3LearnMore__text">
+
+<!-- The &nbsp; Forces an extra space to become present-->
+<!-- I am being a little lazy here and just setting the colors for the bullet icons to the same colors I used in the navigation menu on desktop without doing anything to the css style sheet-->
+<!-- I dimmed the red address card icon becaues it appeared to bright on the page-->
+				<p> <a href="AboutMe.html"><i class=" fas fa-address-card fa-fw" style="color: rgba(255, 0, 0, 0.739)"></i></a> &nbsp;&nbsp; The About Me page details my education, goals, and career paths I am looking towards. There you will also find my resume as a download link</p>
+				<p> <a href="Projects.html"><i class=" fas fa-code fa-fw" style="color: rgb(0, 255, 0);"></i></a> &nbsp;&nbsp; More of my projects and the software contributions I have made are detailed under my Projects tab</p>
+				<p> <a href="ContactMe.html"><i class=" fas fa-phone-alt fa-fw" style="color: rgb(94, 8, 151);"></i></a> &nbsp;&nbsp;Different ways of contacting me such as email and phone are explained under my Contact Information Page</p>
+			</div>
+
+			<div class="page3__image__container">
+				<img width="802" height="591" loading = "lazy" src="images/researching_22gp.svg" alt="An illustration explaining how we should unite together">
+
+			</div>
 		</div>
-		<! We want to toggle states for our mobile menu>
-		<script
+		
+		</div>
+		<h2 class= "page3__ClosingRemarks"> Thank you for visiting my site. I hope we can communicate together soon</h2>
+
+	</div>
+
+
+<!-- Now we are at the footer-->
+
+<footer>
+<div class="footer__container">
+	<p class= "footer__text"><i class="fas fa-copyright fa-fw" style="color: black;"></i>2021Thomas,H. All rights reserved</p>
+
+</div>
+
+</footer>
+
+
+
+
+
+<!--Scripts for Navigation -->
+	<!-- We want to toggle states for our mobile menu -->
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.menuButton').click(function() {
+					$('.navbar').toggleClass('active')
+					$('.navbar__menu-mobile').toggleClass('active')
+					$('.notification__area').toggleClass('moveDown')
+					
+
+
+					
+
+				})
+			})
+
+		</script>
+
+<!-- Scripts for the notification area-->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.notification__btn').click(function() {
+				$('.notification__area').toggleClass('inactive')
+				
+
+
+				
+
+			})
+		})
+
+	</script>
+
+
+<!--Scripts for page 2-->
+	<!-- We want to display more info about a project when the user clicks the Learn More button -->
+	<script
 		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		  	<script type="text/javascript">
 		  		$(document).ready(function(){
-		  			$('button').click(function() {
-		  				$('.navbar').toggleClass('active')
-		  				$('h1').toggleClass('active')
+		  			$('.Project__button__1').click(function() {
+						$('.extended__Description__Project1').toggleClass('visible')
+		  				
+
+		  				
 
 		  			})
 		  		})
 
 		  	</script>
 
-	</body>
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.Project__button__2').click(function() {
+				$('.extended__Description__Project2').toggleClass('visible')
+					
+
+					
+
+				})
+			})
+
+		</script>
+	
+	<script
+		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		  	<script type="text/javascript">
+		  		$(document).ready(function(){
+		  			$('.Project__button__3').click(function() {
+						$('.extended__Description__Project3').toggleClass('visible')
+		  				
+
+		  				
+
+		  			})
+		  		})
+
+		</script>
 
 
-		
 
-</html>
+			  
+<!-- We want an intersection observer to monitor the page so we know when the user is looking at the projects. 
+				Afterwords we will play those projects-->
+<script src="javascript/observer.js"></script>
 
+
+</body>
 

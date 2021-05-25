@@ -1,786 +1,1355 @@
-/*
- * Thomas Hansknecht
- * tfh0007
- */
-
-
-/* The *{ seems to affect the entire webpage style */
-	*{
-		/* The box-sizing property defines how the width and height of an 
-		 * element are calculated: should they include padding and borders, or not. 
-		 * Border-box tells that the width and height properties (and min/max properties) 
-		 * includes content, padding and border */
-
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-
-
-
-	}
-
-	div .main{
-
-		/* This background is the main background of the entire page */
-		background-color: #141414;
-	}
-/* Default properties of all of the icons we are using */
-	.icon::before {
-		font-family: "Font Awesome 5 Free"; 
-		display: inline-block;
-    	font-style: normal;
-    	font-variant: normal;
-    	text-rendering: auto;
-    	-webkit-font-smoothing: antialiased;
-
-	}
-
-	/* Change the default setting for our menu object */
-		.navbar {
-			background: #E87722;
-			height:130px;
-		/* flex forces items to the same length, regardless of content */
-			display: flex;
-		/* justify-content property aligns the flexible container's items when 
-		 * the items do not use all available space on the main-axis (horizontally). */
-			justify-content: center;
-
-		/* Center the alignments for all the items of the flexible <div> element. */	
-			align-items: center;
-
-		/* 1 Rem is equivalent to about 16 pixels */
-		font-size: 1.8rem;
-
-		/* The element is positioned based on the user's scroll position */
-		position: sticky;
-
-		/* The top property affects the vertical position of a positioned 
-		 * element. This property has no effect on non-positioned elements. */
-		top: 0;
-		overflow: hidden; 
-
-		/* We want the menu to stay at top of screen regardless of what we are looking at 
-		 * The z-index property specifies the stack order of an element.*/
-		z-index: 999;	
-
-		/* This transition will occur when the size is switched from mobile to desktop */
-		transform-origin: top;
-				transform: perspective(1000px);
-				/* This transition will cause the transform animation to happen */
-				transition: all 0.9s ease;	
-
-		}
-
-	/* Change the default settings within the menu object */
-		.navbar__menu {
-			display: flex;
-			z-index: 1;
-			width: 100%;
-			padding: 0;
-			align-items: center;
-			list-style: none;
-			text-align: center;	
-		}
-
-	/* Change the default settings for the menu object links */
-		.navbar__links {
-			color: #fff;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			/* Gets rid of the underlines on each menu item */
-			text-decoration: none;
-
-			/* padding uses top, bottom, right, left. We only want to change right and left */
-			padding: 0 3rem;
-			/* Note this font only shows if it exists in the browser */
-			font-family: 'Algerian','sans-serif';
-			height: 100%;
-			width: 100%;
-			/* make the links more circular instead of square */
-			border-radius: 10px;
-			
+/* Changing the body color will set a default background color for the entire website 
+Unfortunately it also overlaps in other areas as well*/
+/* By setting the margin and height to max in the body we ensure that our div classes extend the entire screen */
+body {
+
+    margin:0px;
+    height:100%;
+
+    
+}
+
+/* This class will contain our custom warnning message container*/
+.notification__area {
+    margin-top: 24px;
+    
+
+    /* Because we are using fixed positioning setting right to 
+    0 makes the window appear as for to the right as possible */
+    right: 0px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 900px;
+    position: fixed;
+    background: transparent;
+    background-color: rgba(51, 50, 50, 0.794) ;
+    z-index: 999;
+    
+    opacity: 1;
+
+    
+    transition: transform 500ms ease-in-out;
+
+
+    
+
+    
+
+}
+
+/* This class will contain our custom warnning message after the message has been dismissed*/
+.notification__area.inactive {
+
+    
+    
+    transform: translateY(-1170px);
+    opacity: 0;
+    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
+
+
+}
+
+/* When the navbar opens on moblie our notification overlaps with the menu so lets fix this issue */
+
+    .notification__area.moveDown {
+
+        transform: translateY(580px);
+        transition: transform 400ms ease-in-out;
+
+    }
+
+
+/* This class will contain our custom warning message heading*/
+.notification__heading__msg h1 {
+
+    color: rgba(255, 255, 255, 0.719);
+    padding-left: 2ch;
+}
+
+/* This class will contain our custom warning message body*/
+.notification__heading__msg p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.575);
+    padding-left: 5ch;
+}
+/* This class will contain our custom warning close button container*/
+.notification__close__button {
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* This class will contain our custom warning close button item*/
+.notification__btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+
+
+/* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Using a high index value ensures that nothing will overlap with the header */
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+/*This navbar represents the container for our navbar */
+.navbar {
+    display: flex;   
+
+    /* The border for the navbar will extend to show everything contained within even when we use a transition to push content off screen
+so we need to remove the ugly border when the nav bar is inactive and reapply the border when navbar is active */
+    border: solid 1ch;
+
+    border-color: #02C294;
+    
+    
+    /*Applying this property will stack our navbar__container on top of our navbar__menu */
+    flex-direction: column;
+    /* Overflow must be hidden otherwise when we apply the transition 
+    to move items off screen those items will cause the window to be bigger 
+    than it should and thus the website will go off of the page. */
+    overflow: hidden;
+    flex-grow: 1;
+    
+    
+}
+
+/* This box contains our menu and logo */
+.navbar__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    display: flex;
+    /* Applying this property will space the logo and menu as far apart as possible */
+    justify-content: space-between;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightblue;  */
+    
+    /* Applying this property gives some space between the left of the screen and my logo */
+    padding-left: 1.5ch;
+    font-size: 1.4rem;
+    background-color: #02C294; 
+    
+    
+    
+    
+
+}
+
+/* This box is only the menu icom and menu text */
+.menuButton {
+  font-size: 2rem; 
+  background: none; 
+  border: none;
+  cursor: pointer;
+
+}
+
+/* In mobile we do not want the desktop middle menu to be active */
+.navbar__menu-middle-desktop {
+    display: none;
+}
+/* This box contains all of our links */
+.navbar__menu-mobile {
+
+    display: flex;
+    
+    
+    
+
+    position: absolute;
+    /* Since our position is absolute set right to 0 will make this object always touching the far right side of the div */
+    right:0;
+
+    /* Applying this property will stack our items on top of each other */
+    flex-direction: column;
+
+    /* Applying this property will move our items to the center. 
+    This only works when flex is column based */
+    align-items: center;
+
+
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightpink;
+    */
+    list-style: none;
+    font-size: 4.5rem;
+    /* This property will decrease the space between the middle links and the right links */
+    margin-bottom: 0px;
+     /* This property will decrease the space between the logo/menu links and middle links */
+     margin-top: 0px;
+       
+    z-index: 0;
+
+    transform: translateY(-1170px);
+    transition: transform 400ms ease-in-out, background 650ms ease-in-out, max-height 0ms ease-in-out 600ms;
+
+
+ 
+}
+
+/* Check if backdrop is supported and if it is make the background transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur2em)) {
+    .navbar__menu-mobile {
+      background-color: rgba(0, 0, 0, 0.068);
+      -webkit-backdrop-filter: blur(2em);
+      backdrop-filter: blur(2em);
+    }
+  }
+/* Lets create a state for calling .navbar__menu-mobile once the menu button is pressed */
+.navbar__menu-mobile.active {
+    max-height: 1000px;
+
+    transform: translateY(08px);
+ /*Lets blur and dim the content behind our menu when it is active */
+ background: transparent;
+ border-radius: 20px;
+    
+ /* We need to use a fail safe here incase our current browser does not support backdrop effect */
+ background-color: rgba(0, 0, 0, 0.726);
+   
+     
+    
+}
+
+
+
+
+/* This will be a line below our navbar__menu-middle*/
+.navbar__menu-mobile::after {
+    content: "";
+    outline: dashed gray;
+    width: 90%;  
+
+}
+/* This box contains the links that should be centered on the screen */
+.navbar__item-center {
+    list-style: none;
+    padding: 0;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightgreen;
+    */
+
+
+}
+
+/* This box contains the links that should be on the right of the screen */
+/*Borders for testing can be removed now
+.navbar__item-right {
+     
+    border: solid 1ch;
+    border-color: lightgrey;
+
+}
+*/
+
+/* This box contains the icons that should be on the right of the screen. 
+For Mobile this will be hidden */
+.navbar__menu-right-desktop {
+    
+
+    list-style: none;
+    /*Borders for testing can be removed now
+
+    border: solid 1ch;
+    border-color: lightgreen;
+    */
+    /* The links are still clickable even though they are invisible so we need to fix this */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* We want to disable these icons while we are using the mobile version */
+    display: none;
+}
+
+/* navbar links is how we can remove the style of our links */
+.navbar__links {
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    padding: 1ch;
+
+}
+
+/* The menu links are very difficult to see on mobile so we will make them white */
+.fas {
+    color: white;
+}
+.fab {
+    color: white;
+}
+
+/* Now that the mobile version of navigation is finished we need to build the desktop version */
+/* First we will load the middle icons and leave the right icons in the menu */
+
+@media screen and (min-width: 1293px) {
+
+/*Our notification message appears a little bit too high in the desktop version so lets fix this */
+.notification__area {
+    margin-top: 75px;
+    right: 20px;
+}
+
+ /*This navbar represents the container for our navbar */
+.navbar {
+    display: flex;   
+
+    /*We need to make our navigation bar smaller */
+   
+    background-color: #02C294;
+    
+    /*Applying this property will put  our navbar__container to the left of our navbar__menu */
+    flex-direction: row;
+    /* Overflow must be hidden otherwise when we apply the transition 
+    to move items off screen those items will cause the window to be bigger 
+    than it should and thus the website will go off of the page. */
+    overflow: hidden;
+    /*This property will make our right and left side hug the edge while the middle gets bigger */
+    justify-content: space-between;
+    
+}   
+
+/* This box contains our menu and logo */
+.navbar__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    display: flex;
+    /* Applying this property will space the logo and menu as far apart as possible */
+
+    
+    /* Applying this property gives some space between the left of the screen and my logo */
+    padding-left: 4ch;
+    padding-right: 4ch;
+    
+    font-size: 0.8rem; 
+    /* Applying this property puts our logo in the center of the Y main axis  */
+    align-items: center; 
+
+}
+
+/* This box is only the menu icom and menu text */
+.menuButton {
+    /* We need to disable the menu */
+    display: none;
+  
+  }
+
+  /* In desktop version we do not want the mobile menu to be visible */
+  .navbar__menu-mobile {
+      display: none;
+  }
+/* This class contains the middle links in the nav bar and the space that extends to the right and left
+of the navbar menu middle desktop */
+  .navbar__menu-middle-container {
+    display: flex;
+    justify-content: center;
+    /*THis flex grow makes the middle navigation menu way more centered on desktop */
+    flex-grow: 10;
+  }
+
+/* This box contains all of our middle links */
+.navbar__menu-middle-desktop {
+
+        /* We need to make our content visible even if it was previously hidden */
+
+    display: flex;
+
+    
+
+    /* This property makes our content inside not take up any space to the left */
+
+    font-size: 1.2rem; 
+
+   
+}
+
+
+
+
+
+/* This box contains the icons that should be on the right of the screen. 
+For Desktop this will be visible */
+.navbar__menu-right-desktop {
+    list-style: none;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightgreen;
+
+    */
+    /* The links are still clickable even though they are invisible so we need to fix this */
+
+    /* We want to disable these icons while we are using the mobile version */
+    display: flex;
+    padding-top: 1ch;
+    padding-left: 0px;
+}
+
+/* NOW WE NEED TO GET RID OF THE DASHED LINES THAT WERE DIVIDERS 
+IN THE MOBILE VERSION */
+
+/* This will be a line above our navbar-menu-right*/
+.navbar__menu-right-mobile::before {
+    outline: 0px;
+    outline: none; 
+    display: none;
+
+}
+
+/* This will be a line below our navbar__menu-middle that we put in the Mobile version of the site.
+NOTE: MAKING THE OUTLINE NONE DOES NOT GET RID OF IT. TOOK MY ABOUT 2 HOURS TO FIND THIS MISTAKE... A FAIR WARNING*/
+.navbar__menu-mobile::after {
+    outline: 0px;
+    outline: none;
+    display: none;
+
+}
+
+/* Now our icons are to small so we need to make them bigger. 
+But the right icons need to be bigger than the middle icons 
+so we can not simply change all of the icons at once*/
+
+.fa-home {
+    font-size: 1.8rem;
+    color: orangered;
+
+}
+
+
+.fa-address-card {
+    font-size: 1.8rem; 
+    color: red;
+}
+
+.fa-code {
+    font-size: 1.8rem; 
+    color: rgb(0, 255, 0);
+}
+.fa-phone-alt {
+    font-size: 1.8rem;
+    color: rgb(94, 8, 151);
+}
+
+
+/* Since fas affects one of our right icons we need to overide this with a bigger font size */
+.fa-handshake {
+    font-size: 3.8rem;
+    color: red;
+
+
+}
+
+
+.fa-linkedin-in {
+    color: white;
+    background: #0077B5;
+    border-radius: 18px;
+    font-size: 3.8rem;
+}
+
+.fa-github {
+    font-size: 3.8rem;
+    color: black;
+}
+
+
+
+}
+/* When the navigation bar expands it gets slightly smaller so our notification message appears a bit lower than it should.
+So lets fix this issue */
+@media screen and (min-width:1500px) {
+
+    .notification__area {
+        margin-top: 38px;
+    }
+
+
+}
+
+
+/* Now we can move on to the first page main content */
+
+/* This class contains the entirety of the content found in page 1 */
+.page1container {
+
+    /*Borders for testing can be removed now
+        border: solid black 8px;
+    */
+
+
+    /* Lets add a slow fading background to experiment with 
+    background-image: linear-gradient(90deg,rgba(43, 141, 206, 0.63),rgb(230, 210, 173),lightpink,rgba(204, 68, 68, 0.705),rgb(210, 146, 221));
+    background-size: 400%;
+    animation: page1Bg__animation 1s infinite alternative; */
+
+    /*Lets have this background as a fail safe incase the current browser, such as safari, does not support a conic-gradient */
+    background: linear-gradient(rgba(251, 0, 255, 0.596),rgba(2, 194, 149, 0.623));
+
+    /*THis is the background we made in our figma template */
+    background:conic-gradient(from 180deg at 50% 50%, 
+    rgba(250, 0, 255, 0.22) -14.5deg, 
+    rgba(2, 194, 148, 0.47) 0.34deg, 
+    rgba(1, 141, 201, 0.456406) 89.05deg, 
+    rgba(112, 0, 255, 0.57) 200.63deg, 
+    rgba(250, 0, 255, 0.22) 345.5deg, 
+    rgba(2, 194, 148, 0.47) 360.34deg);
+
+    margin-top: 6.4rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+}
+
+
+
+/*We need to set the actual animation for our background on page 1 
+@keyframes page1Bg__animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+*/
+
+/* This class contains all of the text that will be on the first page */
+.page1Text {
+    /* We want the text here to be both in a column and justified to the center */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    /*Borders for testing can be removed now
+    border: solid red 6px;
+    */
+    
+    
+    
+}
+/* This class is the paragraph page 1 text that says "Hi There, I am Thomas Hansknecht" */
+.page1heading {
+
+     /*Borders for testing can be removed now
+    border: solid pink 4px; 
+    */
+
+
+    color: #303079;
+    font-size: 2.2rem;
+    padding-top: 6px;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    
+}
+/* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+.page1sentance1 {
+
+     /*Borders for testing can be removed now
+    border: solid darkgreen 4px;
+    */
+
+
+    color: #2F2D2D;
+    font-size: 1.4rem; 
+    margin-top: -1.1ch;
+}
+/* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+.page1sentance2 {
+
+     /*Borders for testing can be removed now
+    border: solid darkblue 4px; 
+    */
+
+    color: #2F2D2D;
+    font-size: 1.4rem;
+    margin-top: -1.1ch;
+}
+/* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+.page1sentance3 {
+
+     /*Borders for testing can be removed now
+    border: solid darkorange 4px; 
+    */
+    
+    color: #2F2D2D;
+    font-size: 1.4rem;
+    margin-top: -1.1ch;
+}
+/* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+.page1sentance4 {
+
+     /*Borders for testing can be removed now
+    border: solid yellowgreen 4px; 
+    */
+
+    color: #c01f1f;
+    font-size: 1.7rem;
+    margin-top: -1.1ch;
+}
+.pictureOfMe__container {
+
+     /*Borders for testing can be removed now
+    border: solid cyan 6px;
+
+    */
+    
+    /* On mobile the picture of me is a little too big so we will scale it down a bit */
+    
+    transform: scale(0.7, 0.7);
+			-ms-transform: scale(0.7, 0.7);
+			-webkit-transform: scale(0.7, 0.7);
+    /* On mobile the picture of me becomes to low after the scale transformation so we need to move the picture up slightly in mobile */
+    margin-top: -8.96rem;
+
+}
+
+
+    
+
+
+
+
+
+@media screen and (min-width: 1293px) {
+
+    /* The desktop version navbar is slightly smaller in height 
+    so the margin-top of page 1 will be slightly less in desktop version */
+    .page1container {
+        margin-top: 4.2rem;
+        /* On Destop the page does not extend below the picture of me so lets extend it further so lets extend it */
+        padding-top: 4.96rem;
+        padding-bottom: 4.96rem;
+    }
+
+    .pictureOfMe__container {
+        /*Borders for testing can be removed now
+        border: solid cyan 6px;
+
+        */
+        /* On Desktop the picture of me should be bigger */
+        transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -webkit-transform: scale(1, 1);
+        /* Once the picture is transformed back to normal size our previous margin-top that applied to mobile 
+        becomes inaccurate and we need to fix it */
+        margin-top: 0;
+
+        
+    }
+    /*The font size on desktop becomes too small so lets make it bigger in all areas */
+    /* The page 1 heading text should be more towards to top of the picture in desktop version */
+    .page1heading {
+
+       
+        margin-top: -.1rem;
+        font-size: 3.5rem;
+    }
+/* We want the gap between the heading sentance and paragraph underneath to increase after the display
+     width increases to a certain size */
+    @media screen and (min-width: 1741px) {
+        .page1heading {
+        padding-bottom: 5ch;
+
+        }
+
+/* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+    .page1sentance1 {
+
+        font-size: 2.6rem; 
+
+    }
+    /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+    .page1sentance2 {
+
+        font-size: 2.6rem;
+
+}
+    /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+    .page1sentance3 {
+
+        font-size: 2.6rem;
+
+}
+    /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+    .page1sentance4 {
+
+        font-size: 2.9rem;
+
+
+    }
+
+}
+}   
+
+/* Now we are moving on to Page 2 */
+
+.page2container {
+
+     /*Borders for testing can be removed now
+    border: solid 8px; 
+    */
+
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(252.44deg, 
+    #FFE600 0%, 
+    rgba(255, 186, 53, 0.65) 16.67%, 
+    rgba(209, 21, 66, 0.807292) 100%);
+    /* By using flex grow we ensure that the page 2 container takes up all space not being used by another container.
+    Without this option the background would stop extending since we have 2 containers in our div which are .page2container and .extended_Description */
+    flex-grow: 1;
+
+    
+
+}
+
+.page2heading {
+    display: flex;
+    justify-content: center;
+    font-size: 2.6rem;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    color: #3633C9;
+
+     /*Borders for testing can be removed now
+    border: solid lightblue 4px;
+    */
+}
+
+/* This class contains the titles for the 3 diffrent projects */
+.Project__Name {
+    color: #353541;
+    padding-left: 2ch;
+    padding-right: 2ch;
+
+}
+
+.Projects {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+     /*Borders for testing can be removed now
+    border: solid pink 4px;
+    */
+
+
+
+}
+
+.Project__container {
+    display: flex;
+    flex-direction: column;
+
+     /*Borders for testing can be removed now
+    border: solid orange 4px;
+    */
+
+    align-items: center;
+    padding-bottom: 4ch;
+
+
+}
+/* The project buttons are the buttons that say learn more under each project */
+.Project__button__1 {
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.Project__button__2 {
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.Project__button__3 {
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+
+.page2footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*The video is too below the text so lets fix this */
+.Project__video {
+    margin-top: -5ch;
+
+}
+/* This class represents the description of each project under every video */
+.Project__Description {
+    /*Borders for testing can be removed now
+    border: solid green 4px;
+    */
+    display: flex;
+    justify-content: space-around;
+    max-width: 500px;
+    font-size: 1.3rem;
+    /* The space above is a little bit too much so lets decrease the spacing a little */
+    margin-top: -0.1ch; 
+    padding-left: 2ch;
+    padding-right: 2ch;
+
+    
+
+}
+
+/* This class contains the download source buttons which can be found in the extended description */
+.DownloadButton {
+
+    font-size: 1.4rem;
+    list-style: none;
+    text-decoration: none;
+    background: red;
+    border-radius: 20px;
+    padding: 6px;
+    color: white;
+}
+
+/* The p tag within the Page2__and__extended__Description is all of the statements in the extended description */
+.Page2__and__extended__Description p {
+    font-size: 1.2rem;
+}
+
+/*When a Project learn more button is not pressed we do not want to show any extra details */
+.extended__Description__Project1 {
+    display: none;
+    min-width: 80%;
+    
+}
+.extended__Description__Project2 {
+    display: none;
+    min-width: 80%;
+    
+}
+.extended__Description__Project3 {
+    display: none;
+    min-width: 80%;
+    
+}
+
+/* This class holds the contents of both the extended Decription and Page 2 */
+.Page2__and__extended__Description {
+    display: flex;
+    flex-direction: row-reverse;
+
+    
+    
+
+}
+
+/*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
+.extended__Description__Project1.visible {
+display: flex;
+padding-top: 100px;
+flex-direction: column;
+
+padding-left: 2ch;
+padding-right: 2ch;
+/* We want the items to stay in the center of the container */
+align-items: center;
+flex-wrap: wrap;
+
+flex-grow: 3;
+/* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+This property will need to be modified for desktop and tablet environments */
+
+background: tan;
+
+}
+.extended__Description__Project2.visible {
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+    flex-wrap: wrap;
+
+    flex-grow: 3;    
+    background: tan;
+    
+    }
+
+.extended__Description__Project3.visible {
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+    flex-wrap: wrap;
+
+    flex-grow: 3;    
+    background: tan;
+        
+    }
+
+
+/* We want to make the Extended descriptions take up significatly less space when the screen is big enough */
+@media screen and (min-width: 850px) {
+    .extended__Description__Project1.visible {
+        min-width: 20%;
+    }
+    .extended__Description__Project2.visible {
+        min-width: 20%;
+    }
+    .extended__Description__Project3.visible {
+        min-width: 20%;
+    }
+ 
+}
+
+
+/* This class controls the text for the project buttons */
+.remove__style {
+text-decoration: none;
+color: #D61010;
+}
+
+/* This class contains the page 2 footer text which says "More of my 
+Projects Can be Found Under the Projects Page" */
+.page2footer {
+    padding-top: 2.5ch;
+    padding-bottom: 2.5ch;
+    font-size: 1.4rem;
+}
+
+/* Now we need to adjust font and video sizes for a desktop screen */
+@media screen and (min-width: 1293px) { 
+    .page2heading {
+        font-size: 3.8rem;
+    }
+
+    .Project__Name {
+        font-size: 2.4rem;
+    }
+/* THis class controls the project videos we have */
+    .Project__video {
+        width: 720px; 
+        height: 510px;
+
+
+    }
+
+/* This class represents the description of each project under every video */
+/* On desktop the text here is too small and the max width is too small so lets increase both */
+.Project__Description {
+
+    max-width: 760px;
+    font-size: 1.9rem;
+
+    /* We want to give users as much space as possible for the flex container not to wrap */
+    padding-left: 0;
+    padding-right: 0;
+
+    
+
+}
+
+
+    /* This class contains the page 2 footer text which says "More of my
+        Projects Can be Found Under the Projects Page" */
+    .page2footer {
+        font-size: 1.9rem;
+        padding-top: 5ch;
+        padding-bottom: 5ch;
+    }
+
+
+}
+/*Becasue of how our solution operates the buttons will not line up properly on the screen when the project descriptions are not the same length.
+One fix is to move the two buttons down since the last description is longer than the other two descriptions. This issue currently only happens when 
+all three descriptions are visible on the same row so lets fix this formatting. */
+
+/* Another issue happens when three coloumns of projects are visible which is that the top padding of the
+extended__Description__Project1.visible becomes to large so we need to decrease that space */
+
+@media screen and (min-width: 2297px) { 
+    /* The project buttons are the buttons that say learn more under each project */
+    .Project__button__1 {
+        margin-top: 7.4ch;
+    }
+    .Project__button__2 {
+        margin-top: 7.4ch;
+    }
+    
+    .extended__Description__Project1.visible {
+        padding-top: 0px;
+    }
+
+    .extended__Description__Project2.visible {
+        padding-top: 0px;
+    }
+
+    .extended__Description__Project3.visible {
+         padding-top: 105px;
+    }
+
+}
+
+/* Lets edit the style of page 3 now */
+
+.page3container {
+
+    /*Borders for testing can be removed now
+    border: solid 8px;
+    */
+    display: flex;
+    flex-direction: column;
+    background: -moz-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    background: linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+}
+
+/* This class contains the heading text of the page */
+.page3TextTop h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+
+    color: #303079;
+}
+
+/* THis class contains the user form, heading, and ilustration */
+
+/* THis class contains the email form and illistration */
+.page3Words__And__illustration {
+
+    /*Borders for testing can be removed now
+    border: solid pink 8px;
+    */
+    
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    /* On desktop there is a brief size where the ilustration goes off the page by setting overflow as hidden 
+    for page 3 we ensure that no scrollbar becomes present when the illustration gets slightly clipped */
+    overflow-x: hidden;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+/* THis class contains the email form*/
+.page3Words__And__illustration form {
+
+    /*Borders for testing can be removed now
+    border: solid gray 8px;
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    font-size: 1.5rem;
+}
+/* This class contains all of the form input boxes */
+.inputBox {
+    background: white;
+    color: white;
+    background: transparent;
+    border: solid black 4px;
+    border-radius: 20px;
+    
+    font-size: 2rem;
+    max-width: 400px;
+}
+/* This class contains the submit button on the user form */
+.submit__btn {
+    display: inline-block;
+    color: black;
+    font-size: 1.4rem;
+    background: rgb(146, 135, 250);
+    padding: 1ch 1ch;
+    border: solid tan 5px;
+    border-radius: 20px;
+    margin: 0 100px;
+    cursor: pointer;
+    
+
+}
+
+/* THis class contains the further research and ilustration */
+.page3Words__And__illustration__bottom {
+
+    /*Borders for testing can be removed now
+    border: solid pink 8px;
+    */
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+    flex-wrap: wrap;
+    /* On desktop there is a brief size where the ilustration goes off the page by setting overflow as hidden 
+    for page 3 we ensure that no scrollbar becomes present when the illustration gets slightly clipped */
+    overflow-x: hidden;
+    justify-content: space-around;
+    
+}
+
+
+.page3__image__container {
+
+    /*Borders for testing can be removed now
+    border: solid green 8px;
+    */
+
+    
+    margin-left: -100px;
+    margin-right: -100px;
+    
+    
+    
+    
+    /* On mobile the illustration is too big so we will scale it down a bit */
+    transform: scale(0.55, 0.55);
+			-ms-transform: scale(0.55, 0.55);
+			-webkit-transform: scale(0.55, 0.55);
+    
+
+}
+
+
+
+/* This class contains the paragraph text at the bottom of page 3 */
+.Page3TextBottom {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    
+    
+
+}
+
+/* This class contains the heading text at the bottom of page 3 */
+.Page3TextBottom h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #303079;
+    padding-left: 2ch;
+    padding-right: 2ch;
+
+}
+
+.Page3TextBottom p {
+
+    display: flex;
+    justify-content: center;   
+    
+    
+    font-size: 1.3rem;
+}
+/* This class contains the Learn more about me paragraph text */
+.page3LearnMore__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /*Borders for testing can be removed now
+    border: solid cyan 4px;
+    */
+    margin-right: 0px;
+    max-width: 560px;
+}
+
+/* THis class contains the Thank you message at the very bottom of page 3 */
+.page3__ClosingRemarks{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    padding-left: 2ch;
+    padding-right: 2ch;
+}
+
+/* This class contains the final thank you statement at the bottom of page 3 */
+.page3container h2 {
+    color: #1f187c;
+    font-size: 1.6rem;
+}
+
+
+/* This class contains the footer which will be at the very bottom of every page */
+
+footer {
+
+    background: hsl(155, 60%, 42%);
+    padding: 1ch;
+    color: white;
+    font-size: 1.2rem;
+
+}
+
+
+/* Now lets adjust the size of everything on page 3 and footer to be bigger on desktop version */
+
+@media screen and (min-width: 1293px) {
+
+
+    
+    /* This class contains the heading text of the page */
+    .page3TextTop h1 {
+        font-size: 3.2rem;
+        /* The spacing on Desktop above and below the Page3Top heading is too small so lets increase the spacing here 
+    on desktop */
+        margin-top: 5ch;
+        margin-bottom: 3ch;
+
+    }
+
+    /* This class contains all of the form input boxes */
+    .inputBox {
+    
+        font-size: 2rem;
+        max-width: 500px;
+    }
+
+    /* This class contains the submit button on the user form */
+    .submit__btn {
+
+    font-size: 1.9rem;
+    margin: 0 150px;
+
+    
+
+    }
+
+    .page3Words__And__illustration form {
+        font-size: 1.9rem;
+
+    }
+
+
+    /* The spacing on Desktop above the Page3Bottom is too small so lets increase the spacing here 
+    on desktop */
+
+    .Page3TextBottom {
+        margin: 5ch 0;
+    }
+    /* This class contains the heading text at the bottom of page 3 */
+    .Page3TextBottom h1 {
+
+        /* The spacing on Desktop below the Page3Bottom heading is too small so lets increase the spacing here 
+    on desktop */
+        margin-bottom: 5ch;
+        font-size: 2.2rem;
+    }
+
+/* This class contains the paragraph text at the bottom of page 3 */
+    .Page3TextBottom p {
+
+        font-size: 1.9rem;
+        margin-left: 70px;
+        padding-right: 70px;
+    }
+
+    /* This class contains the final thank you statement at the bottom of page 3 */
+    .page3container h2 {
+    font-size: 1.8rem;
+}
+
+
+   
+
+    .page3__image__container {
+
+        transform: scale(1, 1);
+			-ms-transform: scale(1, 1);
+			-webkit-transform: scale(1, 1);
+            
+
+    }
+    
+
+}
+
+/*The learn more text starts to look a bit squished on a big screen so lets fix this */
+@media screen and (min-width: 1500px) {
+    
+    /* This class contains the paragraph text at the bottom of page 3 */
+    .Page3TextBottom p {
+
+        font-size: 1.9rem;
+        margin-left: -5%;
+        margin-right: -5%;
+        padding-right: 0px;
+
+    }
+}
+
+    /*The learn more text starts to look a bit squished on a big screen so lets fix this */
+@media screen and (min-width: 1700px) {
+    
+    /* This class contains the paragraph text at the bottom of page 3 */
+    .Page3TextBottom p {
+
+        margin-left: -20%;
+        margin-right: -20%;
+
+
+    }
+    
+}
 
-		}
-		/* Creates a hover effect when the cursor hovers over a menu item */
-		.navbar__links:hover {
-			background: #000080;
-			transition: all 0.2s ease;
 
-			padding: 10 3rem;
 
-		}
 
-		/* We want an effect that lets us know we are currently at the home screen */
-		.navbar__item1 {
-			text-decoration: solid underline 4px;
-		}
-
-
-		/*We want the drop down menu to become invisible when not viewing the mobile version of the site */
-		.dropdown
-		{
-
-			opacity: 0;
-		}
-
-		/* Create a home icon */
-		.navbar__item1::before {
-			
-			font-weight: 900; 
-			content: "\f015";
-			
-
-		}
-
-		/* Create a user icon */
-		.navbar__item2::before {
-			/* Font weight can be used to adjust which icon is used from the selection */
-			font-weight: 900; 
-			content: "\f007";
-		}
-
-		/* Create a code icon */
-		.navbar__item3::before {
-			/* Font weight can be used to adjust which icon is used from the selection */
-			font-weight: 900; 
-			content: "\f1c9";
-		}
 
-		/* Create a contact me icon */
-		.navbar__item4::before {
-			/* Font weight can be used to adjust which icon is used from the selection */
-			font-weight: 900; 
-			content: "\f095";
-		}		
 
-		/* We want to trigger this when we load the second page */
-		.navbar.scrolledDown {
-			background: #cc00ff;
-			color: tomato;
 
 
-		}
-
-
-		/* We are changing the properties for heading 1 while we are looking at desktop version */
-		.main h1 {
-			margin-top: 0px;
-			/* Change to text color of heading 1 to red */
-			color: red;
-			margin-bottom;
-			font-style: 'Arial','sans-serif';
-			font-size: 2.7rem;
-
-		}
-
-
-
-		
-		
-		/* Make a different layout for mobile users with a small screen *
-		 * First set a max display size to have the mobile version of the site */
-		@media screen and (max-width: 860px) {
-
-
-			.navbar {
-
-				
-				padding: 0;
-				display: flex;
-				/* This height adjusts the size of the entire dropdown menu */
-				height: 0px;
-				z-index: 1;
-				font-size: 2.5rem;
-				overflow: hidden;
-
-				/* Make opacity 0 to make the navbar invisible */
-
-
-				/* This creates an outward box closing transition */
-				
-				transform-origin: top;
-				transform: perspective(1000px) rotateX(-90deg);
-				/* This transition will cause the transform animation to happen */
-				transition: all 0.9s ease;
-				
-
-		}
-			.navbar__menu {
-
-				display: flex;
-				/* auto overflow means If overflow is clipped, a scroll-bar should be added to see the rest of the content */
-				/* The height here adjusts the pulldown menu box and where it starts on the screen */
-				height: 440px;
-				z-index: 1;
-				width: 100%;
-				padding: .5em;
-				
-				
-				display: inline-block;
-
-				
-			}
-		
-
-		/* Set unique setting for our menu object given we are using mobile version */
-			.navbar__links {
-
-				display: flex;
-				z-index: 1;
-
-				width: 100%;
-				/* This height adjust the vertical spacing of the items in the menu */
-				height: 80px;
-				
-				padding: 0;
-
-				
-				
-
-				display: block;
-
-				
-				text-align: center;
-				text-decoration: none;
-
-			
-
-				/* vh means view port height */
-
-
-			}
-
-			
-
-			/* We need a seprate state to transition the menu objects into becoming visible */
-			.navbar.active
-			{
-				height: 625px;
-				z-index: 999;
-
-				transform: perspective(1000px) rotateX(0deg);
-			}
-
-			/* We need a seprate state to transition the items under the menu into moving the right amount  down*/
-			h1.active {
-				margin-top: 0px;
-				transition: all 0.3s ease;
-				
-			}
-
-
-
-			/* Lets make a mobile drop down menu */
-			.dropdown
-			{
-
-				display: block;
-
-				opacity: 100;
-
-				position: fixed;
-				width: 100%;
-				top: 0px;
-				left:0;
-			/* flex forces items to the same length, regardless of content */
-				display: flex;
-		
-
-			/* We want the menu to stay at top of screen regardless of what we are looking at 
-			 * The z-index property specifies the stack order of an element.*/
-			z-index: 999;	
-
-			
-			}
-
-			button
-			{
-
-				align-items: center;
-				list-style: none;
-				text-align: center;	
-				z-index: 999;
-				top: 0px;
-				color: #fff;
-				background: #E87722;
-				width: 100%;
-				height: 90px;
-			/* Note this font only shows if it exists in the browser */
-				font-family: 'Algerian','sans-serif';
-				width: 100%;
-			/* 1 Rem is equivalent to about 16 pixels */
-				font-size: 3.4rem;
-				border: none;
-			/* Make a cursor icon when the user hovers the mouse over the button */
-				cursor: pointer;
-
-				/* This creates an outward box closing transition */
-				
-				transform-origin: top;
-				transform: perspective(5000px);
-				/* This transition will cause the transform animation to happen */
-				transition: all 0.5s ease;	
-
-
-			}
-
-			/* Creates a hover effect when the cursor hovers over a menu item */
-		button:hover {
-			background: #000080;
-			/* color changes the color of the actual text within the button */
-			transition: all 0.2s ease;
-
-			padding: 10 3rem;
-
-		}
-
-		.navbar__links {
-
-		opacity: 100;
-			
-
-		}
-
-	/* We are changing the properties for heading 1 while we are looking at mobile version */
-	.main h1 {
-		margin-top: 90px;
-		/* Change to text color of heading 1 to red */
-		color: red;
-		margin-bottom;
-		font-style: 'Arial','sans-serif';
-		font-size: 2.7rem;
-		z-index: 10;
-	}
-			
-					
-		}
-
-		/* Style for the main area with the picture of me */
-
-
-		.main {
-			background-color: #141414;
-			padding: 0 20rem 0 0;
-			z-index: 10;
-
-		}
-		.main__container {
-		
-		display: grid;
-		z-index: 10;
-		/* we want the space to the right and left as well as top and bottom to be the same */
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		justify-self: center;
-		/* background-image: linear-gradient(#43cea2 , #185a9d); */
-		
-		margin: 0 auto;
-		/* the height specifies how much of the page should be taken up by this section */
-		height: 90vh;
-		background-color: #141414;
-		
-		z-index: 1;
-		width: 100%
-		max-width: 1300px;
-		padding: 0 100px;
-		
-		
-		}
-		/* Change the style for the h1 text */
-		.main__content h1{
-
-			font-size: 3.9rem;
-			z-index: 10;
-			background-color: #ff8177;
-			background-image: linear-gradient(#43cea2 , #185a9d);
-			-webkit-background-clip: text;
-			-moz-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			-moz-text-fill-color: transparent;
-
-		}
-
-		/* Change the style for the h2 text */
-		.main__content h2{
-
-			font-size: 2rem;
-			background-color: #ff8177;
-			background-image: linear-gradient(#c33764 , #1d2671);
-			-webkit-background-clip: text;
-			-moz-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			-moz-text-fill-color: transparent;
-			overflow: hidden;
-			z-index: 10;
-
-		}
-
-		.main__img--container {
-
-			
-			padding: 100px;
-			text-align: center;
-			object-fit: cover;
-			z-index: 10;
-
-		}
-
-
-		/* Favorite projects styling */
-
-
-		.projects__heading {
-
-			display: grid;
-			grid-template-columns: auto;
-			justify-content: space-around;
-			text-align: center
-			background-color: #ff8177;
-			background-image: linear-gradient(to right, #00c9ff 0%,
-				#92fe9d 100%);
-
-
-			font-size: 3.5rem;
-			-webkit-background-clip: text;
-			-moz-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			-moz-text-fill-color: transparent;
-
-
-		}
-		.projects {
-			padding: 0 0 50px 50px;
-			background: #141414;
-			display:grid;
-			grid-template-columns: 3fr 3fr;
-			
-			align-items:center;
-			height: 160vh;
-		}
-
-		
-
-
-
-
-
-		
-
-		/* Large Mobile support for the cover page */
-
-	@media screen and (max-width: 1300px) {
-
-
-		.main {
-
-		}
-		.main__container {
-			grid-template-columns: 1fr;
-			margin: 0 0 0 0;
-			padding: 0;
-			height: 100vh;
-
-		}
-
-	/* Change the style for the h1 text */
-		.main__content h1{
-
-			
-			padding-right: 100px;
-			padding-left: 100px;
-
-		}
-
-
-		.main__content h2{
-
-			padding-right: 100px;
-			padding-left: 100px;
-
-		}
-
-
-
-		.main__img--container {
-
-			
-			padding: 0px;
-			text-align: center;
-			transform: scale(0.8, 0.8);
-			-ms-transform: scale(0.8, 0.8);
-			-webkit-transform: scale(0.8, 0.8);
-
-		}
-		
-	}
-
-	/* Small Mobile support for the cover page */
-
-	@media screen and (max-width: 700px) {
-
-
-		.navbar {
-		overflow: visible;
-
-		}
-		.main {
-
-			padding: 0;
-			overflow: visible;
-
-
-		}
-		.main__container {
-			grid-template-columns: 1fr;
-			margin: 0 0 0 0;
-			padding: 0;
-			height: 100vh;
-
-		}
-
-	/* Change the style for the h1 text */
-		.main__content h1{
-
-			
-			padding-right: 100px;
-			padding-left: 100px;
-			transform: scale(0.85, 0.85);
-			-ms-transform: scale(0.85, 0.85);
-			-webkit-transform: scale(0.85, 0.85);
-
-		}
-
-
-		.main__content h2{
-
-			padding-right: 100px;
-			padding-left: 100px;
-			padding-bottom: 0px;
-			transform: scale(0.85, 0.85);
-			-ms-transform: scale(0.85, 0.85);
-			-webkit-transform: scale(0.85, 0.85);
-
-		}
-
-
-
-		.main__img--container {
-
-			
-			padding: 0px;
-			text-align: center;
-			transform: scale(0.6, 0.6);
-			transform-origin: 300px;
-			-ms-transform: scale(0.6, 0.6);
-			-webkit-transform: scale(0.6, 0.6);
-
-		}
-		
-	}
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* When the screen gets to small part 1. the pages overlap so we need to fix this */
-		
-		@media screen and (max-height: 1200px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 12rem;
-			}
-
-			h3 {
-			margin-top: 12rem;
-
-			}
-
-		}		
-
-
-		@media screen and (max-height: 1000px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 20rem;
-			}
-
-			h3 {
-			margin-top: 20rem;
-
-			}
-
-		}	
-
-		@media screen and (max-height: 800px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 32rem;
-			}
-
-			h3 {
-			margin-top: 32rem;
-
-			}
-
-		}		
-
-
-		@media screen and (max-height: 600px) and (min-width: 1500px) {
-
-			.projects {
-			margin-bottom: 41rem;
-
-			}
-
-			h3 {
-			margin-top: 41rem;
-
-			}
-
-		}
-
-		@media screen and (max-height: 450px) and (min-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 51rem;
-			}
-
-			h3 {
-			margin-top: 51rem;
-
-			}
-
-		}
-
-		@media screen and (max-height: 300px) and (min-width: 1500px) {
-
-			.projects {
-			margin-bottom: 60rem;
-
-			}
-
-			h3 {
-			margin-top: 60rem;
-
-			}
-
-		}
-
-
-
-
-		/* When the screen gets to small part 2. the pages overlap so we need to fix this */
-		@media screen and (max-height: 1000px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 12rem;
-			}
-
-			h3 {
-			margin-top: 12rem;
-
-			}
-
-
-		}
-
-	
-		@media screen and (max-height: 800px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 20rem;
-			}
-
-			h3 {
-			margin-top: 20rem;
-
-			}
-
-		}		
-
-	
-		@media screen and (max-height: 600px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 32rem;
-			}
-
-
-			h3 {
-			margin-top: 32rem;
-
-			}
-
-		}		
-
-		
-		@media screen and (max-height: 400px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 39rem;
-			}
-
-			h3 {
-			margin-top: 39rem;
-
-			}
-
-		}		
-
-		
-		@media screen and (max-height: 250px) and (max-width: 1500px) {
-
-			.projects {
-
-			margin-bottom: 45rem;
-			}
-
-			h3 {
-			margin-top: 45rem;
-
-			}
-
-		}		
