@@ -333,7 +333,7 @@
 
 		<!-- This might work once the website is live. Not sure Yet-->
 		<!-- We want a way for users of the site to easily be able to contact me-->
-			<form id="contact-form" method="post" action="contact-form-handler.php">
+			<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe" >
 				<label for="firstname">Your First name:</label>
 				<input class="inputBox" type="text" id="userFirst" name="userFirst"><br><br>
 				<label for="lastname">Your Last name:</label>
@@ -341,8 +341,9 @@
 				<label for="email">Your Email Address:</label>
 				<input class="inputBox" type="email" id="userEmail" name="userEmail"><br><br>
 				<label for="comments">Ask Me Anything:</label>
-				<textarea class="inputBox" type="text" name="message" placeholder="Message" row="5"></textarea>
+				<textarea class="inputBox" type="text" name="message" row="6"></textarea>
 				<input class="submit__btn" type="submit" value="Submit">
+				<p id ="my-form-status"></p>
 			</form>
 
 	
@@ -490,6 +491,12 @@
 <!-- We want an intersection observer to monitor the page so we know when the user is looking at the projects. 
 				Afterwords we will play those projects-->
 <script src="javascript/observer.js"></script>
+
+
+<!-- Scripts for page3--> 
+<!-- Our custom javascript for handeling the contact form-->
+
+<script src="javascript/formSubmission.js"> </script>
 
 
 </body>
