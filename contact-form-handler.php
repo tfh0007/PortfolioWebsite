@@ -20,6 +20,6 @@ $headers .= "Rely-To: $visitor_email \r\n";
 mail($to,$email_subject,$email_body,$headers) or die("Error!");
 echo "Thank You!" . " -" . "<a href='index.html' style='text-decoration:none;color:#ff0099;'> Return Home</a>";
 
-header("Location: ../index.html");
+header("Location: index.html");
 
 ?>
