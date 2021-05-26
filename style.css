@@ -753,8 +753,7 @@ So lets fix this issue */
     display: flex;
     justify-content: center;
     font-size: 2.6rem;
-    padding-left: 2ch;
-    padding-right: 2ch;
+    padding: 3ch 2ch;
     color: #3633C9;
 
      /*Borders for testing can be removed now
@@ -1145,7 +1144,6 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
     color: black;
     background: rgba(179, 178, 178, 0.993);
-    padding-bottom: 4ch;
     box-shadow: rgba(0, 0, 0, 0.2);
     -moz-box-shadow: rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: rgba(0, 0, 0, 0.2);
@@ -1179,8 +1177,9 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
         
         font-size: 2rem;
         margin-top: 20px;
-        max-width: 400px;
-        padding: 5px;
+        max-width: 480px;
+        padding: 10px;
+        margin-bottom: 0px;
         border-radius: 20px;
         opacity: 0;
          
@@ -1194,11 +1193,12 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
         opacity: 1;
         transition: opacity 800ms;
         transform: translateX(-1000px);
-        transition: transform 600ms 7s ease-in-out;
+        transition: transform 600ms 12s ease-in-out;
         
       }
   
       /* Now lets account for an error */
+      /* I do not think this works because of some issue with the javascript */
       #my-form-status.error {
 
         color: rgb(255, 255, 255);
@@ -1207,7 +1207,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
         opacity: 1;
         transition: opacity 800ms;
         transform: translateX(-1000px);
-        transition: transform 600ms 7s ease-in-out;
+        transition: transform 600ms 15s ease-in-out;
           
       }
 
@@ -1270,8 +1270,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     justify-content: center;
     font-size: 1.8rem;
     color: #303079;
-    padding-left: 2ch;
-    padding-right: 2ch;
+    padding: 4ch 2ch;
 
 }
 
@@ -1301,8 +1300,8 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     display: flex;
     font-size: 1.5rem;
     justify-content: center;
-    padding-left: 2ch;
-    padding-right: 2ch;
+
+    padding: 6ch 2ch;
 }
 
 /* This class contains the final thank you statement at the bottom of page 3 */
