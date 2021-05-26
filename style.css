@@ -162,7 +162,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 1.5ch;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     background-color: #02C294; 
     
     
