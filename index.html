@@ -5,7 +5,7 @@
 	<html lang="en">
     <meta charset="utf-8">
 	<!-- I am hoping this viewport tag will make the site visible on Mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.75">
 	<!-- We want to use a title, description, and tags to describe our website to others-->
     <title> Thomas Hansknecht Site </title>
 
@@ -333,7 +333,7 @@
 
 		<!-- This might work once the website is live. Not sure Yet-->
 		<!-- We want a way for users of the site to easily be able to contact me-->
-			<form action="ghost34az@gmail.com" method="post" enctype="text/plain">
+			<form id="contact-form" method="post" action="php/contact-form-handler.php">
 				<label for="firstname">Your First name:</label>
 				<input class="inputBox" type="text" id="userFirst" name="userFirst"><br><br>
 				<label for="lastname">Your Last name:</label>
@@ -341,7 +341,7 @@
 				<label for="email">Your Email Address:</label>
 				<input class="inputBox" type="email" id="userEmail" name="userEmail"><br><br>
 				<label for="comments">Ask Me Anything:</label>
-				<input class="inputBox" type="text" name="comment" size="50"><br><br>
+				<textarea class="inputBox" type="text" name="message" placeholder="Message" row="4"></textarea>
 				<input class="submit__btn" type="submit" value="Submit">
 			</form>
 
