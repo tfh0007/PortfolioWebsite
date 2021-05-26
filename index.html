@@ -331,19 +331,21 @@
 
 		<div class= "page3Words__And__illustration">
 
-		<!-- This might work once the website is live. Not sure Yet-->
+		<!-- The reuired text means text has to be typed into that field -->
 		<!-- We want a way for users of the site to easily be able to contact me-->
-			<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe" >
+		<!-- Placeholders will show in the actual input box-->
+			<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe">
 				<label for="firstname">Your First name:</label>
-				<input class="inputBox" type="text" id="userFirst" name="userFirst"><br><br>
+				<input class="inputBox" type="text" id="userFirst" name="userFirst" required><br><br>
 				<label for="lastname">Your Last name:</label>
-				<input class="inputBox" type="text" id="userLast" name="userLast"><br><br>
+				<input class="inputBox" type="text" id="userLast" name="userLast" required><br><br>
 				<label for="email">Your Email Address:</label>
-				<input class="inputBox" type="email" id="userEmail" name="userEmail"><br><br>
+				<input class="inputBox" type="email" id="userEmail" name="userEmail" required><br><br>
 				<label for="comments">Ask Me Anything:</label>
-				<textarea class="inputBox" type="text" name="message" row="6"></textarea>
+				<textarea class="inputBox" type="text" name="message" row="10" placeholder="Type Something" id="textBoxArea"></textarea>
 				<input class="submit__btn" type="submit" value="Submit">
-				<p id ="my-form-status"></p>
+				<div id ="my-form-status"></div>
+				
 			</form>
 
 	

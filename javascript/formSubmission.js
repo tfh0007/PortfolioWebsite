@@ -11,10 +11,20 @@
             'Accept': 'application/json'
         }
       }).then(response => {
+        status.classList.add('success');
         status.innerHTML = "Thank, you for your submission. I look forward to reading your response";
         form.reset()
+        // We want to have different css formatting for a success or failure of our form
+        
+        
+        
       }).catch(error => {
+        status.classList.add('error');
         status.innerHTML = "Oops! There was an issue submitting your form"
+        // We want to have different css formatting for a success or failure of our form
+        
+        
+        
       });
     }
     form.addEventListener("submit", handleSubmit)

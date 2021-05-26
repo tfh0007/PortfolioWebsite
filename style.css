@@ -1122,14 +1122,25 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 }
 /* This class contains all of the form input boxes */
 .inputBox {
-    background: white;
-    color: white;
+    
     background: transparent;
+    background: rgba(179, 178, 178, 0.993);
+    color: white;
+    
     border: solid black 4px;
     border-radius: 20px;
     
-    font-size: 2rem;
+    font-size: 1.7rem;
     max-width: 400px;
+}
+
+/*This id controls the as me anything message box */
+
+#textBoxArea {
+
+    color: black;
+    background: rgba(179, 178, 178, 0.993);
+    padding-bottom: 4ch;
 }
 /* This class contains the submit button on the user form */
 .submit__btn {
@@ -1141,10 +1152,52 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     border: solid tan 5px;
     border-radius: 20px;
     margin: 0 100px;
+    margin-top: 24px;
     cursor: pointer;
     
 
 }
+
+/* Lets format the text after the form is filled out for both sucesses and errors
+    First lets account for a success */
+
+    #my-form-status {
+
+        display: flex;
+        
+        font-size: 2rem;
+        margin-top: 20px;
+        max-width: 400px;
+        padding: 5px;
+        border-radius: 20px;
+        opacity: 0;
+         
+      }
+  
+      #my-form-status.success {
+
+        color: black;
+        background: #09ff00af; 
+        border: solid 2px black; 
+        opacity: 1;
+        transition: opacity 800ms;
+        transform: translateX(-1000px);
+        transition: transform 600ms 7s ease-in-out;
+        
+      }
+  
+      /* Now lets account for an error */
+      #my-form-status.error {
+
+        color: rgb(255, 255, 255);
+        background: #eb2727;
+        border: solid 2px black;
+        opacity: 1;
+        transition: opacity 800ms;
+        transform: translateX(-1000px);
+        transition: transform 600ms 7s ease-in-out;
+          
+      }
 
 /* THis class contains the further research and ilustration */
 .page3Words__And__illustration__bottom {
@@ -1288,9 +1341,11 @@ footer {
     font-size: 1.9rem;
     margin: 0 150px;
 
+    }
+
+    
     
 
-    }
 
     .page3Words__And__illustration form {
         font-size: 1.9rem;
