@@ -1129,9 +1129,14 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     
     border: solid black 4px;
     border-radius: 20px;
-    
+    box-shadow: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2);
     font-size: 1.7rem;
     max-width: 400px;
+    /* Using a high z-index ensures that are inputs are on top of everything else on page 3 */
+    z-index: 100;
+    
 }
 
 /*This id controls the as me anything message box */
@@ -1141,6 +1146,13 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     color: black;
     background: rgba(179, 178, 178, 0.993);
     padding-bottom: 4ch;
+    box-shadow: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2);
+    /* With the text box being scalable horizontally causes issues with our layout so lets 
+    restrict the user to only being allowed to adjust the text area size vertically */
+    resize: vertical;
+
 }
 /* This class contains the submit button on the user form */
 .submit__btn {
@@ -1332,14 +1344,17 @@ footer {
     .inputBox {
     
         font-size: 2rem;
-        max-width: 500px;
+        max-width: 100%;
+        width: 500px;
     }
+
 
     /* This class contains the submit button on the user form */
     .submit__btn {
 
     font-size: 1.9rem;
     margin: 0 150px;
+    margin-top: 18px;
 
     }
 
