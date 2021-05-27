@@ -328,7 +328,7 @@ For Mobile this will be hidden */
 
 /* navbar links is how we can remove the style of our links and edit their size*/
 .navbar__links {
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-decoration: none;
     color: white;
     padding: 1ch;
@@ -432,7 +432,7 @@ of the navbar menu middle desktop */
 
 /* navbar links is how we can remove the style of our links and edit their size*/
 .navbar__links {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     text-decoration: none;
     color: white;
     padding: 1ch;
