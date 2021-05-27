@@ -733,6 +733,10 @@ So lets fix this issue */
 }
 }   
 
+#page2 {
+    overflow-x: hidden;
+}
+
 /* Now we are moving on to Page 2 */
 
 .page2container {
@@ -750,6 +754,7 @@ So lets fix this issue */
     /* By using flex grow we ensure that the page 2 container takes up all space not being used by another container.
     Without this option the background would stop extending since we have 2 containers in our div which are .page2container and .extended_Description */
     flex-grow: 1;
+    
 
     
 
@@ -887,22 +892,93 @@ So lets fix this issue */
 /* The p tag within the Page2__and__extended__Description is all of the statements in the extended description */
 .Page2__and__extended__Description p {
     font-size: 1.2rem;
+
 }
+
+
 
 /*When a Project learn more button is not pressed we do not want to show any extra details */
 .extended__Description__Project1 {
-    display: none;
-    min-width: 80%;
+
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+
+    flex-grow: 3;
+    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+    This property will need to be modified for desktop and tablet environments */
+
+background: tan;
+    position: fixed;
+    top: 103px;
+    overflow-y: scroll;
+    max-height: 90.6%;
+    max-width: 80%;
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+    
+
+    border: solid 8px;
     
 }
 .extended__Description__Project2 {
-    display: none;
-    min-width: 80%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+
+    flex-grow: 3;
+    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+    This property will need to be modified for desktop and tablet environments */
+
+background: tan;
+    position: fixed;
+    top: 103px;
+    overflow-y: scroll;
+    max-height: 90.6%;
+    max-width: 80%;
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+    border: solid 8px;
+
     
 }
 .extended__Description__Project3 {
-    display: none;
-    min-width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+
+    flex-grow: 3;
+    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+    This property will need to be modified for desktop and tablet environments */
+
+    background: tan;
+    position: fixed;
+    top: 103px;
+    overflow-y: scroll;
+    max-height: 90.6%;
+    max-width: 80%;
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+    
+
+    border: solid 8px;
     
 }
 
@@ -918,52 +994,22 @@ So lets fix this issue */
 
 /*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
 .extended__Description__Project1.visible {
-display: flex;
-padding-top: 100px;
-flex-direction: column;
 
-padding-left: 2ch;
-padding-right: 2ch;
-/* We want the items to stay in the center of the container */
-align-items: center;
-flex-wrap: wrap;
 
-flex-grow: 3;
-/* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
-This property will need to be modified for desktop and tablet environments */
-
-background: tan;
+transform: translateX(0);
+transition: transform 500ms ease-in-out;
 
 }
 .extended__Description__Project2.visible {
-    display: flex;
-    padding-top: 100px;
-    flex-direction: column;
-
-    padding-left: 2ch;
-    padding-right: 2ch;
-    /* We want the items to stay in the center of the container */
-    align-items: center;
-    flex-wrap: wrap;
-
-    flex-grow: 3;    
-    background: tan;
+    
+    transform: translateX(0);
+    transition: transform 500ms ease-in-out;
     
     }
 
 .extended__Description__Project3.visible {
-    display: flex;
-    padding-top: 100px;
-    flex-direction: column;
-
-    padding-left: 2ch;
-    padding-right: 2ch;
-    /* We want the items to stay in the center of the container */
-    align-items: center;
-    flex-wrap: wrap;
-
-    flex-grow: 3;    
-    background: tan;
+    transform: translateX(0);
+    transition: transform 500ms ease-in-out;
         
     }
 
@@ -983,11 +1029,7 @@ background: tan;
 }
 
 
-/* This class controls the text for the project buttons */
-.remove__style {
-text-decoration: none;
-color: #D61010;
-}
+
 
 /* This class contains the page 2 footer text which says "More of my 
 Projects Can be Found Under the Projects Page" */
@@ -1049,10 +1091,10 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 
 @media screen and (min-width: 2297px) { 
     /* The project buttons are the buttons that say learn more under each project */
-    .Project__button__1 {
+    #Learn__More_btn1 {
         margin-top: 7.4ch;
     }
-    .Project__button__2 {
+    #Learn__More_btn2 {
         margin-top: 7.4ch;
     }
     
@@ -1065,7 +1107,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     }
 
     .extended__Description__Project3.visible {
-         padding-top: 105px;
+         padding-top: 0px;
     }
 
 }
