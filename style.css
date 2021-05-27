@@ -134,9 +134,8 @@ header {
 
     /* The border for the navbar will extend to show everything contained within even when we use a transition to push content off screen
 so we need to remove the ugly border when the nav bar is inactive and reapply the border when navbar is active */
-    border: solid 1ch;
+    
 
-    border-color: #02C294;
     
     
     /*Applying this property will stack our navbar__container on top of our navbar__menu */
@@ -146,6 +145,10 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     than it should and thus the website will go off of the page. */
     overflow: hidden;
     flex-grow: 1;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
+   
     
     
 }
@@ -208,6 +211,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     /* Applying this property will move our items to the center. 
     This only works when flex is column based */
     align-items: center;
+    
 
 
 
@@ -265,10 +269,26 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     width: 90%;  
 
 }
-/* This box contains the links that should be centered on the screen */
+/* This box contains the links that should be centered on the right of the screen */
 .navbar__item-center {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightgreen;
+    */
+
+
+}
+/* This box contains the links that should be to the right on the screen */
+.navbar__item-right {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 
     /*Borders for testing can be removed now
     border: solid 1ch;
@@ -306,12 +326,13 @@ For Mobile this will be hidden */
     display: none;
 }
 
-/* navbar links is how we can remove the style of our links */
+/* navbar links is how we can remove the style of our links and edit their size*/
 .navbar__links {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-decoration: none;
     color: white;
     padding: 1ch;
+
 
 }
 
@@ -337,6 +358,7 @@ For Mobile this will be hidden */
  /*This navbar represents the container for our navbar */
 .navbar {
     display: flex;   
+    
 
     /*We need to make our navigation bar smaller */
    
@@ -350,6 +372,7 @@ For Mobile this will be hidden */
     overflow: hidden;
     /*This property will make our right and left side hug the edge while the middle gets bigger */
     justify-content: space-between;
+
     
 }   
 
@@ -367,6 +390,7 @@ For Mobile this will be hidden */
     font-size: 0.8rem; 
     /* Applying this property puts our logo in the center of the Y main axis  */
     align-items: center; 
+
 
 }
 
@@ -401,9 +425,19 @@ of the navbar menu middle desktop */
 
     /* This property makes our content inside not take up any space to the left */
 
-    font-size: 1.2rem; 
+    font-size: 0.5rem; 
 
    
+}
+
+/* navbar links is how we can remove the style of our links and edit their size*/
+.navbar__links {
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: white;
+    padding: 1ch;
+
+
 }
 
 
@@ -424,7 +458,7 @@ For Desktop this will be visible */
 
     /* We want to disable these icons while we are using the mobile version */
     display: flex;
-    padding-top: 1ch;
+    
     padding-left: 0px;
 }
 
@@ -453,31 +487,33 @@ But the right icons need to be bigger than the middle icons
 so we can not simply change all of the icons at once*/
 
 .fa-home {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: orangered;
 
 }
 
 
 .fa-address-card {
-    font-size: 1.8rem; 
+    font-size: 1.5rem; 
     color: red;
 }
 
 .fa-code {
-    font-size: 1.8rem; 
+    font-size: 1.5rem; 
     color: rgb(0, 255, 0);
 }
 .fa-phone-alt {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: rgb(94, 8, 151);
 }
 
 
 /* Since fas affects one of our right icons we need to overide this with a bigger font size */
 .fa-handshake {
-    font-size: 3.8rem;
+    font-size: 3rem;
     color: red;
+    display: flex;
+    align-content: center;
 
 
 }
@@ -487,11 +523,11 @@ so we can not simply change all of the icons at once*/
     color: white;
     background: #0077B5;
     border-radius: 18px;
-    font-size: 3.8rem;
+    font-size: 3rem;
 }
 
 .fa-github {
-    font-size: 3.8rem;
+    font-size: 3rem;
     color: black;
 }
 
@@ -537,7 +573,7 @@ So lets fix this issue */
     rgba(250, 0, 255, 0.22) 345.5deg, 
     rgba(2, 194, 148, 0.47) 360.34deg);
 
-    margin-top: 6.4rem;
+    margin-top: 5.4rem;
     padding-top: 1rem;
     padding-bottom: 0;
     display: flex;
@@ -1488,6 +1524,27 @@ footer {
     }
     
 }
+
+
+/* Lets now create the hover effects for the various items and buttons */
+
+/* First we will create the hover effects for the navigation menu */
+.navbar__item-center:hover,
+.navbar__item-right:hover {
+    
+    background-color: #d69710;
+    border-radius: 20px;
+    transition: background-color 300ms;
+
+}
+
+.navbar__item-center ,
+.navbar__item-right {
+    background-color: transparent;
+    transition: background-color 300ms;
+    border-radius: 20px;
+}
+
 
 
 
