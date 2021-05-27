@@ -13,6 +13,7 @@ body {
 .notification__area {
     margin-top: 24px;
     margin-right: 14px;
+    margin-left: 14px;
     
 
     /* Because we are using fixed positioning setting right to 
@@ -74,7 +75,7 @@ body {
 
     .notification__area.moveDown {
 
-        transform: translateY(580px);
+        transform: translateY(520px);
         transition: transform 400ms ease-in-out;
 
     }
@@ -188,6 +189,11 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
 .navbar__menu-mobile {
 
     display: flex;
+
+    /*Using this margin right makes the drop down nav bar be slightly to the left on the right side of the screen */
+    margin-right: 14px;
+    /*Using this margin left makes the drop down nav bar be slightly to the right on the left side of the screen */
+    margin-left: 14px;
     
     
     
@@ -210,7 +216,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     border-color: lightpink;
     */
     list-style: none;
-    font-size: 4.5rem;
+    font-size: 4rem;
     /* This property will decrease the space between the middle links and the right links */
     margin-bottom: 0px;
      /* This property will decrease the space between the logo/menu links and middle links */
