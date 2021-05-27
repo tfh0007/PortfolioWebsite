@@ -942,7 +942,8 @@ So lets fix this issue */
 
     padding-left: 2ch;
     padding-right: 2ch;
-    padding-bottom: 1ch;
+    padding-bottom: 2ch;
+    padding-top: 2ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -954,7 +955,7 @@ background: tan;
     position: fixed;
     top: 114px;
     overflow-y: scroll;
-    max-height: 88.8%;
+    max-height: 80.8%;
     max-width: 80%;
     z-index: 200;
     transform: translateX(100%);
@@ -971,7 +972,8 @@ background: tan;
 
     padding-left: 2ch;
     padding-right: 2ch;
-    padding-bottom: 1ch;
+    padding-bottom: 2ch;
+    padding-top: 2ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -983,7 +985,7 @@ background: tan;
     position: fixed;
     top: 114px;
     overflow-y: scroll;
-    max-height: 88.8%;
+    max-height: 80.8%;
     max-width: 80%;
     z-index: 200;
     transform: translateX(100%);
@@ -998,7 +1000,8 @@ background: tan;
 
     padding-left: 2ch;
     padding-right: 2ch;
-    padding-bottom: 1ch;
+    padding-bottom: 2ch;
+    padding-top: 2ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -1010,7 +1013,7 @@ background: tan;
     position: fixed;
     top: 114px;
     overflow-y: scroll;
-    max-height: 88.8%;
+    max-height: 80.8%;
     max-width: 80%;
     z-index: 200;
     transform: translateX(100%);
