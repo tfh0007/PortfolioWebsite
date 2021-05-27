@@ -856,6 +856,7 @@ So lets fix this issue */
     color: #D61010;
     cursor: pointer;
     padding: 8px;
+    z-index: 100;
 }
 
 .Project__button__2 {
@@ -868,6 +869,7 @@ So lets fix this issue */
     color: #D61010;
     cursor: pointer;
     padding: 8px;
+    z-index: 100;
 }
 
 .Project__button__3 {
@@ -880,6 +882,7 @@ So lets fix this issue */
     color: #D61010;
     cursor: pointer;
     padding: 8px;
+    z-index: 100;
 }
 
 
@@ -922,6 +925,7 @@ So lets fix this issue */
     background: red;
     border-radius: 20px;
     padding: 6px;
+    margin-bottom: 4ch;
     color: white;
 }
 
@@ -943,7 +947,7 @@ So lets fix this issue */
     padding-left: 2ch;
     padding-right: 2ch;
     padding-bottom: 2ch;
-    padding-top: 2ch;
+    padding-top: 6ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -973,7 +977,7 @@ background: tan;
     padding-left: 2ch;
     padding-right: 2ch;
     padding-bottom: 2ch;
-    padding-top: 2ch;
+    padding-top: 6ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -1001,7 +1005,7 @@ background: tan;
     padding-left: 2ch;
     padding-right: 2ch;
     padding-bottom: 2ch;
-    padding-top: 2ch;
+    padding-top: 6ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -1140,17 +1144,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
         margin-top: 7.4ch;
     }
     
-    .extended__Description__Project1.visible {
-        padding-top: 0px;
-    }
-
-    .extended__Description__Project2.visible {
-        padding-top: 0px;
-    }
-
-    .extended__Description__Project3.visible {
-         padding-top: 0px;
-    }
+    
 
 }
 
