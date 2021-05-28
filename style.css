@@ -623,7 +623,7 @@ So lets fix this issue */
 
 
     color: #303079;
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     padding-top: 6px;
     padding-left: 2ch;
     padding-right: 2ch;
@@ -638,8 +638,10 @@ So lets fix this issue */
 
 
     color: #2F2D2D;
-    font-size: 1.4rem; 
+    font-size: 1.3rem; 
     margin-top: -1.1ch;
+     /* We will animate this when the website loads so it should start invisible */
+     opacity: 0;
 }
 /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
 .page1sentance2 {
@@ -649,8 +651,10 @@ So lets fix this issue */
     */
 
     color: #2F2D2D;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-top: -1.1ch;
+     /* We will animate this when the website loads so it should start invisible */
+     opacity: 0;
 }
 /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
 .page1sentance3 {
@@ -660,8 +664,10 @@ So lets fix this issue */
     */
     
     color: #2F2D2D;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-top: -1.1ch;
+     /* We will animate this when the website loads so it should start invisible */
+     opacity: 0;
 }
 /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
 .page1sentance4 {
@@ -671,8 +677,11 @@ So lets fix this issue */
     */
 
     color: #c01f1f;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     margin-top: -1.1ch;
+     /* We will animate this when the website loads so it should start invisible */
+     opacity: 0;
+     transform: scale(.1);
 }
 .pictureOfMe__container {
 
@@ -732,6 +741,31 @@ So lets fix this issue */
        
         margin-top: -.1rem;
         font-size: 3.5rem;
+    }
+    /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+    .page1sentance1 {
+
+        font-size: 2.6rem; 
+
+    }
+    /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+    .page1sentance2 {
+
+        font-size: 2.6rem;
+
+}
+    /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+    .page1sentance3 {
+
+        font-size: 2.6rem;
+
+}
+    /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+    .page1sentance4 {
+
+        font-size: 2.9rem;
+
+
     }
 /* We want the gap between the heading sentance and paragraph underneath to increase after the display
      width increases to a certain size */
@@ -1675,6 +1709,63 @@ transform: scaleX(1);
 }
 
 
+
+/* Lets deal with the animations caused by intersection observers */
+/* Lets have a typing animation to reveal my name */
+.page1container.startAnimation h1{
+
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    padding-bottom: 1ch;
+    
+    animation: 
+      typing 3s steps(30, end);
+      
+  }
+  
+  /* Create the typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  .page1container.startAnimation .page1sentance1,
+  .page1container.startAnimation .page1sentance2,
+  .page1container.startAnimation .page1sentance3
+  
+  {
+    opacity: 1;
+    transition: opacity ease-in 300ms 3s;
+    
+
+      
+  }
+
+  .page1container.startAnimation .page1sentance2
+
+  {
+    opacity: 1;
+    transition: opacity ease-in 300ms 3.3s;
+
+  }
+
+  .page1container.startAnimation .page1sentance3 {
+    opacity: 1;
+    transition: opacity ease-in 300ms 3.6s;
+
+  }
+
+  .page1container.startAnimation .page1sentance4
+  {
+    
+    opacity: 1;
+    transform: scale(1.1);
+    transition: opacity ease-in 300ms 3.9s, transform ease-in 300ms 3.9s;
+  }
+  
+  
+  
 
 
 

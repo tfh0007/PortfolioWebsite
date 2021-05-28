@@ -1,8 +1,8 @@
-//Projects will point to our .Projects which is the html class Projects
-// .Projects is the area where my projects are viewable
+//page1 will point to our .page1container which is the html class page1container
+// .page1container is the area where my website first becomes visable
 // We want to trigger play project videos when the videos become visible
-const Projects = document.querySelector(".Projects");
-
+const page1 = document.querySelector(".page1container");
+var counter = 1;
 const options = {
 
     //root:null, means observing based on viewport
@@ -13,12 +13,20 @@ const options = {
 
 };
 
-const Projectsobserver = new IntersectionObserver(function(entries, obserever) {
+const page1observer = new IntersectionObserver(function(entries, obserever) {
 entries.forEach(entry => {
-    console.log(entry),
-    entry.target.classList.toggle("playVideo");
+    if (counter == 1 && entry.isIntersecting) {
+        console.log(entry),
+        entry.target.classList.toggle("startAnimation");
+        counter++;
+        }
+    else {
+        return;
+    }
+    
+    
 
 });
  }, options);
 
- Projectsobserver.observe(Projects);
+ page1observer.observe(page1);
