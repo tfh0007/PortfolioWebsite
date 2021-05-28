@@ -412,6 +412,7 @@ of the navbar menu middle desktop */
     justify-content: left;
     /*THis flex grow makes the middle navigation menu way more centered on desktop */
     flex-grow: 0.275;
+    
   }
 
 /* This box contains all of our middle links */
@@ -1532,7 +1533,10 @@ footer {
 
 /* First we will create the hover effects for the navigation menu */
 .navbar__item-center:hover,
-.navbar__item-right:hover {
+.navbar__item-center:focus,
+.navbar__item-right:hover,
+.navbar__item-right:focus       
+ {
     
     background-color: #d69710;
     border-radius: 20px;
@@ -1546,6 +1550,70 @@ footer {
     transition: background-color 300ms;
     border-radius: 20px;
 }
+
+/*Next lets create the hover animation for our learn more project description buttons */
+
+.Project__button__1,
+.Project__button__2,
+.Project__button__3
+{
+position: relative;
+
+transition: color 250ms ease-in-out;
+overflow: hidden;
+
+
+}
+#Learn__More_btn1:hover,
+#Learn__More_btn1:focus,
+#Learn__More_btn2:hover,
+#Learn__More_btn2:focus,
+#Learn__More_btn3:hover,
+#Learn__More_btn3:focus
+{
+color: white;
+transition: color 250ms ease-in-out;
+overflow: hidden;
+
+
+}
+
+#Learn__More_btn1::before,
+#Learn__More_btn2::before,
+#Learn__More_btn3::before
+
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: rgb(236, 51, 51);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms;
+    
+}
+
+#Learn__More_btn1:hover::before,
+#Learn__More_btn1:focus::before,
+#Learn__More_btn2:hover::before,
+#Learn__More_btn2:focus::before,
+#Learn__More_btn3:hover::before,
+#Learn__More_btn3:focus::before
+
+
+{
+transform: scaleX(1);
+
+}
+
+
+
+
 
 
 
