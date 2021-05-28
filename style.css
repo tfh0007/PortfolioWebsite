@@ -1602,18 +1602,16 @@ footer {
 
 }
 
-/* .navbar__item-center:hover,
-.navbar__item-center:focus,
-.navbar__item-right:hover,
-.navbar__item-right:focus       
- {
-    
-    background-color: #d69710;
-    border-radius: 20px;
-    transition: background-color 300ms;
-
+/* Next lets cover the animation for the menu button */
+.menuButton {
+    transition: color 250ms;
 }
-*/
+
+.menuButton:hover,
+.menuButton:focus {
+
+    color: white;
+}
 
 
 /*Next lets create the hover animation for our learn more project description buttons */
