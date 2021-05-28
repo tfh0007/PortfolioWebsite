@@ -1532,7 +1532,78 @@ footer {
 /* Lets now create the hover effects for the various items and buttons */
 
 /* First we will create the hover effects for the navigation menu */
-.navbar__item-center:hover,
+.navbar__links {
+    position: relative;
+}
+
+#navbar__mobile__link1::before,
+#navbar__mobile__link2::before,
+#navbar__mobile__link3::before,
+#navbar__mobile__link4::before,
+#navbar__mobile__link5::before,
+#navbar__mobile__link6::before,
+#navbar__mobile__link7::before,
+
+#navbar__desktop__link1::before,
+#navbar__desktop__link2::before,
+#navbar__desktop__link3::before,
+#navbar__desktop__link4::before,
+#navbar__desktop__link5::before,
+#navbar__desktop__link6::before,
+#navbar__desktop__link7::before
+ 
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: cyan;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in-out;
+}
+
+#navbar__mobile__link1:hover::before,
+#navbar__mobile__link2:hover::before,
+#navbar__mobile__link3:hover::before,
+#navbar__mobile__link4:hover::before,
+#navbar__mobile__link5:hover::before,
+#navbar__mobile__link6:hover::before,
+#navbar__mobile__link7:hover::before,
+
+#navbar__mobile__link1:focus::before,
+#navbar__mobile__link2:focus::before,
+#navbar__mobile__link3:focus::before,
+#navbar__mobile__link4:focus::before,
+#navbar__mobile__link5:focus::before,
+#navbar__mobile__link6:focus::before,
+#navbar__mobile__link7:focus::before,
+
+
+#navbar__desktop__link1:hover::before,
+#navbar__desktop__link2:hover::before,
+#navbar__desktop__link3:hover::before,
+#navbar__desktop__link4:hover::before,
+#navbar__desktop__link5:hover::before,
+#navbar__desktop__link6:hover::before,
+#navbar__desktop__link7:hover::before,
+
+#navbar__desktop__link1:focus::before,
+#navbar__desktop__link2:focus::before,
+#navbar__desktop__link3:focus::before,
+#navbar__desktop__link4:focus::before,
+#navbar__desktop__link5:focus::before,
+#navbar__desktop__link6:focus::before,
+#navbar__desktop__link7:focus::before
+{
+    transform: scaleX(1);
+
+}
+
+/* .navbar__item-center:hover,
 .navbar__item-center:focus,
 .navbar__item-right:hover,
 .navbar__item-right:focus       
@@ -1543,13 +1614,8 @@ footer {
     transition: background-color 300ms;
 
 }
+*/
 
-.navbar__item-center ,
-.navbar__item-right {
-    background-color: transparent;
-    transition: background-color 300ms;
-    border-radius: 20px;
-}
 
 /*Next lets create the hover animation for our learn more project description buttons */
 
