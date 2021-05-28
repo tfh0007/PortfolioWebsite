@@ -409,9 +409,9 @@ For Mobile this will be hidden */
 of the navbar menu middle desktop */
   .navbar__menu-middle-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     /*THis flex grow makes the middle navigation menu way more centered on desktop */
-    flex-grow: 10;
+    flex-grow: 0.275;
   }
 
 /* This box contains all of our middle links */
@@ -929,11 +929,22 @@ So lets fix this issue */
     color: white;
 }
 
+/* This class holds the contents of both the extended Decription and Page 2 */
+.Page2__and__extended__Description {
+    display: flex;
+    flex-direction: row-reverse;
+
+    
+    
+
+}
+
 /* The p tag within the Page2__and__extended__Description is all of the statements in the extended description */
 .Page2__and__extended__Description p {
     font-size: 1.2rem;
 
 }
+
 
 
 /* This class contains the close window button in project extended decription */
@@ -945,7 +956,7 @@ So lets fix this issue */
 
     top: 0;
     right: 36px;
-    margin-top: 90px;
+    margin-top: 60px;
     z-index: 300;
     padding: 0px;
     transform: translateX(150%);
@@ -974,7 +985,7 @@ So lets fix this issue */
     position: fixed;
     top: 0;
     right: 110px;
-    margin-top: 136px;
+    margin-top: 106px;
     z-index: 300;
     transform: translateX(150%);
     transition: transform 150ms 150ms ease-in-out;
@@ -1005,7 +1016,7 @@ So lets fix this issue */
 
 background: tan;
     position: fixed;
-    top: 130px;
+    top: 100px;
     overflow-y: scroll;
     max-height: 80.8%;
     max-width: 80%;
@@ -1019,15 +1030,7 @@ background: tan;
     
 }
 
-/* This class holds the contents of both the extended Decription and Page 2 */
-.Page2__and__extended__Description {
-    display: flex;
-    flex-direction: row-reverse;
 
-    
-    
-
-}
 
 
 /*When a Project learn more button is pressed we want an overlay to appear that gives a download button */
