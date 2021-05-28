@@ -936,9 +936,57 @@ So lets fix this issue */
 }
 
 
+/* This class contains the close window button in project extended decription */
+.CloseWindow__Section1,
+.CloseWindow__Section2,
+.CloseWindow__Section3
+{
+    position: fixed;
+
+    top: 0;
+    right: 36px;
+    margin-top: 90px;
+    z-index: 300;
+    padding: 0px;
+    transform: translateX(150%);
+    transition: transform 150ms ease-in-out;
+    }
+    
+    /* This id is the close window button in project extended decription */
+    #closeWindowBtn__Project1,
+    #closeWindowBtn__Project2,
+    #closeWindowBtn__Project3
+    {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 3.5rem;
+
+    
+    }
+
+   /* This class contains the download section in project extended decription */
+.download_Section1,
+.download_Section2,
+.download_Section3
+ {
+
+    position: fixed;
+    top: 0;
+    right: 110px;
+    margin-top: 136px;
+    z-index: 300;
+    transform: translateX(150%);
+    transition: transform 150ms 150ms ease-in-out;
+}
+
+
 
 /*When a Project learn more button is not pressed we do not want to show any extra details */
-.extended__Description__Project1 {
+.extended__Description__Project1,
+.extended__Description__Project2,
+.extended__Description__Project3
+{
 
 
     display: flex;
@@ -947,7 +995,7 @@ So lets fix this issue */
     padding-left: 2ch;
     padding-right: 2ch;
     padding-bottom: 2ch;
-    padding-top: 6ch;
+    padding-top: 7ch;
     /* We want the items to stay in the center of the container */
     align-items: center;
 
@@ -957,74 +1005,17 @@ So lets fix this issue */
 
 background: tan;
     position: fixed;
-    top: 114px;
+    top: 130px;
     overflow-y: scroll;
     max-height: 80.8%;
     max-width: 80%;
     z-index: 200;
     transform: translateX(100%);
-    transition: transform 350ms ease-in-out;
+    transition: transform 200ms 300ms ease-in-out;
     
 
-    border: solid 4px;
-    
-}
-.extended__Description__Project2 {
-
-    display: flex;
-    flex-direction: column;
-
-    padding-left: 2ch;
-    padding-right: 2ch;
-    padding-bottom: 2ch;
-    padding-top: 6ch;
-    /* We want the items to stay in the center of the container */
-    align-items: center;
-
-    flex-grow: 3;
-    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
-    This property will need to be modified for desktop and tablet environments */
-
-background: tan;
-    position: fixed;
-    top: 114px;
-    overflow-y: scroll;
-    max-height: 80.8%;
-    max-width: 80%;
-    z-index: 200;
-    transform: translateX(100%);
-    transition: transform 350ms ease-in-out;
-    border: solid 4px;
-
-    
-}
-.extended__Description__Project3 {
-    display: flex;
-    flex-direction: column;
-
-    padding-left: 2ch;
-    padding-right: 2ch;
-    padding-bottom: 2ch;
-    padding-top: 6ch;
-    /* We want the items to stay in the center of the container */
-    align-items: center;
-
-    flex-grow: 3;
-    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
-    This property will need to be modified for desktop and tablet environments */
-
-    background: tan;
-    position: fixed;
-    top: 114px;
-    overflow-y: scroll;
-    max-height: 80.8%;
-    max-width: 80%;
-    z-index: 200;
-    transform: translateX(100%);
-    transition: transform 350ms ease-in-out;
-    
-
-    border: solid 4px;
+    border: solid 7px;
+    border-radius: 15px;
     
 }
 
@@ -1038,27 +1029,38 @@ background: tan;
 
 }
 
+
+/*When a Project learn more button is pressed we want an overlay to appear that gives a download button */
+.download_Section1.visible,
+.download_Section2.visible,
+.download_Section3.visible
+ {
+   
+    transform: translateX(-1%);
+    transition: transform 350ms 350ms ease-in-out;
+
+}
+
+/*When a Project learn more button is pressed we want an overlay to appear that gives a close button */
+.CloseWindow__Section1.visible,
+.CloseWindow__Section2.visible,
+.CloseWindow__Section3.visible
+{
+    
+    transform: translateX(-1%);
+    transition: transform 350ms 550ms ease-in-out;
+}
+
 /*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
-.extended__Description__Project1.visible {
+.extended__Description__Project1.visible,
+.extended__Description__Project2.visible,
+.extended__Description__Project3.visible{
 
 
 transform: translateX(-1%);
 transition: transform 350ms ease-in-out;
 
 }
-.extended__Description__Project2.visible {
-    
-    transform: translateX(-1%);
-    transition: transform 350ms ease-in-out;
-    
-    }
-
-.extended__Description__Project3.visible {
-    transform: translateX(-1%);
-    transition: transform 350ms ease-in-out;
-        
-    }
-
 
 /* We want to make the Extended descriptions take up significatly less space when the screen is big enough */
 @media screen and (min-width: 850px) {
