@@ -67,10 +67,10 @@ function bannerLoop2() {
                 document.getElementById("imgban4").style.right = "0px"
                 document.getElementById("imgban4").style.zIndex = "1000"
 
-                document.getElementById("imgban5").style.right = "-420px"
+                document.getElementById("imgban5").style.right = "-600px"
                 document.getElementById("imgban5").style.zIndex = "1500"
 
-                document.getElementById("imgban6").style.right = "420px"
+                document.getElementById("imgban6").style.right = "600px"
                 document.getElementById("imgban6").style.zIndex = "500"
 
             }, 500);
@@ -98,10 +98,10 @@ function bannerLoop2() {
                 document.getElementById("imgban5").style.right = "0px"
                 document.getElementById("imgban5").style.zIndex = "1000"
 
-                document.getElementById("imgban6").style.right = "-420px"
+                document.getElementById("imgban6").style.right = "-600px"
                 document.getElementById("imgban6").style.zIndex = "1500"
 
-                document.getElementById("imgban4").style.right = "420px"
+                document.getElementById("imgban4").style.right = "600px"
                 document.getElementById("imgban4").style.zIndex = "500"
 
             }, 500);
@@ -128,10 +128,10 @@ function bannerLoop2() {
                 document.getElementById("imgban6").style.right = "0px"
                 document.getElementById("imgban6").style.zIndex = "1000"
 
-                document.getElementById("imgban4").style.right = "-420px"
+                document.getElementById("imgban4").style.right = "-600px"
                 document.getElementById("imgban4").style.zIndex = "1500"
 
-                document.getElementById("imgban5").style.right = "420px"
+                document.getElementById("imgban5").style.right = "600px"
                 document.getElementById("imgban5").style.zIndex = "500"
 
             }, 500);
@@ -166,10 +166,10 @@ function bannerLoop2Backwords() {
                 document.getElementById("imgban4").style.right = "0px"
                 document.getElementById("imgban4").style.zIndex = "1000"
 
-                document.getElementById("imgban5").style.right = "-420px"
+                document.getElementById("imgban5").style.right = "-600px"
                 document.getElementById("imgban5").style.zIndex = "1500"
 
-                document.getElementById("imgban6").style.right = "420px"
+                document.getElementById("imgban6").style.right = "600px"
                 document.getElementById("imgban6").style.zIndex = "500"
 
             }, 500);
@@ -197,10 +197,10 @@ function bannerLoop2Backwords() {
                 document.getElementById("imgban5").style.right = "0px"
                 document.getElementById("imgban5").style.zIndex = "1000"
 
-                document.getElementById("imgban6").style.right = "-420px"
+                document.getElementById("imgban6").style.right = "-600px"
                 document.getElementById("imgban6").style.zIndex = "1500"
 
-                document.getElementById("imgban4").style.right = "420px"
+                document.getElementById("imgban4").style.right = "600px"
                 document.getElementById("imgban4").style.zIndex = "500"
 
             }, 500);
@@ -227,10 +227,10 @@ function bannerLoop2Backwords() {
                 document.getElementById("imgban6").style.right = "0px"
                 document.getElementById("imgban6").style.zIndex = "1000"
 
-                document.getElementById("imgban4").style.right = "-420px"
+                document.getElementById("imgban4").style.right = "-600px"
                 document.getElementById("imgban4").style.zIndex = "1500"
 
-                document.getElementById("imgban5").style.right = "420px"
+                document.getElementById("imgban5").style.right = "600px"
                 document.getElementById("imgban5").style.zIndex = "500"
 
             }, 500);
