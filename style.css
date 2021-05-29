@@ -874,7 +874,10 @@ So lets fix this issue */
 
 }
 
-.Project__container {
+.Project__container1,
+.Project__container2,
+.Project__container3
+ {
     display: flex;
     flex-direction: column;
 
@@ -1785,62 +1788,63 @@ transform: scaleX(1);
 }  
   /* Lets create an animation that is best for when 1 of the three projects are viewable at a time */
     
-    @media screen and (max-width: 1536px) {
+    @media screen and (max-width: 2296px) {
         
     
         /* We want project 1 to slide in from the left */
-        #Project1__container {
+        .Project__container1 {
             transform: translateX(-100%);
             opacity: 0;
         }
     
-        .page2container.startAnimation #Project1__container {
+        .Project__container1.startAnimation {
             transform: translateX(0);
             opacity: 1;
-            transition: transform ease-in 400ms 600ms, opacity ease-in 400ms 600ms
+            transition: transform ease-in 400ms 700ms, opacity ease-in 400ms 700ms
         }
     
         /* We want project 2 to slide in from the right */
     
-        #Project2__container {
+        .Project__container2 {
             transform: translateX(100%);
             opacity: 0;
         }
     
-        .page2container.startAnimation #Project2__container {
+        .Project__container2.startAnimation {
             opacity: 1;
             transform: translateX(0);
-            transition: transform ease-in 400ms 1200ms, opacity ease-in 400ms 1200ms
+            transition: transform ease-in 400ms 700ms, opacity ease-in 400ms 700ms
         }
     
-        /* We want project 3 to grow in size from the middle */
+        /* We want project 3 to slide in from the left */
     
-        #Project3__container {
+        .Project__container3 {
             transform: translateX(-100%);
             opacity: 0;
         }
     
-        .page2container.startAnimation #Project3__container {
+        .Project__container3.startAnimation {
             opacity: 1;
             transform: translateX(0);
-            transition: transform ease-in 400ms 2000ms, opacity ease-in 400ms 2000ms
+            transition: transform ease-in 400ms 700ms, opacity ease-in 400ms 700ms
         }
     }
+
   /* Lets create an animation that is best for when two of the three projects are viewable at the same time */
     /* Lets have the heading come from the bottom of the screen */
 
   /* Lets create an animation that is best for when all three projects are viewable at the same time */
     /* Lets have the heading come from the bottom of the screen */
-@media screen and (min-width: 1537px) {
+@media screen and (min-width: 2297px) {
     
 
     /* We want project 1 to slide in from the left */
-    #Project1__container {
+    .Project__container1 {
         transform: translateX(-100%);
         opacity: 0;
     }
 
-    .page2container.startAnimation #Project1__container {
+    .Project__container1.startAnimation {
         transform: translateX(0);
         opacity: 1;
         transition: transform ease-in 400ms 600ms, opacity ease-in 400ms 600ms
@@ -1848,12 +1852,12 @@ transform: scaleX(1);
 
     /* We want project 3 to slide in from the left */
 
-    #Project3__container {
+    .Project__container3 {
         transform: translateX(100%);
         opacity: 0;
     }
 
-    .page2container.startAnimation #Project3__container {
+    .Project__container3.startAnimation {
         opacity: 1;
         transform: translateX(0);
         transition: transform ease-in 400ms 1000ms, opacity ease-in 400ms 1000ms
@@ -1861,15 +1865,15 @@ transform: scaleX(1);
 
     /* We want project 2 to grow in size from the middle */
 
-    #Project2__container {
+    .Project__container2 {
         transform: scale(0);
         opacity: 0;
     }
 
-    .page2container.startAnimation #Project2__container {
+    .Project__container2.startAnimation {
         opacity: 1;
         transform: scale(1);
-        transition: transform ease-in 400ms 1400ms, opacity ease-in 400ms 1400ms
+        transition: transform ease-in 400ms 400ms, opacity ease-in 400ms 400ms
     }
 }
 
