@@ -2,10 +2,13 @@ var bannerStatus = 1;
 // This will be the time it takes to change images (in miliseconds)
 var bannerTimer = 5000;
 
-
-window.onload = function () {
+var TriggerScript = document.getElementById("Learn__More_btn2")
+TriggerScript.onclick = function () {
     bannerLoop();
 }
+// We want to stop this function when the window is closed
+var StopScript = document.getElementById("closeWindowBtn__Project2")
+StopScript.onclick = stop;
 
 var startBannerLoop = setInterval(function() {
     bannerLoop();
