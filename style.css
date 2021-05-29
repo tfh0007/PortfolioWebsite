@@ -39,8 +39,8 @@ body {
     
 
 }
-
-.fa-exclamation-triangle {
+/* I am removing this animation cause it is unnecessary and slowing down my website */
+/* .fa-exclamation-triangle {
 
     animation-name: pulseTriangle;
     animation-duration: 2.5s;
@@ -49,7 +49,7 @@ body {
 
     
 }
-/* Pretty sure this animation will continue even if it is invisible */
+/* Pretty sure this animation will continue even if it is invisible 
 @keyframes pulseTriangle{
     0%   {color: red;}
   
@@ -57,6 +57,8 @@ body {
   
   
 }
+*/
+
 
 
 /* This class will contain our custom warnning message after the message has been dismissed*/
@@ -627,6 +629,8 @@ So lets fix this issue */
     padding-top: 6px;
     padding-left: 2ch;
     padding-right: 2ch;
+    /* We will animate this when the website loads so it should start invisible */
+    opacity: 0;
     
 }
 /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
@@ -681,7 +685,7 @@ So lets fix this issue */
     margin-top: -1.1ch;
      /* We will animate this when the website loads so it should start invisible */
      opacity: 0;
-     transform: scale(.1);
+     transform: scale(0);
 }
 .pictureOfMe__container {
 
@@ -837,6 +841,9 @@ So lets fix this issue */
     font-size: 2.6rem;
     padding: 3ch 2ch;
     color: #3633C9;
+
+    /* we want the text to start off screen and we will bring it on screen with animation */
+    transform: translateY(100%);
 
      /*Borders for testing can be removed now
     border: solid lightblue 4px;
@@ -1711,6 +1718,8 @@ transform: scaleX(1);
 
 
 /* Lets deal with the animations caused by intersection observers */
+
+/* Page 1 intersection observer */
 /* Lets have a typing animation to reveal my name */
 .page1container.startAnimation h1{
 
@@ -1718,7 +1727,7 @@ transform: scaleX(1);
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     padding-bottom: 1ch;
-    
+    opacity: 1;
     animation: 
       typing 3s steps(30, end);
       
@@ -1763,9 +1772,112 @@ transform: scaleX(1);
     transform: scale(1.1);
     transition: opacity ease-in 300ms 3.9s, transform ease-in 300ms 3.9s;
   }
-  
-  
-  
+
+
+
+/* Page 2 intersection observer */
+
+/* Lets have the heading come from the bottom of the screen */
+.page2container.startAnimation h1 {
+    
+    transform: translateY(0);
+    transition: transform ease-in 400ms  
+}  
+  /* Lets create an animation that is best for when 1 of the three projects are viewable at a time */
+    
+    @media screen and (max-width: 1536px) {
+        
+    
+        /* We want project 1 to slide in from the left */
+        #Project1__container {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    
+        .page2container.startAnimation #Project1__container {
+            transform: translateX(0);
+            opacity: 1;
+            transition: transform ease-in 400ms 600ms, opacity ease-in 400ms 600ms
+        }
+    
+        /* We want project 2 to slide in from the right */
+    
+        #Project2__container {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    
+        .page2container.startAnimation #Project2__container {
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform ease-in 400ms 1200ms, opacity ease-in 400ms 1200ms
+        }
+    
+        /* We want project 3 to grow in size from the middle */
+    
+        #Project3__container {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    
+        .page2container.startAnimation #Project3__container {
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform ease-in 400ms 2000ms, opacity ease-in 400ms 2000ms
+        }
+    }
+  /* Lets create an animation that is best for when two of the three projects are viewable at the same time */
+    /* Lets have the heading come from the bottom of the screen */
+
+  /* Lets create an animation that is best for when all three projects are viewable at the same time */
+    /* Lets have the heading come from the bottom of the screen */
+@media screen and (min-width: 1537px) {
+    
+
+    /* We want project 1 to slide in from the left */
+    #Project1__container {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    .page2container.startAnimation #Project1__container {
+        transform: translateX(0);
+        opacity: 1;
+        transition: transform ease-in 400ms 600ms, opacity ease-in 400ms 600ms
+    }
+
+    /* We want project 3 to slide in from the left */
+
+    #Project3__container {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .page2container.startAnimation #Project3__container {
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform ease-in 400ms 1000ms, opacity ease-in 400ms 1000ms
+    }
+
+    /* We want project 2 to grow in size from the middle */
+
+    #Project2__container {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    .page2container.startAnimation #Project2__container {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform ease-in 400ms 1400ms, opacity ease-in 400ms 1400ms
+    }
+}
+
+
+
+
+
+
 
 
 
