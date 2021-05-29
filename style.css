@@ -1178,6 +1178,41 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
+/* This class and id contain our buttons for changing the images */
+.imgbanbtn {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 125px;
+    z-index: 2000;
+    opacity: 0.2;
+    cursor: pointer;
+
+
+
+}
+
+.imgbanbtn:hover {
+   
+    opacity: 0.9;
+}
+
+.imgbanbtn-prev {
+
+    left: 5px;
+    font-size: 2.5rem;
+    
+}
+
+.imgbanbtn-next {
+
+    right: 15px;
+    font-size: 2.5rem;
+}
+
+
+
+
 
 
 
