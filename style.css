@@ -1129,6 +1129,57 @@ transition: transform 350ms ease-in-out;
 }
 
 
+/* Lets make a rotating image banner that will show various pictures of the project */
+/* The size of this banner will increase when the display size increases */
+.main-banner {
+    width: 420px;
+    height: 330px;
+    margin-top: 100px;
+    background-color: #fff;
+    overflow: hidden;
+    position: absolute;
+}
+
+.main-banner .imgban {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition: all ease-in-out 500ms;
+}
+
+/* We need to make room for the banner container */
+.extended__Description__text {
+
+    margin-top: 36ch;
+}
+
+/* This class and id contain our 3rd image for project 2 */
+.main-banner #imgban3 {
+    background-image: url(images/MarioGun3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project 2 */
+.main-banner #imgban2 {
+    background-image: url(images/MarioImg2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner #imgban1 {
+    background-image: url(images/MarioImg1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
 
 
 /* This class contains the page 2 footer text which says "More of my 
