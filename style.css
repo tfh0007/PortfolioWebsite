@@ -1199,7 +1199,7 @@ transition: transform 350ms ease-in-out;
     width: 30px;
     height: 40px;
     position: absolute;
-    top: 125px;
+    top: 142px;
     z-index: 2000;
     opacity: 0.3;
     cursor: pointer;
@@ -1309,7 +1309,7 @@ transition: transform 350ms ease-in-out;
     width: 30px;
     height: 40px;
     position: absolute;
-    top: 145px;
+    top: 163.3px;
     z-index: 2000;
     opacity: 0.3;
     cursor: pointer;
@@ -1421,7 +1421,7 @@ transition: transform 350ms ease-in-out;
     width: 30px;
     height: 40px;
     position: absolute;
-    top: 145px;
+    top: 163px;
     z-index: 2000;
     opacity: 0.3;
     cursor: pointer;
@@ -1513,7 +1513,7 @@ Projects Can be Found Under the Projects Page" */
     /* This class contains the page 2 footer text which says "More of my
         Projects Can be Found Under the Projects Page" */
     .page2footer {
-        font-size: 1.9rem;
+        font-size: 2.1rem;
         padding-top: 5ch;
         padding-bottom: 5ch;
     }
