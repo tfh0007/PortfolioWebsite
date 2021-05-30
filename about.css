@@ -1,0 +1,49 @@
+/* This class contains my heading banner background */
+.topBanner {
+    margin-top: 90px;
+}
+
+/* This class contains my choose me text and resume text */
+.page1__body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* This class contains my choose me text and resume text */
+.page1__body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* This class contains my choose me text */
+.choose__me_text {
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    padding: 3ch;
+    font-size: 1.5rem;
+}
+
+/* This class contains my resume text */
+.look__at__resume__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 3ch;
+    font-size: 1.5rem;
+}
+
+/* This class contains my education text */
+.my__education__text {
+
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 3ch;
+    font-size: 1.2rem;
+}
