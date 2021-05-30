@@ -1,11 +1,12 @@
+
 var bannerStatus2 = 1;
 // This will be the time it takes to change images (in miliseconds)
 var bannerTimer2 = 7000;
 
 
 // We want to stop this function when the window is closed
-var StopScript2 = document.getElementById("closeWindowBtn__Project1")
-StopScript2.onclick = stop;
+//var StopScript2 = document.getElementById("closeWindowBtn__Project1")
+//StopScript2.onclick = stop;
 
 var startbannerLoop2 = setInterval(function() {
     bannerLoop2();

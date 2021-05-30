@@ -186,6 +186,8 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
   background: none; 
   border: none;
   cursor: pointer;
+  /* Doing this makes the menu more aligned bu also messes up page 1 alignment which needs to be fixed */
+  margin-top: -3px;
 
 }
 
@@ -579,7 +581,7 @@ So lets fix this issue */
     rgba(250, 0, 255, 0.22) 345.5deg, 
     rgba(2, 194, 148, 0.47) 360.34deg);
 
-    margin-top: 5.4rem;
+    margin-top: 5.2rem;
     padding-top: 1rem;
     padding-bottom: 0;
     display: flex;
@@ -1134,12 +1136,25 @@ transition: transform 350ms ease-in-out;
 .main-banner {
     width: 420px;
     height: 330px;
-    margin-top: 100px;
+
     background-color: rgb(0, 0, 0);
     overflow: hidden;
     position: absolute;
     max-width: 97%;
 }
+/* The margin needs to be different when the display gets too small */
+@media screen and (max-width: 572px) {
+    .main-banner {
+        margin-top: 120px;
+    }
+}
+/* The margin needs to be different when the display gets larger */
+@media screen and (min-width: 573px) {
+    .main-banner {
+        margin-top: 85px;
+    }
+}
+
 
 .main-banner .imgban {
     width: 100%;
@@ -1231,17 +1246,30 @@ transition: transform 350ms ease-in-out;
 .main-banner2 {
     width: 600px;
     height: 370px;
-    margin-top: 100px;
+    
     background-color: rgb(0, 0, 0);
     overflow: hidden;
     position: absolute;
     max-width: 97%;
 }
 
+/* The margin needs to be different when the display gets too small */
+@media screen and (max-width: 828px) {
+    .main-banner2 {
+        margin-top: 128px;
+    }
+}
+/* The margin needs to be different when the display gets larger */
+@media screen and (min-width: 829px) {
+    .main-banner2 {
+        margin-top: 85px;
+    }
+}
+
     /* We need to make room for the banner container */
     #extended__Description__text1 {
 
-        margin-top: 44ch;
+        margin-top: 41.5ch;
     }
 
 .main-banner2 .imgban2 {
@@ -1328,17 +1356,32 @@ transition: transform 350ms ease-in-out;
 .main-banner3 {
     width: 600px;
     height: 370px;
-    margin-top: 100px;
+    
     background-color: rgb(0, 0, 0);
     overflow: hidden;
     position: absolute;
     max-width: 97%;
 }
 
+/* The margin needs to be different when the display gets too small */
+@media screen and (max-width: 587px) {
+    .main-banner3 {
+        margin-top: 128px;
+    }
+}
+/* The margin needs to be different when the display gets larger */
+@media screen and (min-width: 588px) {
+    .main-banner3 {
+        margin-top: 85px;
+    }
+}
+
+
+
     /* We need to make room for the banner container */
     #extended__Description__text3 {
 
-        margin-top: 44ch;
+        margin-top: 41.5ch;
     }
 
 .main-banner3 .imgban3 {
