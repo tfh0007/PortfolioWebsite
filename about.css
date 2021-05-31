@@ -4,13 +4,13 @@
 /* This class contains my heading banner container */
 .topBanner {
     
-    margin-top: 84px;
+    margin-top: 80px;
     left: 0;
     right: 0;
     
     
     overflow: hidden;
-    background-color: ;
+    
 
     
     
@@ -24,7 +24,7 @@
     display: flex;
     align-content: center;
     overflow: none;
-    margin-top: -200px;
+    margin-top: -250px;
     background: #0b1b09;
     
     
@@ -52,41 +52,14 @@
     flex-direction: row;
     
     
-    margin-top: -5px;
+    
     width: 100%;
     height: auto;
+    transform: scale(0.7);
     
     
     
 }
-
-/*We want to have the matrix above the banner when we have enough space */
-@media screen and (min-width: 700px) {
-
-    .topBanner  {
-        margin-top: 160px;
-    }
-
-    .Matrix__rain__container {
-        margin-top: -300px;
-        
-    }
-
-
-}
-/* The banner needs to start later on desktop*/
-@media screen and (min-width: 1293px) {
-    
-    .topBanner  {
-        margin-top: 140px;
-    }
-    .Matrix__rain__container {
-        margin-top: -300px;
-    }
-
-}
-
-
 
 /* This class contains my choose me text, career interests, and resume text */
 .page1__body {
@@ -97,10 +70,51 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 70px;
+    margin-top: -4px;
     padding-bottom: 100px;
     overflow: hidden;
 }
+
+/*We want to have the matrix above the banner when we have enough space */
+@media screen and (min-width: 700px) {
+
+    .topBanner  {
+        margin-top: 160px;
+    }
+
+    .topBanner__container {
+        transform: scale(1);
+    }
+
+    .Matrix__rain__container {
+        margin-top: -310px;
+        
+    }
+
+    .page1__body {
+        margin-top: 70px;
+    }
+
+
+}
+/* The banner needs to start later on desktop*/
+@media screen and (min-width: 1293px) {
+    
+    .topBanner  {
+        margin-top: 140px;
+    }
+
+    
+
+    .Matrix__rain__container {
+        margin-top: -300px;
+    }
+
+}
+
+
+
+
 
 
 /* This class contains my choose me text */
@@ -162,6 +176,42 @@
     align-items: center;
     padding: 3ch;
     font-size: 1.2rem;
+    
+}
+
+/* This class contains my embeded Resume file container*/
+.embeded__resume__container {
+
+    
+    /* Until we want to view the resume we want it to stay invisible */
+    display: none;
+    
+}
+
+/* This class contains my embeded Resume file */
+.embeded__resume__container embed {
+    width: 100%;
+    height: 100%;
+}
+
+/* This class contains my embeded Resume file container while it is active*/
+.embeded__resume__container.active {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    max-width: 1300px;
+    width: 100%;
+    border: solid 8px;
+    height: 800px;
+}
+
+/*On desktop we want the embeded resume to have a larger container */
+@media  screen and (min-width: 1293px) {
+    .embeded__resume__container.active {
+        height: 1200px;
+        
+    }
     
 }
 
