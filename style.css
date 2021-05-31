@@ -710,8 +710,11 @@ So lets fix this issue */
 
 }
 
-
+/* THis class contains an illustration of a programmer */
+.picture__of__programmer {
     
+    max-width: 200px;
+}    
 
 
 

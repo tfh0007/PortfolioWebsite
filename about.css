@@ -25,7 +25,7 @@
     align-content: center;
     overflow: none;
     margin-top: -200px;
-    background: #0f200c;
+    background: #0b1b09;
     
     
 
@@ -99,6 +99,7 @@
     justify-content: space-around;
     margin-top: 70px;
     padding-bottom: 100px;
+    overflow: hidden;
 }
 
 
@@ -114,6 +115,28 @@
     font-size: 1.5rem;
 }
 
+
+.my__career__interests {
+
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 3ch;
+    font-size: 1.5rem;
+    max-width: 800px;
+    
+}
+
+.picture__of__programmer__container {
+    height: 500px;
+    width: 500px;
+    transform: scale(.7);
+    position: relative;
+    margin-left: -326.5px;
+    margin-top: -100px;
+    
+}
 /* This class contains my resume text */
 .look__at__resume__text {
     
@@ -142,13 +165,8 @@
     
 }
 
-.my__career__interests {
 
-    padding: 3ch;
-    font-size: 1.5rem;
-    max-width: 800px;
-    
-}
+
 
 /* This class contains by Personal backstory and pictures */
 .page2__container {
