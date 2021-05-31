@@ -1,25 +1,106 @@
-/* This class contains my heading banner background */
+
+
+
+/* This class contains my heading banner container */
 .topBanner {
-    margin-top: 90px;
+    
+    margin-top: 84px;
+    left: 0;
+    right: 0;
+    
+    background-color: rgb(83, 83, 83);
+    overflow: none;
+
+    
+    
+}
+
+.Matrix__rain__container {
+    
+    width: 100%;
+    z-index: -100;
+    position: fixed;
+    overflow: none;
+
+}
+
+#matrix__Rain {
+    
+    
+    width: 100%;
+    height: auto;
+    
+    z-index: -100;
+}
+
+/* This class contains my heading banner background */
+.topBanner__container {
+   
+    
+    display: flex;
+    justify-content: center;
+    overflow: none;
+    flex-direction: row;
+    
+    
+    margin-top: -5px;
+    width: 100%;
+    height: auto;
+    
+    
+    
+}
+
+/* The banner gets too small quite quickly so lets fix this */
+@media screen and (min-width: 700px) {
+    
+    .topBanner__container {
+        transform: scale(.8);
+        margin-top: 3px;
+    }
+}
+/* The banner gets too small quite quickly so lets fix this */
+@media screen and (min-width: 800px) {
+    
+    .topBanner__container {
+        transform: scale(.9);
+    }
+}
+/* The banner gets too small quite quickly so lets fix this */
+@media screen and (min-width: 900px) {
+    
+    .topBanner__container {
+        transform: scale(1);
+    }
+}
+
+/* The banner gets too small quite quickly so lets fix this */
+@media screen and (min-width: 1293px) {
+    
+    .topBanner  {
+        margin-top: 69px;
+    }
+
 }
 
 /* This class contains my choose me text and resume text */
 .page1__body {
+    z-index: 50;
+    position: relative;
+    background-color: rgb(0, 255, 242);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 70px;
 }
-/* This class contains my choose me text and resume text */
-.page1__body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+
 
 /* This class contains my choose me text */
 .choose__me_text {
+    
     display: flex;
+   
     max-width: 800px;
     flex-direction: column;
     align-items: center;
@@ -29,6 +110,7 @@
 
 /* This class contains my resume text */
 .look__at__resume__text {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,6 +123,7 @@
 .my__education__text {
 
     display: flex;
+    position: relative;
     
     flex-direction: column;
     align-items: center;
