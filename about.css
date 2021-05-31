@@ -202,14 +202,51 @@
 
     max-width: 1300px;
     width: 100%;
-    border: solid 8px;
-    height: 800px;
+    border: solid black 6px;
+    height: 900px;
+}
+
+/* This class contains the resume related buttons*/
+.downloadResume__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+/* This id contains my view Resume file button while*/
+#view__resume__btn {
+    font-size: 1.4rem;
+    position: relative;
+    list-style: none;
+    text-decoration: none;
+    background: red;
+    border-radius: 20px;
+    margin-top: 2.7ch;
+    margin-bottom: 6.5ch;
+    margin-left: 1ch;
+    margin-right: 1ch;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    
+}
+
+/* This id contains my minimize Resume file button while the resume container is active*/
+#minimize__resume__btn {
+   
+    background-color: rgb(117, 117, 117);
+    font-size: 1.7rem;
+    padding: 3px;
+    cursor: pointer;
+    
 }
 
 /*On desktop we want the embeded resume to have a larger container */
 @media  screen and (min-width: 1293px) {
     .embeded__resume__container.active {
-        height: 1200px;
+        height: 1300px;
         
     }
     
