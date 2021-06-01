@@ -227,9 +227,10 @@
 #minimize__resume__btn {
    
     background-color: rgb(117, 117, 117);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     padding: 3px;
     cursor: pointer;
+    color: white;
     
 }
 
@@ -249,6 +250,12 @@
     background-color: rgb(255, 166, 0);
 }
 
+.my__education__text h1 {
+    margin-top: 0px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
 /* This class contains my education text */
 .my__education__text {
 
@@ -257,10 +264,55 @@
     
     flex-direction: column;
     align-items: center;
+    justify-items: center;
     padding: 3ch;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    
     
 }
+
+/* This class contains my Universitys/school text and pictures*/
+.Auburn__education,
+.Spring__Hill__education,
+.UMS__education 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 10ch;
+    overflow-x: hidden;
+}
+
+/* This class contains my Universitys and school text*/
+.Auburn__education__text,
+.Spring__Hill__education__text,
+.UMS__education__text 
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 850px;
+    font-size: 1.8rem;
+    padding: 2ch;
+    align-items: center;
+    
+
+}
+
+/* This class contains my Universitys and school images*/
+.picture__of__Auburn__University,
+.picture__of__Spring__Hill__College,
+.picture__of__Ums__Wright
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* With out forcing a max height our images can stretch and become ugly overall */
+    max-height: 300px;
+    
+}
+
 
 
 /* This class contains by Personal backstory and pictures */
