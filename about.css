@@ -127,7 +127,7 @@
     flex-direction: column;
     align-items: center;
     padding: 3ch;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 
@@ -138,7 +138,7 @@
     flex-direction: column;
     align-items: center;
     padding: 3ch;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     max-width: 800px;
     
 }
@@ -163,8 +163,12 @@
     align-items: center;
     background: tan;
     
-    padding: 3ch;
+    padding-top: 2ch;
+    padding-bottom: 5ch;
+    padding-left: 3ch;
+    padding-right: 3ch;
     font-size: 1.5rem;
+    
 }
 
 /* This class contains my embeded Resume file container*/
@@ -205,6 +209,28 @@
 
 }
 
+/* This class contains the download resume button*/
+.Download__Resume__btn {
+    font-size: 1.4rem;
+    position: relative;
+    list-style: none;
+    text-decoration: none;
+    background: rgba(255, 0, 0, 0.411);
+    border: solid 5px;
+    border-color: red;
+    
+    border-radius: 20px;
+    max-height: 50px;
+    margin-left: 1ch;
+    margin-right: 1ch;
+    margin-bottom: 2ch;
+
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+
+}
+
 /* This id contains my view Resume file button while*/
 #view__resume__btn {
     font-size: 1.4rem;
@@ -213,13 +239,16 @@
     text-decoration: none;
     background: red;
     border-radius: 20px;
-    margin-top: 2.7ch;
-    margin-bottom: 6.5ch;
+    
+    
     margin-left: 1ch;
     margin-right: 1ch;
-    padding: 8px;
+    margin-bottom: 2ch;
+    padding: 6px;
     color: white;
     cursor: pointer;
+    max-height: 50px;
+    
     
 }
 
@@ -318,12 +347,43 @@
 /* This class contains by Personal backstory and pictures */
 .page2__container {
     position: relative;
-    background-color: rgb(5, 231, 220);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    background-color: rgb(255, 238, 0);
+
     font-size: 1.3rem;
     
     
+
+}
+/* This class contains by Personal backstory heading */
+.my__Backstory__heading {
+
+    font-size: 1.8rem;
+    padding-left: 3ch;
+    padding-right: 3ch;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.my__Backstory {
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+    
+    
+    
+
+}
+/* This class contains by Personal backstory text */
+.my__Backstory__text {
+    padding: 2ch;
+    font-size: 1.5rem;
+    width: 33.333%;
+    max-width: 600px;
+    min-width: 400px;
 }
