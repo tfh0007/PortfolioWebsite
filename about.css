@@ -65,7 +65,8 @@
 .page1__body {
     z-index: 50;
     position: relative;
-    background-color: rgb(5, 231, 220);
+    background: rgb(0, 217, 255); 
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -151,32 +152,19 @@
     margin-top: -100px;
     
 }
+
+
+
 /* This class contains my resume text */
 .look__at__resume__text {
     
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: tan;
     
     padding: 3ch;
     font-size: 1.5rem;
-}
-/* This class contains my education and images */
-.page1__body2 {
-    background-color: rgb(255, 166, 0);
-}
-
-/* This class contains my education text */
-.my__education__text {
-
-    display: flex;
-    position: relative;
-    
-    flex-direction: column;
-    align-items: center;
-    padding: 3ch;
-    font-size: 1.2rem;
-    
 }
 
 /* This class contains my embeded Resume file container*/
@@ -185,6 +173,7 @@
     
     /* Until we want to view the resume we want it to stay invisible */
     display: none;
+    
     
 }
 
@@ -204,6 +193,7 @@
     width: 100%;
     border: solid black 6px;
     height: 900px;
+    
 }
 
 /* This class contains the resume related buttons*/
@@ -253,6 +243,24 @@
 }
 
 
+
+/* This class contains my education and images */
+.page1__body2 {
+    background-color: rgb(255, 166, 0);
+}
+
+/* This class contains my education text */
+.my__education__text {
+
+    display: flex;
+    position: relative;
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 3ch;
+    font-size: 1.2rem;
+    
+}
 
 
 /* This class contains by Personal backstory and pictures */
