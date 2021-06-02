@@ -24,17 +24,27 @@ background: linear-gradient(252.44deg,
     flex-wrap: wrap;
 
     margin-top: 83px;
-    padding-top: 6ch;
-    padding-bottom: 6ch;
+    padding-top: 5ch;
+    padding-bottom: 5ch;
 }
 
 /* When we move to desktop the navbar shrinks so the top margin needs to shrink as well */
+
 @media screen and (min-width: 1293px) {
     .page1__container {
         margin-top: 68px;
+        
     }
 }
 
+/* On desktop the first page is not long enough when 2 columns are visible so lets extend to top and bottom some */
+@media screen and (min-width: 1665px) {
+    .page1__container {
+        
+        padding-top: 10ch;
+        padding-bottom: 10ch;
+    }
+}
 
 /* This class contains the heading text for page 1 */
 .page1__container h1 {
@@ -82,5 +92,15 @@ background: linear-gradient(252.44deg,
    
 
     
+}
+/* When the screen gets bigger we want to make the map view larger as well */
+@media screen and (min-width: 1293px) {
+    
+
+    .Control__Auburn__map__size,
+    .Auburn__Map_style.mapouter {
+        width: 800px;
+        height: 600px;
+    }
 }
 
