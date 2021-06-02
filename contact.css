@@ -80,9 +80,19 @@ background: linear-gradient(252.44deg,
     align-items: center;
     max-width: 800px;
     overflow-x: hidden;
+      
     
-    
-    
+}
+/* This class contains the current residence location heading*/
+.Where__I__am__located h1 {
+    padding-left: 2ch;
+    padding-right: 2ch;
+}
+
+/* This class contains the current residence location sentance (paragraph)*/
+.Where__I__am__located p {
+    padding-left: 2ch;
+    padding-right: 2ch;
 }
 /* This class contains the current residence location map*/
 .gmap_canvas {
