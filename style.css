@@ -1144,6 +1144,7 @@ transition: transform 350ms ease-in-out;
     overflow: hidden;
     position: absolute;
     max-width: 97%;
+    
 }
 /* The margin needs to be different when the display gets too small */
 @media screen and (max-width: 572px) {

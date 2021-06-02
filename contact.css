@@ -52,21 +52,34 @@ background: linear-gradient(252.44deg,
 
     padding: 1ch;
     font-size: 2.8rem;
+    color: rgb(52, 57, 102);
 }
 
 /* This class contains the paragraph text for page 1 */
 .page1__container p {
 
    font-size: 1.8rem; 
+   color:rgb(42, 42, 42)
 
 
 }
 
+
 /* This class contains the current contact info text */
-.current__contact__text {
+.current__contact__text h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+   
+    padding-left: 3ch;
+    padding-right: 3ch;
+
+}
+/* This class contains the current contact info text */
+.current__contact__text p{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     max-width: 800px;
     padding-left: 3ch;
     padding-right: 3ch;
@@ -114,3 +127,51 @@ background: linear-gradient(252.44deg,
     }
 }
 
+/* This class contains the contact form heading text*/
+.Contact__form__heading {
+    display: flex;
+    justify-content: center;
+    padding: 3ch;
+    font-size: 1.7rem
+
+}
+
+/* This class contains page 2 which is the contact form page*/
+.page2__container {
+    background: -moz-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    background: linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,238,1) 100%);
+    
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15ch;
+
+}
+.page2__container h1{
+    color: rgb(42, 48, 59);
+}
+
+/* This class contains the contact phones image*/
+.phone__illustration__container {
+    transform: scale(0.65);
+    
+    padding-left: 2ch;
+    padding-right: 2ch;
+    margin-top: -80px;
+    margin-bottom: -60px;
+
+
+}
+
+/* The phone photo is too smal on desktop so lets fix that*/
+@media screen and (min-width: 1293px) {
+    
+    .phone__illustration__container {
+        transform: scale(1);
+        padding-bottom: 10ch;
+        margin-bottom: 0px;
+        margin-top: -40px;
+    
+    
+    }
+}
