@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 
 <head>
+	<!-- The language of the website is English -->
+	<html lang="en">
     <meta charset="utf-8">
-    <title> Thomas H Site-Contact Info </title>
+	<!-- I am hoping this viewport tag will make the site visible on Mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=0.75">
+	<!-- We want to use a title, description, and tags to describe our website to others-->
+    <title> Thomas Hansknecht Site-Contact </title>
+
+	<meta name="description" content="All about Thomas F Hanskecht who is a software developer 
+	including how to contact me and projects I have / am currently working on">
+ 	<meta name="keywords" content="Developer, UI Design, Java, Python, Portfolio, Engineering, CSS, HTML, JavaScript">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleContact.css">
+	<link rel="stylesheet" href="contact.css">
 	<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
 	
 
@@ -20,55 +29,79 @@
                 <!-- My logo will not be a clickable icon -->
                     <h1 class="mainLogo">Thomas F Hansknecht</h1>
 					<h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
-				
-			</div>
-				<ul class="navbar__menu-middle">
-                    <!-- Create a menu item Home. The icon phrase means an icon will be before or after 
-					the text-->
-					<li class="navbar__item-center icon">
-						<a href="index.html" class="navbar__links"><i class=" fas fa-home fa-fw"></i>&nbsp; Home</a></li>
+				</div>
+	<!-- Lets make the mobile menu first-->			
+				<div>
 
-					<!-- Create a menu item About Me -->
-					<li class="navbar__item-center icon">
-						<a href="AboutMe.html" class="navbar__links"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About Me</a></li>
+					<ul class="navbar__menu-mobile">
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+						the text-->
+						<li class="navbar__item-center icon">
+							<a href="index.html" class="navbar__links"id="navbar__mobile__link2"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
 
-					<!-- Create a menu item Projects -->
-					<li class="navbar__item-center icon">
-                        <a href="Projects.html" class="navbar__links"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects</a></li>
+						<!-- Create a menu item About Me -->
+						<li class="navbar__item-center icon">
+							<a href="AboutMe.html" class="navbar__links"id="navbar__mobile__link3"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About Me &nbsp;</a></li>
 
-					<!-- Create a menu item Contact Me -->
-					<li class="navbar__item-center icon">
-						<a href="ContactMe.html" class="navbar__links"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information</a></li>
+						<!-- Create a menu item Projects -->
+						<li class="navbar__item-center icon">
+							<a href="Projects.html" class="navbar__links"id="navbar__mobile__link4"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
 
-				</ul>
-			<div>
-				<ul class="navbar__menu-right-mobile">
-					 <!-- Create a menu item Handshake Icon -->
-					<li class="navbar__item-right icon">
-						<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class=" fas fa-handshake fa-fw"></i>&nbsp; View my Handshake Profile</a></li>  
-                       
-					<!-- Create a menu item LinkedIn Icon -->
-					<li class="navbar__item-right icon">
-						<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; Check Out My LinkedIn Profile</a></li>  
-                    
-					<!-- Create a menu item Github Icon -->
-					<li class="navbar__item-right icon">
-						<a href="https://github.com/tfh0007" class="navbar__links"><i class=" fab fa-github fa-fw"></i>&nbsp; Visit My GitHub Page</a></li>  		
+						<!-- Create a menu item Contact Me -->
+						<li class="navbar__item-center icon">
+							<a href="ContactMe.html" class="navbar__links"id="navbar__mobile__link1"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information &nbsp;</a></li>
+					
+						<!-- Create a menu item Handshake Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"id="navbar__mobile__link5"><i class=" fas fa-handshake fa-fw"></i>&nbsp; View my Handshake Profile &nbsp;</a></li>  
+						
+						<!-- Create a menu item LinkedIn Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"id="navbar__mobile__link6"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; Check Out My LinkedIn Profile &nbsp;</a></li>  
+						
+						<!-- Create a menu item Github Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://github.com/tfh0007" class="navbar__links"id="navbar__mobile__link7"><i class=" fab fa-github fa-fw"></i>&nbsp; Visit My GitHub Page &nbsp;</a></li>  		
 					</ul>
+				</div>
+
+
+		<!-- Lets make the Desktop menu second-->
+				<div class="navbar__menu-middle-container">
+					<ul class="navbar__menu-middle-desktop">
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+						the text-->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="index.html" class="navbar__links" id="navbar__desktop__link2"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
+
+						<!-- Create a menu item About Me -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="AboutMe.html" class="navbar__links" id="navbar__desktop__link3"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About Me &nbsp;</a></li>
+
+						<!-- Create a menu item Projects -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="Projects.html" class="navbar__links" id="navbar__desktop__link4"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
+
+						<!-- Create a menu item Contact Me -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="ContactMe.html" class="navbar__links" id="navbar__desktop__link1"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact Information &nbsp;</a></li>
+				</div>
+				
+					
 				<div>
 					<ul class="navbar__menu-right-desktop">
 								 <!-- Create a menu item Handshake Icon -->
 								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
 								<li class="navbar__item-right icon">
-									<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links"><i class="fas fa-handshake"></i></a></li>  
+									<a href="https://auburn.joinhandshake.com/users/15063009" class="navbar__links" id="navbar__desktop__link5"><i class="fas fa-handshake"></i></a></li>  
 								   
 								<!-- Create a menu item LinkedIn Icon -->
 								<li class="navbar__item-right icon">
-									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"><i class="fab fa-linkedin-in"></i></a></li>  
+									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"  id="navbar__desktop__link6"><i class="fab fa-linkedin-in"></i></a></li>  
 								
 								<!-- Create a menu item Github Icon -->
 								<li class="navbar__item-right icon">
-									<a href="https://github.com/tfh0007" class="navbar__links"><i class="fab fa-github"></i></a></li>  		
+									<a href="https://github.com/tfh0007" class="navbar__links" id="navbar__desktop__link7"><i class="fab fa-github"></i></a></li>  		
 							
                </ul>
 			</div>
@@ -76,18 +109,94 @@
 		</nav>
     </header>
 
+	<div class="page1__container">
+
+		<div class="current__contact__text">
+
+			<h1>Current Contact Information</h1>
+
+			<p> My prefered form of contact is email or text message </p>
+			<p> My email is tfh0007@auburn.edu</p>
+			<p> My phone number is 251-327-7009 </p>
+			<p> <strong>Note: </strong> I am always skeptical about unknown or unverified numbers thus when trying to reach me by phone leave a voicemail as I am not likely to answer unless I am expecting the call</p>
+			<p> <strong>Note: </strong> I can also be reached directly with the contact form located on the next page</p>
+		</div>
+
+		<div class="Where__I__am__located">
+			<h1> Current Residence Location</h1>
+			<p> I am currently located in Auburn, Alabama</p>
+		<!-- A google map of Auburn Alabama-->
+			<div class="Auburn__map__pointer"><div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Auburn%20Al&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe><a href="https://fmovies-online.net"></a><br><style>.mapouter{height:600px;width:800px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:600px;width:800px;}</style></div></div>
+
+		</div>
+	</div>
+
+	<div class="page2__container">
+			<div class="Contact__form">
+
+		</div>
+		<h1> Let's connect with each other</h1>
+
+		<div class= "page3Words__And__illustration">
+
+			<!-- The reuired text means text has to be typed into that field -->
+			<!-- We want a way for users of the site to easily be able to contact me-->
+			<!-- Placeholders will show in the actual input box when nothing has been typed-->
+				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe">
+					<label for="firstname">Your First name:</label>
+					<input class="inputBox" type="text" id="userFirst" name="userFirst" required><br><br>
+					<label for="lastname">Your Last name:</label>
+					<input class="inputBox" type="text" id="userLast" name="userLast" required><br><br>
+					<label for="email">Your Email Address:</label>
+					<input class="inputBox" type="email" id="userEmail" name="userEmail" placeholder="email@domain.com" required><br><br>
+					<label for="comments">Tell Me Something:</label>
+					<textarea class="inputBox" type="text" name="message" rows="6" cols="50" placeholder="Type Something" id="textBoxArea"></textarea>
+					<input class="submit__btn" type="submit" value="Submit">
+					<div id ="my-form-status"></div>
+					
+				</form>
+
+
+		
+	</div>
+
+	
+
+	
 
 
 
-    <!--Scripts for Navigation -->
+
+
+
+
+
+
+<!-- Now we are at the footer-->
+
+<footer>
+<div class="footer__container">
+	<p class= "footer__text"><i class="fas fa-copyright fa-fw" style="color: black;"></i>2021Thomas,H. All rights reserved </p>
+	
+</div>
+
+</footer>
+
+
+
+
+
+<!--Scripts for Navigation -->
 	<!-- We want to toggle states for our mobile menu -->
 	<script
 	src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('.menuButton').click(function() {
-				$('.navbar__menu-middle').toggleClass('active')
-					$('.navbar__menu-right-mobile').toggleClass('active')
+					$('.navbar').toggleClass('active')
+					$('.navbar__menu-mobile').toggleClass('active')
+					
+
 
 					
 
@@ -95,3 +204,14 @@
 			})
 
 		</script>
+
+
+<!-- Scripts for page3--> 
+<!-- Our custom javascript for handeling the contact form-->
+
+<script src="javascript/formSubmission.js"> </script>
+
+
+
+</body>
+

@@ -1,4 +1,12 @@
+/* By setting the margin and height to max in the body we ensure that our div classes extend the entire screen */
+body {
 
+    margin:0px;
+    height:100%;
+
+
+    
+}
 
 
 /* This class contains my heading banner container */

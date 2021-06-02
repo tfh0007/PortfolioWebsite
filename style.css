@@ -2009,6 +2009,17 @@ we are on. The link1 id location will be changed depending on the html file we a
     color: white;
 }
 
+/* Next lets create animation for the close notification button */
+
+.notification__btn {
+    transition: color 300ms ease-out;
+}
+.notification__btn:hover,
+.notification__btn:focus {
+
+    color: rgb(214, 27, 27);
+}
+
 
 /*Next lets create the hover animation for our learn more project description buttons */
 
@@ -2084,7 +2095,7 @@ transform: scaleX(1);
     padding-bottom: 1ch;
     opacity: 1;
     animation: 
-      typing 3s steps(30, end);
+      typing 2500ms steps(30, end);
       
   }
   
@@ -2100,7 +2111,7 @@ transform: scaleX(1);
   
   {
     opacity: 1;
-    transition: opacity ease-in 300ms 3s;
+    transition: opacity ease-in 300ms 2500ms;
     
 
       
@@ -2110,13 +2121,13 @@ transform: scaleX(1);
 
   {
     opacity: 1;
-    transition: opacity ease-in 300ms 3.3s;
+    transition: opacity ease-in 300ms 2800ms;
 
   }
 
   .page1container.startAnimation .page1sentance3 {
     opacity: 1;
-    transition: opacity ease-in 300ms 3.6s;
+    transition: opacity ease-in 300ms 3100ms;
 
   }
 
@@ -2125,7 +2136,7 @@ transform: scaleX(1);
     
     opacity: 1;
     transform: scale(1.1);
-    transition: opacity ease-in 300ms 3.9s, transform ease-in 300ms 3.9s;
+    transition: opacity ease-in 300ms 3.4s, transform ease-in 300ms 3.4s;
   }
 
 

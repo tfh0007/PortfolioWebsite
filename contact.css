@@ -1,0 +1,86 @@
+/* By setting the margin and height to max in the body we ensure that our div classes extend the entire screen */
+body {
+
+    margin:0px;
+    height:100%;
+
+
+    
+}
+
+
+/* This class contains everything related to my current contact information */
+.page1__container {
+
+
+background: linear-gradient(252.44deg, 
+    #FFE600 0%, 
+    rgba(255, 186, 53, 0.65) 16.67%, 
+    rgba(209, 21, 66, 0.807292) 100%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    margin-top: 83px;
+    padding-top: 6ch;
+    padding-bottom: 6ch;
+}
+
+/* When we move to desktop the navbar shrinks so the top margin needs to shrink as well */
+@media screen and (min-width: 1293px) {
+    .page1__container {
+        margin-top: 68px;
+    }
+}
+
+
+/* This class contains the heading text for page 1 */
+.page1__container h1 {
+
+
+    padding: 1ch;
+    font-size: 2.8rem;
+}
+
+/* This class contains the paragraph text for page 1 */
+.page1__container p {
+
+   font-size: 1.8rem; 
+
+
+}
+
+/* This class contains the current contact info text */
+.current__contact__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    padding-left: 3ch;
+    padding-right: 3ch;
+
+}
+
+/* This class contains the current residence location text and map*/
+.Where__I__am__located {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    overflow-x: hidden;
+    
+    
+    
+}
+/* This class contains the current residence location map*/
+.gmap_canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+    
+}
+
