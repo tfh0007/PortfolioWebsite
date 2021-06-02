@@ -215,7 +215,7 @@
     position: relative;
     list-style: none;
     text-decoration: none;
-    background: rgba(255, 0, 0, 0.411);
+    background: rgba(255, 0, 0, 0.322);
     border: solid 5px;
     border-color: red;
     
@@ -257,7 +257,7 @@
    
     background-color: rgb(117, 117, 117);
     font-size: 1.6rem;
-    padding: 3px;
+    padding: 8px;
     cursor: pointer;
     color: white;
     
@@ -386,4 +386,127 @@
     width: 33.333%;
     max-width: 600px;
     min-width: 400px;
+}
+
+/* Lets create animations for our buttons */
+
+#view__resume__btn {
+    
+    transition: color 250ms ease-in-out;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#view__resume__btn:hover,
+#view__resume__btn:focus
+
+{
+
+    color: black;
+    
+
+}
+
+#view__resume__btn::before
+
+
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: rgb(16, 231, 52);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms;
+    
+}
+
+#view__resume__btn:hover::before,
+#view__resume__btn:focus::before
+
+{
+transform: scaleX(1);
+
+}
+
+
+.Download__Resume__btn {
+    
+    transition: color 250ms ease-in-out;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.Download__Resume__btn::before
+
+
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: rgb(16, 231, 52);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms;
+    
+}
+
+.Download__Resume__btn:hover::before,
+.Download__Resume__btn:focus::before
+
+{
+transform: scaleX(1);
+
+}
+
+
+
+
+
+#minimize__resume__btn {
+    
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+#minimize__resume__btn::before
+
+
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: rgba(255, 0, 0, 0.644);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 400ms;
+    
+}
+
+#minimize__resume__btn:hover::before,
+#minimize__resume__btn:focus::before
+
+{
+transform: scaleX(1);
+
 }
