@@ -358,6 +358,7 @@ body {
     background-color: rgb(255, 238, 0);
 
     font-size: 1.3rem;
+    padding-bottom: 8ch;
     
     
 
@@ -368,6 +369,7 @@ body {
     font-size: 1.8rem;
     padding-left: 3ch;
     padding-right: 3ch;
+    padding-bottom: 1ch;
     display: flex;
     justify-content: center;
 
@@ -378,7 +380,7 @@ body {
     display: flex;
     
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 
     
@@ -395,11 +397,12 @@ body {
 
 /* THis class is the container that holds the main image banner4 */
 .main-banner4__container {
-display: flex;
-flex-direction: row;
-justify-content: center;
-padding-bottom: 8ch;
-padding-top: 1ch;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+
 
 }
 
@@ -411,7 +414,16 @@ padding-top: 1ch;
     overflow: hidden;
     position: relative;
     max-width: 96%;
+    transform: scale(.8);
 
+}
+
+/* The images look too big on a small screen so lets shrink them dow some */
+@media screen and (min-width: 900px){
+    .main-banner4 {
+
+        transform: scale(1);
+    }
 }
 
     
@@ -491,8 +503,12 @@ padding-top: 1ch;
     padding: 2ch;
     font-size: 1.5rem;
     width: 33.333%;
-    max-width: 600px;
+    max-width: 700px;
     min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 /* Lets create animations for our buttons */
