@@ -500,7 +500,6 @@ body {
     padding: 2ch;
     font-size: 1.6rem;
     
-    min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
