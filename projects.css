@@ -1,0 +1,36 @@
+/* By setting the margin and height to max in the body we ensure that our div classes extend the entire screen */
+body {
+
+    margin:0px;
+    height:100%;
+
+
+    
+}
+/* This class contains all of page 1 */
+.page1__container {
+
+    background: rgb(0, 195, 255);
+    margin-top: 83px;
+}
+
+/* page 1 needs to start later on desktop*/
+@media screen and (min-width: 1293px) {
+    
+    .page1__container  {
+        margin-top: 68px;
+    }
+
+}
+
+/* This class contains the introduction to the projects page */
+.page1__intro {
+    padding-top: 5ch;
+    font-size: 1.7rem;
+}
+
+/* This class contains the introduction to the projects page header */
+.page1__intro h1 {
+    display: flex;
+    justify-content: center;
+}
