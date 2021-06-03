@@ -125,7 +125,8 @@ header {
     left: 0;
     right: 0;
     /* Using a high index value ensures that nothing will overlap with the header */
-    z-index: 999;
+        /*I changed this from 999 to 2500 because the backstory image banner was overlapping the menu */
+    z-index: 2500;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -152,6 +153,8 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     flex-grow: 1;
     padding-top: 0px;
     padding-bottom: 0px;
+
+
     
    
     
@@ -173,6 +176,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     padding-left: 1.5ch;
     font-size: 1.2rem;
     background-color: #02C294; 
+
     
     
     
@@ -1144,7 +1148,6 @@ transition: transform 350ms ease-in-out;
     overflow: hidden;
     position: absolute;
     max-width: 97%;
-    
 }
 /* The margin needs to be different when the display gets too small */
 @media screen and (max-width: 572px) {

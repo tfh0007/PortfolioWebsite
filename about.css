@@ -387,6 +387,105 @@ body {
     
 
 }
+
+
+
+/* Lets make a rotating image banner that will show various pictures of the project 1*/
+/* The size of this banner will increase when the display size increases */
+
+/* THis class is the container that holds the main image banner4 */
+.main-banner4__container {
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding-bottom: 8ch;
+padding-top: 1ch;
+
+}
+
+.main-banner4 {
+    width: 673.2px;
+    height: 897.6px;
+    
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: relative;
+    max-width: 96%;
+
+}
+
+    
+
+.main-banner4 .imgban4 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition: all ease-in-out 500ms;
+}
+
+/* This class and id contain our 3rd image for project 2 */
+.main-banner4 #imgban12 {
+    background-image: url(images__about/MeWinningAtChess.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project 2 */
+.main-banner4 #imgban11 {
+    background-image: url(images__about/MeAtMyDesk.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner4 #imgban10 {
+    background-image: url(images__about/MeAtDauphinIsland.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our buttons for changing the images */
+.imgbanbtn4 {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 385px;
+    z-index: 2000;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
+
+
+
+}
+
+.imgbanbtn4:hover {
+
+
+    opacity: 0.9;
+}
+
+.imgbanbtn4-prev {
+
+    left: 10px;
+    font-size: 4.5rem;
+    
+}
+
+.imgbanbtn4-next {
+
+    right: 50px;
+    font-size: 4.5rem;
+}
+
+
+
+
+
 /* This class contains by Personal backstory text */
 .my__Backstory__text {
     padding: 2ch;
