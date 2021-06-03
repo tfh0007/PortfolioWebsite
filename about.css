@@ -389,6 +389,7 @@ body {
 
 
 
+
 /* Lets make a rotating image banner that will show various pictures of the project 1*/
 /* The size of this banner will increase when the display size increases */
 
@@ -498,12 +499,20 @@ body {
 .my__Backstory__text {
     padding: 2ch;
     font-size: 1.6rem;
-    width: 33.333%;
-    min-width: 400px;
+    
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+}
+
+/*We need this media query otherwise the backstory text will almost never condense enough to form a second column */
+@media screen and (min-width: 1243px) {
+    .my__Backstory__text {
+        
+        width: 33.333%;
+    }
 }
 
 
