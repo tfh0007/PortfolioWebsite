@@ -38,7 +38,7 @@ background: linear-gradient(252.44deg,
 }
 
 /* On desktop the first page is not long enough when 2 columns are visible so lets extend to top and bottom some */
-@media screen and (min-width: 1665px) {
+@media screen and (min-width: 1694px) {
     .page1__container {
         
         padding-top: 10ch;
@@ -58,7 +58,7 @@ background: linear-gradient(252.44deg,
 /* This class contains the paragraph text for page 1 */
 .page1__container p {
 
-   font-size: 1.8rem; 
+   font-size: 1.6rem; 
    color:rgb(42, 42, 42)
 
 
@@ -132,7 +132,7 @@ background: linear-gradient(252.44deg,
     display: flex;
     justify-content: center;
     padding: 3ch;
-    font-size: 1.7rem
+    font-size: 1.6rem
 
 }
 
