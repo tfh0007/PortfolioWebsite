@@ -135,7 +135,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 3ch;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 
@@ -146,7 +146,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 3ch;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     max-width: 800px;
     
 }
@@ -303,7 +303,7 @@ body {
     align-items: center;
     justify-items: center;
     padding: 3ch;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     
     
 }
@@ -330,7 +330,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 850px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding: 2ch;
     align-items: center;
     
@@ -367,7 +367,7 @@ body {
 /* This class contains by Personal backstory heading */
 .my__Backstory__heading {
 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding-left: 3ch;
     padding-right: 3ch;
     padding-bottom: 1ch;
@@ -498,7 +498,7 @@ body {
 /* This class contains by Personal backstory text */
 .my__Backstory__text {
     padding: 2ch;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     
     display: flex;
     flex-direction: column;
