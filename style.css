@@ -756,30 +756,30 @@ So lets fix this issue */
 
        
         margin-top: -.1rem;
-        font-size: 3.5rem;
+        font-size: 3.1rem;
     }
     /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
     .page1sentance1 {
 
-        font-size: 2.6rem; 
+        font-size: 2.0rem; 
 
     }
     /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
     .page1sentance2 {
 
-        font-size: 2.6rem;
+        font-size: 2.0rem;
 
 }
     /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
     .page1sentance3 {
 
-        font-size: 2.6rem;
+        font-size: 2.0rem;
 
 }
     /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
     .page1sentance4 {
 
-        font-size: 2.9rem;
+        font-size: 2.3rem;
 
 
     }
@@ -788,36 +788,37 @@ So lets fix this issue */
     @media screen and (min-width: 1741px) {
         .page1heading {
         padding-bottom: 5ch;
+        font-size: 3.4rem;
 
         }
 
-/* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
-    .page1sentance1 {
+    /* This class is the paragraph page 1 text that says "Are you looking for a Software Developer?" */
+        .page1sentance1 {
 
-        font-size: 2.6rem; 
+            font-size: 2.6rem; 
+
+        }
+        /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
+        .page1sentance2 {
+
+            font-size: 2.6rem;
+
+        }
+        /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
+        .page1sentance3 {
+
+            font-size: 2.6rem;
+
+        }
+        /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
+        .page1sentance4 {
+
+            font-size: 2.9rem;
+
+
+        }
 
     }
-    /* This class is the paragraph page 1 text that says "How about a Web Designer?" */
-    .page1sentance2 {
-
-        font-size: 2.6rem;
-
-}
-    /* This class is the paragraph page 1 text that says "Maybe,a User Interface Designer?" */
-    .page1sentance3 {
-
-        font-size: 2.6rem;
-
-}
-    /* This class is the paragraph page 1 text that says "I am the person you are looking for" */
-    .page1sentance4 {
-
-        font-size: 2.9rem;
-
-
-    }
-
-}
 }   
 
 #page2 {
@@ -1487,11 +1488,11 @@ Projects Can be Found Under the Projects Page" */
 /* Now we need to adjust font and video sizes for a desktop screen */
 @media screen and (min-width: 1293px) { 
     .page2heading {
-        font-size: 3.8rem;
+        font-size: 3.3rem;
     }
 
     .Project__Name {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 /* THis class controls the project videos we have */
     .Project__video {
@@ -1506,7 +1507,7 @@ Projects Can be Found Under the Projects Page" */
 .Project__Description {
 
     max-width: 760px;
-    font-size: 1.9rem;
+    font-size: 1.6rem;
 
     /* We want to give users as much space as possible for the flex container not to wrap */
     padding-left: 0;
@@ -1520,7 +1521,7 @@ Projects Can be Found Under the Projects Page" */
     /* This class contains the page 2 footer text which says "More of my
         Projects Can be Found Under the Projects Page" */
     .page2footer {
-        font-size: 2.1rem;
+        font-size: 1.9rem;
         padding-top: 5ch;
         padding-bottom: 5ch;
     }
@@ -1537,10 +1538,10 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
 @media screen and (min-width: 2297px) { 
     /* The project buttons are the buttons that say learn more under each project */
     #Learn__More_btn1 {
-        margin-top: 7.4ch;
+        margin-top: 6.6ch;
     }
     #Learn__More_btn2 {
-        margin-top: 7.4ch;
+        margin-top: 6.6ch;
     }
     
     
@@ -1814,7 +1815,7 @@ footer {
     
     /* This class contains the heading text of the page */
     .page3TextTop h1 {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
         /* The spacing on Desktop above and below the Page3Top heading is too small so lets increase the spacing here 
     on desktop */
         margin-top: 5ch;
@@ -1834,7 +1835,7 @@ footer {
     /* This class contains the submit button on the user form */
     .submit__btn {
 
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     margin: 0 150px;
     margin-top: 18px;
 
@@ -1845,7 +1846,7 @@ footer {
 
 
     .page3Words__And__illustration form {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
 
     }
 
@@ -1862,20 +1863,20 @@ footer {
         /* The spacing on Desktop below the Page3Bottom heading is too small so lets increase the spacing here 
     on desktop */
         margin-bottom: 5ch;
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
 /* This class contains the paragraph text at the bottom of page 3 */
     .Page3TextBottom p {
 
-        font-size: 1.9rem;
+        font-size: 1.5rem;
         margin-left: 70px;
         padding-right: 70px;
     }
 
     /* This class contains the final thank you statement at the bottom of page 3 */
     .page3container h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 
@@ -1899,7 +1900,7 @@ footer {
     /* This class contains the paragraph text at the bottom of page 3 */
     .Page3TextBottom p {
 
-        font-size: 1.9rem;
+        font-size: 1.5rem;
         margin-left: -5%;
         margin-right: -5%;
         padding-right: 0px;
