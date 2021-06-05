@@ -44,57 +44,228 @@ body {
 
 }
 
-/* This class contains the large scale projects and heading */
-.page2 {
+.page2__container {
 
-    font-size: 1.3rem;
+    /*Borders for testing can be removed now
+   border: solid 8px; 
+   */
 
+   display: flex;
+   flex-direction: column;
+   
+   /* By using flex grow we ensure that the page 2 container takes up all space not being used by another container.
+   Without this option the background would stop extending since we have 2 containers in our div which are .page2container and .extended_Description */
+   flex-grow: 1;
+   
+
+   
 
 }
-.page2 h1 {
+
+.page2__heading {
     display: flex;
     justify-content: center;
+    font-size: 2.6rem;
+    padding: 3ch 2ch;
+    color: #3633C9;
+
+
+
+     /*Borders for testing can be removed now
+    border: solid lightblue 4px;
+    */
 }
 
-/* This class contains all of the large scale projects */
-.large__scale__projects {
+/* This class contains the titles for the 3 diffrent projects */
+.Project__Name {
+    color: #353541;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    padding-bottom: 1.5ch;
+
+}
+
+.large_scale_Projects {
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 
-}
-/* This class contains each of the large scale projects */
-.large__project__container {
-    max-width: 700px;
-    
+     /*Borders for testing can be removed now
+    border: solid pink 4px;
+    */
+
+
+
 }
 
-/* This class contains each of the large scale projects names*/
-.large__project__Name
+.large__Project__container1,
+.large__Project__container2,
+.large__Project__container3,
+.large__Project__container4,
+.large__Project__container5,
+.large__Project__container6
  {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+     /*Borders for testing can be removed now
+    border: solid orange 4px;
+    */
+
+    align-items: center;
+    padding-bottom: 4ch;
+
+
+}
+/* The project buttons are the buttons that say learn more under each project */
+.Project__button__1,
+.Project__button__2,
+.Project__button__3,
+.Project__button__4,
+.Project__button__5,
+.Project__button__6
+{
+
+    border: 1.5px solid #000000;
+    border-radius: 20px;
+    background: #3CB928;
+    font-size: 2rem;
+    margin-top: 1.5ch;
+    color: #D61010;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 100;
 }
 
-/* This class contains each of the large scale projects image containers*/
-.project__img__container {
+
+.page2footer {
     display: flex;
     justify-content: center;
-    border: solid lightseagreen 8px;
 }
 
-/* This class contains each of the large scale projects button containers*/
-.large__project__btn__container {
+
+/*The video is too below the text so lets fix this */
+.Project__video {
+    margin-top: -5ch;
+
+}
+/* This class represents the description of each project under every video */
+.Project__Description {
+    /*Borders for testing can be removed now
+    border: solid green 4px;
+    */
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    max-width: 500px;
+    font-size: 1.3rem;
+    /* The space above is a little bit too much so lets decrease the spacing a little */
+    margin-top: -0.1ch; 
+    padding-left: 2ch;
+    padding-right: 2ch;
+
+    
+
+}
+
+/* This class contains the download source buttons which can be found in the extended description */
+.DownloadButton {
+
+    font-size: 1.4rem;
+    list-style: none;
+    text-decoration: none;
+    background: red;
+    border-radius: 20px;
+    padding: 6px;
+    margin-bottom: 4ch;
+    color: white;
+    cursor: pointer;
+}
+
+/* This class holds the contents of both the extended Decription and Page 2 */
+.Page2__and__extended__Description {
+    display: flex;
+    flex-direction: row-reverse;
+
+    
+    
+
+}
+
+/* The p tag within the Page2__and__extended__Description is all of the statements in the extended description */
+.Page2__and__extended__Description p {
+    font-size: 1.2rem;
+
 }
 
 
 
+/* This class contains the close window button in project extended decription */
+.CloseWindow__Section1,
+.CloseWindow__Section2,
+.CloseWindow__Section3,
+.CloseWindow__Section4,
+.CloseWindow__Section5,
+.CloseWindow__Section6
+{
+    position: fixed;
 
-/* Lets make the extended description formating */
-.extended__description2 {
+    top: 0;
+    right: 36px;
+    margin-top: 60px;
+    z-index: 300;
+    padding: 0px;
+    transform: translateX(150%);
+    transition: transform 150ms ease-in-out;
+    }
+    
+    /* This id is the close window button in project extended decription */
+    #closeWindowBtn__Project1,
+    #closeWindowBtn__Project2,
+    #closeWindowBtn__Project3,
+    #closeWindowBtn__Project4,
+    #closeWindowBtn__Project5,
+    #closeWindowBtn__Project6
+    {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 3.5rem;
+
+    
+    }
+
+   /* This class contains the download section in project extended decription */
+.download_Section1,
+.download_Section2,
+.download_Section3,
+.download_Section4,
+.download_Section5,
+.download_Section6
+ {
+
+    position: fixed;
+    top: 0;
+    right: 110px;
+    margin-top: 106px;
+    z-index: 300;
+    transform: translateX(150%);
+    transition: transform 150ms 150ms ease-in-out;
+}
+
+
+
+/*When a Project learn more button is not pressed we do not want to show any extra details */
+.extended__Description__Project1,
+.extended__Description__Project2,
+.extended__Description__Project3
+.extended__Description__Project4,
+.extended__Description__Project5,
+.extended__Description__Project6
+{
+
+
     display: flex;
     flex-direction: column;
 
@@ -109,7 +280,7 @@ body {
     /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
     This property will need to be modified for desktop and tablet environments */
 
-    background: tan;
+background: tan;
     position: fixed;
     top: 100px;
     overflow-y: scroll;
@@ -125,16 +296,371 @@ body {
     
 }
 
-/* This class holds the contents of both the extended Decription and Page 2 */
-.page2__and__extended__Descriptions {
-    display: flex;
-    flex-direction: row-reverse;
+
+
+
+/*When a Project learn more button is pressed we want an overlay to appear that gives a download button */
+.download_Section1.visible,
+.download_Section2.visible,
+.download_Section3.visible,
+.download_Section4.visible,
+.download_Section5.visible,
+.download_Section6.visible
+ {
+   
+    transform: translateX(-1%);
+    transition: transform 350ms 350ms ease-in-out;
+
+}
+
+/*When a Project learn more button is pressed we want an overlay to appear that gives a close button */
+.CloseWindow__Section1.visible,
+.CloseWindow__Section2.visible,
+.CloseWindow__Section3.visible,
+.CloseWindow__Section4.visible,
+.CloseWindow__Section5.visible,
+.CloseWindow__Section6.visible
+{
+    
+    transform: translateX(-1%);
+    transition: transform 350ms 550ms ease-in-out;
 }
 
 /*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
-.extended__description2.visible 
+.extended__Description__Project1.visible,
+.extended__Description__Project2.visible,
+.extended__Description__Project3.visible,
+.extended__Description__Project4.visible,
+.extended__Description__Project5.visible,
+.extended__Description__Project6.visible
+
 {
-    transform: translateX(-1%);
+
+
+transform: translateX(-1%);
 transition: transform 350ms ease-in-out;
 
+}
+
+/* We want to make the Extended descriptions take up significatly less space when the screen is big enough */
+@media screen and (min-width: 850px) {
+    .extended__Description__Project1.visible,
+    .extended__Description__Project2.visible,
+    .extended__Description__Project3.visible,
+    .extended__Description__Project4.visible,
+    .extended__Description__Project5.visible,
+    .extended__Description__Project6.visible  
+    {
+        min-width: 20%;
+    }
+    
+ 
+}
+
+
+/* Lets make a rotating image banner that will show various pictures of the project */
+/* The size of this banner will increase when the display size increases */
+.main-banner {
+    width: 420px;
+    height: 330px;
+
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: absolute;
+    max-width: 97%;
+}
+/* The margin needs to be different when the display gets too small */
+@media screen and (max-width: 572px) {
+    .main-banner {
+        margin-top: 120px;
+    }
+}
+/* The margin needs to be different when the display gets larger */
+@media screen and (min-width: 573px) {
+    .main-banner {
+        margin-top: 85px;
+    }
+}
+
+
+.main-banner .imgban {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition: all ease-in-out 500ms;
+}
+
+/* We need to make room for the banner container */
+#extended__Description__text2 {
+
+    margin-top: 38ch;
+}
+
+/* This class and id contain our 3rd image for project 2 */
+.main-banner #imgban3 {
+    background-image: url(images/MarioGun3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project 2 */
+.main-banner #imgban2 {
+    background-image: url(images/MarioImg2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner #imgban1 {
+    background-image: url(images/MarioImg1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our buttons for changing the images */
+.imgbanbtn {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 142px;
+    z-index: 2000;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
+
+
+}
+
+.imgbanbtn:hover {
+   
+    opacity: 0.9;
+
+    
+}
+
+.imgbanbtn-prev {
+
+    left: 5px;
+    font-size: 2.5rem;
+    
+}
+
+.imgbanbtn-next {
+
+    right: 15px;
+    font-size: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lets make a rotating image banner that will show various pictures of the project 1*/
+/* The size of this banner will increase when the display size increases */
+.main-banner2 {
+    width: 600px;
+    height: 370px;
+    
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: absolute;
+    max-width: 97%;
+}
+
+/* The margin needs to be different when the display gets too small */
+@media screen and (max-width: 828px) {
+    .main-banner2 {
+        margin-top: 128px;
+    }
+}
+/* The margin needs to be different when the display gets larger */
+@media screen and (min-width: 829px) {
+    .main-banner2 {
+        margin-top: 85px;
+    }
+}
+
+    /* We need to make room for the banner container */
+    #extended__Description__text1 {
+
+        margin-top: 41.5ch;
+    }
+
+.main-banner2 .imgban2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition: all ease-in-out 500ms;
+}
+
+/* This class and id contain our 3rd image for project 2 */
+.main-banner2 #imgban6 {
+    background-image: url(images/AirTrafficImg3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project 2 */
+.main-banner2 #imgban5 {
+    background-image: url(images/AirTrafficImg2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner2 #imgban4 {
+    background-image: url(images/AirTrafficImg1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our buttons for changing the images */
+.imgbanbtn2 {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 163.3px;
+    z-index: 2000;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
+
+
+
+}
+
+.imgbanbtn2:hover {
+
+
+    opacity: 0.9;
+}
+
+.imgbanbtn2-prev {
+
+    left: 5px;
+    font-size: 2.5rem;
+    
+}
+
+.imgbanbtn2-next {
+
+    right: 15px;
+    font-size: 2.5rem;
+}
+
+
+/* Lets make a rotating image banner that will show various pictures of the project 3*/
+/* The size of this banner will increase when the display size increases */
+.main-banner3 {
+    width: 600px;
+    height: 370px;
+    
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: absolute;
+    max-width: 97%;
+}
+
+/* The margin needs to be different when the display gets too small */
+@media screen and (max-width: 587px) {
+    .main-banner3 {
+        margin-top: 128px;
+    }
+}
+/* The margin needs to be different when the display gets larger */
+@media screen and (min-width: 588px) {
+    .main-banner3 {
+        margin-top: 85px;
+    }
+}
+
+
+
+    /* We need to make room for the banner container */
+    #extended__Description__text3 {
+
+        margin-top: 41.5ch;
+    }
+
+.main-banner3 .imgban3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition: all ease-in-out 500ms;
+}
+
+/* This class and id contain our 3rd image for project 2 */
+.main-banner3 #imgban9 {
+    background-image: url(images/WordSearchImg3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project 2 */
+.main-banner3 #imgban8 {
+    background-image: url(images/WordSearchImg2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner3 #imgban7 {
+    background-image: url(images/WordSearchImg1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our buttons for changing the images */
+.imgbanbtn3 {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 163px;
+    z-index: 2000;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
+    
+
+
+
+}
+
+.imgbanbtn3:hover {
+
+
+    opacity: 0.9;
+}
+
+.imgbanbtn3-prev {
+
+    left: 5px;
+    font-size: 2.5rem;
+    
+}
+
+.imgbanbtn3-next {
+
+    right: 15px;
+    font-size: 2.5rem;
 }

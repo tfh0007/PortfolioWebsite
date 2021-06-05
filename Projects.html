@@ -116,7 +116,7 @@
 		<div class="page1__intro">
 			<h1>My Collection of Projects</h1>
 			<ul>
-				<li><p>This page contains numerous projects not found at the home page</p></li>
+				<li><p>This page contains numerous projects including those found on the home page</p></li>
 				<li><p>Some of these projects were created in relation to a class </p></li>
 				<li><p> Other projects were developed during my spare time </p></li>
 				<li><p> Some of these projects are still in development</p></li>
@@ -124,109 +124,277 @@
 
 		</div>	
 
-		<!-- Lets make the extended descriptions-->
+<!-- NOW WE ARE AT PAGE 2-->
 
-		<div class="page2">
-
-			<h1>Large Scale Projects</h1>
-
-			<div class = "page2__and__extended__Descriptions">
-
-				<div class="extended__description2">
-
-					<h1>More About Home Automations Project</h1>
-
-					<ul>
-						<li><p>A collection of scripts that control logic and allow for custom automations in a connected home environment</p></li>
-						<li><p>Implemented 31 virtual switches and 9 custom device handlers for advanced automations</p></li>
-						<li><p>The project was later expanded with a seprate Hub to control an apartment</p></li>
-						<li><p>As an independent developer, created 41 unique pistons with various inputs using webCoRE</p></li>
-						<li><p>The Hub that controls the automations is the Samsung Smartthings Hub which is combined with Google Assistant, Amazon alexa, Apple home kit, amoung other API's</p></li>
-						
-
-					</ul>
-
-					<h2>What was learned</h2>
-
-					<ul>
-
-						<li><p>Learned more about how simple embedded devices communicate with each other</p></li>
-						<li><p>Learned more about gathering and responding to signals from an interconnected range of devices</p></li>
-						<li><p>Gathered expanded knowledge of how IoT (internet of things) devices operate</p></li>
-						<li><p>Had to use critical thinking to solve issues and engineer solutions</p></li>
-						<li><p>Used extensive debugging to find and correct mistakes while many different signals were competing for the same resources</p></li>
-					</ul>
+<!-- We want a extended description on the right of the screen when the user clicks Learn More-->
+<div class="Page2__and__extended__Description" id="page2">
 
 
-				</div>
+	<div class="CloseWindow__Section1">
 
+		
+		<button class="Project__button__1" id="closeWindowBtn__Project1"><i class="fas fa-window-close"></i></button>
 			
+	</div>
 
-				
-					
+	<div class= "download_Section1">
+		<h2> 
+			<a style="text-decoration: none" href="https://github.com/tfh0007/Air-Traffic-Controller-Application/archive/refs/heads/main.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+		</h2>
 
-			
+	</div>
 
-				<div class= "large__scale__projects">
+	<div class="extended__Description__Project1">
 
-					
+		
 
+		
 
-					<div class="large__project__container" id="large__project1__container">
-						<h2 class="large__project__Name">#1 Thomas Hansknecht Website</h2>
-							
-						<div class="project__img__container">
-						
-							<img class="Project__img" width="480" height="340" src="images__projects/smartHomeImage.png">
-						
-						</div>
-
-							<h2 class="large__project__description"style="font-weight: normal"> The current site being examined. Created from scratch using HTML, CSS, and Javascript.</h2>
-							<div class="large__project__btn__container">
-								
-								<button class="Project__button__1" id="Learn__More_btn1">Learn More</button>
-							
-							</div>
-					</div>
-
-					
-					<div class="large__project__container" id="large__project2__container">
-						<h2 class="large__project__Name">#2 Home Automations Project</h2>
-						
-						<div class="project__img__container">
-							<img class="Project__img" width="480" height="340" src="images__projects/smartHomeImage.png" alt="An illustration of a smart home">
-						</div>	
-
-							<h2 class="large__project__description"style="font-weight: normal"> The scripts that control custom automations for an apartment and family home.</h2>
-							<div class="large__project__btn__container">
-								<button class="Project__button__2" id="Learn__More_btn2">Learn More</button>
-					
-							</div>
-						</div>
-					<div class="large__project__container" id="large__project3__container">
-						<h2 class="large__project__Name">#3 Mad Gab Game</h2>
-						<div class="project__img__container">
-						
-							<img class="Project__img" width="480" height="340" src="images__projects/smartHomeImage.png">
-						
-						</div>
-							<h2 class="large__project__description"style="font-weight: normal"> A recreation of the card game Mad Gab. Contains two seprate levels of difficulty with customizable time constraints.</h2>
-						
-							<div class="large__project__btn__container">
-								<button class="Project__button__3" id="Learn__More_btn3">Learn More</button>
-							</div>
-						</div>
+			<h1><strong>More About Air Traffic Controller Application</strong></h1>
 
 
-					
-					
-					
-
-
-				</div>
+			<!-- We want a rotating image banner here-->
+		<div class = "main-banner2" id = "main-banner2">
+			<div class="imgbanbtn2 imgbanbtn2-prev" id="imgbanbtn2-prev"><i class="fas fa-chevron-circle-left"></i></div>
+			<div class="imgban2" id="imgban6">
 
 			</div>
+		
+			<div class="imgban2" id="imgban5">
+				
+			</div>
+
+			<div class="imgban2" id="imgban4">
+				
+			</div>
+			<div class="imgbanbtn2 imgbanbtn2-next" id="imgbanbtn2-next"><i class="fas fa-chevron-circle-right"></i></div>
+
+
 		</div>
+			
+			
+			
+			
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p class = "extended__Description__text" id="extended__Description__text1">A fully interactive application that allows users to create and view their tickets</p></li>
+				<li><p>The application stores and retrieves customers, tickets, and airports from different databases</p></li>
+				<li><p>The databases were made simple and used consistent formatting</p></li>
+				<li><p>Part of a Software Modeling and Design Semester Long Project</p></li>
+				<li><p>Created as a shared GitHub Project</p></li>
+				<li><p>Designed based on UML diagrams and GRASP design patterns created by a team</p></li>
+			</ul>
+
+			<h2><strong>What was Learned</strong></h2>
+			<ul>
+
+				<li><p>Learned about creating menu objects and allowing interaction with them</p></li>
+				<li><p>Used custom Scanner classes to manage the transfer of data betwen the program and the databases</p></li>
+				<li><p>Created multiple threads to allow for asyncronous operations as well as unique visuals</p></li>
+				<li><p>Managed the development process and instructed team members on solutions</p></li>
+				<li><p>Handled and resolved merge conflicts between various git branches that were created</p></li>
+				<li><p>Used extensive debugging and error checking to find and test for issues with the logic</p></li>
+				<li><p>Used Exception Handeling to prevent a user's invalid entries from corrupting the program</p></li>
+				<li><p>Implemented action listeners so the user can interact with objects</p></li>
+				<li><p>Made the experience unique to every user by gathering data on every customer</p></li>
+				<li><p>Used parsers for assigning format to date objects</p></li>
+			</ul>
+			
+		
+
+	</div>
+
+	
+
+		<div class="CloseWindow__Section2">
+
+		
+			<button class="Project__button__2" id="closeWindowBtn__Project2"><i class="fas fa-window-close"></i></button>
+				
+		</div>
+
+		<div class= "download_Section2">
+			<h2> 
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Mario-With-A-Gun/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+			</h2>
+		</div>
+
+
+		<div class="extended__Description__Project2">
+
+
+		<h1><strong>More About Mario With A Gun</strong></h1>
+
+			<!-- We want a rotating image banner here-->
+		<div class = "main-banner" id = "main-banner">
+			<div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"><i class="fas fa-chevron-circle-left"></i></div>
+			<div class="imgban" id="imgban3">
+
+			</div>
+		
+			<div class="imgban" id="imgban2">
+				
+			</div>
+
+			<div class="imgban" id="imgban1">
+				
+			</div>
+			<div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"><i class="fas fa-chevron-circle-right"></i></div>
+
+
+		</div>
+
+		<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+			we can get a bulleted list-->
+		<ul>
+			<li><p class = "extended__Description__text" id="extended__Description__text2">Was a project submitted for a hackathon competition</p></li>
+			<li><p>Created with a group in Python using Pygame</p></li>
+		</ul>
+
+		<h2><strong>What was Learned</strong></h2>
+		<ul>
+			<li><p>Used Sprite sheets to animate the player and enemies</p></li>
+			<li><p>Learned more about Pygame and how you can use external platforms in conjunction with a programming language</p></li>
+			<li><p>Learned how to create logic for movement of player and developed in game collision physics for background obejcts and enemies</p></li>
+			<li><p>Worked with a team to complete the project</p></li>
+			<li><p>There was a limited deadline and the team was forced to make changes to cater to this deadline</p></li>
+			<li><p>Implemented external custom resources such as soundtracks and visuals</p></li>
+
+		</ul>
+		
+		
+
+
+	</div>
+
+
+	<div class="CloseWindow__Section3">
+
+		
+		<button class="Project__button__3" id="closeWindowBtn__Project3"><i class="fas fa-window-close"></i></button>
+			
+	</div>
+
+	<div class= "download_Section3">
+
+		<h2> 
+			<a style="text-decoration: none" href="https://github.com/tfh0007/Word-Search-Game/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>			
+		</h2>
+	</div>
+
+	<div class="extended__Description__Project3">
+
+		
+
+		<h1><strong>More About Word Search Game</strong></h1>
+
+		<!-- We want a rotating image banner here-->
+		<div class = "main-banner3" id = "main-banner3">
+			<div class="imgbanbtn3 imgbanbtn3-prev" id="imgbanbtn3-prev"><i class="fas fa-chevron-circle-left"style="color: black"></i></div>
+			<div class="imgban3" id="imgban9">
+
+			</div>
+		
+			<div class="imgban3" id="imgban8">
+				
+			</div>
+
+			<div class="imgban3" id="imgban7">
+				
+			</div>
+			<div class="imgbanbtn3 imgbanbtn3-next" id="imgbanbtn3-next"><i class="fas fa-chevron-circle-right" style="color: black"></i></div>
+
+
+		</div>
+
+
+		<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+			we can get a bulleted list-->
+		<ul >
+			<li><p class = "extended__Description__text" id="extended__Description__text3">This project is an extension to the Boogle Word Search game created for a Java II Class</p></li>
+			
+		</ul>
+
+		<h2><strong>How the Project was Expanded and What was Learned</strong></h2>
+
+		<ul>
+			<li><p>Learned how to create graphical interfaces using JFrames</p></li>
+			<li><p>Used action listeners to make the program interactable</p></li>
+			<li><p>Used Exception Handeling to deal with invalid user entries</p></li>
+			<li><p>Used visuals and sound effects to make the experience complete</p></li>
+			<li><p>Made the values in the word search table customizable</p></li>
+			<li><p>Allowed the user to choose different table sizes as well as use different Lexicon listings</p></li>
+		</ul>
+
+		<h2><strong>What was Learned in the Original Class Project</strong></h2>
+
+		<ul>
+			<li><p>Used Lexicon dictionaries and stored the values into a Sorted Set of strings</p></li>
+			<li><p>Used a depth first search algorithm to search for valid words on the generated board</p></li>
+			<li><p>Used 2 dimensional arrays to create the board</p></li>
+			<li><p>Used various functions for checking what neighbors existed near the current position</p></li>
+			<li><p>Used a scoreboard to keep track of the users correct responses</p></li>
+
+		</ul>
+		
+
+
+
+	</div>
+
+
+
+	<div class= "page2__container">
+		<h1 class="page2__heading"> Large Scale Projects</h1>
+
+		<div class="large_scale_Projects">
+
+		<!-- This is for Project 1-->
+		<!-- Not the best to have heading 2 for the project name 
+			and description but it works when modifing the name and not the description. 
+			Our descriptions do have to have bold removed, however-->
+			<div class="large__Project__container1" id="Project1__container">
+				<h2 class="Project__Name">Air Traffic Controller Application</h2>
+					<video class="Project__video" width="480" height="340" controls loop>
+					<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
+					Unfortunately your browser does not support the video tag
+					</video>
+					<h2 class="Project__Description"style="font-weight: normal"> JFrame application that allows new user and ticket creation as well as management of user and ticket data which is stored in several databases.</h2>
+				<button class="Project__button__1" id="Learn__More_btn1">Learn More</button>
+			</div>
+
+		<!-- This is for Project 2-->
+			<div class="large__Project__container2" id="Project2__container">
+				<h2 class="Project__Name">Mario With A Gun</h2>
+				<!-- Using the autoplay will make the video start playing as soon as it loads-->
+				<!-- Stating muted will mute the video when it is loaded-->
+				<!-- Using controls gives media controls to the user on the website-->
+					<video class="Project__video" width="480" height="340" controls loop>
+					<source src="video/MarioWithGunsDemo_Trim.mp4" type="video/mp4">
+					Unfortunately your browser does not support the video tag
+					</video>
+					<h2 class="Project__Description" style="font-weight: normal"> A reimagining of the 1985 Super Mario Bros. The game incorporates guns and takes place in a nuclear apocalyptic setting.</h2>
+				<button class="Project__button__2" id="Learn__More_btn2">Learn More</button>
+			</div>
+		<!-- This is for Project 3-->
+			<div class="large__Project__container3" id="Project3__container">
+				<h2 class="Project__Name">Word Search Game</h2>
+				<video class="Project__video" width="480" height="340" controls loop>
+					<source src="video/JavaWordSearchEdit.mp4" type="video/mp4">
+					Unfortunately your browser does not support the video tag
+				</video>
+				
+				<h2 class="Project__Description"style="font-weight: normal"> Game where players create a board consisting of whatever letters the players want. Then, the program locates any word combinations possible on the board. The job of the players is to find all of the words on the board. The players can check if they are right or not by inputting the word they see in the entry box.</h2>
+				
+				<button class="Project__button__3" id="Learn__More_btn3">Learn More</button>
+			</div>		
+		</div>
+		<p class= "page2footer"> </p>
+			
+	</div>
+
+</div>
 
 			<div class= "small__scale__projects">
 				<h1>Small Scale Projects</h1>
@@ -302,14 +470,14 @@
 		</script>
 
 
-<!--Scripts for extended project descriptions-->
+<!--Scripts for page 2-->
 	<!-- We want to display more info about a project when the user clicks the Learn More button -->
 	<script
 		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		  	<script type="text/javascript">
 		  		$(document).ready(function(){
-		  			$('.Project__button__2').click(function() {
-						$('.extended__description2').toggleClass('visible')
+		  			$('.Project__button__1').click(function() {
+						$('.extended__Description__Project1').toggleClass('visible')
 						$('.CloseWindow__Section1').toggleClass('visible')
 						$('.download_Section1').toggleClass('visible')
 		  				
@@ -320,6 +488,47 @@
 		  		})
 
 		  	</script>
+
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.Project__button__2').click(function() {
+				$('.extended__Description__Project2').toggleClass('visible')
+				$('.CloseWindow__Section2').toggleClass('visible')
+				$('.download_Section2').toggleClass('visible')
+
+					
+
+				})
+			})
+
+		</script>
+	
+	<script
+		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		  	<script type="text/javascript">
+		  		$(document).ready(function(){
+		  			$('.Project__button__3').click(function() {
+						$('.extended__Description__Project3').toggleClass('visible')
+						$('.CloseWindow__Section3').toggleClass('visible')
+						$('.download_Section3').toggleClass('visible')
+
+		  				
+
+		  			})
+		  		})
+
+		</script>
+
+		<!-- script for project 1-->
+<script src="javascript/imgBannerControllerProject1.js"></script>
+
+<!-- script for project 2-->
+<script src="javascript/imgBannerController.js"></script>
+
+<!-- script for project 3-->
+<script src="javascript/imgBannerControllerProject3.js"></script>
 
 	
 
