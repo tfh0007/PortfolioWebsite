@@ -39,7 +39,6 @@ body {
 .page1__intro ul {
     display: flex;
     flex-direction: column;
-    border: solid 8px;
     align-items: center;
 
 }
@@ -663,4 +662,115 @@ transition: transform 350ms ease-in-out;
 
     right: 15px;
     font-size: 2.5rem;
+}
+
+
+/* Lets create animations */
+
+/*First lets make animations for our learn more buttons */
+
+
+
+.Project__button__4,
+.Project__button__5,
+.Project__button__6
+{
+position: relative;
+
+transition: color 250ms ease-in-out;
+overflow: hidden;
+
+
+}
+#Learn__More_btn1__pt2:hover,
+#Learn__More_btn1__pt2:focus,
+#Learn__More_btn2__pt2:hover,
+#Learn__More_btn2__pt2:focus,
+#Learn__More_btn3__pt2:hover,
+#Learn__More_btn3__pt2:focus,
+
+
+#Learn__More_btn4:hover,
+#Learn__More_btn4:focus,
+#Learn__More_btn5:hover,
+#Learn__More_btn5:focus,
+
+#Learn__More_btn6:hover,
+#Learn__More_btn6:focus
+{
+color: white;
+transition: color 250ms ease-in-out;
+overflow: hidden;
+
+
+}
+
+#Learn__More_btn1__pt2::before,
+#Learn__More_btn2__pt2::before,
+#Learn__More_btn3__pt2::before,
+
+
+#Learn__More_btn4::before,
+#Learn__More_btn5::before,
+#Learn__More_btn6::before
+
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: rgb(236, 51, 51);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms;
+    
+}
+#Learn__More_btn1__pt2:hover::before,
+#Learn__More_btn1__pt2:focus::before,
+#Learn__More_btn2__pt2:hover::before,
+#Learn__More_btn2__pt2:focus::before,
+#Learn__More_btn3__pt2:hover::before,
+#Learn__More_btn3__pt2:focus::before,
+
+#Learn__More_btn4:hover::before,
+#Learn__More_btn4:focus::before,
+#Learn__More_btn5:hover::before,
+#Learn__More_btn5:focus::before,
+#Learn__More_btn6:hover::before,
+#Learn__More_btn6:focus::before
+
+
+{
+transform: scaleX(1);
+
+}
+
+/* Now lets create animations for the close exdended description button */
+
+/* Now lets create an animation for the close buttons found in the extended project descriptions */
+#closeWindowBtn__Project4,
+#closeWindowBtn__Project5,
+#closeWindowBtn__Project6 
+{
+    transform: scale(1);
+    border-radius: 100%;
+    transition: transform 350ms ease-in-out;
+
+    
+
+}
+
+#closeWindowBtn__Project4:hover,
+#closeWindowBtn__Project4:focus,
+#closeWindowBtn__Project5:hover,
+#closeWindowBtn__Project5:focus,
+#closeWindowBtn__Project6:hover,
+#closeWindowBtn__Project6:focus 
+{
+    transform: scale(1.2);
+    
 }
