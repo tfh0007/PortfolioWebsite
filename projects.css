@@ -34,3 +34,107 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/* This class contains the introduction to the projects page bullet points */
+.page1__intro ul {
+    display: flex;
+    flex-direction: column;
+    border: solid 8px;
+    align-items: center;
+
+}
+
+/* This class contains the large scale projects and heading */
+.page2 {
+
+    font-size: 1.3rem;
+
+
+}
+.page2 h1 {
+    display: flex;
+    justify-content: center;
+}
+
+/* This class contains all of the large scale projects */
+.large__scale__projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+/* This class contains each of the large scale projects */
+.large__project__container {
+    max-width: 700px;
+    
+}
+
+/* This class contains each of the large scale projects names*/
+.large__project__Name
+ {
+    display: flex;
+    justify-content: center;
+}
+
+/* This class contains each of the large scale projects image containers*/
+.project__img__container {
+    display: flex;
+    justify-content: center;
+    border: solid lightseagreen 8px;
+}
+
+/* This class contains each of the large scale projects button containers*/
+.large__project__btn__container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/* Lets make the extended description formating */
+.extended__description2 {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    padding-bottom: 2ch;
+    padding-top: 7ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+
+    flex-grow: 3;
+    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+    This property will need to be modified for desktop and tablet environments */
+
+    background: tan;
+    position: fixed;
+    top: 100px;
+    overflow-y: scroll;
+    max-height: 80.8%;
+    max-width: 80%;
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 200ms 300ms ease-in-out;
+    
+
+    border: solid 7px;
+    border-radius: 15px;
+    
+}
+
+/* This class holds the contents of both the extended Decription and Page 2 */
+.page2__and__extended__Descriptions {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
+.extended__description2.visible 
+{
+    transform: translateX(-1%);
+transition: transform 350ms ease-in-out;
+
+}
