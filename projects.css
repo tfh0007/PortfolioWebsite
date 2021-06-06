@@ -104,7 +104,13 @@ body {
 .large__Project__container3,
 .large__Project__container4,
 .large__Project__container5,
-.large__Project__container6
+.large__Project__container6,
+
+.small__Project__container7,
+.small__Project__container8,
+.small__Project__container9,
+.small__Project__container10,
+.small__Project__container11
  {
     display: flex;
     flex-direction: column;
@@ -124,7 +130,14 @@ body {
 .Project__button__3,
 .Project__button__4,
 .Project__button__5,
-.Project__button__6
+.Project__button__6,
+
+.Project__button__7,
+.Project__button__8,
+.Project__button__9,
+.Project__button__10,
+.Project__button__11
+
 {
 
     border: 1.5px solid #000000;
@@ -206,7 +219,14 @@ body {
 .CloseWindow__Section3,
 .CloseWindow__Section4,
 .CloseWindow__Section5,
-.CloseWindow__Section6
+.CloseWindow__Section6,
+
+
+.CloseWindow__Section7,
+.CloseWindow__Section8,
+.CloseWindow__Section9,
+.CloseWindow__Section10,
+.CloseWindow__Section11
 {
     position: fixed;
 
@@ -225,7 +245,13 @@ body {
     #closeWindowBtn__Project3,
     #closeWindowBtn__Project4,
     #closeWindowBtn__Project5,
-    #closeWindowBtn__Project6
+    #closeWindowBtn__Project6,
+
+    #closeWindowBtn__Project7,
+    #closeWindowBtn__Project8,
+    #closeWindowBtn__Project9,
+    #closeWindowBtn__Project10,
+    #closeWindowBtn__Project11
     {
     background: transparent;
     color: rgb(255, 255, 255);
@@ -241,7 +267,13 @@ body {
 .download_Section3,
 .download_Section4,
 .download_Section5,
-.download_Section6
+.download_Section6,
+
+.download_Section7,
+.download_Section8,
+.download_Section9,
+.download_Section10,
+.download_Section11
  {
 
     position: fixed;
@@ -261,7 +293,14 @@ body {
 .extended__Description__Project3,
 .extended__Description__Project4,
 .extended__Description__Project5,
-.extended__Description__Project6
+.extended__Description__Project6,
+
+
+.extended__Description__Project7,
+.extended__Description__Project8,
+.extended__Description__Project9,
+.extended__Description__Project10,
+.extended__Description__Project11
 {
 
 
@@ -304,7 +343,13 @@ background: tan;
 .download_Section3.visible,
 .download_Section4.visible,
 .download_Section5.visible,
-.download_Section6.visible
+.download_Section6.visible,
+
+.download_Section7.visible,
+.download_Section8.visible,
+.download_Section9.visible,
+.download_Section10.visible,
+.download_Section11.visible
  {
    
     transform: translateX(-1%);
@@ -318,7 +363,13 @@ background: tan;
 .CloseWindow__Section3.visible,
 .CloseWindow__Section4.visible,
 .CloseWindow__Section5.visible,
-.CloseWindow__Section6.visible
+.CloseWindow__Section6.visible,
+
+.CloseWindow__Section7.visible,
+.CloseWindow__Section8.visible,
+.CloseWindow__Section9.visible,
+.CloseWindow__Section10.visible,
+.CloseWindow__Section11.visible
 {
     
     transform: translateX(-1%);
@@ -331,7 +382,13 @@ background: tan;
 .extended__Description__Project3.visible,
 .extended__Description__Project4.visible,
 .extended__Description__Project5.visible,
-.extended__Description__Project6.visible
+.extended__Description__Project6.visible,
+
+.extended__Description__Project7.visible,
+.extended__Description__Project8.visible,
+.extended__Description__Project9.visible,
+.extended__Description__Project10.visible,
+.extended__Description__Project11.visible
 
 {
 
@@ -348,7 +405,13 @@ transition: transform 350ms ease-in-out;
     .extended__Description__Project3.visible,
     .extended__Description__Project4.visible,
     .extended__Description__Project5.visible,
-    .extended__Description__Project6.visible  
+    .extended__Description__Project6.visible,
+    
+    .extended__Description__Project7.visible,
+    .extended__Description__Project8.visible,
+    .extended__Description__Project9.visible,
+    .extended__Description__Project10.visible,
+    .extended__Description__Project11.visible
     {
         min-width: 20%;
     }
@@ -664,6 +727,30 @@ transition: transform 350ms ease-in-out;
     font-size: 2.5rem;
 }
 
+/*Lets make the formatting for the small scale projects */
+.page3__heading {
+    display: flex;
+    justify-content: center;
+}
+
+.small__scale__projects {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+     /*Borders for testing can be removed now
+    border: solid pink 4px;
+    */
+
+
+
+}
+
+
+
+
 
 /* Lets create animations */
 
@@ -673,7 +760,13 @@ transition: transform 350ms ease-in-out;
 
 .Project__button__4,
 .Project__button__5,
-.Project__button__6
+.Project__button__6,
+
+.Project__button__7,
+.Project__button__8,
+.Project__button__9,
+.Project__button__10,
+.Project__button__11
 {
 position: relative;
 
@@ -694,9 +787,20 @@ overflow: hidden;
 #Learn__More_btn4:focus,
 #Learn__More_btn5:hover,
 #Learn__More_btn5:focus,
-
 #Learn__More_btn6:hover,
-#Learn__More_btn6:focus
+#Learn__More_btn6:focus,
+
+#Learn__More_btn7:hover,
+#Learn__More_btn7:focus,
+#Learn__More_btn8:hover,
+#Learn__More_btn8:focus,
+#Learn__More_btn9:hover,
+#Learn__More_btn9:focus,
+#Learn__More_btn10:hover,
+#Learn__More_btn10:focus,
+#Learn__More_btn11:hover,
+#Learn__More_btn11:focus
+
 {
 color: white;
 transition: color 250ms ease-in-out;
@@ -712,7 +816,13 @@ overflow: hidden;
 
 #Learn__More_btn4::before,
 #Learn__More_btn5::before,
-#Learn__More_btn6::before
+#Learn__More_btn6::before,
+
+#Learn__More_btn7::before,
+#Learn__More_btn8::before,
+#Learn__More_btn9::before,
+#Learn__More_btn10::before,
+#Learn__More_btn11::before
 
 {
     content: '';
@@ -741,7 +851,19 @@ overflow: hidden;
 #Learn__More_btn5:hover::before,
 #Learn__More_btn5:focus::before,
 #Learn__More_btn6:hover::before,
-#Learn__More_btn6:focus::before
+#Learn__More_btn6:focus::before,
+
+#Learn__More_btn7:hover::before,
+#Learn__More_btn7:focus::before,
+#Learn__More_btn8:hover::before,
+#Learn__More_btn8:focus::before,
+#Learn__More_btn9:hover::before,
+#Learn__More_btn9:focus::before,
+
+#Learn__More_btn10:hover::before,
+#Learn__More_btn10:focus::before,
+#Learn__More_btn11:hover::before,
+#Learn__More_btn11:focus::before
 
 
 {
@@ -754,7 +876,13 @@ transform: scaleX(1);
 /* Now lets create an animation for the close buttons found in the extended project descriptions */
 #closeWindowBtn__Project4,
 #closeWindowBtn__Project5,
-#closeWindowBtn__Project6 
+#closeWindowBtn__Project6,
+
+#closeWindowBtn__Project7,
+#closeWindowBtn__Project8,
+#closeWindowBtn__Project9,
+#closeWindowBtn__Project10,
+#closeWindowBtn__Project11 
 {
     transform: scale(1);
     border-radius: 100%;
@@ -769,7 +897,18 @@ transform: scaleX(1);
 #closeWindowBtn__Project5:hover,
 #closeWindowBtn__Project5:focus,
 #closeWindowBtn__Project6:hover,
-#closeWindowBtn__Project6:focus 
+#closeWindowBtn__Project6:focus,
+
+#closeWindowBtn__Project7:hover,
+#closeWindowBtn__Project7:focus,
+#closeWindowBtn__Project8:hover,
+#closeWindowBtn__Project8:focus,
+#closeWindowBtn__Project9:hover,
+#closeWindowBtn__Project9:focus,
+#closeWindowBtn__Project10:hover,
+#closeWindowBtn__Project10:focus,
+#closeWindowBtn__Project11:hover,
+#closeWindowBtn__Project11:focus
 {
     transform: scale(1.2);
     
