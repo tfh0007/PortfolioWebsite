@@ -61,7 +61,9 @@ body {
 
 }
 
-.page2__heading {
+.page2__heading,
+.page3__heading 
+{
     display: flex;
     justify-content: center;
     font-size: 2.6rem;
