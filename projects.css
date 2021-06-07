@@ -736,7 +736,14 @@ transition: transform 350ms ease-in-out;
 /* The size of this banner will increase when the display size increases */
 .main-banner4,
 .main-banner5,
-.main-banner6{
+.main-banner6,
+.main-banner7,
+.main-banner8,
+.main-banner9,
+.main-banner10,
+.main-banner11
+
+{
     width: 600px;
     height: 370px;
     
@@ -750,7 +757,12 @@ transition: transform 350ms ease-in-out;
 @media screen and (max-width: 587px) {
     .main-banner4,
     .main-banner5,
-    .main-banner6 
+    .main-banner6,
+    .main-banner7,
+    .main-banner8,
+    .main-banner9,
+    .main-banner10,
+    .main-banner11 
         {
         margin-top: 128px;
     }
@@ -759,7 +771,14 @@ transition: transform 350ms ease-in-out;
 @media screen and (min-width: 588px) {
     .main-banner4,
     .main-banner5,
-    .main-banner6 {
+    .main-banner6,
+    .main-banner7,
+    .main-banner8,
+    .main-banner9,
+    .main-banner10,
+    .main-banner11 
+    
+    {
         margin-top: 85px;
     }
 }
@@ -769,14 +788,28 @@ transition: transform 350ms ease-in-out;
     /* We need to make room for the banner container */
     #extended__Description__text4,
     #extended__Description__text5,
-    #extended__Description__text6 {
+    #extended__Description__text6,
+    #extended__Description__text7,
+    #extended__Description__text8,
+    #extended__Description__text9,
+    #extended__Description__text10,
+    #extended__Description__text11
+    
+    {
 
         margin-top: 41.5ch;
     }
 
 .main-banner4 .imgban4,
 .main-banner5 .imgban5,
-.main-banner6 .imgban6 {
+.main-banner6 .imgban6,
+.main-banner7 .imgban7,
+.main-banner8 .imgban8,
+.main-banner9 .imgban9,
+.main-banner10 .imgban10,
+.main-banner11 .imgban11
+
+{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -811,7 +844,12 @@ transition: transform 350ms ease-in-out;
 /* This class and id contain our buttons for changing the images */
 .imgbanbtn4,
 .imgbanbtn5,
-.imgbanbtn6
+.imgbanbtn6,
+.imgbanbtn7,
+.imgbanbtn8,
+.imgbanbtn9,
+.imgbanbtn10,
+.imgbanbtn11
  {
     width: 30px;
     height: 40px;
@@ -829,7 +867,12 @@ transition: transform 350ms ease-in-out;
 
 .imgbanbtn4:hover,
 .imgbanbtn5:hover,
-.imgbanbtn6:hover
+.imgbanbtn6:hover,
+.imgbanbtn7:hover,
+.imgbanbtn8:hover,
+.imgbanbtn9:hover,
+.imgbanbtn10:hover,
+.imgbanbtn11:hover
 {
 
 
@@ -838,7 +881,14 @@ transition: transform 350ms ease-in-out;
 
 .imgbanbtn4-prev,
 .imgbanbtn5-prev,
-.imgbanbtn6-prev {
+.imgbanbtn6-prev,
+.imgbanbtn7-prev,
+.imgbanbtn8-prev,
+.imgbanbtn9-prev,
+.imgbanbtn10-prev,
+.imgbanbtn11-prev
+
+{
 
     left: 5px;
     font-size: 2.5rem;
@@ -847,7 +897,14 @@ transition: transform 350ms ease-in-out;
 
 .imgbanbtn4-next,
 .imgbanbtn5-next,
-.imgbanbtn6-next {
+.imgbanbtn6-next,
+.imgbanbtn7-next,
+.imgbanbtn8-next,
+.imgbanbtn9-next,
+.imgbanbtn10-next,
+.imgbanbtn11-next
+
+{
 
     right: 15px;
     font-size: 2.5rem;
@@ -880,7 +937,7 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
-/* Lets make a rotating image banner that will show various pictures of the project 4*/
+/* Lets make a rotating image banner that will show various pictures of the project 6*/
 /* This class and id contain our 3rd image for project */
 .main-banner6 #imgban18 {
     background-image: url(images__projects/MadGabGame3.png);
@@ -900,6 +957,32 @@ transition: transform 350ms ease-in-out;
 /* This class and id contain our 1st image for project */
 .main-banner6 #imgban16 {
     background-image: url(images__projects/MadGabGame1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Lets make a rotating image banner that will show various pictures of the project 6*/
+/* This class and id contain our 3rd image for project */
+.main-banner7 #imgban21 {
+    background-image: url(images__projects/placeholder3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project */
+.main-banner7 #imgban20 {
+    background-image: url(images__projects/placeholder2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project */
+.main-banner7 #imgban19 {
+    background-image: url(images__projects/placeholder1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
