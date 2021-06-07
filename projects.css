@@ -26,6 +26,8 @@ body {
 /* This class contains the introduction to the projects page */
 .page1__intro {
     padding-top: 5ch;
+    padding-left: 3ch;
+    padding-right: 3ch;
     font-size: 1.4rem;
 }
 
@@ -160,11 +162,7 @@ body {
 }
 
 
-/*The video is too below the text so lets fix this */
-.Project__video {
-    margin-top: -5ch;
 
-}
 /* This class represents the description of each project under every video */
 .Project__Description {
     /*Borders for testing can be removed now
@@ -749,6 +747,27 @@ transition: transform 350ms ease-in-out;
 
 
 }
+
+.Project__img {
+
+margin-top: -40px;
+}
+
+
+/* Now we need to adjust font and video sizes for a mobile screen */
+@media screen and (max-width: 1292px) { 
+    
+/* THis class controls the project primary images we have */
+    .Project__img {
+        transform: scale(0.5);
+        margin-left: -310px;
+        margin-right: -310px;
+        margin-top: -150px;
+        margin-bottom: -100px;
+        
+
+
+    }
 
 /* This class is the final container at the bottom of page 3 for the closing text*/
 .Projects__not__mentioned {
