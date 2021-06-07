@@ -847,7 +847,6 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn6,
 .imgbanbtn7,
 .imgbanbtn8,
-.imgbanbtn9,
 .imgbanbtn10,
 .imgbanbtn11
  {
@@ -862,6 +861,20 @@ transition: transform 350ms ease-in-out;
     
 
 
+
+}
+
+/* We want a separate button layout for project 9: The Quadratic formula project */
+.imgbanbtn9
+{
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    top: 240px;
+    z-index: 2000;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
 
 }
 
@@ -963,7 +976,7 @@ transition: transform 350ms ease-in-out;
 }
 
 
-/* Lets make a rotating image banner that will show various pictures of the project 6*/
+/* Lets make a rotating image banner that will show various pictures of the project 7*/
 /* This class and id contain our 3rd image for project */
 .main-banner7 #imgban21 {
     background-image: url(images__projects/placeholder3.png);
@@ -988,6 +1001,59 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
+
+/* Lets make a rotating image banner that will show various pictures of the project 8*/
+/* This class and id contain our 3rd image for project */
+.main-banner8 #imgban24 {
+    background-image: url(images__projects/placeholder3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project */
+.main-banner8 #imgban23 {
+    background-image: url(images__projects/placeholder2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project */
+.main-banner8 #imgban22 {
+    background-image: url(images__projects/placeholder1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* Lets make a rotating image banner that will show various pictures of the project 9*/
+/* This class and id contain our 3rd image for project */
+.main-banner9 #imgban27 {
+    background-image: url(images__projects/QuadraticFormula3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project */
+.main-banner9 #imgban26 {
+    background-image: url(images__projects/QuadraticFormula2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project */
+.main-banner9 #imgban25 {
+    background-image: url(images__projects/QuadraticFormula1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /*Lets make the formatting for the small scale projects */
 .page3__heading {
