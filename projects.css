@@ -735,7 +735,8 @@ transition: transform 350ms ease-in-out;
 /* Lets make a rotating image banner that will show various pictures of the project 4*/
 /* The size of this banner will increase when the display size increases */
 .main-banner4,
-.main-banner5{
+.main-banner5,
+.main-banner6{
     width: 600px;
     height: 370px;
     
@@ -748,7 +749,8 @@ transition: transform 350ms ease-in-out;
 /* The margin needs to be different when the display gets too small */
 @media screen and (max-width: 587px) {
     .main-banner4,
-    .main-banner5 
+    .main-banner5,
+    .main-banner6 
         {
         margin-top: 128px;
     }
@@ -756,7 +758,8 @@ transition: transform 350ms ease-in-out;
 /* The margin needs to be different when the display gets larger */
 @media screen and (min-width: 588px) {
     .main-banner4,
-    .main-banner5 {
+    .main-banner5,
+    .main-banner6 {
         margin-top: 85px;
     }
 }
@@ -765,13 +768,15 @@ transition: transform 350ms ease-in-out;
 
     /* We need to make room for the banner container */
     #extended__Description__text4,
-    #extended__Description__text5 {
+    #extended__Description__text5,
+    #extended__Description__text6 {
 
         margin-top: 41.5ch;
     }
 
 .main-banner4 .imgban4,
-.main-banner5 .imgban5 {
+.main-banner5 .imgban5,
+.main-banner6 .imgban6 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -805,7 +810,8 @@ transition: transform 350ms ease-in-out;
 
 /* This class and id contain our buttons for changing the images */
 .imgbanbtn4,
-.imgbanbtn5
+.imgbanbtn5,
+.imgbanbtn6
  {
     width: 30px;
     height: 40px;
@@ -822,7 +828,8 @@ transition: transform 350ms ease-in-out;
 }
 
 .imgbanbtn4:hover,
-.imgbanbtn5:hover
+.imgbanbtn5:hover,
+.imgbanbtn6:hover
 {
 
 
@@ -830,7 +837,8 @@ transition: transform 350ms ease-in-out;
 }
 
 .imgbanbtn4-prev,
-.imgbanbtn5-prev {
+.imgbanbtn5-prev,
+.imgbanbtn6-prev {
 
     left: 5px;
     font-size: 2.5rem;
@@ -838,7 +846,8 @@ transition: transform 350ms ease-in-out;
 }
 
 .imgbanbtn4-next,
-.imgbanbtn5-next {
+.imgbanbtn5-next,
+.imgbanbtn6-next {
 
     right: 15px;
     font-size: 2.5rem;
@@ -866,6 +875,31 @@ transition: transform 350ms ease-in-out;
 /* This class and id contain our 1st image for project */
 .main-banner5 #imgban13 {
     background-image: url(images__projects/Website1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Lets make a rotating image banner that will show various pictures of the project 4*/
+/* This class and id contain our 3rd image for project */
+.main-banner6 #imgban18 {
+    background-image: url(images__projects/MadGabGame3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project */
+.main-banner6 #imgban17 {
+    background-image: url(images__projects/MadGabGame2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project */
+.main-banner6 #imgban16 {
+    background-image: url(images__projects/MadGabGame1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
