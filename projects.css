@@ -1055,6 +1055,31 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
+
+
+/* Lets make a non rotating image banner that will show 1 picture of project 10*/
+/* This class and id contain our 3rd image for project */
+.main-banner10 #imgban28 {
+    background-image: url(images__projects/CustomiTunesScriptEdit.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Lets make a non rotating image banner that will show 1 picture of project 10*/
+/* This class and id contain our 3rd image for project */
+.main-banner11 #imgban31 {
+    background-image: url(images__projects/WakeFromSleepScriptEdit.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
 /*Lets make the formatting for the small scale projects */
 .page3__heading {
     display: flex;
