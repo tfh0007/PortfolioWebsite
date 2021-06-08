@@ -1076,8 +1076,35 @@ transition: transform 350ms ease-in-out;
 }
 /* For project 10 and 11 where we have one image the text sometimes overlaps with the picture so lets fix this */
 .extended__Description__Project10 h1,
-.extended__Description__Project11 h1 {
+.extended__Description__Project11 h1
+ {
     margin-top: 14px;
+}
+
+/*Project 6 and 7 on mobile the content gets clipped into the picture so lets fix this */
+/*On Mobile sometimes the bottom of the extended description gets clipped slightly so lets fix this */
+@media screen and (max-width: 1000px){
+    
+
+    .extended__Description__Project7 h1,
+    .extended__Description__Project6 h1{
+        padding-bottom: 30px;
+    }
+
+    .extended__Description__Project1,
+    .extended__Description__Project2,
+    .extended__Description__Project3,
+    .extended__Description__Project4,
+    .extended__Description__Project5,
+    .extended__Description__Project6,
+    .extended__Description__Project7,
+    .extended__Description__Project8,
+    .extended__Description__Project9,
+    .extended__Description__Project10,
+    .extended__Description__Project11
+     {
+        padding-bottom: 75px;
+    }
 }
 
 
