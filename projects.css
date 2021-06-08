@@ -1074,7 +1074,11 @@ transition: transform 350ms ease-in-out;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+/* For project 10 and 11 where we have one image the text sometimes overlaps with the picture so lets fix this */
+.extended__Description__Project10 h1,
+.extended__Description__Project11 h1 {
+    margin-top: 14px;
+}
 
 
 
