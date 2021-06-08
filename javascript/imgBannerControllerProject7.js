@@ -1,7 +1,7 @@
 
 var bannerStatus7 = 1;
 // This will be the time it takes to change images (in miliseconds)
-var bannerTimer7 = 7000;
+var bannerTimer7 = 12000;
 
 
 // We want to stop this function when the window is closed
