@@ -979,7 +979,7 @@ transition: transform 350ms ease-in-out;
 /* Lets make a rotating image banner that will show various pictures of the project 7*/
 /* This class and id contain our 3rd image for project */
 .main-banner7 #imgban21 {
-    background-image: url(images__projects/placeholder3.png);
+    background-image: url(images__projects/GitHubManager3.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -987,7 +987,7 @@ transition: transform 350ms ease-in-out;
 
 /* This class and id contain our 2nd image for project */
 .main-banner7 #imgban20 {
-    background-image: url(images__projects/placeholder2.png);
+    background-image: url(images__projects/GitHubManager2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -995,7 +995,7 @@ transition: transform 350ms ease-in-out;
 
 /* This class and id contain our 1st image for project */
 .main-banner7 #imgban19 {
-    background-image: url(images__projects/placeholder1.png);
+    background-image: url(images__projects/GitHubManager1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1005,7 +1005,7 @@ transition: transform 350ms ease-in-out;
 /* Lets make a rotating image banner that will show various pictures of the project 8*/
 /* This class and id contain our 3rd image for project */
 .main-banner8 #imgban24 {
-    background-image: url(images__projects/placeholder3.png);
+    background-image: url(images__projects/AutoCompileKernel3.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1013,7 +1013,7 @@ transition: transform 350ms ease-in-out;
 
 /* This class and id contain our 2nd image for project */
 .main-banner8 #imgban23 {
-    background-image: url(images__projects/placeholder2.png);
+    background-image: url(images__projects/AutoCompileKernel2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1021,7 +1021,7 @@ transition: transform 350ms ease-in-out;
 
 /* This class and id contain our 1st image for project */
 .main-banner8 #imgban22 {
-    background-image: url(images__projects/placeholder1.png);
+    background-image: url(images__projects/AutoCompileKernel1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
