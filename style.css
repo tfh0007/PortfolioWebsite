@@ -34,7 +34,11 @@ body {
     
     transition: transform 500ms ease-in-out;
 
-
+    
+    /* Get rid of the following three lines to bring back the notification */
+    transform: translateY(-1170px);
+    opacity: 0;
+    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
       
 
     
