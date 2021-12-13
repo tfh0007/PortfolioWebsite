@@ -36,16 +36,16 @@ body {
 
     
     /* Get rid of the following three lines to bring back the notification */
-    transform: translateY(-1170px);
+    /* transform: translateY(-1170px);
     opacity: 0;
-    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
+    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms; */
       
 
     
 
 }
 /* I am removing this animation cause it is unnecessary and slowing down my website */
-/* .fa-exclamation-triangle {
+.fa-exclamation-triangle {
 
     animation-name: pulseTriangle;
     animation-duration: 2.5s;
@@ -54,7 +54,7 @@ body {
 
     
 }
-/* Pretty sure this animation will continue even if it is invisible 
+/* Pretty sure this animation will continue even if it is invisible */
 @keyframes pulseTriangle{
     0%   {color: red;}
   
@@ -62,20 +62,47 @@ body {
   
   
 }
-*/
+
 
 
 
 /* This class will contain our custom warnning message after the message has been dismissed*/
 .notification__area.inactive {
 
+    animation-name: minimize_to_notification;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    -webkit-animation-fill-mode: forwards; /* for less modern browsers */
+    animation-fill-mode: forwards; 
+  
+    /* transform: translateY(-1170px);
+    
+    transition: transform 10.5s ease-in-out 0ms;
+    */
     
     
-    transform: translateY(-1170px);
-    opacity: 0;
-    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
+
+    
 
 
+
+}
+
+@keyframes minimize_to_notification{
+    10% {transform: scale(0.5) translateY(300px)}
+    60% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) }
+    80% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) skewX(45deg) }
+    
+    100% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) translateX(-3000px) }
+    
+    
+    
+    
+    
+    
+    
+  
 }
 
 /* When the navbar opens on moblie our notification overlaps with the menu so lets fix this issue by 
@@ -120,6 +147,67 @@ destroying the notification when the drop down menu opens */
     color: rgba(255, 255, 255, 0.664);
 }
 
+/* This id will contain our notification symbol area */
+.navbar__links__notifications {
+    right: 10px;
+    top: 9px;
+}
+
+/* This class will contain our number of notifications as a badge */
+.num-of-notifications {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    padding: 3px 8px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    opacity: 0;
+  }
+
+  /* This will make the notification badge update when a notification is closed */
+  .num-of-notifications.fadeIn {
+    opacity: 1;
+    transition: opacity 500ms 3.6s ease-in-out;
+  }
+
+  /* Ring our bell cause there is a notification */
+  .navbar__links__notifications.ring_animate {
+
+    animation-name: bellShake;
+    animation-duration: .4s;
+    animation-delay: 1.6s;
+    animation-iteration-count: 5;
+    animation-direction:normal;
+
+    
+}
+/* Pretty sure this animation will continue even if it is invisible */
+@keyframes bellShake{
+   
+    0%   {transform: rotateZ(0deg);}
+    25%  {transform: rotateZ(30deg);}
+    50%   {transform: rotateZ(0deg);}
+    75%  {transform: rotateZ(-30deg);}
+    100%  {transform: rotateZ(0deg);}
+
+  }
+  /* This class will make the notification bell sparkle red as it rings */
+  .fa-bell.ring_red {
+    animation-name: bellSparkle;
+    animation-duration: .8s;
+    animation-delay: 1.6s;
+    animation-iteration-count: 3;
+    animation-direction:normal;
+   
+  }
+  @keyframes bellSparkle{
+   
+    0%   {color: red;}
+    
+    100%  {color: black;}
+
+  }
 
 
 /* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
@@ -342,7 +430,7 @@ For Mobile this will be hidden */
 }
 
 /* navbar links is how we can remove the style of our links and edit their size*/
-.navbar__links {
+.navbar__links, .navbar__links__notifications {
     font-size: 2rem;
     text-decoration: none;
     color: white;
@@ -447,7 +535,7 @@ of the navbar menu middle desktop */
 }
 
 /* navbar links is how we can remove the style of our links and edit their size*/
-.navbar__links {
+.navbar__links, .navbar__links__notifications {
     font-size: 1.3rem;
     text-decoration: none;
     color: white;
@@ -525,6 +613,16 @@ so we can not simply change all of the icons at once*/
 
 
 /* Since fas affects one of our right icons we need to overide this with a bigger font size */
+
+.fa-bell {
+    font-size: 2rem;
+    color: black;
+    display: flex;
+    align-content: center;
+
+}
+
+
 .fa-handshake {
     font-size: 3rem;
     color: red;
@@ -1930,7 +2028,7 @@ footer {
 /* Lets now create the hover effects for the various items and buttons */
 
 /* First we will create the hover effects for the navigation menu */
-.navbar__links {
+.navbar__links, .navbar__links__notifications {
     position: relative;
 }
 

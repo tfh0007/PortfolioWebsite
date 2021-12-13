@@ -89,7 +89,14 @@
 					
 				<div>
 					<ul class="navbar__menu-right-desktop">
-								 <!-- Create a menu item Handshake Icon -->
+
+
+								<!-- Create a menu item Notification Icon -->
+								<li class="navbar__item-right icon">
+									<!-- Span specifies the number of notifications-->
+									<a class="navbar__links__notifications"  id="navbar__desktop__notifications"><i class="fas fa-bell"></i><span class = "num-of-notifications">1</span></a></li>  
+								
+								<!-- Create a menu item Handshake Icon -->
 								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
 								<li class="navbar__item-right icon">
 									<a href="https://app.joinhandshake.com/login" class="navbar__links" id="navbar__desktop__link5"><i class="fas fa-handshake"></i></a></li>  
@@ -118,7 +125,7 @@
 		
 		<div class="notification__heading__msg">
 			<h1><i class="fas fa-exclamation-triangle" style="color: gold;"></i>&nbsp; Warning:</h1>
-			<p>This site has not been fully developed yet and some areas may behave unresponsive or have issues. The page Projects is currently incomplete.</p>
+			<p>New changes are being developed. The layout and functionality of this website may behave unresponsive until these changes are fully developed.</p>
 		
 
 
@@ -515,6 +522,8 @@
 					$('.navbar').toggleClass('active')
 					$('.navbar__menu-mobile').toggleClass('active')
 					$('.notification__area').toggleClass('moveDown')
+
+					
 					
 
 
@@ -527,10 +536,15 @@
 
 <!-- Scripts for the notification area-->
 
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.notification__btn').click(function() {
 				$('.notification__area').toggleClass('inactive')
+				$('.num-of-notifications').toggleClass('fadeIn')
+				$('.navbar__links__notifications').toggleClass('ring_animate')
+				$('.fa-bell').toggleClass('ring_red')
+				
 				
 
 
