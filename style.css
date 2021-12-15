@@ -125,11 +125,7 @@ destroying the notification when the drop down menu opens */
     top: 0;
 }
 /* This class will contain our custom warning close button item*/
-.notification__btn,
-.notification__btn1,
-.notification__btn2,
-.notification__btn3,
-.notification__btn4 
+.notification__btn
 {
     cursor: pointer;
     background: transparent;
@@ -137,6 +133,9 @@ destroying the notification when the drop down menu opens */
     font-size: 2.2rem;
     color: rgba(255, 255, 255, 0.664);
 }
+
+
+
 
 /* This id will contain our notification symbol area */
 .navbar__links__notifications {
@@ -211,9 +210,9 @@ destroying the notification when the drop down menu opens */
     padding-left: 2ch;
     padding-right: 2ch;
     padding-bottom: 2ch;
-    padding-top: 7ch;
+    padding-top: 2ch;
     /* We want the items to stay in the center of the container */
-    align-items: center;
+    
 
     flex-grow: 3;
     /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
@@ -225,11 +224,14 @@ background: black;
     right: 10px;
     max-height: 80.8%;
     max-width: 35%;
-    z-index: 200;
+    z-index: 5000;
     opacity: 0.8;
+    overflow-y: scroll;
+    border: solid black 15px;
+    border-radius: 30px;
 
     transform: translateY(-150%);
-    transition: transform 200ms 300ms ease-in-out;
+    transition: transform 200ms 0ms ease-in-out;
     
 }
 
@@ -242,12 +244,77 @@ background: black;
     }
   }
 
+
+  .notification__closeWindowBtn__container {
+    display: flex;
+    justify-content: right;
+}
+/* This class will contain the notification window close button */
+.notification__closeWindowBtn
+  {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 2.7rem;
+  cursor: pointer;
+
+  
+  }
+
+  .notification__heading__and__close__btn__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    
+    
+  }
+
+  /* This class will contain the heading info and Mark all as seen button in the notifications window */
+.notificationPageHeading {
+
+    display: flex;
+    flex-direction: column;
+    
+    
+
+}
+.notificationPageHeading h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.6rem;
+    color: white;
+    
+}
+
+/* This class will contain the Mark all as seen button container in the notifications window */
+.notificationPageHeading .notifications__close__button {
+
+    display: flex;
+    justify-content: left;
+    border: none;
+    
+    margin-bottom: -10px;
+}
+
+
   /* This class will contain our custom warning message heading*/
 .notification__heading__msg h1 {
 
     color: rgba(255, 255, 255, 0.719);
     padding-left: 2ch;
     font-size: 2.2rem;
+}
+
+.notification__mark__all__read__btn {
+
+    font-size: 1.4rem;
+    list-style: none;
+    text-decoration: none;
+    background: blue;
+    border-radius: 20px;
+    padding: 6px;
+    color: white;
+    cursor: pointer;
 }
 
 /* This class will contain our notification message bodys*/
@@ -260,19 +327,9 @@ background: black;
     padding-left: 5ch;
 }
 
-.notification1__close__button,
-.notification2__close__button,
-.notification3__close__button,
-.notification4__close__button {
-
-    position: relative;
-    right: 0;
-    top: 0;
-}
-
 .notificationPageContainer.visible {
     transform: translateY(0%);
-    transition: transform 200ms 300ms ease-in-out;
+    transition: transform 200ms 0ms ease-in-out;
 }
 
 .navbar__links__notifications {
@@ -2211,23 +2268,16 @@ we are on. The link1 id location will be changed depending on the html file we a
 /* Next lets create animation for the close notification button */
 
 .notification__btn,
-.notification__btn1,
-.notification__btn2,
-.notification__btn3,
-.notification__btn4 {
+.notification__closeWindowBtn
+ 
+{
     transition: color 300ms ease-out;
 }
 .notification__btn:hover,
 .notification__btn:focus,
 
-.notification__btn1:hover,
-.notification__btn1:focus,
-.notification__btn2:hover,
-.notification__btn2:focus,
-.notification__btn3:hover,
-.notification__btn3:focus,
-.notification__btn4:hover,
-.notification__btn4:focus
+.notification__closeWindowBtn:hover,
+.notification__closeWindowBtn:focus
 {
 
     color: rgb(214, 27, 27);
