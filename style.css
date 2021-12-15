@@ -80,13 +80,6 @@ body {
     
     transition: transform 10.5s ease-in-out 0ms;
     */
-    
-    
-
-    
-
-
-
 }
 
 @keyframes minimize_to_notification{
@@ -94,14 +87,7 @@ body {
     60% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) }
     80% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) skewX(45deg) }
     
-    100% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) translateX(-3000px) }
-    
-    
-    
-    
-    
-    
-    
+    100% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) translateX(-3000px) } 
   
 }
 
@@ -139,7 +125,12 @@ destroying the notification when the drop down menu opens */
     top: 0;
 }
 /* This class will contain our custom warning close button item*/
-.notification__btn {
+.notification__btn,
+.notification__btn1,
+.notification__btn2,
+.notification__btn3,
+.notification__btn4 
+{
     cursor: pointer;
     background: transparent;
     border: none;
@@ -202,6 +193,103 @@ destroying the notification when the drop down menu opens */
    
   }
   @keyframes bellSparkle{
+   
+    0%   {color: red;}
+    
+    100%  {color: black;}
+
+  }
+
+  /*When the notification button is not clicked we want the notifications to be invisible */
+.notificationPageContainer
+{
+
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    padding-bottom: 2ch;
+    padding-top: 7ch;
+    /* We want the items to stay in the center of the container */
+    align-items: center;
+
+    flex-grow: 3;
+    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+    This property will need to be modified for desktop and tablet environments */
+
+background: black;
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    max-height: 80.8%;
+    max-width: 35%;
+    z-index: 200;
+    opacity: 0.8;
+
+    transform: translateY(-150%);
+    transition: transform 200ms 300ms ease-in-out;
+    
+}
+
+/* Check if backdrop is supported and if it is make the background transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur2em)) {
+    .notificationPageContainer {
+      background-color: rgba(0, 0, 0, 0.068);
+      -webkit-backdrop-filter: blur(2em);
+      backdrop-filter: blur(2em);
+    }
+  }
+
+  /* This class will contain our custom warning message heading*/
+.notification__heading__msg h1 {
+
+    color: rgba(255, 255, 255, 0.719);
+    padding-left: 2ch;
+    font-size: 2.2rem;
+}
+
+/* This class will contain our notification message bodys*/
+.notification1__heading__msg, 
+.notification2__heading__msg,
+.notification3__heading__msg,
+.notification4__heading__msg {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.575);
+    padding-left: 5ch;
+}
+
+.notification1__close__button,
+.notification2__close__button,
+.notification3__close__button,
+.notification4__close__button {
+
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+.notificationPageContainer.visible {
+    transform: translateY(0%);
+    transition: transform 200ms 300ms ease-in-out;
+}
+
+.navbar__links__notifications {
+    cursor:pointer
+}
+
+
+
+  /* This class will make the notification bell sparkle red as it rings */
+  .fa-bell.ring_red:hover {
+    animation-name: bellSparkle2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+   
+  }
+  @keyframes bellSparkle2{
    
     0%   {color: red;}
     
@@ -446,6 +534,10 @@ For Mobile this will be hidden */
 .fab {
     color: white;
 }
+
+
+
+
 
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
 /* First we will load the middle icons and leave the right icons in the menu */
@@ -2118,11 +2210,25 @@ we are on. The link1 id location will be changed depending on the html file we a
 
 /* Next lets create animation for the close notification button */
 
-.notification__btn {
+.notification__btn,
+.notification__btn1,
+.notification__btn2,
+.notification__btn3,
+.notification__btn4 {
     transition: color 300ms ease-out;
 }
 .notification__btn:hover,
-.notification__btn:focus {
+.notification__btn:focus,
+
+.notification__btn1:hover,
+.notification__btn1:focus,
+.notification__btn2:hover,
+.notification__btn2:focus,
+.notification__btn3:hover,
+.notification__btn3:focus,
+.notification__btn4:hover,
+.notification__btn4:focus
+{
 
     color: rgb(214, 27, 27);
 }
