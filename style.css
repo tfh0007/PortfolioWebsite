@@ -225,8 +225,10 @@ destroying the notification when the drop down menu opens */
 .navbar__links__notifications {
     right: 10px;
     top: 9px;
+    /* 
     transform: translateY(-150%);
     opacity: 0;
+    */
     
 }
 
@@ -249,7 +251,9 @@ destroying the notification when the drop down menu opens */
   }
 /* This will make the notification icon/button visible */
   .navbar__links__notifications.visible {
+    /* 
     transform: translateY(0%);
+    */
     opacity: 1;
     transition: opacity 1s 600ms
   }

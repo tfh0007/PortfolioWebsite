@@ -125,7 +125,7 @@
 		
 		<div class="notification__heading__msg">
 			<h1><i class="fas fa-exclamation-triangle" style="color: gold;"></i>&nbsp; Note:</h1>
-			<p>New changes are currently being added. Parts of my website may behave unresponsive until these changes are fully developed.</p>
+			<p>Notifications and update history can now be found on my website. Click the bell icon to learn more. Dismissing message after a few seconds.</p>
 		
 		</div>
 <!-- The point of the aria label is to make visual elements have text associated for screen readers to have an understanding of the button-->
@@ -577,16 +577,32 @@
 
 
 	<script type="text/javascript">
+	// Will trigger the button press automatically after duration. Timeout will be canceled if user pushes button first. Timeout set in miliseconds
+	const myTimeout = setTimeout(notificationTimeout, 10000);	
 		$(document).ready(function(){
 			$('.notification__btn').click(function() {
+				clearTimeout(myTimeout) // Stops the timer so the actions do not happen twice
 				$('.notification__area').toggleClass('inactive')
 				$('.num-of-notifications').toggleClass('fadeIn')
 				$('.navbar__links__notifications').toggleClass('visible')
+				
 				$('.navbar__links__notifications').toggleClass('ring_animate')
 				$('.fa-bell').toggleClass('ring_red')	
 
 			})
+			
 		})
+		function notificationTimeout() {
+			$(document).ready(function(){
+				$('.notification__area').toggleClass('inactive')
+				$('.num-of-notifications').toggleClass('fadeIn')
+				$('.navbar__links__notifications').toggleClass('visible')
+				
+				$('.navbar__links__notifications').toggleClass('ring_animate')
+				$('.fa-bell').toggleClass('ring_red')		
+			})
+		}
+
 
 	</script>
 
@@ -596,6 +612,9 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		$(document).ready(function(){
 			$('#navbar__desktop__notifications').click(function() {
 			  $('.notificationPageContainer').toggleClass('visible')
+			  // Makes the process one way, we can change into the class visible but cannot change back
+			  //$('.notificationPageContainer').removeClass('visible')
+			  //$('.notificationPageContainer').addClass('visible')
 
 			})
 		})
