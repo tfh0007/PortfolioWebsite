@@ -553,23 +553,25 @@
 
 
 
-
+<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <!--Scripts for Navigation -->
 	<!-- We want to toggle states for our mobile menu -->
-	<script
-	src="https://code.jquery.com/jquery-3.6.0.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('.menuButton').click(function() {
-					$('.navbar').toggleClass('active')
-					$('.navbar__menu-mobile').toggleClass('active')
-					$('.notification__area').toggleClass('moveDown')
+	
+		
+		
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menuButton').click(function() {
+				$('.navbar').toggleClass('active')
+				$('.navbar__menu-mobile').toggleClass('active')
+				$('.notification__area').toggleClass('moveDown')
 
-				})
 			})
+		})
 
-		</script>
+	</script>
 
 <!-- Scripts for the notification area-->
 
@@ -579,6 +581,7 @@
 			$('.notification__btn').click(function() {
 				$('.notification__area').toggleClass('inactive')
 				$('.num-of-notifications').toggleClass('fadeIn')
+				$('.navbar__links__notifications').toggleClass('visible')
 				$('.navbar__links__notifications').toggleClass('ring_animate')
 				$('.fa-bell').toggleClass('ring_red')	
 
@@ -598,8 +601,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		})
 
 	</script>
-<script
-src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.notification__closeWindowBtn').click(function() {
@@ -614,8 +616,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <!--Scripts for page 2-->
 	<!-- We want to display more info about a project when the user clicks the Learn More button -->
-	<script
-		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 		  	<script type="text/javascript">
 		  		$(document).ready(function(){
 		  			$('.Project__button__1').click(function() {
@@ -628,8 +629,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 		  	</script>
 
-	<script
-	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('.Project__button__2').click(function() {
@@ -644,8 +644,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 		</script>
 	
-	<script
-		  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 		  	<script type="text/javascript">
 		  		$(document).ready(function(){
 		  			$('.Project__button__3').click(function() {

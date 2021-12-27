@@ -10,6 +10,90 @@ body {
     
 }
 
+/* Allows us to customize the global scroll bar */
+::-webkit-scrollbar {
+width: 1em;
+
+}
+
+/* Controls the outer portion of the global scroll bar */
+::-webkit-scrollbar-track {
+
+    background: rgb(214, 176, 126);
+border-radius: 100vw;
+margin-block: 0.5em;
+}
+
+/* Scroll Bar Buttons 
+https://stackoverflow.com/questions/40512026/no-arrow-buttons-in-scrollbar-after-writing-webkit-css/46229219#46229219*/
+::-webkit-scrollbar-button
+{
+  border-style: solid;
+  height: 16px;
+  width: 16px;
+}
+
+
+/* Up */
+::-webkit-scrollbar-button:vertical:decrement
+{
+  border-width: 0 7px 14px 7px;
+  border-color: transparent transparent #ff0000 transparent;
+}
+::-webkit-scrollbar-button:vertical:decrement:hover
+{
+  border-color: transparent transparent #363636 transparent;
+}
+
+
+
+/* Down */
+::-webkit-scrollbar-button:vertical:increment
+{
+  border-width: 14px 7px 0 7px;
+  border-color: #ff0000 transparent transparent transparent;
+}
+::-webkit-scrollbar-button:vertical:increment:hover
+{
+  border-color: #363636 transparent transparent transparent;
+}
+
+/* Controls the scrolling portion of the global scroll bar */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(90, 90, 90);
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(90, 90, 90, 0.726);
+    border-radius: 100vw;
+}
+
+/* Controls the outer portion of the notification scroll bar */
+.notificationPageContainer::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+/* Controls the scrolling portion of the notification scroll bar */
+.notificationPageContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.678);
+}
+
+.notificationPageContainer::-webkit-scrollbar-button:vertical:decrement,
+.notificationPageContainer::-webkit-scrollbar-button:vertical:increment {
+    border-width: 0;
+}
+
+/* Sets the scroll buttons for all extended project descriptions. If more than 18 add those here. Can definitely be refactored later */
+.extended__Description__Project1::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project2::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project3::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project4::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project5::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project6::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project7::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project8::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project9::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project10::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project11::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project12::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project13::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project14::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project15::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project16::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project17::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project18::-webkit-scrollbar-button:vertical:decrement,
+.extended__Description__Project1::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project2::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project3::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project4::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project5::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project6::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project7::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project8::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project9::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project10::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project11::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project12::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project13::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project14::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project15::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project16::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project17::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project18::-webkit-scrollbar-button:vertical:increment
+{
+border-width: 0;
+}
+
+
+
+
+
 /* This class will contain our custom warnning message container*/
 .notification__area {
     margin-top: 24px;
@@ -141,6 +225,9 @@ destroying the notification when the drop down menu opens */
 .navbar__links__notifications {
     right: 10px;
     top: 9px;
+    transform: translateY(-150%);
+    opacity: 0;
+    
 }
 
 /* This class will contain our number of notifications as a badge */
@@ -159,6 +246,12 @@ destroying the notification when the drop down menu opens */
   .num-of-notifications.fadeIn {
     opacity: 1;
     transition: opacity 500ms 3.6s ease-in-out;
+  }
+/* This will make the notification icon/button visible */
+  .navbar__links__notifications.visible {
+    transform: translateY(0%);
+    opacity: 1;
+    transition: opacity 1s 600ms
   }
 
   /* Ring our bell cause there is a notification */
