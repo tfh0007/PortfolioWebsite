@@ -112,6 +112,7 @@ border-width: 0;
     background: transparent;
     background-color: rgba(51, 50, 50, 0.794) ;
     z-index: 999;
+    padding-right: 50px;
     
     opacity: 1;
 
@@ -168,10 +169,10 @@ border-width: 0;
 
 @keyframes minimize_to_notification{
     10% {transform: scale(0.5) translateY(300px)}
-    60% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) }
-    80% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) skewX(45deg) }
+    60% {transform: scale(0.5) translateY(300px) translateX(510px) rotateZ(90deg) }
+    80% {transform: scale(0.5) translateY(300px) translateX(510px) rotateZ(90deg) skewX(45deg) }
     
-    100% {transform: scale(0.5) translateY(300px) translateX(470px) rotateZ(90deg) translateX(-3000px) } 
+    100% {transform: scale(0.5) translateY(300px) translateX(510px) rotateZ(90deg) translateX(-3000px) } 
   
 }
 
@@ -329,6 +330,7 @@ background: black;
 
     transform: translateY(-150%);
     transition: transform 200ms 0ms ease-in-out;
+    overflow-x: hidden;
     
 }
 
@@ -414,11 +416,16 @@ background: black;
     cursor: pointer;
 }
 
+.notification__mark__all__read__btn.invisible {
+    display:none
+}
+
 /* This class will contain our notification message bodys*/
 .notification1__heading__msg, 
 .notification2__heading__msg,
 .notification3__heading__msg,
-.notification4__heading__msg {
+.notification4__heading__msg,
+.noneNotifications__heading__msg {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.575);
     padding-left: 5ch;
@@ -450,6 +457,10 @@ background: black;
     100%  {color: black;}
 
   }
+
+
+
+  
 
 
 /* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
