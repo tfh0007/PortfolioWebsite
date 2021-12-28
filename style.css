@@ -10,6 +10,102 @@ body {
     
 }
 
+/* Allows us to customize the global scroll bar */
+::-webkit-scrollbar {
+width: 1em;
+
+}
+
+/* Controls the outer portion of the global scroll bar */
+::-webkit-scrollbar-track {
+
+    background: rgb(214, 176, 126);
+border-radius: 100vw;
+margin-block: 0.5em;
+}
+
+/* Scroll Bar Buttons 
+https://stackoverflow.com/questions/40512026/no-arrow-buttons-in-scrollbar-after-writing-webkit-css/46229219#46229219*/
+::-webkit-scrollbar-button
+{
+  border-style: solid;
+  height: 16px;
+  width: 16px;
+}
+
+
+/* Up */
+::-webkit-scrollbar-button:vertical:decrement
+{
+  border-width: 0 7px 14px 7px;
+  border-color: transparent transparent #ff0000 transparent;
+}
+::-webkit-scrollbar-button:vertical:decrement:hover
+{
+  border-color: transparent transparent #33ff00 transparent;
+}
+
+
+
+/* Down */
+::-webkit-scrollbar-button:vertical:increment
+{
+  border-width: 14px 7px 0 7px;
+  border-color: #ff0000 transparent transparent transparent;
+}
+::-webkit-scrollbar-button:vertical:increment:hover
+{
+  border-color: #33ff00 transparent transparent transparent;
+}
+
+/* Controls the scrolling portion of the global scroll bar */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(90, 90, 90);
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(90, 90, 90, 0.726);
+    border-radius: 100vw;
+}
+
+/* Controls the outer portion of the notification scroll bar */
+.notificationPageContainer::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+/* Controls the scrolling portion of the notification scroll bar */
+.notificationPageContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.678);
+}
+
+.notificationPageContainer::-webkit-scrollbar-button:vertical:decrement,
+.notificationPageContainer::-webkit-scrollbar-button:vertical:increment {
+    border-width: 0;
+}
+
+#textBoxArea::-webkit-scrollbar-button:vertical:decrement,
+#textBoxArea::-webkit-scrollbar-button:vertical:increment
+{
+    border-width: 0.2;
+}
+
+#textBoxArea::-webkit-scrollbar
+{
+    width: 0.5em;
+}
+
+
+/* Sets the scroll buttons for all extended project descriptions. If more than 18 add those here. Can definitely be refactored later */
+.extended__Description__Project1::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project2::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project3::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project4::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project5::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project6::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project7::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project8::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project9::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project10::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project11::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project12::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project13::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project14::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project15::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project16::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project17::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project18::-webkit-scrollbar-button:vertical:decrement,
+.extended__Description__Project1::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project2::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project3::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project4::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project5::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project6::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project7::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project8::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project9::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project10::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project11::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project12::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project13::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project14::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project15::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project16::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project17::-webkit-scrollbar-button:vertical:increment,.extended__Description__Project18::-webkit-scrollbar-button:vertical:increment
+{
+border-width: 0;
+}
+
+
+
+
+
 /* This class will contain our custom warnning message container*/
 .notification__area {
     margin-top: 24px;
@@ -28,6 +124,7 @@ body {
     background: transparent;
     background-color: rgba(51, 50, 50, 0.794) ;
     z-index: 999;
+    padding-right: 50px;
     
     opacity: 1;
 
@@ -36,16 +133,16 @@ body {
 
     
     /* Get rid of the following three lines to bring back the notification */
-    transform: translateY(-1170px);
+    /* transform: translateY(-1170px);
     opacity: 0;
-    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
+    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms; */
       
 
     
 
 }
 /* I am removing this animation cause it is unnecessary and slowing down my website */
-/* .fa-exclamation-triangle {
+.fa-exclamation-triangle {
 
     animation-name: pulseTriangle;
     animation-duration: 2.5s;
@@ -54,7 +151,7 @@ body {
 
     
 }
-/* Pretty sure this animation will continue even if it is invisible 
+/* Pretty sure this animation will continue even if it is invisible */
 @keyframes pulseTriangle{
     0%   {color: red;}
   
@@ -62,20 +159,33 @@ body {
   
   
 }
-*/
+
 
 
 
 /* This class will contain our custom warnning message after the message has been dismissed*/
 .notification__area.inactive {
 
+    animation-name: minimize_to_notification;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    -webkit-animation-fill-mode: forwards; /* for less modern browsers */
+    animation-fill-mode: forwards; 
+  
+    /* transform: translateY(-1170px);
     
+    transition: transform 10.5s ease-in-out 0ms;
+    */
+}
+
+@keyframes minimize_to_notification{
+    10% {transform: scale(0.5) translateY(300px)}
+    60% {transform: scale(0.5) translateY(300px) translateX(510px) rotateZ(90deg) }
+    80% {transform: scale(0.5) translateY(300px) translateX(510px) rotateZ(90deg) skewX(45deg) }
     
-    transform: translateY(-1170px);
-    opacity: 0;
-    transition: opacity 500ms ease-in-out,transform 0ms ease-in-out 800ms;
-
-
+    100% {transform: scale(0.5) translateY(300px) translateX(510px) rotateZ(90deg) translateX(-3000px) } 
+  
 }
 
 /* When the navbar opens on moblie our notification overlaps with the menu so lets fix this issue by 
@@ -112,7 +222,8 @@ destroying the notification when the drop down menu opens */
     top: 0;
 }
 /* This class will contain our custom warning close button item*/
-.notification__btn {
+.notification__btn
+{
     cursor: pointer;
     background: transparent;
     border: none;
@@ -120,6 +231,265 @@ destroying the notification when the drop down menu opens */
     color: rgba(255, 255, 255, 0.664);
 }
 
+
+
+
+/* This id will contain our notification symbol area */
+.navbar__links__notifications {
+    right: 10px;
+    top: 9px;
+    /* 
+    transform: translateY(-150%);
+    opacity: 0;
+    */
+    
+}
+
+/* This class will contain our number of notifications as a badge */
+.num-of-notifications {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    padding: 3px 8px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    opacity: 0;
+  }
+
+  /* This class will contain our number of notifications on mobile as a badge */
+.num-of-notifications-mobile {
+    position: absolute;
+    top: 12px;
+    right: -10px;
+    padding: 1px 8px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    opacity: 0;
+  }
+
+  /* This will make the notification badge update when a notification is closed */
+  .num-of-notifications.fadeIn,
+  .num-of-notifications-mobile.fadeIn{
+    opacity: 1;
+    transition: opacity 500ms 3.6s ease-in-out;
+  }
+/* This controls the Notifications bell and text icon for the mobile menu object */
+  .mobile__notification__bell {
+      padding-bottom: 0.2ch;
+  }
+/* This will make the notification icon/button visible */
+  .navbar__links__notifications.visible {
+    /* 
+    transform: translateY(0%);
+    */
+    opacity: 1;
+    transition: opacity 1s 600ms
+  }
+
+  /* Ring our bell cause there is a notification */
+  .navbar__links__notifications.ring_animate {
+
+    animation-name: bellShake;
+    animation-duration: .4s;
+    animation-delay: 1.6s;
+    animation-iteration-count: 5;
+    animation-direction:normal;
+
+    
+}
+/* Pretty sure this animation will continue even if it is invisible */
+@keyframes bellShake{
+   
+    0%   {transform: rotateZ(0deg);}
+    25%  {transform: rotateZ(30deg);}
+    50%   {transform: rotateZ(0deg);}
+    75%  {transform: rotateZ(-30deg);}
+    100%  {transform: rotateZ(0deg);}
+
+  }
+  /* This class will make the notification bell sparkle red as it rings */
+  .fa-bell.ring_red {
+    animation-name: bellSparkle;
+    animation-duration: .8s;
+    animation-delay: 1.6s;
+    animation-iteration-count: 3;
+    animation-direction:normal;
+   
+  }
+  @keyframes bellSparkle{
+   
+    0%   {color: red;}
+    
+    100%  {color: black;}
+
+  }
+
+  /*When the notification button is not clicked we want the notifications to be invisible */
+.notificationPageContainer
+{
+
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2ch;
+    padding-right: 2ch;
+    padding-bottom: 2ch;
+    padding-top: 2ch;
+    /* We want the items to stay in the center of the container */
+    
+
+    flex-grow: 3;
+    /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
+    This property will need to be modified for desktop and tablet environments */
+
+background: black;
+    position: fixed;
+    top: 92px;
+    right: 10px;
+    max-height: 80.8%;
+    max-width: 600px;
+    z-index: 5000;
+    opacity: 0.85;
+    overflow-y: scroll;
+    border: solid black 15px;
+    border-radius: 30px;
+
+    transform: translateY(-150%);
+    transition: transform 200ms 0ms ease-in-out;
+    overflow-x: hidden;
+    
+}
+
+/* Check if backdrop is supported and if it is make the background transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur2em)) {
+    .notificationPageContainer {
+      background-color: rgba(0, 0, 0, 0.068);
+      -webkit-backdrop-filter: blur(2em);
+      backdrop-filter: blur(2em);
+    }
+  }
+
+
+  .notification__closeWindowBtn__container {
+    display: flex;
+    justify-content: right;
+}
+/* This class will contain the notification window close button */
+.notification__closeWindowBtn
+  {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 2.7rem;
+  cursor: pointer;
+
+  
+  }
+
+  .notification__heading__and__close__btn__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    
+    
+  }
+
+  /* This class will contain the heading info and Mark all as seen button in the notifications window */
+.notificationPageHeading {
+
+    display: flex;
+    flex-direction: column;
+    
+    
+
+}
+.notificationPageHeading h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.6rem;
+    color: white;
+    
+}
+
+/* This class will contain the Mark all as seen button container in the notifications window */
+.notificationPageHeading .notifications__close__button {
+
+    display: flex;
+    justify-content: left;
+    border: none;
+    
+    margin-bottom: -10px;
+}
+
+
+  /* This class will contain our custom warning message heading*/
+.notification__heading__msg h1 {
+
+    color: rgba(255, 255, 255, 0.719);
+    padding-left: 2ch;
+    font-size: 2.2rem;
+}
+
+.notification__mark__all__read__btn {
+
+    font-size: 1.4rem;
+    list-style: none;
+    text-decoration: none;
+    background: blue;
+    border-radius: 20px;
+    padding: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.notification__mark__all__read__btn.invisible {
+    display:none
+}
+
+/* This class will contain our notification message bodys*/
+.notification1__heading__msg, 
+.notification2__heading__msg,
+.notification3__heading__msg,
+.notification4__heading__msg,
+.noneNotifications__heading__msg {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.575);
+    padding-left: 5ch;
+}
+
+.notificationPageContainer.visible {
+    transform: translateY(0%);
+    transition: transform 200ms 0ms ease-in-out;
+}
+
+.navbar__links__notifications {
+    cursor:pointer
+}
+
+
+
+  /* This class will make the notification bell sparkle red as it rings */
+  .fa-bell.ring_red:hover {
+    animation-name: bellSparkle2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+   
+  }
+  @keyframes bellSparkle2{
+   
+    0%   {color: red;}
+    
+    100%  {color: black;}
+
+  }
+
+
+
+  
 
 
 /* The header contains our navigation bar and by making the header position fixed the navigation bar will always remain on the screen */
@@ -262,7 +632,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
 .navbar__menu-mobile.active {
     max-height: 1000px;
 
-    transform: translateY(08px);
+    transform: translateY(8px);
  /*Lets blur and dim the content behind our menu when it is active */
  background: transparent;
  border-radius: 20px;
@@ -342,7 +712,7 @@ For Mobile this will be hidden */
 }
 
 /* navbar links is how we can remove the style of our links and edit their size*/
-.navbar__links {
+.navbar__links, .navbar__links__notifications {
     font-size: 2rem;
     text-decoration: none;
     color: white;
@@ -359,6 +729,10 @@ For Mobile this will be hidden */
     color: white;
 }
 
+
+
+
+
 /* Now that the mobile version of navigation is finished we need to build the desktop version */
 /* First we will load the middle icons and leave the right icons in the menu */
 
@@ -368,6 +742,11 @@ For Mobile this will be hidden */
 .notification__area {
     margin-top: 75px;
     right: 20px;
+}
+
+/* On desktop the Notifications Menu is too low so we need to make it start higher */
+.notificationPageContainer {
+    top: 80px;
 }
 
  /*This navbar represents the container for our navbar */
@@ -447,7 +826,7 @@ of the navbar menu middle desktop */
 }
 
 /* navbar links is how we can remove the style of our links and edit their size*/
-.navbar__links {
+.navbar__links, .navbar__links__notifications {
     font-size: 1.3rem;
     text-decoration: none;
     color: white;
@@ -525,6 +904,16 @@ so we can not simply change all of the icons at once*/
 
 
 /* Since fas affects one of our right icons we need to overide this with a bigger font size */
+
+.fa-bell {
+    font-size: 2rem;
+    color: black;
+    display: flex;
+    align-content: center;
+
+}
+
+
 .fa-handshake {
     font-size: 3rem;
     color: red;
@@ -1621,6 +2010,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     -webkit-box-shadow: rgba(0, 0, 0, 0.2);
     font-size: 1.7rem;
     max-width: 400px;
+    padding-block: 0.5ch;
     /* Using a high z-index ensures that are inputs are on top of everything else on page 3 */
     z-index: 100;
     
@@ -1635,9 +2025,11 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     box-shadow: rgba(0, 0, 0, 0.2);
     -moz-box-shadow: rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: rgba(0, 0, 0, 0.2);
+    padding-block: 0.5ch;
+    
     /* With the text box being scalable horizontally causes issues with our layout so lets 
     restrict the user to only being allowed to adjust the text area size vertically */
-    resize: vertical;
+    resize: vertical; 
 
 }
 /* This class contains the submit button on the user form */
@@ -1930,9 +2322,11 @@ footer {
 /* Lets now create the hover effects for the various items and buttons */
 
 /* First we will create the hover effects for the navigation menu */
-.navbar__links {
+.navbar__links, .navbar__links__notifications {
     position: relative;
 }
+
+#navbar__mobile__notifications::before,
 
 #navbar__mobile__link1::before,
 #navbar__mobile__link2::before,
@@ -1963,6 +2357,7 @@ footer {
     transform-origin: right;
     transition: transform 250ms ease-in-out;
 }
+#navbar__mobile__notifications:hover::before,
 
 #navbar__mobile__link1:hover::before,
 #navbar__mobile__link2:hover::before,
@@ -1971,6 +2366,8 @@ footer {
 #navbar__mobile__link5:hover::before,
 #navbar__mobile__link6:hover::before,
 #navbar__mobile__link7:hover::before,
+
+#navbar__mobile__notifications:focus::before,
 
 #navbar__mobile__link1:focus::before,
 #navbar__mobile__link2:focus::before,
@@ -2020,11 +2417,18 @@ we are on. The link1 id location will be changed depending on the html file we a
 
 /* Next lets create animation for the close notification button */
 
-.notification__btn {
+.notification__btn,
+.notification__closeWindowBtn
+ 
+{
     transition: color 300ms ease-out;
 }
 .notification__btn:hover,
-.notification__btn:focus {
+.notification__btn:focus,
+
+.notification__closeWindowBtn:hover,
+.notification__closeWindowBtn:focus
+{
 
     color: rgb(214, 27, 27);
 }
