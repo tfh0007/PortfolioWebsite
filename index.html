@@ -36,14 +36,13 @@
 				<div>
 
 					<ul class="navbar__menu-mobile">
-						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
-						the text-->
-
-						<li class="mobile__notifcation__bell">
+						
+						<!-- Create a menu item Notifications -->
+						<li class="mobile__notification__bell">
 							<!-- Span specifies the number of notifications-->
 							<a class="navbar__links__notifications"  id="navbar__mobile__notifications"><i class="fas fa-bell"></i>&nbsp; Notifications &nbsp;<span class = "num-of-notifications-mobile" id="setNumOfNotifications-mobile">4</span></a>
 						</li> 
-
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after the text-->
 						<li class="navbar__item-center icon">
 							<a href="index.html" class="navbar__links"id="navbar__mobile__link1"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
 
@@ -124,7 +123,7 @@
 		</nav>
     </header>
 
-<!-- Lets make a notification pane-->
+<!-- Lets make a major notification that appears at top over everything-->
 
 	<div class="notification__area">
 
@@ -134,7 +133,7 @@
 		
 		<div class="notification__heading__msg">
 			<h1><i class="fas fa-exclamation-triangle" style="color: gold;"></i>&nbsp; Note:</h1>
-			<p>Notifications and update history can now be found on this website. Click the bell icon to learn more. Dismissing message after a few seconds.</p>
+			<p>Notifications and update history can now be viewed on this website. Click the Bell icon (on desktop) or Notifications (on mobile within Menu) to learn more. Dismissing message after a few seconds.</p>
 		
 		</div>
 <!-- The point of the aria label is to make visual elements have text associated for screen readers to have an understanding of the button-->
@@ -167,7 +166,7 @@
 		
 		<div class="notification1__heading__msg">
 			<h2 id="deleteMeNotification1Heading"><i class="fas fa-exclamation-triangle" style="color: gold;"></i>&nbsp; Note:</h2>
-			<p id="deleteMeNotification1Body">Changes are currently being added. Parts of my website may behave unresponsive until these changes are fully developed.</p>
+			<p id="deleteMeNotification1Body">Changes are currently being added. Parts of my website may behave unresponsive until these changes are fully developed and tested.</p>
 		</div>
 		
 
@@ -183,7 +182,7 @@
 
 		<div class="notification4__heading__msg">
 			<h2 id="deleteMeNotification4Heading"><i class="fas fa-wrench" style="color: orange;"></i>&nbsp; Update:</h2>
-			<p id="deleteMeNotification4Body">As of December 2021 a new feature called notification menu has been added and is currently available for the desktop version of this site</p>
+			<p id="deleteMeNotification4Body">As of December 2021 a new feature called Notifications Menu has been added and is currently available for the desktop and mobile version of this site</p>
 		</div>
 
 		<div class="noneNotifications__heading__msg">
@@ -614,6 +613,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		$(document).ready(function(){
 			$('#navbar__desktop__notifications').click(function() {
 			  $('.notificationPageContainer').toggleClass('visible')
+			  $('.navbar__menu-mobile').removeClass('active')
 			  // Makes the process one way, we can change into the class visible but cannot change back
 			  //$('.notificationPageContainer').removeClass('visible')
 			  //$('.notificationPageContainer').addClass('visible')
@@ -627,6 +627,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	$(document).ready(function(){
 		$('#navbar__mobile__notifications').click(function() {
 		  $('.notificationPageContainer').toggleClass('visible')
+		  // By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
 		  $('.navbar__menu-mobile').removeClass('active')
 
 
@@ -646,7 +647,6 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 				$('.navbar').toggleClass('active')
 				$('.navbar__menu-mobile').toggleClass('active')
 				$('.notification__area').toggleClass('moveDown')
-				// By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
 				$('.notificationPageContainer').removeClass('visible')
 
 			})

@@ -275,6 +275,10 @@ destroying the notification when the drop down menu opens */
     opacity: 1;
     transition: opacity 500ms 3.6s ease-in-out;
   }
+/* This controls the Notifications bell and text icon for the mobile menu object */
+  .mobile__notification__bell {
+      padding-bottom: 0.2ch;
+  }
 /* This will make the notification icon/button visible */
   .navbar__links__notifications.visible {
     /* 
@@ -343,7 +347,7 @@ destroying the notification when the drop down menu opens */
 
 background: black;
     position: fixed;
-    top: 80px;
+    top: 92px;
     right: 10px;
     max-height: 80.8%;
     max-width: 600px;
@@ -628,7 +632,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
 .navbar__menu-mobile.active {
     max-height: 1000px;
 
-    transform: translateY(08px);
+    transform: translateY(8px);
  /*Lets blur and dim the content behind our menu when it is active */
  background: transparent;
  border-radius: 20px;
@@ -738,6 +742,11 @@ For Mobile this will be hidden */
 .notification__area {
     margin-top: 75px;
     right: 20px;
+}
+
+/* On desktop the Notifications Menu is too low so we need to make it start higher */
+.notificationPageContainer {
+    top: 80px;
 }
 
  /*This navbar represents the container for our navbar */
@@ -2317,6 +2326,8 @@ footer {
     position: relative;
 }
 
+#navbar__mobile__notifications::before,
+
 #navbar__mobile__link1::before,
 #navbar__mobile__link2::before,
 #navbar__mobile__link3::before,
@@ -2346,6 +2357,7 @@ footer {
     transform-origin: right;
     transition: transform 250ms ease-in-out;
 }
+#navbar__mobile__notifications:hover::before,
 
 #navbar__mobile__link1:hover::before,
 #navbar__mobile__link2:hover::before,
@@ -2354,6 +2366,8 @@ footer {
 #navbar__mobile__link5:hover::before,
 #navbar__mobile__link6:hover::before,
 #navbar__mobile__link7:hover::before,
+
+#navbar__mobile__notifications:focus::before,
 
 #navbar__mobile__link1:focus::before,
 #navbar__mobile__link2:focus::before,
