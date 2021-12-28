@@ -42,7 +42,7 @@ https://stackoverflow.com/questions/40512026/no-arrow-buttons-in-scrollbar-after
 }
 ::-webkit-scrollbar-button:vertical:decrement:hover
 {
-  border-color: transparent transparent #363636 transparent;
+  border-color: transparent transparent #33ff00 transparent;
 }
 
 
@@ -55,7 +55,7 @@ https://stackoverflow.com/questions/40512026/no-arrow-buttons-in-scrollbar-after
 }
 ::-webkit-scrollbar-button:vertical:increment:hover
 {
-  border-color: #363636 transparent transparent transparent;
+  border-color: #33ff00 transparent transparent transparent;
 }
 
 /* Controls the scrolling portion of the global scroll bar */
@@ -82,6 +82,18 @@ https://stackoverflow.com/questions/40512026/no-arrow-buttons-in-scrollbar-after
 .notificationPageContainer::-webkit-scrollbar-button:vertical:increment {
     border-width: 0;
 }
+
+#textBoxArea::-webkit-scrollbar-button:vertical:decrement,
+#textBoxArea::-webkit-scrollbar-button:vertical:increment
+{
+    border-width: 0.2;
+}
+
+#textBoxArea::-webkit-scrollbar
+{
+    width: 0.5em;
+}
+
 
 /* Sets the scroll buttons for all extended project descriptions. If more than 18 add those here. Can definitely be refactored later */
 .extended__Description__Project1::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project2::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project3::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project4::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project5::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project6::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project7::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project8::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project9::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project10::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project11::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project12::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project13::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project14::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project15::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project16::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project17::-webkit-scrollbar-button:vertical:decrement,.extended__Description__Project18::-webkit-scrollbar-button:vertical:decrement,
@@ -1976,6 +1988,7 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     -webkit-box-shadow: rgba(0, 0, 0, 0.2);
     font-size: 1.7rem;
     max-width: 400px;
+    padding-block: 0.5ch;
     /* Using a high z-index ensures that are inputs are on top of everything else on page 3 */
     z-index: 100;
     
@@ -1990,9 +2003,11 @@ extended__Description__Project1.visible becomes to large so we need to decrease 
     box-shadow: rgba(0, 0, 0, 0.2);
     -moz-box-shadow: rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: rgba(0, 0, 0, 0.2);
+    padding-block: 0.5ch;
+    
     /* With the text box being scalable horizontally causes issues with our layout so lets 
     restrict the user to only being allowed to adjust the text area size vertically */
-    resize: vertical;
+    resize: vertical; 
 
 }
 /* This class contains the submit button on the user form */
