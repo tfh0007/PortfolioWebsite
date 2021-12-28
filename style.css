@@ -257,8 +257,21 @@ destroying the notification when the drop down menu opens */
     opacity: 0;
   }
 
+  /* This class will contain our number of notifications on mobile as a badge */
+.num-of-notifications-mobile {
+    position: absolute;
+    top: 12px;
+    right: -10px;
+    padding: 1px 8px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    opacity: 0;
+  }
+
   /* This will make the notification badge update when a notification is closed */
-  .num-of-notifications.fadeIn {
+  .num-of-notifications.fadeIn,
+  .num-of-notifications-mobile.fadeIn{
     opacity: 1;
     transition: opacity 500ms 3.6s ease-in-out;
   }
