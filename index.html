@@ -613,9 +613,9 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		$(document).ready(function(){
 			$('#navbar__desktop__notifications').click(function() {
 			  $('.notificationPageContainer').toggleClass('visible')
+			  // We want to make sure the mobile menu is gone in case we switch to mobile version while Notifications Menu is active
 			  $('.navbar__menu-mobile').removeClass('active')
 			  // Makes the process one way, we can change into the class visible but cannot change back
-			  //$('.notificationPageContainer').removeClass('visible')
 			  //$('.notificationPageContainer').addClass('visible')
 
 			})
