@@ -345,7 +345,7 @@ destroying the notification when the drop down menu opens */
     /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
     This property will need to be modified for desktop and tablet environments */
 
-background: black;
+
     position: fixed;
     top: 92px;
     right: 10px;
@@ -360,13 +360,19 @@ background: black;
     transform: translateY(-150%);
     transition: transform 200ms 0ms ease-in-out;
     overflow-x: hidden;
+
+     /*Lets blur and dim the content behind our menu when it is active */
+ background: transparent;
+    
+ /* We need to use a fail safe here incase our current browser does not support backdrop effect */
+ background-color: rgb(0, 0, 0);
     
 }
 
 /* Check if backdrop is supported and if it is make the background transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur2em)) {
     .notificationPageContainer {
-      background-color: rgba(0, 0, 0, 0.068);
+      background-color: rgba(0, 0, 0, 0.65);
       -webkit-backdrop-filter: blur(2em);
       backdrop-filter: blur(2em);
     }
