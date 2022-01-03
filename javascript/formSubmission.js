@@ -12,7 +12,7 @@
         }
       }).then(response => {
         status.classList.add('success');
-        status.innerHTML = "Thank, you for your submission. I look forward to reading your response";
+        status.innerHTML = "Thank you for your submission. I look forward to reading your message";
         form.reset()
         // We want to have different css formatting for a success or failure of our form
         
