@@ -1078,7 +1078,7 @@ transition: transform 350ms ease-in-out;
 /* Lets make a rotating image banner that will show various pictures of the project 12*/
 /* This class and id contain our 3rd image for project */
 .main-banner12 #imgban34 {
-    background-image: url(images__projects/placeholder3.png);
+    background-image: url(images__projects/ChatVUELinuxInstaller.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1086,7 +1086,7 @@ transition: transform 350ms ease-in-out;
 
 /* This class and id contain our 2nd image for project */
 .main-banner12 #imgban33 {
-    background-image: url(images__projects/placeholder2.png);
+    background-image: url(images__projects/ChatVUEMacInstaller.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
