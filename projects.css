@@ -183,8 +183,11 @@ body {
 
 }
 
-/* This class contains the download source buttons which can be found in the extended description */
-.DownloadButton {
+/* This class contains the download buttons which can be found in the extended description */
+.DownloadButton,
+.DownloadButton_extended_Source_project_12,
+.DownloadButton_extended_User_Man_project_12,
+.DownloadButton_extended_Developer_Man_project_12 {
 
     font-size: 1.4rem;
     list-style: none;
@@ -195,6 +198,50 @@ body {
     margin-bottom: 4ch;
     color: white;
     cursor: pointer;
+}
+
+/* This class contains the download installer code button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
+.DownloadButton_extended_Source_project_12 {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    z-index: 0;
+    transform: rotateX(90deg);
+    transition: transform 200ms 200ms ease-in-out;
+}
+
+.DownloadButton_extended_Source_project_12.visible {
+    transform: rotateX(0deg);
+    
+}
+
+/* This class contains the download user manual button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
+.DownloadButton_extended_User_Man_project_12 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    z-index: 0;
+    transform: rotateX(90deg);
+    transition: transform 200ms 300ms ease-in-out;
+
+}
+
+.DownloadButton_extended_User_Man_project_12.visible {
+    transform: rotateX(0deg);
+}
+/* This class contains the download developer manual button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
+.DownloadButton_extended_Developer_Man_project_12 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    z-index: 0;
+    transform: rotateX(90deg);
+    transition: transform 200ms 400ms ease-in-out;
+
+}
+
+.DownloadButton_extended_Developer_Man_project_12.visible {
+    transform: rotateX(0deg);
 }
 
 /* This class holds the contents of both the extended Decription and Page 2 */
@@ -289,6 +336,30 @@ body {
     transform: translateX(150%);
     transition: transform 150ms 150ms ease-in-out;
 }
+
+
+ /* This class contains the extended downloads section in project ChatVUE Installer Applications */
+.download_Section12_extended 
+{
+    position: fixed;
+    top: 0;
+
+    margin-top: -600px;
+    background: rgba(0, 0, 0, 0.678);
+    border-radius: 20px;
+    transform: rotateX(90deg);
+    transition: transform 200ms 0ms ease-in-out; 
+}
+.download_Section12_extended.visible {
+    margin-top: 20px;
+    transform: rotateX(0deg);
+
+}
+
+
+
+
+
 
 
 
