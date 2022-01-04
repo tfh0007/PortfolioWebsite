@@ -109,6 +109,7 @@ body {
 .large__Project__container4,
 .large__Project__container5,
 .large__Project__container6,
+.large__Project__container7,
 
 .small__Project__container7,
 .small__Project__container8,
@@ -140,7 +141,8 @@ body {
 .Project__button__8,
 .Project__button__9,
 .Project__button__10,
-.Project__button__11
+.Project__button__11,
+.Project__button__12
 
 {
 
@@ -226,7 +228,8 @@ body {
 .CloseWindow__Section8,
 .CloseWindow__Section9,
 .CloseWindow__Section10,
-.CloseWindow__Section11
+.CloseWindow__Section11,
+.CloseWindow__Section12
 {
     position: fixed;
 
@@ -251,7 +254,8 @@ body {
     #closeWindowBtn__Project8,
     #closeWindowBtn__Project9,
     #closeWindowBtn__Project10,
-    #closeWindowBtn__Project11
+    #closeWindowBtn__Project11,
+    #closeWindowBtn__Project12
     {
     background: transparent;
     color: rgb(255, 255, 255);
@@ -273,7 +277,8 @@ body {
 .download_Section8,
 .download_Section9,
 .download_Section10,
-.download_Section11
+.download_Section11,
+.download_Section12
  {
 
     position: fixed;
@@ -300,7 +305,8 @@ body {
 .extended__Description__Project8,
 .extended__Description__Project9,
 .extended__Description__Project10,
-.extended__Description__Project11
+.extended__Description__Project11,
+.extended__Description__Project12
 {
 
 
@@ -349,7 +355,8 @@ background: tan;
 .download_Section8.visible,
 .download_Section9.visible,
 .download_Section10.visible,
-.download_Section11.visible
+.download_Section11.visible,
+.download_Section12.visible
  {
    
     transform: translateX(-1%);
@@ -369,7 +376,8 @@ background: tan;
 .CloseWindow__Section8.visible,
 .CloseWindow__Section9.visible,
 .CloseWindow__Section10.visible,
-.CloseWindow__Section11.visible
+.CloseWindow__Section11.visible,
+.CloseWindow__Section12.visible
 {
     
     transform: translateX(-1%);
@@ -388,7 +396,8 @@ background: tan;
 .extended__Description__Project8.visible,
 .extended__Description__Project9.visible,
 .extended__Description__Project10.visible,
-.extended__Description__Project11.visible
+.extended__Description__Project11.visible,
+.extended__Description__Project12.visible
 
 {
 
@@ -411,7 +420,8 @@ transition: transform 350ms ease-in-out;
     .extended__Description__Project8.visible,
     .extended__Description__Project9.visible,
     .extended__Description__Project10.visible,
-    .extended__Description__Project11.visible
+    .extended__Description__Project11.visible,
+    .extended__Description__Project12.visible
     {
         min-width: 20%;
     }
@@ -1101,7 +1111,8 @@ transition: transform 350ms ease-in-out;
     .extended__Description__Project8,
     .extended__Description__Project9,
     .extended__Description__Project10,
-    .extended__Description__Project11
+    .extended__Description__Project11,
+    .extended__Description__Project12
      {
         padding-bottom: 75px;
     }
@@ -1187,7 +1198,8 @@ margin-top: -40px;
 .Project__button__8,
 .Project__button__9,
 .Project__button__10,
-.Project__button__11
+.Project__button__11,
+.Project__button__12
 {
 position: relative;
 
@@ -1220,7 +1232,9 @@ overflow: hidden;
 #Learn__More_btn10:hover,
 #Learn__More_btn10:focus,
 #Learn__More_btn11:hover,
-#Learn__More_btn11:focus
+#Learn__More_btn11:focus,
+#Learn__More_btn12:hover,
+#Learn__More_btn12:focus
 
 {
 color: white;
@@ -1243,7 +1257,8 @@ overflow: hidden;
 #Learn__More_btn8::before,
 #Learn__More_btn9::before,
 #Learn__More_btn10::before,
-#Learn__More_btn11::before
+#Learn__More_btn11::before,
+#Learn__More_btn12::before
 
 {
     content: '';
@@ -1284,7 +1299,9 @@ overflow: hidden;
 #Learn__More_btn10:hover::before,
 #Learn__More_btn10:focus::before,
 #Learn__More_btn11:hover::before,
-#Learn__More_btn11:focus::before
+#Learn__More_btn11:focus::before,
+#Learn__More_btn12:hover::before,
+#Learn__More_btn12:focus::before
 
 
 {
@@ -1303,7 +1320,8 @@ transform: scaleX(1);
 #closeWindowBtn__Project8,
 #closeWindowBtn__Project9,
 #closeWindowBtn__Project10,
-#closeWindowBtn__Project11 
+#closeWindowBtn__Project11,
+#closeWindowBtn__Project12 
 {
     transform: scale(1);
     border-radius: 100%;
@@ -1329,7 +1347,9 @@ transform: scaleX(1);
 #closeWindowBtn__Project10:hover,
 #closeWindowBtn__Project10:focus,
 #closeWindowBtn__Project11:hover,
-#closeWindowBtn__Project11:focus
+#closeWindowBtn__Project11:focus,
+#closeWindowBtn__Project12:hover,
+#closeWindowBtn__Project12:focus
 {
     transform: scale(1.2);
     
