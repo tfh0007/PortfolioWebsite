@@ -200,6 +200,8 @@ body {
     cursor: pointer;
 }
 
+
+
 /* This class contains the download installer code button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
 .DownloadButton_extended_Source_project_12 {
     margin-top: 35px;
@@ -335,6 +337,14 @@ body {
     z-index: 300;
     transform: translateX(150%);
     transition: transform 150ms 150ms ease-in-out;
+}
+
+.download_Section12 {
+
+    padding: 0px;
+}
+#download_options_Project12 {
+    margin-bottom: 0px;
 }
 
 
