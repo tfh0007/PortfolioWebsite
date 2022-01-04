@@ -751,7 +751,8 @@ transition: transform 350ms ease-in-out;
 .main-banner8,
 .main-banner9,
 .main-banner10,
-.main-banner11
+.main-banner11,
+.main-banner12
 
 {
     width: 600px;
@@ -772,7 +773,8 @@ transition: transform 350ms ease-in-out;
     .main-banner8,
     .main-banner9,
     .main-banner10,
-    .main-banner11 
+    .main-banner11,
+    .main-banner12 
         {
         margin-top: 128px;
     }
@@ -786,7 +788,8 @@ transition: transform 350ms ease-in-out;
     .main-banner8,
     .main-banner9,
     .main-banner10,
-    .main-banner11 
+    .main-banner11,
+    .main-banner12 
     
     {
         margin-top: 85px;
@@ -803,7 +806,9 @@ transition: transform 350ms ease-in-out;
     #extended__Description__text8,
     #extended__Description__text9,
     #extended__Description__text10,
-    #extended__Description__text11
+    #extended__Description__text11,
+    #extended__Description__text12
+
     
     {
 
@@ -817,7 +822,8 @@ transition: transform 350ms ease-in-out;
 .main-banner8 .imgban8,
 .main-banner9 .imgban9,
 .main-banner10 .imgban10,
-.main-banner11 .imgban11
+.main-banner11 .imgban11,
+.main-banner12 .imgban12
 
 {
     width: 100%;
@@ -858,7 +864,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn7,
 .imgbanbtn8,
 .imgbanbtn10,
-.imgbanbtn11
+.imgbanbtn11,
+.imgbanbtn12
  {
     width: 30px;
     height: 40px;
@@ -895,7 +902,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn8:hover,
 .imgbanbtn9:hover,
 .imgbanbtn10:hover,
-.imgbanbtn11:hover
+.imgbanbtn11:hover,
+.imgbanbtn12:hover
 {
 
 
@@ -909,7 +917,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn8-prev,
 .imgbanbtn9-prev,
 .imgbanbtn10-prev,
-.imgbanbtn11-prev
+.imgbanbtn11-prev,
+.imgbanbtn12-prev
 
 {
 
@@ -925,7 +934,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn8-next,
 .imgbanbtn9-next,
 .imgbanbtn10-next,
-.imgbanbtn11-next
+.imgbanbtn11-next,
+.imgbanbtn12-next
 
 {
 
@@ -1060,6 +1070,31 @@ transition: transform 350ms ease-in-out;
 /* This class and id contain our 1st image for project */
 .main-banner9 #imgban25 {
     background-image: url(images__projects/QuadraticFormula1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Lets make a rotating image banner that will show various pictures of the project 12*/
+/* This class and id contain our 3rd image for project */
+.main-banner12 #imgban34 {
+    background-image: url(images__projects/placeholder3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project */
+.main-banner12 #imgban33 {
+    background-image: url(images__projects/placeholder2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project */
+.main-banner12 #imgban32 {
+    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
