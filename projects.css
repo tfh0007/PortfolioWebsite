@@ -343,6 +343,8 @@ body {
 
     padding: 0px;
 }
+
+/* This id points to the Downloads Options container. The container extends down too far so let's fix that */  
 #download_options_Project12 {
     margin-bottom: 0px;
 }
