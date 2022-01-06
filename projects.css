@@ -109,6 +109,7 @@ body {
 .large__Project__container4,
 .large__Project__container5,
 .large__Project__container6,
+.large__Project__container7,
 
 .small__Project__container7,
 .small__Project__container8,
@@ -140,7 +141,8 @@ body {
 .Project__button__8,
 .Project__button__9,
 .Project__button__10,
-.Project__button__11
+.Project__button__11,
+.Project__button__12
 
 {
 
@@ -181,8 +183,11 @@ body {
 
 }
 
-/* This class contains the download source buttons which can be found in the extended description */
-.DownloadButton {
+/* This class contains the download buttons which can be found in the extended description */
+.DownloadButton,
+.DownloadButton_extended_Source_project_12,
+.DownloadButton_extended_User_Man_project_12,
+.DownloadButton_extended_Developer_Man_project_12 {
 
     font-size: 1.4rem;
     list-style: none;
@@ -193,6 +198,52 @@ body {
     margin-bottom: 4ch;
     color: white;
     cursor: pointer;
+}
+
+
+
+/* This class contains the download installer code button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
+.DownloadButton_extended_Source_project_12 {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    z-index: 0;
+    transform: rotateX(90deg);
+    transition: transform 200ms 200ms ease-in-out;
+}
+
+.DownloadButton_extended_Source_project_12.visible {
+    transform: rotateX(0deg);
+    
+}
+
+/* This class contains the download user manual button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
+.DownloadButton_extended_User_Man_project_12 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    z-index: 0;
+    transform: rotateX(90deg);
+    transition: transform 200ms 300ms ease-in-out;
+
+}
+
+.DownloadButton_extended_User_Man_project_12.visible {
+    transform: rotateX(0deg);
+}
+/* This class contains the download developer manual button which can be found in the extended description of ChatVUE Installer Applications within Downloads */
+.DownloadButton_extended_Developer_Man_project_12 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    z-index: 0;
+    transform: rotateX(90deg);
+    transition: transform 200ms 400ms ease-in-out;
+
+}
+
+.DownloadButton_extended_Developer_Man_project_12.visible {
+    transform: rotateX(0deg);
 }
 
 /* This class holds the contents of both the extended Decription and Page 2 */
@@ -226,7 +277,8 @@ body {
 .CloseWindow__Section8,
 .CloseWindow__Section9,
 .CloseWindow__Section10,
-.CloseWindow__Section11
+.CloseWindow__Section11,
+.CloseWindow__Section12
 {
     position: fixed;
 
@@ -251,7 +303,8 @@ body {
     #closeWindowBtn__Project8,
     #closeWindowBtn__Project9,
     #closeWindowBtn__Project10,
-    #closeWindowBtn__Project11
+    #closeWindowBtn__Project11,
+    #closeWindowBtn__Project12
     {
     background: transparent;
     color: rgb(255, 255, 255);
@@ -273,7 +326,8 @@ body {
 .download_Section8,
 .download_Section9,
 .download_Section10,
-.download_Section11
+.download_Section11,
+.download_Section12
  {
 
     position: fixed;
@@ -284,6 +338,40 @@ body {
     transform: translateX(150%);
     transition: transform 150ms 150ms ease-in-out;
 }
+
+.download_Section12 {
+
+    padding: 0px;
+}
+
+/* This id points to the Downloads Options container. The container extends down too far so let's fix that */  
+#download_options_Project12 {
+    margin-bottom: 0px;
+}
+
+
+ /* This class contains the extended downloads section in project ChatVUE Installer Applications */
+.download_Section12_extended 
+{
+    position: fixed;
+    top: 0;
+
+    margin-top: -600px;
+    background: rgba(0, 0, 0, 0.678);
+    border-radius: 20px;
+    transform: rotateX(90deg);
+    transition: transform 200ms 0ms ease-in-out; 
+}
+.download_Section12_extended.visible {
+    margin-top: 20px;
+    transform: rotateX(0deg);
+
+}
+
+
+
+
+
 
 
 
@@ -300,7 +388,8 @@ body {
 .extended__Description__Project8,
 .extended__Description__Project9,
 .extended__Description__Project10,
-.extended__Description__Project11
+.extended__Description__Project11,
+.extended__Description__Project12
 {
 
 
@@ -349,7 +438,8 @@ background: tan;
 .download_Section8.visible,
 .download_Section9.visible,
 .download_Section10.visible,
-.download_Section11.visible
+.download_Section11.visible,
+.download_Section12.visible
  {
    
     transform: translateX(-1%);
@@ -369,7 +459,8 @@ background: tan;
 .CloseWindow__Section8.visible,
 .CloseWindow__Section9.visible,
 .CloseWindow__Section10.visible,
-.CloseWindow__Section11.visible
+.CloseWindow__Section11.visible,
+.CloseWindow__Section12.visible
 {
     
     transform: translateX(-1%);
@@ -388,7 +479,8 @@ background: tan;
 .extended__Description__Project8.visible,
 .extended__Description__Project9.visible,
 .extended__Description__Project10.visible,
-.extended__Description__Project11.visible
+.extended__Description__Project11.visible,
+.extended__Description__Project12.visible
 
 {
 
@@ -411,7 +503,8 @@ transition: transform 350ms ease-in-out;
     .extended__Description__Project8.visible,
     .extended__Description__Project9.visible,
     .extended__Description__Project10.visible,
-    .extended__Description__Project11.visible
+    .extended__Description__Project11.visible,
+    .extended__Description__Project12.visible
     {
         min-width: 20%;
     }
@@ -741,7 +834,8 @@ transition: transform 350ms ease-in-out;
 .main-banner8,
 .main-banner9,
 .main-banner10,
-.main-banner11
+.main-banner11,
+.main-banner12
 
 {
     width: 600px;
@@ -762,7 +856,8 @@ transition: transform 350ms ease-in-out;
     .main-banner8,
     .main-banner9,
     .main-banner10,
-    .main-banner11 
+    .main-banner11,
+    .main-banner12 
         {
         margin-top: 128px;
     }
@@ -776,7 +871,8 @@ transition: transform 350ms ease-in-out;
     .main-banner8,
     .main-banner9,
     .main-banner10,
-    .main-banner11 
+    .main-banner11,
+    .main-banner12 
     
     {
         margin-top: 85px;
@@ -793,7 +889,9 @@ transition: transform 350ms ease-in-out;
     #extended__Description__text8,
     #extended__Description__text9,
     #extended__Description__text10,
-    #extended__Description__text11
+    #extended__Description__text11,
+    #extended__Description__text12
+
     
     {
 
@@ -807,7 +905,8 @@ transition: transform 350ms ease-in-out;
 .main-banner8 .imgban8,
 .main-banner9 .imgban9,
 .main-banner10 .imgban10,
-.main-banner11 .imgban11
+.main-banner11 .imgban11,
+.main-banner12 .imgban12
 
 {
     width: 100%;
@@ -848,7 +947,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn7,
 .imgbanbtn8,
 .imgbanbtn10,
-.imgbanbtn11
+.imgbanbtn11,
+.imgbanbtn12
  {
     width: 30px;
     height: 40px;
@@ -885,7 +985,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn8:hover,
 .imgbanbtn9:hover,
 .imgbanbtn10:hover,
-.imgbanbtn11:hover
+.imgbanbtn11:hover,
+.imgbanbtn12:hover
 {
 
 
@@ -899,7 +1000,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn8-prev,
 .imgbanbtn9-prev,
 .imgbanbtn10-prev,
-.imgbanbtn11-prev
+.imgbanbtn11-prev,
+.imgbanbtn12-prev
 
 {
 
@@ -915,7 +1017,8 @@ transition: transform 350ms ease-in-out;
 .imgbanbtn8-next,
 .imgbanbtn9-next,
 .imgbanbtn10-next,
-.imgbanbtn11-next
+.imgbanbtn11-next,
+.imgbanbtn12-next
 
 {
 
@@ -1055,6 +1158,31 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
+/* Lets make a rotating image banner that will show various pictures of the project 12*/
+/* This class and id contain our 3rd image for project */
+.main-banner12 #imgban34 {
+    background-image: url(images__projects/ChatVUELinuxInstaller.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 2nd image for project */
+.main-banner12 #imgban33 {
+    background-image: url(images__projects/ChatVUEMacInstaller.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This class and id contain our 1st image for project */
+.main-banner12 #imgban32 {
+    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 
 /* Lets make a non rotating image banner that will show 1 picture of project 10*/
@@ -1101,7 +1229,8 @@ transition: transform 350ms ease-in-out;
     .extended__Description__Project8,
     .extended__Description__Project9,
     .extended__Description__Project10,
-    .extended__Description__Project11
+    .extended__Description__Project11,
+    .extended__Description__Project12
      {
         padding-bottom: 75px;
     }
@@ -1187,7 +1316,8 @@ margin-top: -40px;
 .Project__button__8,
 .Project__button__9,
 .Project__button__10,
-.Project__button__11
+.Project__button__11,
+.Project__button__12
 {
 position: relative;
 
@@ -1220,7 +1350,9 @@ overflow: hidden;
 #Learn__More_btn10:hover,
 #Learn__More_btn10:focus,
 #Learn__More_btn11:hover,
-#Learn__More_btn11:focus
+#Learn__More_btn11:focus,
+#Learn__More_btn12:hover,
+#Learn__More_btn12:focus
 
 {
 color: white;
@@ -1243,7 +1375,8 @@ overflow: hidden;
 #Learn__More_btn8::before,
 #Learn__More_btn9::before,
 #Learn__More_btn10::before,
-#Learn__More_btn11::before
+#Learn__More_btn11::before,
+#Learn__More_btn12::before
 
 {
     content: '';
@@ -1284,7 +1417,9 @@ overflow: hidden;
 #Learn__More_btn10:hover::before,
 #Learn__More_btn10:focus::before,
 #Learn__More_btn11:hover::before,
-#Learn__More_btn11:focus::before
+#Learn__More_btn11:focus::before,
+#Learn__More_btn12:hover::before,
+#Learn__More_btn12:focus::before
 
 
 {
@@ -1303,7 +1438,8 @@ transform: scaleX(1);
 #closeWindowBtn__Project8,
 #closeWindowBtn__Project9,
 #closeWindowBtn__Project10,
-#closeWindowBtn__Project11 
+#closeWindowBtn__Project11,
+#closeWindowBtn__Project12 
 {
     transform: scale(1);
     border-radius: 100%;
@@ -1329,7 +1465,9 @@ transform: scaleX(1);
 #closeWindowBtn__Project10:hover,
 #closeWindowBtn__Project10:focus,
 #closeWindowBtn__Project11:hover,
-#closeWindowBtn__Project11:focus
+#closeWindowBtn__Project11:focus,
+#closeWindowBtn__Project12:hover,
+#closeWindowBtn__Project12:focus
 {
     transform: scale(1.2);
     

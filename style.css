@@ -2651,7 +2651,11 @@ transform: scaleX(1);
 }
 
 /* Now lets create an animation for the download buttons found in the extended project descriptions */
-.DownloadButton {
+.DownloadButton,
+.DownloadButton_extended_Source_project_12,
+.DownloadButton_extended_User_Man_project_12,
+.DownloadButton_extended_Developer_Man_project_12
+{
 transition: color 300ms ease-in-out;
 position: relative;
 overflow:hidden;
@@ -2659,13 +2663,28 @@ z-index: 1;
 
 }
 .DownloadButton:hover,
-.DownloadButton:focus
+.DownloadButton:focus,
+
+.DownloadButton_extended_Source_project_12:hover,
+.DownloadButton_extended_Source_project_12:focus,
+
+.DownloadButton_extended_User_Man_project_12:hover,
+.DownloadButton_extended_User_Man_project_12:focus,
+
+.DownloadButton_extended_Developer_Man_project_12:hover,
+.DownloadButton_extended_Developer_Man_project_12:focus
 {
     color: rgb(0, 0, 0);
     
     }
 
-.DownloadButton::before {
+.DownloadButton::before,
+
+.DownloadButton_extended_Source_project_12::before,
+.DownloadButton_extended_User_Man_project_12::before,
+.DownloadButton_extended_Developer_Man_project_12::before
+
+{
     content: '';
     position: absolute;
     top: 0;
@@ -2684,7 +2703,19 @@ z-index: 1;
 
 
 .DownloadButton:hover::before,
-.DownloadButton:focus::before {
+.DownloadButton:focus::before,
+
+.DownloadButton_extended_Source_project_12:hover::before,
+.DownloadButton_extended_Source_project_12:focus::before,
+
+.DownloadButton_extended_User_Man_project_12:hover::before,
+.DownloadButton_extended_User_Man_project_12:focus::before,
+
+.DownloadButton_extended_Developer_Man_project_12:hover::before,
+.DownloadButton_extended_Developer_Man_project_12:focus::before
+
+
+{
     transform: scale(1.5);
     
 }
