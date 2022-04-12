@@ -103,6 +103,9 @@ border-width: 0;
 }
 
 
+.linkToDemoProject {
+    color: rgba(0, 153, 255, 0.623);
+}
 
 
 
@@ -447,10 +450,11 @@ destroying the notification when the drop down menu opens */
 .notification2__heading__msg,
 .notification3__heading__msg,
 .notification4__heading__msg,
+.notification5__heading__msg,
 .noneNotifications__heading__msg {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.575);
-    padding-left: 5ch;
+    padding-left: 1ch;
 }
 
 .notificationPageContainer.visible {
