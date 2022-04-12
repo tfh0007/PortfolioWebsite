@@ -1463,7 +1463,8 @@ So lets fix this issue */
     /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
     This property will need to be modified for desktop and tablet environments */
 
-background: tan;
+background: transparent;
+background-color: #a6b1cef5;
     position: fixed;
     top: 100px;
     overflow-y: scroll;

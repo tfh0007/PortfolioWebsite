@@ -10,7 +10,7 @@ body {
 /* This class contains all of page 1 */
 .page1__container {
 
-    background: rgb(0, 195, 255);
+    background: rgba(0, 255, 234, 0.39);
     margin-top: 83px;
 }
 
@@ -407,7 +407,8 @@ body {
     /* On mobile we have to make the the extend decription window take up enough space that the user can easily read it.
     This property will need to be modified for desktop and tablet environments */
 
-background: tan;
+    background: transparent;
+    background-color: #c4c8d6fa;
     position: fixed;
     top: 100px;
     overflow-y: scroll;
