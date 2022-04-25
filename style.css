@@ -1680,6 +1680,12 @@ transition: transform 350ms ease-in-out;
         transition: top 0.6s; /* Transition effect when sliding down (and up) */
         
     }
+
+    /* At this screen size the menu covers the navagation bar so let's fix that */
+    .navbar__menu-mobile {
+        margin-top: 85px;
+    }
+
 }
 /* The margin needs to be different when the display gets larger */
 @media screen and (min-width: 829px) {
