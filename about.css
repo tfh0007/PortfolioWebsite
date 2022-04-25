@@ -653,3 +653,12 @@ transform: scaleX(1);
 transform: scaleX(1);
 
 }
+
+
+/*We want to set the link1 to always be underlined that way we know the current page
+we are on. The link1 id location will be changed depending on the html file we are using*/
+#navbar__mobile__link2::before,
+#navbar__desktop__link2::before {
+    transform-origin: center;
+    transform: scaleX(0.85);
+}

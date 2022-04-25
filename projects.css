@@ -1473,3 +1473,12 @@ transform: scaleX(1);
     transform: scale(1.2);
     
 }
+
+
+/*We want to set the link3 to always be underlined. That way we know the current page
+we are on. The link3 id location will be the Projects page*/
+#navbar__mobile__link3::before,
+#navbar__desktop__link3::before {
+    transform-origin: center;
+    transform: scaleX(0.85);
+}

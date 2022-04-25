@@ -1,0 +1,298 @@
+
+
+    
+
+<!-- NOW WE ARE AT NAVIGATION MENU-->
+<header>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!-- My logo will not be a clickable icon -->
+                <h1 class="mainLogo">Thomas F Hansknecht</h1>
+                <!-- Create a menu item Notification Icon -->
+                
+                
+                <h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
+            </div>
+<!-- Lets make the mobile menu first-->			
+            <div>
+
+                <ul class="navbar__menu-mobile">
+                    
+                    <!-- Create a menu item Notifications -->
+                    <li class="mobile__notification__bell">
+                        <!-- Span specifies the number of notifications-->
+                        <a class="navbar__links__notifications"  id="navbar__mobile__notifications"><i class="fas fa-bell"></i>&nbsp; Notifications &nbsp;<span class = "num-of-notifications-mobile" id="setNumOfNotifications-mobile">5</span></a>
+                    </li> 
+                    <!-- Create a menu item Home. The icon phrase means an icon will be before or after the text-->
+                    <li class="navbar__item-center icon">
+                        <a href="index.html" class="navbar__links"id="navbar__mobile__link1"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
+
+                    <!-- Create a menu item About Me -->
+                    <li class="navbar__item-center icon">
+                        <a href="AboutMe.html" class="navbar__links"id="navbar__mobile__link2"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About &nbsp;</a></li>
+
+                    <!-- Create a menu item Projects -->
+                    <li class="navbar__item-center icon">
+                        <a href="Projects.html" class="navbar__links"id="navbar__mobile__link3"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
+
+                    <!-- Create a menu item Contact Me -->
+                    <li class="navbar__item-center icon">
+                        <a href="ContactMe.html" class="navbar__links"id="navbar__mobile__link4"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact &nbsp;</a></li>
+                
+                    <!-- Create a menu item Handshake Icon -->
+                    <li class="navbar__item-right icon">
+                        <a href="https://app.joinhandshake.com/login" class="navbar__links"id="navbar__mobile__link5"><i class=" fas fa-handshake fa-fw"></i>&nbsp; Handshake Profile &nbsp;</a></li>  
+                    
+                    <!-- Create a menu item LinkedIn Icon -->
+                    <li class="navbar__item-right icon">
+                        <a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"id="navbar__mobile__link6"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; LinkedIn Profile &nbsp;</a></li>  
+                    
+                    <!-- Create a menu item Github Icon -->
+                    <li class="navbar__item-right icon">
+                        <a href="https://github.com/tfh0007" class="navbar__links"id="navbar__mobile__link7"><i class=" fab fa-github fa-fw"></i>&nbsp; GitHub Profile &nbsp;</a></li>  		
+                </ul>
+            </div>
+
+
+    <!-- Lets make the Desktop menu second-->
+            <div class="navbar__menu-middle-container">
+                <ul class="navbar__menu-middle-desktop">
+                    <!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+                    the text-->
+                    <li class="navbar__item-center icon" style="list-style: none">
+                        <a href="index.html" class="navbar__links" id="navbar__desktop__link1"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
+
+                    <!-- Create a menu item About Me -->
+                    <li class="navbar__item-center icon" style="list-style: none">
+                        <a href="AboutMe.html" class="navbar__links" id="navbar__desktop__link2"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About &nbsp;</a></li>
+
+                    <!-- Create a menu item Projects -->
+                    <li class="navbar__item-center icon" style="list-style: none">
+                        <a href="Projects.html" class="navbar__links" id="navbar__desktop__link3"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
+
+                    <!-- Create a menu item Contact Me -->
+                    <li class="navbar__item-center icon" style="list-style: none">
+                        <a href="ContactMe.html" class="navbar__links" id="navbar__desktop__link4"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact &nbsp;</a></li>
+            </div>
+            
+                
+            <div>
+                <ul class="navbar__menu-right-desktop">
+
+
+                            <!-- Create a menu item Notification Icon -->
+                            <li class="navbar__item-right icon">
+                                <!-- Span specifies the number of notifications-->
+                                <a class="navbar__links__notifications"  id="navbar__desktop__notifications"><i class="fas fa-bell"></i><span class = "num-of-notifications" id="setNumOfNotifications">5</span></a></li>  
+                            
+                            <!-- Create a menu item Handshake Icon -->
+                             <!-- To have an icon clickable simply place the icon within the <a> tag-->
+                            <li class="navbar__item-right icon">
+                                <a href="https://app.joinhandshake.com/login" class="navbar__links" id="navbar__desktop__link5"><i class="fas fa-handshake"></i></a></li>  
+                               
+                            <!-- Create a menu item LinkedIn Icon -->
+                            <li class="navbar__item-right icon">
+                                <a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"  id="navbar__desktop__link6"><i class="fab fa-linkedin-in"></i></a></li>  
+                            
+                            <!-- Create a menu item Github Icon -->
+                            <li class="navbar__item-right icon">
+                                <a href="https://github.com/tfh0007" class="navbar__links" id="navbar__desktop__link7"><i class="fab fa-github"></i></a></li>  		
+                        
+           </ul>
+        </div>
+        </div>
+    </nav>
+
+    
+
+<!-- Lets make a notification page to display all notifications -->
+
+<div class="notificationPageContainer">
+
+		<div class = "notificationPageHeading">
+			<div class="notification__heading__and__close__btn__container">
+				<div class="notification__closeWindowBtn__container"> 
+					<button class="notification__closeWindowBtn" aria-label="Button to close the Notifications Menu"><i class="far fa-times-circle"></i></button>
+
+				</div>
+					<div class="notification__menu__heading__text">
+					
+						<h1>Notifications Menu</h1>
+					</div>
+			</div>
+			
+		</div>
+	
+	<div class= "notificationPageText">
+
+		<div class="notification1__heading__msg">
+			<h2 id="deleteMeNotification1Heading"><i class="fas fa-wrench" style="color: rgba(255, 0, 0, 0.687);"></i></i>&nbsp; Important Update:</h2>
+			<p id="deleteMeNotification1Body"></pid>As of April 2022 a Live Beta of this website with Google Cloud and FireBase integration can be tested. 
+				Visit <a class="linkToDemoProject"href="https://helical-analyst-338502.firebaseapp.com" >https://helical-analyst-338502.firebaseapp.com </a> for demonstration. Note that the Beta Release may have functional and visual issues while under development.</p>
+		
+		<div class="notification2__heading__msg">
+			<h2 id="deleteMeNotification2Heading"><i class="fas fa-wrench" style="color: orange;"></i>&nbsp; Update:</h2>
+			<p id="deleteMeNotification2Body">As of January 2022 the project ChatVUE Installer Applications has been added. To view the changes visit Large Scale Projects under the Projects tab</p>
+		</div>
+		
+
+		<div class="notification3__heading__msg">
+			<h2 id="deleteMeNotification3Heading"><i class="fas fa-wrench" style="color: orange;"></i>&nbsp; Update:</h2>
+			<p id="deleteMeNotification3Body">As of January 2022 recent changes have been added to my Résumé. Check About Me/View Résumé or Download Résumé</p>
+		</div>
+
+		<div class="notification4__heading__msg">
+			<h2 id="deleteMeNotification4Heading"><i class="fas fa-wrench" style="color: orange;"></i>&nbsp; Update:</h2>
+			<p id="deleteMeNotification4Body">As of December 2021 a new feature called Notifications Menu has been added and is currently available for the desktop and mobile version of this site</p>
+		</div>
+
+		<div class="notification5__heading__msg">
+			<h2 id="deleteMeNotification5Heading"><i class="fas fa-wrench" style="color: orange;"></i>&nbsp; Update:</h2>
+			<p id="deleteMeNotification5Body">As of December 2021 I graduated Auburn University with my Bachelors of Science in Computer Science</p>
+		</div>
+
+		<div class="noneNotifications__heading__msg">
+			<h2 id="addMeNoneNotificationHeading"></h2>
+			<p id="addMeNoneNotificationBody"></p>
+		</div>
+	</div>	
+
+	</div>
+    <!-- Right now this only affects one page at a time so stop it for now 
+	<div class="notifications__close__button">
+		<button class="notification__mark__all__read__btn" aria-label="Mark all notifications as read">Mark all as seen <i class="fas fa-eye"></i></button>
+	</div>
+</div>
+-->
+
+
+
+
+
+
+    <script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+
+
+<!-- Scripts for the notification area -->
+<script>
+$(document).ready(function(){
+    // $('.notification__area').addClass('inactive')
+    $('.num-of-notifications').addClass('fadeIn')
+    $('.num-of-notifications-mobile').addClass('fadeIn')
+    // $('.navbar__links__notifications').addClass('visible')		
+})
+
+</script>	
+
+
+
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#navbar__desktop__notifications').click(function() {
+			  $('.notificationPageContainer').toggleClass('visible')
+			  // We want to make sure the mobile menu is gone in case we switch to mobile version while Notifications Menu is active
+			  $('.navbar__menu-mobile').removeClass('active')
+			  // Makes the process one way, we can change into the class visible but cannot change back
+			  //$('.notificationPageContainer').addClass('visible')
+
+			})
+		})
+
+	</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar__mobile__notifications').click(function() {
+		  $('.notificationPageContainer').toggleClass('visible')
+		  // By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
+		  $('.navbar__menu-mobile').removeClass('active')
+
+
+		})
+	})
+
+</script>
+
+<!--Scripts for Navigation -->
+	<!-- We want to toggle states for our mobile menu -->
+		
+		
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menuButton').click(function() {
+				$('.navbar').toggleClass('active')
+				$('.navbar__menu-mobile').toggleClass('active')
+				$('.notification__area').toggleClass('moveDown')
+				$('.notificationPageContainer').removeClass('visible')
+
+			})
+		})
+
+	</script>
+
+	<script type="text/javascript">
+		var deleteNotification1Heading = document.getElementById("deleteMeNotification1Heading")
+		var deleteNotification1Body = document.getElementById("deleteMeNotification1Body")
+
+		var deleteNotification2Heading = document.getElementById("deleteMeNotification2Heading")
+		var deleteNotification2Body = document.getElementById("deleteMeNotification2Body")
+
+		var deleteNotification3Heading = document.getElementById("deleteMeNotification3Heading")
+		var deleteNotification3Body = document.getElementById("deleteMeNotification3Body")
+
+		var deleteNotification4Heading = document.getElementById("deleteMeNotification4Heading")
+		var deleteNotification4Body = document.getElementById("deleteMeNotification4Body")
+
+		var deleteNotification5Heading = document.getElementById("deleteMeNotification5Heading")
+		var deleteNotification5Body = document.getElementById("deleteMeNotification5Body")
+		
+		var NoneNotificationHeading = document.getElementById("addMeNoneNotificationHeading")
+		var NoneNotificationBody = document.getElementById("addMeNoneNotificationBody")
+		
+		var setNumOfNotifications = document.getElementById("setNumOfNotifications")
+		var setNumOfNotificationsMobile = document.getElementById("setNumOfNotifications-mobile")
+		
+		$(document).ready(function(){
+			$('.notification__mark__all__read__btn').click(function() {
+				$('.notification__mark__all__read__btn').toggleClass('invisible')
+			
+				deleteNotification1Heading.innerText = ""
+				deleteNotification1Body.innerText = ""
+				deleteNotification2Heading.innerText = ""
+				deleteNotification2Body.innerText = ""
+				deleteNotification3Heading.innerText = ""
+				deleteNotification3Body.innerText = ""
+				deleteNotification4Heading.innerText = ""
+				deleteNotification4Body.innerText = ""
+				deleteNotification5Heading.innerText = ""
+				deleteNotification5Body.innerText = ""
+				NoneNotificationBody.innerText = "All notifications read. No new notifications to display"
+				setNumOfNotifications.innerText = "0"
+				setNumOfNotificationsMobile.innerText = "0"
+
+				
+			})
+	})
+
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.notification__closeWindowBtn').click(function() {
+				
+					
+
+
+			  $('.notificationPageContainer').toggleClass('visible')
+
+
+			})
+		})
+
+	</script>
+

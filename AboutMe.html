@@ -18,102 +18,29 @@
 	<link rel="stylesheet" href="about.css">
 	<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
 	
+	<!-- We want to make life easier by keeping the navigation and notifications tied to one file we can reuse on every page-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<script>
+		$(function() {
+			$('#header').load('reuseNavigation.html');
 
+		});
+	</script>
 
 </head>
 
 <body>
 
-<!-- NOW WE ARE AT NAVIGATION MENU-->
-    <header>
-        <nav class="navbar">
-			<div class="navbar__container">
-                <!-- My logo will not be a clickable icon -->
-                    <h1 class="mainLogo">Thomas F Hansknecht</h1>
-					<h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
-				</div>
-	<!-- Lets make the mobile menu first-->			
-				<div>
-
-					<ul class="navbar__menu-mobile">
-						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
-						the text-->
-						<li class="navbar__item-center icon">
-							<a href="index.html" class="navbar__links"id="navbar__mobile__link2"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
-
-						<!-- Create a menu item About Me -->
-						<li class="navbar__item-center icon">
-							<a href="AboutMe.html" class="navbar__links"id="navbar__mobile__link1"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About &nbsp;</a></li>
-
-						<!-- Create a menu item Projects -->
-						<li class="navbar__item-center icon">
-							<a href="Projects.html" class="navbar__links"id="navbar__mobile__link3"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
-
-						<!-- Create a menu item Contact Me -->
-						<li class="navbar__item-center icon">
-							<a href="ContactMe.html" class="navbar__links"id="navbar__mobile__link4"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact &nbsp;</a></li>
-					
-						<!-- Create a menu item Handshake Icon -->
-						<li class="navbar__item-right icon">
-							<a href="https://app.joinhandshake.com/login" class="navbar__links"id="navbar__mobile__link5"><i class=" fas fa-handshake fa-fw"></i>&nbsp; View my Handshake Profile &nbsp;</a></li>  
-						
-						<!-- Create a menu item LinkedIn Icon -->
-						<li class="navbar__item-right icon">
-							<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"id="navbar__mobile__link6"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; Check Out My LinkedIn Profile &nbsp;</a></li>  
-						
-						<!-- Create a menu item Github Icon -->
-						<li class="navbar__item-right icon">
-							<a href="https://github.com/tfh0007" class="navbar__links"id="navbar__mobile__link7"><i class=" fab fa-github fa-fw"></i>&nbsp; Visit My GitHub Page &nbsp;</a></li>  		
-					</ul>
-				</div>
-
-
-		<!-- Lets make the Desktop menu second-->
-				<div class="navbar__menu-middle-container">
-					<ul class="navbar__menu-middle-desktop">
-						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
-						the text-->
-						<li class="navbar__item-center icon" style="list-style: none">
-							<a href="index.html" class="navbar__links" id="navbar__desktop__link2"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
-
-						<!-- Create a menu item About Me -->
-						<li class="navbar__item-center icon" style="list-style: none">
-							<a href="AboutMe.html" class="navbar__links" id="navbar__desktop__link1"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About &nbsp;</a></li>
-
-						<!-- Create a menu item Projects -->
-						<li class="navbar__item-center icon" style="list-style: none">
-							<a href="Projects.html" class="navbar__links" id="navbar__desktop__link3"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
-
-						<!-- Create a menu item Contact Me -->
-						<li class="navbar__item-center icon" style="list-style: none">
-							<a href="ContactMe.html" class="navbar__links" id="navbar__desktop__link4"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact &nbsp;</a></li>
-				</div>
-				
-					
-				<div>
-					<ul class="navbar__menu-right-desktop">
-								 <!-- Create a menu item Handshake Icon -->
-								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
-								<li class="navbar__item-right icon">
-									<a href="https://app.joinhandshake.com/login" class="navbar__links" id="navbar__desktop__link5"><i class="fas fa-handshake"></i></a></li>  
-								   
-								<!-- Create a menu item LinkedIn Icon -->
-								<li class="navbar__item-right icon">
-									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"  id="navbar__desktop__link6"><i class="fab fa-linkedin-in"></i></a></li>  
-								
-								<!-- Create a menu item Github Icon -->
-								<li class="navbar__item-right icon">
-									<a href="https://github.com/tfh0007" class="navbar__links" id="navbar__desktop__link7"><i class="fab fa-github"></i></a></li>  		
-							
-               </ul>
-			</div>
-			</div>
-		</nav>
-    </header>
 
 	
 
-	</div>
+	<header>
+		<div id="header">
+			
+
+		</div>
+	</header>
 
 	<div class="page1__container">
 
@@ -230,7 +157,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 
 				<div class="picture__of__Auburn__University">
 					
-					<img src="images__about/AlgoExpert_Certificate.png" alt="A logo for Auburn University">
+					<img src="images__about/AlgoExpert_Certificate.png" loading="lazy" alt="A logo for Auburn University">
 					
 				</div>
 
@@ -248,7 +175,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 				<div class="picture__of__Auburn__University">
 					
 					
-					<img src="images__about/AlgoExpert_logo.png" alt="A logo for AlgoExpert">
+					<img src="images__about/AlgoExpert_logo.png" loading="lazy" alt="A logo for AlgoExpert">
 				</div>
 
 			</div>
@@ -260,7 +187,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 
 				<div class="picture__of__Auburn__University">
 					
-					<img src="images__about/pictureOfAuburnUniversity-trim.jpg" alt="A picture of Auburn University">
+					<img src="images__about/pictureOfAuburnUniversity-trim.jpg" loading="lazy"  alt="Auburn University">
 					
 				</div>
 
@@ -278,7 +205,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 				<div class="picture__of__Auburn__University">
 					
 					
-					<img src="images__about/2560px-Auburn_University_primary_logo-trim.png" alt="A logo for Auburn University">
+					<img src="images__about/2560px-Auburn_University_primary_logo-trim.png" loading="lazy" alt="Logo for Auburn University">
 				</div>
 
 			</div>
@@ -290,7 +217,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 			<div class="Spring__Hill__education">
 				
 				<div class="picture__of__Spring__Hill__College">
-					<img src="images__about/spring-hill-college-logo-png-transparent-trim.png" alt="A logo for Spring Hill College">
+					<img src="images__about/spring-hill-college-logo-png-transparent-trim.png" loading="lazy" alt="Logo for Spring Hill College">
 					
 					
 				</div>
@@ -306,7 +233,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 
 				<div class="picture__of__Spring__Hill__College">
 					
-					<img src="images__about/pictureOfSpringHillCollege-trim.jpg" alt="A picture of Spring Hill College">
+					<img src="images__about/pictureOfSpringHillCollege-trim.jpg" loading="lazy"  alt="Spring Hill College">
 					
 				</div>
 
@@ -319,7 +246,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 			<div class="UMS__education">
 
 				<div class="picture__of__Ums__Wright">
-					<img src="images__about/pictureOfUms-Wright-trim.jpg" alt="A logo for Spring Hill College">
+					<img src="images__about/pictureOfUms-Wright-trim.jpg" loading="lazy" alt="A logo for Spring Hill College">
 					
 				</div>
 
@@ -332,7 +259,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 			</div>
 
 				<div class="picture__of__Ums__Wright">
-					<img src="images__about/220px-UMS-Wright_Preparatory_School_logo-trim.jpg" alt="A picture of Spring Hill College">
+					<img src="images__about/220px-UMS-Wright_Preparatory_School_logo-trim.jpg" loading="lazy" alt="Spring Hill College">
 
 				</div>
 
@@ -441,25 +368,7 @@ We need to use the rel attribute because if we don't our user can be exposed to 
 
 
 
-<!--Scripts for Navigation -->
-	<!-- We want to toggle states for our mobile menu -->
-	<script
-	src="https://code.jquery.com/jquery-3.6.0.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('.menuButton').click(function() {
-					$('.navbar').toggleClass('active')
-					$('.navbar__menu-mobile').toggleClass('active')
-					$('.notification__area').toggleClass('moveDown')
-					
 
-
-					
-
-				})
-			})
-
-		</script>
 
 	<script
 	src="https://code.jquery.com/jquery-3.6.0.js"></script>

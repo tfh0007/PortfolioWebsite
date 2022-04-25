@@ -175,3 +175,12 @@ background: linear-gradient(252.44deg,
     
     }
 }
+
+
+/*We want to set the link1 to always be underlined. That way we know the current page
+we are on. The link1 id location will be the home page*/
+#navbar__mobile__link4::before,
+#navbar__desktop__link4::before {
+    transform-origin: center;
+    transform: scaleX(0.85);
+}

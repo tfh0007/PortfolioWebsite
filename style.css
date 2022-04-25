@@ -111,7 +111,7 @@ border-width: 0;
 
 /* This class will contain our custom warnning message container*/
 .notification__area {
-    margin-top: 24px;
+    margin-top: 10px;
     margin-right: 14px;
     margin-left: 14px;
     
@@ -278,7 +278,7 @@ destroying the notification when the drop down menu opens */
   .num-of-notifications.fadeIn,
   .num-of-notifications-mobile.fadeIn{
     opacity: 1;
-    transition: opacity 500ms 3.6s ease-in-out;
+    transition: opacity 500ms 0s ease-in-out;
   }
 /* This controls the Notifications bell and text icon for the mobile menu object */
   .mobile__notification__bell {
@@ -746,7 +746,7 @@ For Mobile this will be hidden */
 
 /*Our notification message appears a little bit too high in the desktop version so lets fix this */
 .notification__area {
-    margin-top: 75px;
+    margin-top: 10px;
     right: 20px;
 }
 
@@ -950,7 +950,7 @@ So lets fix this issue */
 @media screen and (min-width:1500px) {
 
     .notification__area {
-        margin-top: 38px;
+        margin-top: 10px;
     }
 
 
@@ -2403,13 +2403,7 @@ footer {
     transform: scaleX(1);
 
 }
-/*We want to set the link1 to always be underlined that way we know the current page
-we are on. The link1 id location will be changed depending on the html file we are using*/
-#navbar__mobile__link1::before,
-#navbar__desktop__link1::before {
-    transform-origin: center;
-    transform: scaleX(0.85);
-}
+
 
 /* Next lets cover the animation for the menu button */
 .menuButton {
