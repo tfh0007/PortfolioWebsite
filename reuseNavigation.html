@@ -5,7 +5,7 @@
 <!-- NOW WE ARE AT NAVIGATION MENU-->
 <header>
     <nav class="navbar">
-        <div class="navbar__container">
+        <div class="navbar__container" id="navbarThing">
             <!-- My logo will not be a clickable icon -->
                 <h1 class="mainLogo">Thomas F Hansknecht</h1>
                 <!-- Create a menu item Notification Icon -->
@@ -295,4 +295,27 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		})
 
 	</script>
+
+
+<!-- Script to make the navbar hide when user scrolls on a small display-->
+<script>
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    let lastScrollY = window.scrollY
+    window.addEventListener("scroll", () => {
+        /* By using the -15 we are making it so the user has to scroll upwards fast before the menu will come back.
+        By setting the or last scrollY < 800 we are saying that the menu will always appear until we are atleast 
+        800 pixels down on the webpage */
+        if ((lastScrollY - 15 > window.scrollY) || (lastScrollY < 800)) {
+            document.getElementById("navbarThing").style.top = "0";
+        }
+        else {
+            if ((lastScrollY > 800) && (lastScrollY < window.scrollY)){
+            document.getElementById("navbarThing").style.top = "-120px";
+            }
+        }
+        /* Update the current lasScrollY value since it needs to change perodically */
+        lastScrollY = window.scrollY;
+    })
+
+</script>
 

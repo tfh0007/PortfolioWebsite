@@ -984,7 +984,7 @@ So lets fix this issue */
     rgba(250, 0, 255, 0.22) 345.5deg, 
     rgba(2, 194, 148, 0.47) 360.34deg);
 
-    margin-top: 5.2rem;
+    
     padding-top: 1rem;
     padding-bottom: 0;
     display: flex;
@@ -1015,6 +1015,7 @@ So lets fix this issue */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
     
 
     /*Borders for testing can be removed now
@@ -1665,6 +1666,19 @@ transition: transform 350ms ease-in-out;
 @media screen and (max-width: 828px) {
     .main-banner2 {
         margin-top: 128px;
+        
+    }
+
+
+    /* Let's make the top menu bar not fixed for smaller screens in terms of width */
+
+    #navbarThing {
+        
+        position: fixed; /* Make it stick/fixed */
+        top: 0; /* Stay on top */
+        width: 98%; /* Full width */
+        transition: top 0.6s; /* Transition effect when sliding down (and up) */
+        
     }
 }
 /* The margin needs to be different when the display gets larger */
