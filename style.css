@@ -144,7 +144,7 @@ border-width: 0;
     
 
 }
-/* I am removing this animation cause it is unnecessary and slowing down my website */
+/* I am removing this animation cause it is unnecessary and slowing down my website 
 .fa-exclamation-triangle {
 
     animation-name: pulseTriangle;
@@ -154,7 +154,7 @@ border-width: 0;
 
     
 }
-/* Pretty sure this animation will continue even if it is invisible */
+/* Pretty sure this animation will continue even if it is invisible
 @keyframes pulseTriangle{
     0%   {color: red;}
   
@@ -162,6 +162,8 @@ border-width: 0;
   
   
 }
+
+*/
 
 
 
@@ -395,7 +397,8 @@ destroying the notification when the drop down menu opens */
 
   /* This class will contain the heading info and Mark all as seen button in the notifications window */
 .notificationPageHeading {
-
+    position: absolute;
+    left: 18%;
     display: flex;
     flex-direction: column;
     
@@ -430,15 +433,24 @@ destroying the notification when the drop down menu opens */
 }
 
 .notification__mark__all__read__btn {
+
     
     font-size: 1.4rem;
+    align-content: center;
     list-style: none;
     text-decoration: none;
     background: blue;
     border-radius: 20px;
     padding: 6px;
+    
     color: white;
     cursor: pointer;
+}
+
+
+/* Controls the position of the main text in the notification window */
+.notificationPageText {
+    margin-top: 90px;
 }
 
 .notification__mark__all__read__btn.invisible {
