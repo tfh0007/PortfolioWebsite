@@ -2829,6 +2829,13 @@ transform: scale(1.1);
 }
 
 
+/* Text based animations */
+.Page1_Heading h1
+{
+    color: blue;
+    transform: scale(0.3);
+    transition: all 0,0.3;
+}
 
 
 
