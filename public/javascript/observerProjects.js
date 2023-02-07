@@ -18,7 +18,7 @@ const options3 = {
 const project1Observer = new IntersectionObserver(function(entries, obserever) {
 entries.forEach(entry => {
     if (entry.isIntersecting && project1Counter < 2) {
-        console.log(entry),
+        //console.log(entry),
         entry.target.classList.toggle("startAnimation");
         project1Counter ++;
         
@@ -35,7 +35,7 @@ entries.forEach(entry => {
  const project2Observer = new IntersectionObserver(function(entries, obserever) {
     entries.forEach(entry => {
         if (entry.isIntersecting && project2Counter < 2) {
-            console.log(entry),
+            //console.log(entry),
             entry.target.classList.toggle("startAnimation");
             project2Counter ++;
             }
@@ -51,7 +51,7 @@ entries.forEach(entry => {
      const project3Observer = new IntersectionObserver(function(entries, obserever) {
 entries.forEach(entry => {
     if (entry.isIntersecting && project3Counter < 2) {
-        console.log(entry),
+        //console.log(entry),
         entry.target.classList.toggle("startAnimation");
         project3Counter ++;
         

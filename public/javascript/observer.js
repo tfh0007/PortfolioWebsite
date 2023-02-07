@@ -15,7 +15,7 @@ const options = {
 const page1observer = new IntersectionObserver(function(entries, obserever) {
 entries.forEach(entry => {
     if (counter == 1 && entry.isIntersecting) {
-        console.log(entry),
+        //console.log(entry),
         entry.target.classList.toggle("startAnimation");
         counter++;
         }

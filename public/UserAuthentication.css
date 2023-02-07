@@ -1,0 +1,563 @@
+.mainLogo h4 {
+    font-size: 5rem;
+}
+
+#userAndMyLogo h3  {
+    font-size: 2.5rem;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+#userAndMyLogo p {
+    font-size: 1rem;
+    margin-bottom: -20px;
+}
+
+.UserThings {
+    margin-top: 90px;
+}
+
+
+
+#navbar-signUp-desktop,
+#navbar-logIn-desktop,
+
+
+
+
+#navbar__desktop__link9 {
+    margin-left: -1ch;
+}
+
+
+
+
+
+
+#CreateUserError {
+    position: fixed;
+    border: solid rgb(251, 80, 80) 10px;
+    border-radius: 20px;
+    background: rgb(251, 80, 80);
+    top: 0px;
+    width: 98%;
+    font-size: 1.8rem;
+    left: 0.5%;
+    
+    transform: translateY(-150%);
+    transition: transform 200ms 0ms;
+    z-index: 5502;
+
+}
+
+
+
+
+
+#navbar-signUp,
+#navbar-logIn {
+    margin-left: 2ch;
+    font-size: 1.4rem;
+}
+
+.logIn-Page,
+.signUp-Page,
+.authenticationChoice-Page {
+
+width: 100%;
+height: 100%;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-200%,-200%);
+background: rgba(0, 0, 0, 0);
+z-index: 2501;
+padding: 100px;
+
+/* Lets make the window disappear at first */
+
+transition: background 150ms, transform 300ms 150ms;
+}
+
+.authenticationChoice-Page.visible {
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.842);
+    transition: transform 300ms, background 200ms 300ms;
+}
+
+.logIn-Page.visible {
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.842);
+    transition: transform 300ms, background 200ms 300ms;
+}
+
+.signUp-Page.visible {
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.842);
+    transition: transform 300ms, background 200ms 300ms;
+}
+
+.authenticationChoice-Page h1 {
+    font-size: 3.7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.logIn-Page h2,
+.signUp-Page h2{
+    font-size: 3.7rem;
+    color: rgb(81, 81, 124);
+    padding-top: 1ch;
+    padding-bottom: 1ch;
+    display: flex;
+    justify-content: center;
+}
+
+.signUp-Page h2 {
+    font-size: 3rem;
+    padding-bottom: 0ch;
+}
+
+
+
+.logIn-Container,
+.forgotPasswordContainer,
+.authenticationChoiceContainer {
+    max-width: 1200px;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(197, 197, 197);
+    border-radius: 30px;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    
+
+
+}
+.logIn-Container h2,
+.forgotPasswordContainer h2
+ {
+    padding-left: 1ch;
+    padding-right: 1ch;
+    color: #3633C9;
+}
+
+#logIn-email,
+#logIn-password,
+#resetPassword-email,
+#user-name-first,
+#user-name-last,
+#user-email,
+#user-phone,
+#user-password
+ {
+    padding-block: 1ch;
+    font-size: 1.3rem;
+    border-radius: 20px;
+}
+
+.signUp-Page-Container {
+    position: absolute;
+    max-width: 1200px;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(197, 197, 197);
+
+    border-radius: 30px;
+    padding-bottom: 3%;
+    padding-top: 2%;
+}
+
+.signUp-Page-Container h2 {
+    color: #303079;
+    padding-inline: 1.5ch;
+}
+
+
+
+.input-fields
+ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+    padding-bottom: 3ch;
+    padding-left: 4ch;
+    padding-right: 4ch;
+}
+
+.input-fields-signUp {
+    
+    display: flex;
+    font-size: 2.5rem;
+    padding-block: 1ch;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.signup-form-left-side {
+    padding: 3ch;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form-right-side {
+    padding: 3ch;
+    display: flex;
+    flex-direction: column;
+}
+
+.signUp-form-required-text {
+    color: red;
+    font-size: 1.2rem;
+}
+
+#signInGoogleBtn,
+#signInMetaBtn,
+#custom-logIn {
+    font-size: 2rem;
+}
+
+#logInBtn,
+#logInForgotPasswordBtn,
+#goBackTologInPage,
+#triggerResetLinkBtn,
+#signUpBtn
+ {
+    font-size: 2rem;
+    
+}
+
+#logInBtn,
+#triggerResetLinkBtn
+ {
+    margin-left: 4ch;
+    margin-right: 1ch;
+}
+
+#goBackTologInPage,
+#signUpBtn {
+    border: solid rgb(24, 192, 38) 5px;
+    background: rgb(24, 192, 38);
+    border-radius: 20px;
+}
+
+#signUpBtn {
+    
+    padding: 0px;
+    margin-top: 2ch;
+}
+
+#triggerResetLinkBtn {
+    background: crimson;
+    border: solid crimson;
+    border-radius: 20px;
+    padding: 6px;
+}
+
+
+/* We need to move the Reset Password Page out of the way before we call it */
+.forgotPasswordContainer {
+    transform: translateX(250%);
+    opacity: 0;
+    transition: transform 300ms;
+}
+
+.forgotPasswordContainer.minimize {
+    transform: translateX(250%);
+    opacity: 1;
+    transition: transform 300ms;
+
+}
+
+.forgotPasswordContainer.show {
+    transform: translate(-50%,-50%);
+    transition: transform 300ms;
+    opacity: 1;
+}
+
+
+
+.logIn-Container.hide {
+    transform: translateX(-500%);
+    transition: transform 300ms;
+}
+
+.logIn-Container {
+    transform: translate(-50%,-50%);
+    transition: transform 300ms;
+}
+
+#logInCloseBtn,
+#logInCloseBtn2,
+#signUpCloseBtn,
+#authenticationChoiceCloseBtn {
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 2.2rem;
+    color: rgba(0, 0, 0, 0.664);
+    right: 25px;
+    font-size: 4rem;
+    transition: color 300ms;
+    
+}
+
+/* The login and password reset form with their respecitve div is messing up formating so lets manually move buttons */
+#goBackTologInPage
+
+{
+    
+    margin-left: 20ch;
+    padding: 4px;
+}
+
+
+
+
+
+#logInCloseBtn:hover,
+#logInCloseBtn:focus,
+#logInCloseBtn2:hover,
+#logInCloseBtn2:focus,
+#signUpCloseBtn:hover,
+#signUpCloseBtn:focus,
+#authenticationChoiceCloseBtn:hover,
+#authenticationChoiceCloseBtn:focus
+{
+
+    color: rgb(214, 27, 27);
+}
+
+#logInBtn
+ {
+    border: solid rgb(24, 192, 38) 5px;
+    background: rgb(24, 192, 38);
+    border-radius: 20px;
+}
+
+#logInForgotPasswordBtn {
+    margin-left: 13ch;
+    border: solid rgb(214, 27, 27) 5px;
+    background: rgb(214, 27, 27);
+    border-radius: 20px;
+    
+}
+
+.containerOflogInForgotPasswordBtn
+
+ {
+    margin-top: -49px;
+    
+}
+
+.containerOfgoBackTologInPage {
+    margin-top: -55px;
+   
+    
+}
+
+/* Lets do the css for locking the contact form */
+
+.lockTheContactForm .fa-lock {
+    font-size: 30rem;
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 40px;
+    z-index: 200;
+    color: rgba(0, 0, 0, 0.815);
+}
+
+.lockTheContactForm h2 {
+    position: absolute;
+    z-index: 201;
+    font-size: 2.3rem;
+    margin-top: 390px;
+    margin-left: 3ch;
+    color: rgb(204, 8, 8);
+}
+
+
+
+
+
+@media screen and (max-width: 1292px) {
+    .lockTheContactForm .fa-lock {
+        margin-top: 50px;
+        margin-left: -4px;
+    }
+
+    .lockTheContactForm h2 {
+        margin-top: 370px;
+        margin-left: 0.6ch;
+    }
+}
+
+/* Lets add better formatting for account creation and signup pages for Mobile devices */
+@media screen and (max-width: 1726px)
+{
+    .signUp-Page-Container,
+    .logIn-Container,
+    .forgotPasswordContainer
+    {
+        width: 80%;
+    }
+
+    
+    
+}
+
+@media screen and (max-width: 1009px)
+{
+    .signup-form-right-side {
+        padding: 0.5ch;
+    }
+    .signup-form-left-side {
+        padding: 0.5ch;
+    }
+    
+
+
+}
+
+
+
+@media screen and (max-width: 799px) {
+
+/* Let's make the top menu bar not fixed for smaller screens in terms of width */
+
+    #navbarThing {
+        
+        position: fixed; /* Make it stick/fixed */
+        top: 0; /* Stay on top */
+        width: 100%; /* Full width */
+        transition: top 0.4s; /* Transition effect when sliding down (and up) */
+        
+    }
+
+    .navbar__menu-mobile {
+        top: 90px;
+    }
+
+    .logIn-Container h2,
+    .forgotPasswordContainer h2,
+    .signUp-Page-Container h2 {
+        font-size: 2.8rem;
+        padding-left: 2ch;
+    }
+
+    .logIn-Container,
+    .forgotPasswordContainer,
+    .signUp-Page-Container {
+        height: 70%;
+        overflow-y: scroll;
+    }
+
+
+
+    
+}
+
+
+
+/*Next lets create the hover animations for our contact form on page 3*/
+
+#logIn-email,
+#logIn-password,
+#resetPassword-email,
+#user-name-first,
+#user-name-last,
+#user-email,
+#user-phone,
+#user-password
+{
+    transform: scale(1);
+    transform: translateY(0);
+    transition: transform 250ms ease-in-out;
+}
+
+#logIn-email:hover,
+#logIn-email:focus,
+#logIn-password:hover,
+#logIn-password:focus,
+#resetPassword-email:hover,
+#resetPassword-email:focus,
+#user-name-first:hover,
+#user-name-first:focus,
+#user-name-last:hover,
+#user-name-last:focus,
+#user-email:hover,
+#user-email:focus,
+#user-phone:hover,
+#user-phone:focus,
+#user-password:hover,
+#user-password:focus
+
+{
+    transform: scale(1.05);
+    
+}
+
+
+#logInBtn,
+#logInForgotPasswordBtn,
+#triggerResetLinkBtn,
+#goBackTologInPage,
+#signUpBtn,
+#navbar-signUp,
+#navbar-logIn,
+
+
+
+#logInBtn:hover, 
+#logInBtn:focus,
+#logInForgotPasswordBtn:hover, 
+#logInForgotPasswordBtn:focus,
+#triggerResetLinkBtn:hover,
+#triggerResetLinkBtn:focus,
+#goBackTologInPage:hover,
+#goBackTologInPage:focus,
+#signUpBtn:hover,
+#signUpBtn:focus
+
+
+{
+color: white;
+transform: scale(1.05);
+
+}
+
+#navbar-signUp:hover,
+#navbar-signUp:focus,
+#navbar-logIn:hover,
+#navbar-logIn:focus
+{
+    color: black;
+    transform: scale(1.15);
+    
+    }
+
+
+.fa-sign-out-alt{
+    color: red;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.fa-sign-out-alt:hover {
+    color: white;
+    transform: scale(1.15);
+}
+
+
+
+

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- The language of the website is English -->
+	<html lang="en">
+    <meta charset="utf-8">
+	<!-- I am hoping this viewport tag will make Mobile devices not scale automatically which will mess up all my formating-->
+	<meta name="viewport" content="width=device-width, initial-scale=0.75">
+	<!-- We want to use a title, description, and tags to describe our website to others-->
+    <title> Thomas Hansknecht Portfolio </title>
+	<!-- Is the icon that displays in the tab of the borwser window -->
+	<link rel="icon" href="images/house-chimney-solid.svg">
+	<meta name="description" content="All about Thomas F Hansknecht who is a software developer 
+	including how to contact me and projects I have / am currently working on">
+ 	<meta name="keywords" content="Developer, UI Design, Java, Python, Portfolio, Engineering, CSS, HTML, JavaScript">
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="UserAuthentication.css">
+	<link rel="stylesheet" href="setHomeAsCurTab.css">
+	<script src="https://kit.fontawesome.com/e46c78e982.js" crossorigin="anonymous"></script>
+	<!-- We want to make life easier by keeping the navigation and notifications tied to one file we can reuse on every page-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+	<script defer src="app.js"></script>
+  	<script defer src="auth.js"></script>
+	  
+	
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"
+	  integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw=="
+	  crossorigin="anonymous">
+	</script>
+
+  </head>
+  <body>
+    <!-- The point of the aria label is to make visual elements have text associated for screen readers to have an understanding of the button-->
+	<!-- Lets make a major notification that appears at top over everything else (This will only be used on the main page)
+
+	<div class="notification__area">	
+		<div class="notification__heading__msg">
+			<h1><i class="fas fa-wrench" style="color: rgba(255, 0, 0, 0.687);"></i>&nbsp; Important Update:</h1>
+			<p>As of April 2022 a Live Beta of this website with Google Cloud and FireBase integration can be tested. 
+				Visit <a class="linkToDemoProject"href="https://helical-analyst-338502.firebaseapp.com" >https://helical-analyst-338502.firebaseapp.com </a> for demonstration. Note that the Beta Release may have functional and visual issues while under development.</p>		
+		</div>
+		<div class="notification__close__button">
+			<p><button class="notification__btn" aria-label="Close the notification"><i class="far fa-times-circle"></i></button></p>
+		</div>
+	</div>
+-->
+	<header>
+		<nav class="navbar">
+			<div class="navbar__container" id="navbarThing">
+				<!-- My logo will not be a clickable icon -->
+				<a class="navbar__links" title="Sign Out" id="signOutBtn"><i class="fas fa-sign-out-alt"></i></a>
+					<h1 id="userAndMyLogo">Thomas F Hansknecht</h1>
+					<!-- Create a menu item Notification Icon -->
+					
+					
+					<h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
+				</div>
+	<!-- Lets make the mobile menu first-->			
+				<div>
+	
+					<ul class="navbar__menu-mobile">
+						
+						<!-- Create a menu item Notifications -->
+						<li class="mobile__notification__bell">
+							<!-- Span specifies the number of notifications-->
+							<a class="navbar__links__notifications"  id="navbar__mobile__notifications"><i class="fas fa-bell"></i>&nbsp; Notifications &nbsp;<span class = "num-of-notifications-mobile" id="setNumOfNotifications-mobile">5</span></a>
+						</li> 
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after the text-->
+						<li class="navbar__item-center icon">
+							<a href="index.html" class="navbar__links"id="navbar__mobile__link1"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
+	
+						<!-- Create a menu item About Me -->
+						<li class="navbar__item-center icon">
+							<a href="AboutMe.html" class="navbar__links"id="navbar__mobile__link2"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About &nbsp;</a></li>
+	
+						<!-- Create a menu item Projects -->
+						<li class="navbar__item-center icon">
+							<a href="Projects.html" class="navbar__links"id="navbar__mobile__link3"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
+	
+						<!-- Create a menu item Contact Me -->
+						<li class="navbar__item-center icon">
+							<a href="ContactMe.html" class="navbar__links"id="navbar__mobile__link4"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact &nbsp;</a></li>
+					
+						<!-- Create a menu item Handshake Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://app.joinhandshake.com/login" class="navbar__links"id="navbar__mobile__link5"><i class=" fas fa-handshake fa-fw"></i>&nbsp; Handshake Profile &nbsp;</a></li>  
+						
+						<!-- Create a menu item LinkedIn Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"id="navbar__mobile__link6"><i class=" fab fa-linkedin-in fa-fw"></i>&nbsp; LinkedIn Profile &nbsp;</a></li>  
+						
+						<!-- Create a menu item Github Icon -->
+						<li class="navbar__item-right icon">
+							<a href="https://github.com/tfh0007" class="navbar__links"id="navbar__mobile__link7"><i class=" fab fa-github fa-fw"></i>&nbsp; GitHub Profile &nbsp;</a></li>  		
+					</ul>
+				</div>
+	
+	
+		<!-- Lets make the Desktop menu second-->
+				<div class="navbar__menu-middle-container">
+					<ul class="navbar__menu-middle-desktop">
+						<!-- Create a menu item Home. The icon phrase means an icon will be before or after 
+						the text-->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="index.html" class="navbar__links" id="navbar__desktop__link1"><i class=" fas fa-home fa-fw"></i>&nbsp; Home &nbsp;</a></li>
+	
+						<!-- Create a menu item About Me -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="AboutMe.html" class="navbar__links" id="navbar__desktop__link2"><i class=" fas fa-address-card fa-fw"></i>&nbsp; About &nbsp;</a></li>
+	
+						<!-- Create a menu item Projects -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="Projects.html" class="navbar__links" id="navbar__desktop__link3"><i class=" fas fa-code fa-fw"></i>&nbsp; Projects &nbsp;</a></li>
+	
+						<!-- Create a menu item Contact Me -->
+						<li class="navbar__item-center icon" style="list-style: none">
+							<a href="ContactMe.html" class="navbar__links" id="navbar__desktop__link4"><i class=" fas fa-phone-alt fa-fw"></i>&nbsp; Contact &nbsp;</a></li>
+				</div>
+				
+					
+				<div>
+					<ul class="navbar__menu-right-desktop">
+								
+								<!-- Create a menu item Notification Icon -->
+								<li class="navbar__item-right icon">
+									<!-- Span specifies the number of notifications-->
+									<a class="navbar__links__notifications"  id="navbar__desktop__notifications"><i class="fas fa-bell"></i><span class = "num-of-notifications" id="setNumOfNotifications">5</span></a></li>  
+								
+								<!-- Create a menu item Handshake Icon -->
+								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
+								<li class="navbar__item-right icon">
+									<a href="https://app.joinhandshake.com/login" class="navbar__links" id="navbar__desktop__link5"><i class="fas fa-handshake"></i></a></li>  
+								   
+								<!-- Create a menu item LinkedIn Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://linkedin.com/in/ThomasHansknecht-tfh" class="navbar__links"  id="navbar__desktop__link6"><i class="fab fa-linkedin-in"></i></a></li>  
+								
+								<!-- Create a menu item Github Icon -->
+								<li class="navbar__item-right icon">
+									<a href="https://github.com/tfh0007" class="navbar__links" id="navbar__desktop__link7"><i class="fab fa-github"></i></a></li>  		
+							
+			   </ul>
+			</div>
+			</div>
+		</nav>
+		
+	
+		
+	
+	<!-- Lets make a notification page to display all notifications -->
+	
+		<div class="notificationPageContainer">
+	
+			<div class = "notificationPageHeading">
+				<div class="notification__heading__and__close__btn__container">
+					<div class="notification__closeWindowBtn__container"> 
+						<button class="notification__closeWindowBtn" aria-label="Button to close the Notifications Menu"><i class="far fa-times-circle"></i></button>
+	
+					</div>
+						<div class="notification__menu__heading__text">
+						
+							<h1>Notifications Menu</h1>
+						</div>
+				</div>
+				
+			</div>
+		
+			<div class= "notificationPageText">
+	
+				
+	
+				<div class="noneNotifications__heading__msg">
+					<h2 id="addMeNoneNotificationHeading"> Nothing Here </h2>
+					<p id="addMeNoneNotificationBody">No notifications have been loaded nor are visible</p>
+				</div>
+			</div>	
+	
+		</div>
+		<!-- Right now this only affects one page at a time so stop it for now 
+		<div class="notifications__close__button">
+			<button class="notification__mark__all__read__btn" aria-label="Mark all notifications as read">Mark all as seen <i class="fas fa-eye"></i></button>
+		</div>
+	</div>
+	-->
+	
+	
+	
+	
+	
+	
+		<script
+		src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	
+	
+	
+	<!-- Scripts for the notification area -->
+	<script>
+	$(document).ready(function(){
+		// $('.notification__area').addClass('inactive')
+		$('.num-of-notifications').addClass('fadeIn')
+		$('.num-of-notifications-mobile').addClass('fadeIn')
+		// $('.navbar__links__notifications').addClass('visible')		
+	})
+	
+	</script>	
+	
+	
+	
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#navbar__desktop__notifications').click(function() {
+				  $('.notificationPageContainer').toggleClass('visible')
+				  // We want to make sure the mobile menu is gone in case we switch to mobile version while Notifications Menu is active
+				  $('.navbar__menu-mobile').removeClass('active')
+				  // Makes the process one way, we can change into the class visible but cannot change back
+				  //$('.notificationPageContainer').addClass('visible')
+	
+				})
+			})
+	
+		</script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#navbar__mobile__notifications').click(function() {
+			  $('.notificationPageContainer').toggleClass('visible')
+			  // By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
+			  $('.navbar__menu-mobile').removeClass('active')
+	
+	
+			})
+		})
+	
+	</script>
+	
+	<!--Scripts for Navigation -->
+		<!-- We want to toggle states for our mobile menu -->
+			
+			
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.menuButton').click(function() {
+					$('.navbar').toggleClass('active')
+					$('.navbar__menu-mobile').toggleClass('active')
+					$('.notification__area').toggleClass('moveDown')
+					$('.notificationPageContainer').removeClass('visible')
+	
+				})
+			})
+	
+		</script>
+	
+		<script type="text/javascript">
+			var deleteNotification1Heading = document.getElementById("deleteMeNotification1Heading")
+			var deleteNotification1Body = document.getElementById("deleteMeNotification1Body")
+	
+			var deleteNotification2Heading = document.getElementById("deleteMeNotification2Heading")
+			var deleteNotification2Body = document.getElementById("deleteMeNotification2Body")
+	
+			var deleteNotification3Heading = document.getElementById("deleteMeNotification3Heading")
+			var deleteNotification3Body = document.getElementById("deleteMeNotification3Body")
+	
+			var deleteNotification4Heading = document.getElementById("deleteMeNotification4Heading")
+			var deleteNotification4Body = document.getElementById("deleteMeNotification4Body")
+	
+			var deleteNotification5Heading = document.getElementById("deleteMeNotification5Heading")
+			var deleteNotification5Body = document.getElementById("deleteMeNotification5Body")
+			
+			var NoneNotificationHeading = document.getElementById("addMeNoneNotificationHeading")
+			var NoneNotificationBody = document.getElementById("addMeNoneNotificationBody")
+			
+			var setNumOfNotifications = document.getElementById("setNumOfNotifications")
+			var setNumOfNotificationsMobile = document.getElementById("setNumOfNotifications-mobile")
+			
+			$(document).ready(function(){
+				$('.notification__mark__all__read__btn').click(function() {
+					$('.notification__mark__all__read__btn').toggleClass('invisible')
+				
+					deleteNotification1Heading.innerText = ""
+					deleteNotification1Body.innerText = ""
+					deleteNotification2Heading.innerText = ""
+					deleteNotification2Body.innerText = ""
+					deleteNotification3Heading.innerText = ""
+					deleteNotification3Body.innerText = ""
+					deleteNotification4Heading.innerText = ""
+					deleteNotification4Body.innerText = ""
+					deleteNotification5Heading.innerText = ""
+					deleteNotification5Body.innerText = ""
+					NoneNotificationBody.innerText = "All notifications read. No new notifications to display"
+					setNumOfNotifications.innerText = "0"
+					setNumOfNotificationsMobile.innerText = "0"
+	
+					
+				})
+		})
+	
+		</script>
+	
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.notification__closeWindowBtn').click(function() {
+					
+						
+	
+	
+				  $('.notificationPageContainer').toggleClass('visible')
+	
+	
+				})
+			})
+	
+		</script>
+	
+	
+	<!-- Script to make the navbar hide when user scrolls on a small display-->
+	<script>
+		/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+		let lastScrollY = window.scrollY
+		window.addEventListener("scroll", () => {
+			/* By using the -15 we are making it so the user has to scroll upwards fast before the menu will come back.
+			By setting the or last scrollY < 800 we are saying that the menu will always appear until we are atleast 
+			800 pixels down on the webpage */
+			if ((lastScrollY - 15 > window.scrollY) || (lastScrollY < 800)) {
+				document.getElementById("navbarThing").style.top = "0";
+			}
+			else {
+				if ((lastScrollY > 800) && (lastScrollY < window.scrollY)){
+				document.getElementById("navbarThing").style.top = "-120px";
+				}
+			}
+			/* Update the current lasScrollY value since it needs to change perodically */
+			lastScrollY = window.scrollY;
+		})
+	
+	</script>
+	</header>
+
+	<div>
+		<h1>...</h1>
+		<button id="navbar-logIn"> Log In</button>
+		<button id="navbar-signUp"> SignUp</button>
+		<button id="navbar-logIn-desktop"> Desktop Login</button>
+		<button id="navbar-signUp-desktop"> Desktop SignUp</button>
+	</div>
+
+	<!-- Begin server file -->
+  	<!-- The container for User Creation Errors -->
+	  <div id="CreateUserError">
+		<h2 id="CreateUserErrorOccuredTitle"></h2>
+		<h3 id="CreateUserErrorCode"></h3>
+		<h3 id="CreateUserErrorMessage"></h3>
+	</div>
+  	
+	<section id="whenSignedOut">
+		<div class= "authenticationChoice-Page">
+			<div class="authenticationChoiceContainer">
+				<button id="authenticationChoiceCloseBtn"><i class="far fa-times-circle"></i></button>
+				<h1> Select Identification Method</h1>
+				<button class ="btn btn-primary" id="signInGoogleBtn"><i class="fa-brands fa-google"></i> &nbsp; Sign in with Google </button>
+				<button class ="btn btn-primary" id="signInMetaBtn"><i class="fa-brands fa-meta"></i> &nbsp; Sign in with Meta </button>
+				<button class ="btn btn-primary" id = "custom-logIn"><i class="fas fa-sign-in-alt"></i>&nbsp; Sign in with Custom Account </button>
+			</div>
+		</div>
+		<div class="logIn-Page">
+			<div class="logIn-Container">
+				<button id="logInCloseBtn"><i class="far fa-times-circle"></i></button>
+				<h2>Log In to thomashansknecht.com</h2>
+				<div class="logIn-form-div">
+						<form id="logIn-form">
+							<div class="input-fields">
+								<label for="logIn-email">Email Address</label>
+								<input type="email" id="logIn-email" placeholder="email@domain.com" required>
+								<label for="logIn-password">Log In Password</label>
+								<input type="password" id="logIn-password" placeholder="********" required>
+							</div>
+							<button id="logInBtn">Sign In</button>
+						</form>
+						<div class="containerOflogInForgotPasswordBtn">
+							<button id="logInForgotPasswordBtn">Forgot Password</button>
+						</div>
+					</div>
+				</div>
+				<div class="forgotPasswordContainer">
+					<button id="logInCloseBtn2"><i class="far fa-times-circle"></i></button>
+					<h2>Reset Password to thomashansknecht.com?</h2>
+					<div class="passwordRest-form-div">
+						<form id="passwordReset-form">
+							<div class="input-fields">
+								<label for="resetPassword-email">Email Address</label>
+								<input type="email" id="resetPassword-email" placeholder="email@domain.com" required>
+							</div>
+						<button id="triggerResetLinkBtn" class="btn btn-success">Email Reset Link</button>
+						</form>
+						<div class="containerOfgoBackTologInPage">
+							<button id="goBackTologInPage" class="btn btn-success">Go Back</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<div class="signUp-Page">
+			<div class="signUp-form-div">
+				<div class="signUp-Page-Container">
+					<button id="signUpCloseBtn"><i class="far fa-times-circle"></i></button>
+					<h2>Create account for thomashansknecht.com</h2>
+					<form id="signup-form">
+						<div class="input-fields-signUp">	
+							<div class="signup-form-left-side">
+								<label for="user-name-first"> First Name<span class="signUp-form-required-text"> *Required* </span> &nbsp; &nbsp; &nbsp; &nbsp;</label>
+								<input type="text" id="user-name-first" required oninvalid="this.setCustomValidity('Provide First Name here')" oninput="this.setCustomValidity('')">
+								<label for="user-name-last"> Last Name</label>
+								<input type="text" id="user-name-last" >
+								<label for="user-email">Email<span class="signUp-form-required-text"> *Required* </span></label>
+								<input type="email" id="user-email" placeholder="email@domain.com" required oninvalid="this.setCustomValidity('Provide a valid Email address here')" oninput="this.setCustomValidity('')">
+							</div>
+							<div class="signup-form-right-side">
+								<label for="user-phone">Phone Number</label>
+								<input type="tel" id="user-phone" placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="this.setCustomValidity('Phone number must follow format XXX-XXX-XXXX')" oninput="this.setCustomValidity('')">
+								<label for="user-password">Secure Password<span class="signUp-form-required-text"> *Required* </span></label>
+								<!-- The pattern attribute is a form of a regular expression. The ? means does this thing exist. The /d means a digit value. The A-Za means letters that are upper and lower case. For just upper we would use A-Z and for just lower we would use a-z. The , within {x,} means that we can have any length from x to infinity -->
+								<input type="password" id="user-password" placeholder="********" required pattern="(?=.*\d)(?=.*[A-Za]).{6,}" oninvalid="this.setCustomValidity('Password must be at least 6 characters long, contain at least one number, and contain one or more letters')" oninput="this.setCustomValidity('')">
+								<button id="signUpBtn">Sign Up</button>
+								<!-- Need to fill appropriate capcha info later-->
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="whenSignedIn">
+		<div id="userDetails">
+			<div class="UserThings">
+				<h2>My Items</h2>
+				<ul id="thingsList">
+				</ul>
+				<button id="createThing" class="btn btn-success">Create Random Store Item</button>
+				<button id="deleteThings">Delete all of my Items</button>
+				
+			</div>
+		</div>
+	</section>
+
+	<!-- NOW WE ARE AT PAGE 1-->
+	<div class= "page1container">
+		<div class = "page1Text">
+		<h1 class= "page1heading">Hi there, I am Thomas Hansknecht</h1>
+		<p class= "page1sentance1">Are you looking for a Computer Scientist?</p>
+		<p class= "page1sentance2">How about a Web Designer?</p>
+		<p class= "page1sentance3">Maybe, a Software Developer?</p>
+		<p class= "page1sentance4"><strong>I am the person you are looking for</strong></p>
+	</div>
+		<div class ="pictureOfMe__container">
+			<img width="750px" height="950px" loading="lazy" src="images__about/Headshot_IMG_1991Crop.jpg" alt="me in a graduation outfit">
+		</div>
+	</div>
+	
+	<!-- NOW WE ARE AT PAGE 2-->
+	<!-- We want a extended description on the right of the screen when the user clicks Learn More-->
+	<div class="Page2__and__extended__Description" id="page2">
+		<div class="CloseWindow__Section1">
+			<button class="Project__button__1" id="closeWindowBtn__Project1"><i class="fas fa-window-close"></i></button>	
+		</div>
+		<div class= "download_Section1">
+			<h2> 
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Air-Traffic-Controller-Application/archive/refs/heads/main.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+			</h2>
+		</div>
+		<div class="extended__Description__Project1">
+				<h1><strong>More About Air Traffic Controller Application</strong></h1>
+				<!-- We want a rotating image banner here-->
+			<div class = "main-banner2" id = "main-banner2">
+				<div class="imgbanbtn2 imgbanbtn2-prev" id="imgbanbtn2-prev"><i class="fas fa-chevron-circle-left"></i></div>
+				<div class="imgban2" id="imgban6">
+				</div>		
+				<div class="imgban2" id="imgban5">					
+				</div>
+				<div class="imgban2" id="imgban4">					
+				</div>
+				<div class="imgbanbtn2 imgbanbtn2-next" id="imgbanbtn2-next"><i class="fas fa-chevron-circle-right"></i></div>
+			</div>
+				<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+					we can get a bulleted list-->
+				<ul>
+					<li><p class = "extended__Description__text" id="extended__Description__text1">A fully interactive application that allows users to create and view their tickets</p></li>
+					<li><p>The application stores and retrieves customers, tickets, and airports from different databases</p></li>
+					<li><p>The databases were made simple and used consistent formatting</p></li>
+					<li><p>Part of a Software Modeling and Design Semester Long Project</p></li>
+					<li><p>Created as a shared GitHub Project</p></li>
+					<li><p>Designed based on UML diagrams and GRASP design patterns created by a team</p></li>
+				</ul>
+				<h2><strong>What was Learned</strong></h2>
+				<ul>
+					<li><p>Learned about creating menu objects and allowing interaction with them</p></li>
+					<li><p>Used custom Scanner classes to manage the transfer of data between the program and the databases</p></li>
+					<li><p>Created multiple threads to allow for asynchronous operations as well as unique visuals</p></li>
+					<li><p>Managed the development process and instructed team members on solutions</p></li>
+					<li><p>Handled and resolved merge conflicts between various git branches that were created</p></li>
+					<li><p>Used extensive debugging and error checking to find and test for issues with the logic</p></li>
+					<li><p>Used Exception Handling to prevent a user's invalid entries from corrupting the program</p></li>
+					<li><p>Implemented action listeners so the user can interact with objects</p></li>
+					<li><p>Made the experience unique to every user by gathering data on every customer</p></li>
+					<li><p>Used parsers for assigning format to date objects</p></li>
+				</ul>
+			</div>
+			<div class="CloseWindow__Section2">
+				<button class="Project__button__2" id="closeWindowBtn__Project2"><i class="fas fa-window-close"></i></button>					
+			</div>
+			<div class= "download_Section2">
+				<h2> 
+					<a style="text-decoration: none" href="https://github.com/tfh0007/Mario-With-A-Gun/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+				</h2>
+			</div>
+			<div class="extended__Description__Project2">
+				<h1><strong>More About Mario With A Gun</strong></h1>
+				<!-- We want a rotating image banner here-->
+				<div class = "main-banner" id = "main-banner">
+					<div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"><i class="fas fa-chevron-circle-left"></i></div>
+						<div class="imgban" id="imgban3">
+						</div>
+						<div class="imgban" id="imgban2">
+						</div>
+						<div class="imgban" id="imgban1">
+						</div>
+					<div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"><i class="fas fa-chevron-circle-right"></i></div>
+				</div>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p class = "extended__Description__text" id="extended__Description__text2">Project submitted for a hackathon competition</p></li>
+				<li><p>Created with a group in Python using Pygame</p></li>
+			</ul>
+
+			<h2><strong>What was Learned</strong></h2>
+			<ul>
+				<li><p>Used Sprite sheets to animate the player and enemies</p></li>
+				<li><p>Learned more about Pygame and how you can use external platforms in conjunction with a programming language</p></li>
+				<li><p>Learned how to create logic for movement of player and developed in game collision physics for background objects and enemies</p></li>
+				<li><p>Worked with a team to complete the project</p></li>
+				<li><p>There was a limited deadline, and the team was forced to make changes to cater to this deadline</p></li>
+				<li><p>Implemented external custom resources such as soundtracks and visuals</p></li>
+			</ul>
+		</div>
+		<div class="CloseWindow__Section3">
+			<button class="Project__button__3" id="closeWindowBtn__Project3"><i class="fas fa-window-close"></i></button>	
+		</div>
+
+		<div class= "download_Section3">
+			<h2> 
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Word-Search-Game/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>			
+			</h2>
+		</div>
+		<div class="extended__Description__Project3">
+			<h1><strong>More About Word Search Game</strong></h1>
+			<!-- We want a rotating image banner here-->
+			<div class = "main-banner3" id = "main-banner3">
+				<div class="imgbanbtn3 imgbanbtn3-prev" id="imgbanbtn3-prev"><i class="fas fa-chevron-circle-left"style="color: black"></i></div>
+				<div class="imgban3" id="imgban9">
+				</div>
+				<div class="imgban3" id="imgban8">
+				</div>
+				<div class="imgban3" id="imgban7">	
+				</div>
+				<div class="imgbanbtn3 imgbanbtn3-next" id="imgbanbtn3-next"><i class="fas fa-chevron-circle-right" style="color: black"></i></div>
+			</div>
+			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
+				we can get a bulleted list-->
+			<ul>
+				<li><p class = "extended__Description__text" id="extended__Description__text3"> This project is an extension to the Boggle Word Search game created for a Java II Class </p></li>	
+			</ul>
+			<h2><strong> How the Project was Expanded and What was Learned</strong></h2>
+			<ul>
+				<li><p> Learned how to create graphical interfaces using JFrames</p></li>
+				<li><p> Used action listeners to make the program interactable</p></li>
+				<li><p> Used Exception Handling to deal with invalid user entries</p></li>
+				<li><p> Used visuals and sound effects to make the experience complete</p></li>
+				<li><p> Made the values in the word search table customizable</p></li>
+				<li><p> Allowed the user to choose different table sizes as well as use different Lexicon listings</p></li>
+			</ul>
+			<h2><strong> What was Learned in the Original Class Project</strong></h2>
+			<ul>
+				<li><p> Used Lexicon dictionaries and stored the values into a Sorted Set of strings</p></li>
+				<li><p> Used a depth first search algorithm to search for valid words on the generated board</p></li>
+				<li><p> Used 2 dimensional arrays to create the board</p></li>
+				<li><p> Used various functions for checking what neighbors existed near the current position</p></li>
+				<li><p> Used a scoreboard to keep track of the users correct responses</p></li>
+			</ul>
+		</div>
+		<div class= "page2container">
+			<h1 class="page2heading"> Some of my Favorite Projects</h1>
+			<div class="Projects">
+			<!-- This is for Project 1-->
+			<!-- Not the best to have heading 2 for the project name 
+				and description but it works when modifing the name and not the description. 
+				Our descriptions do have to have bold removed, however-->
+				<div class="Project__container1" id="Project1__container">
+					<h2 class="Project__Name">Air Traffic Controller Application</h2>
+						<video class="Project__video" width="480" height="340" controls loop>
+						<source src="video/AirTrafficControllerDemo_Trim.mp4" type="video/mp4">
+						Unfortunately your browser does not support the video tag
+						</video>
+						<h2 class="Project__Description"style="font-weight: normal"> JFrame application that allows new user and ticket creation as well as management of user and ticket data which is stored in several databases.</h2>
+					<button class="Project__button__1" id="Learn__More_btn1">Learn More</button>
+				</div>
+			<!-- This is for Project 2-->
+				<div class="Project__container2" id="Project2__container">
+					<h2 class="Project__Name">Mario With A Gun</h2>
+					<!-- Using the autoplay will make the video start playing as soon as it loads-->
+					<!-- Stating muted will mute the video when it is loaded-->
+					<!-- Using controls gives media controls to the user on the website-->
+						<video class="Project__video" width="480" height="340" controls autoplay="autoplay" muted loop="loop" muted defaultMuted playsinline oncontextmenu="false;" preload="auto">
+						<source src="video/MarioWithGunsDemo_Trim.mp4" type="video/mp4">
+						Unfortunately your browser does not support the video tag
+						</video>
+						<h2 class="Project__Description" style="font-weight: normal"> A reimagining of the 1985 Super Mario Bros. The game incorporates guns and takes place in a nuclear apocalyptic setting.</h2>
+					<button class="Project__button__2" id="Learn__More_btn2">Learn More</button>
+				</div>
+			<!-- This is for Project 3-->
+				<div class="Project__container3" id="Project3__container">
+					<h2 class="Project__Name">Word Search Game</h2>
+					<video class="Project__video" width="480" height="340" controls loop>
+						<source src="video/JavaWordSearchEdit.mp4" type="video/mp4">
+						Unfortunately your browser does not support the video tag
+					</video>		
+					<h2 class="Project__Description"style="font-weight: normal"> Game where players create a board consisting of whatever letters the players want. Then, the program locates any word combinations possible on the board. The job of the players is to find all of the words on the board. The players can check if they are right or not by inputting the word they see in the entry box.</h2>		
+					<button class="Project__button__3" id="Learn__More_btn3">Learn More</button>
+				</div>		
+			</div>
+			<p class= "page2footer"> </p>
+		</div>
+	</div>
+
+	<!-- NOW WE ARE AT PAGE 3-->
+	<div class = "page3container">	
+		<div class="page3TextTop">
+			<h1>Let's Connect With Each Other</h1>
+			<div class= "page3Words__And__illustration">
+			<!-- The reuired text means text has to be typed into that field -->
+			<!-- We want a way for users of the site to easily be able to contact me-->
+			<!-- Placeholders will show in the actual input box when nothing has been typed-->
+				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe">
+					<label for="firstname">Your First name:</label>
+					<input class="inputBox" type="text" id="userFirst" name="userFirst" required><br><br>
+					<label for="lastname">Your Last name:</label>
+					<input class="inputBox" type="text" id="userLast" name="userLast" required><br><br>
+					<label for="email">Your Email Address:</label>
+					<input class="inputBox" type="email" id="userEmail" name="userEmail" placeholder="email@domain.com" required><br><br>
+					<label for="comments">Ask Me Anything:</label>
+					<textarea class="inputBox" type="text" name="message" rows="6" cols="50" placeholder="Type Something" id="textBoxArea"></textarea>
+					<input class="submit__btn" type="submit" value="Submit">
+					<div id ="my-form-status"></div>				
+				</form>
+				<!-- By using lazy loading of our ilustrations we speed up preformance of our site-->
+				<div class="page3__image__container">
+					<img width="951" height="428" loading = "lazy" src="images/team_goals_re_4a3t.svg" alt="An illustration explaining how we should unite together">
+				</div>
+			</div>
+		</div>
+
+		<!-- This text will be our conluding remarks and explanation of where to find other content-->
+		<div class="Page3TextBottom">
+			<h1> If you want to learn more about me, projects I have worked on, or more forms of communication visit my other pages</h1>
+			<div class="page3Words__And__illustration__bottom">
+				<div class="page3LearnMore__text">
+	<!-- The &nbsp; Forces an extra space to become present-->
+	<!-- I am being a little lazy here and just setting the colors for the bullet icons to the same colors I used in the navigation menu on desktop without doing anything to the css style sheet-->
+	<!-- I dimmed the red address card icon becaues it appeared to bright on the page-->
+					<p> <a href="AboutMe.html"><i class=" fas fa-address-card fa-fw" style="color: rgba(255, 0, 0, 0.739)"></i></a> &nbsp;&nbsp; The About page details my education, goals, and career paths I am looking towards. I also reveal why you should pick me for assistance. There you will also find my Résumé.</p>
+					<p> <a href="Projects.html"><i class=" fas fa-code fa-fw" style="color: rgb(0, 255, 0);"></i></a> &nbsp;&nbsp; More of my projects and the software contributions I have made are detailed under my Projects tab.</p>
+					<p> <a href="ContactMe.html"><i class=" fas fa-phone-alt fa-fw" style="color: rgb(94, 8, 151);"></i></a> &nbsp;&nbsp; Different ways of contacting me such as email and phone are exposed in my Contact page. The contact form earlier on this page can also be found through Contact tab.</p>
+				</div>
+				<div class="page3__image__container">
+					<img width="802" height="591" loading = "lazy" src="images/researching_22gp.svg" alt="An illustration explaining how we should unite together">
+				</div>
+			</div>
+		</div>
+		<h2 class= "page3__ClosingRemarks"> Thank you for visiting my site. Let's communicate together soon.</h2>
+	</div>
+
+
+	<!-- Now we are at the footer-->
+
+	<footer>
+	<div class="footer__container">
+		<p class= "footer__text"><i class="fas fa-copyright fa-fw" style="color: black;"></i>2021-2023 Thomas, H. All rights reserved</p>
+	</div>
+	</footer>
+
+	<!-- Script for single incomming notification
+	<script type="text/javascript">
+		// Will trigger the button press automatically after duration. Timeout will be canceled if user pushes button first. Timeout set in miliseconds
+		const myTimeout = setTimeout(notificationTimeout, 12000);	
+			$(document).ready(function(){
+				$('.notification__btn').click(function() {
+					clearTimeout(myTimeout) // Stops the timer so the actions do not happen twice
+					$('.notification__area').toggleClass('inactive')
+					$('.num-of-notifications').toggleClass('fadeIn')
+					$('.num-of-notifications-mobile').toggleClass('fadeIn')
+					$('.navbar__links__notifications').toggleClass('visible')
+					
+					$('.navbar__links__notifications').toggleClass('ring_animate')
+					$('.fa-bell').toggleClass('ring_red')	
+
+				})
+				
+			})
+			function notificationTimeout() {
+				$(document).ready(function(){
+					$('.notification__area').toggleClass('inactive')
+					$('.num-of-notifications').toggleClass('fadeIn')
+					$('.num-of-notifications-mobile').toggleClass('fadeIn')
+					$('.navbar__links__notifications').toggleClass('visible')
+					
+					$('.navbar__links__notifications').toggleClass('ring_animate')
+					$('.fa-bell').toggleClass('ring_red')		
+				})
+			}
+
+
+		</script>
+	-->
+
+
+
+	<!--Scripts for page 2-->
+	<!-- We want to display more info about a project when the user clicks the Learn More button -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.Project__button__1').click(function() {
+					// Make the other projects extended descriptions disappear first
+				$('.extended__Description__Project2').removeClass('visible')
+				$('.extended__Description__Project3').removeClass('visible')
+				$('.CloseWindow__Section2').removeClass('visible')
+				$('.download_Section2').removeClass('visible')
+				$('.CloseWindow__Section3').removeClass('visible')
+				$('.download_Section3').removeClass('visible')
+
+				$('.extended__Description__Project1').toggleClass('visible')
+				$('.CloseWindow__Section1').toggleClass('visible')
+				$('.download_Section1').toggleClass('visible')
+				$('.notificationPageContainer').removeClass('visible')
+			})
+		})
+
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.Project__button__2').click(function() {
+				// Make the other projects extended descriptions disappear first
+			$('.extended__Description__Project1').removeClass('visible')
+			$('.extended__Description__Project3').removeClass('visible')
+			$('.CloseWindow__Section1').removeClass('visible')
+			$('.download_Section1').removeClass('visible')
+			$('.CloseWindow__Section3').removeClass('visible')
+			$('.download_Section3').removeClass('visible')
+
+			$('.extended__Description__Project2').toggleClass('visible')
+			$('.CloseWindow__Section2').toggleClass('visible')
+			$('.download_Section2').toggleClass('visible')
+			$('.notificationPageContainer').removeClass('visible')
+			})
+		})
+
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.Project__button__3').click(function() {
+					// Make the other projects extended descriptions disappear
+				$('.extended__Description__Project1').removeClass('visible')
+				$('.extended__Description__Project2').removeClass('visible')
+				$('.CloseWindow__Section1').removeClass('visible')
+				$('.download_Section1').removeClass('visible')
+				$('.CloseWindow__Section2').removeClass('visible')
+				$('.download_Section2').removeClass('visible')
+				
+				$('.extended__Description__Project3').toggleClass('visible')
+				$('.CloseWindow__Section3').toggleClass('visible')
+				$('.download_Section3').toggleClass('visible')
+				$('.notificationPageContainer').removeClass('visible')
+			})
+		})
+	</script>
+
+	<!-- We need scripts to manage our image banners-->
+	<!-- script for project 1-->
+	<script src="javascript/imgBannerControllerProject1.js"></script>
+
+	<!-- script for project 2-->
+	<script src="javascript/imgBannerController.js"></script>
+
+	<!-- script for project 3-->
+	<script src="javascript/imgBannerControllerProject3.js"></script>
+
+	<!-- We want intersection observers to monitor the pages so we know when the user is looking at the projects. 
+					Afterwords we will play those projects-->
+	<script src="javascript/observer.js"></script>
+	<script src="javascript/observerPage2.js"></script>
+	<script src="javascript/observerProjects.js"></script>
+
+	<!-- Scripts for page3--> 
+	<!-- Our custom javascript for handeling the contact form-->
+
+	<script src="javascript/formSubmission.js"> </script>
+
+	<!-- Scripts for SignUp and LogIn for Mobile and Desktop -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar-logIn').click(function() {
+			$('.authenticationChoice-Page').toggleClass('visible')
+			$('.logIn-Container').removeClass('hide')
+			$('.forgotPasswordContainer').removeClass('show')
+			$('.forgotPasswordContainer').addClass('minimize')
+			$('.navbar__menu-mobile').removeClass('active')
+			$('.logIn-Page').removeClass('visible')
+			$('.signUp-Page').removeClass('visible')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar-logIn-desktop').click(function() {
+			$('.authenticationChoice-Page').toggleClass('visible')
+			$('.logIn-Container').removeClass('hide')
+			$('.forgotPasswordContainer').removeClass('show')
+			$('.forgotPasswordContainer').addClass('minimize')
+			$('.logIn-Page').removeClass('visible')
+			$('.signUp-Page').removeClass('visible')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar-signUp').click(function() {
+			$('.signUp-Page').toggleClass('visible')
+			$('.navbar__menu-mobile').removeClass('active')
+			$('.authenticationChoice-Page').removeClass('visible')
+			$('.logIn-Page').removeClass('visible')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar-signUp-desktop').click(function() {
+			$('.signUp-Page').toggleClass('visible')
+			$('.authenticationChoice-Page').removeClass('visible')
+			$('.logIn-Page').removeClass('visible')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#custom-logIn').click(function() {
+			$('.logIn-Page').addClass('visible')
+			$('.authenticationChoice-Page').removeClass('visible')
+			
+		})
+	})
+
+</script>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#authenticationChoiceCloseBtn').click(function() {
+			$('.authenticationChoice-Page').removeClass('visible')
+			
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#logInCloseBtn').click(function() {
+			$('.logIn-Page').removeClass('visible')
+			$('.logIn-Container').removeClass('hide')
+			$('.forgotPasswordContainer').removeClass('show')
+			$('.forgotPasswordContainer').removeClass('minimize')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#logInCloseBtn2').click(function() {
+			$('.logIn-Page').removeClass('visible')
+			$('.logIn-Container').removeClass('hide')
+			$('.forgotPasswordContainer').removeClass('show')
+			$('.forgotPasswordContainer').removeClass('minimize')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#logInForgotPasswordBtn').click(function() {
+			$('.logIn-Container').addClass('hide')
+			$('.forgotPasswordContainer').addClass('show')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#goBackTologInPage').click(function() {
+			$('.logIn-Container').removeClass('hide')
+			$('.forgotPasswordContainer').removeClass('show')
+			$('.forgotPasswordContainer').addClass('minimize')
+			
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#signUpCloseBtn').click(function() {
+			$('.signUp-Page').removeClass('visible')
+			
+			
+		})
+	})
+
+</script>
+
+  </body>
+</html>
