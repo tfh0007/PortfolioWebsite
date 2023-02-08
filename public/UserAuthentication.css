@@ -146,6 +146,39 @@ transition: background 150ms, transform 300ms 150ms;
     color: #3633C9;
 }
 
+.notificationTypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.notificatonTypeGeneralBtn {
+    border: solid rgb(24, 102, 192) 5px;
+    background: rgb(24, 102, 192);
+    color: white;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.notificatonTypeGeneralBtn.focus,
+.notificationTypeUserBtn.focus {
+    border: solid rgb(49, 192, 24) 5px;
+    background: rgb(49, 192, 24);
+    color: white;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    
+}
+
+.notificationTypeUserBtn {
+    border: solid rgb(125, 24, 192) 5px;
+    background: rgb(125, 24, 192);
+    color: white;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 #logIn-email,
 #logIn-password,
 #resetPassword-email,

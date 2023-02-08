@@ -77,7 +77,7 @@
 						<!-- Create a menu item Notifications -->
 						<li class="mobile__notification__bell">
 							<!-- Span specifies the number of notifications-->
-							<a class="navbar__links__notifications"  id="navbar__mobile__notifications"><i class="fas fa-bell"></i>&nbsp; Notifications &nbsp;<span class = "num-of-notifications-mobile" id="setNumOfNotifications-mobile">5</span></a>
+							<a class="navbar__links__notifications"  id="navbar__mobile__notifications"><i class="fas fa-bell"></i>&nbsp; Notifications &nbsp;<span class = "num-of-notifications-mobile" id="setNumOfNotifications-mobile">?</span></a>
 						</li> 
 						<!-- Create a menu item Home. The icon phrase means an icon will be before or after the text-->
 						<li class="navbar__item-center icon">
@@ -137,7 +137,7 @@
 								<!-- Create a menu item Notification Icon -->
 								<li class="navbar__item-right icon">
 									<!-- Span specifies the number of notifications-->
-									<a class="navbar__links__notifications"  id="navbar__desktop__notifications"><i class="fas fa-bell"></i><span class = "num-of-notifications" id="setNumOfNotifications">5</span></a></li>  
+									<a class="navbar__links__notifications"  id="navbar__desktop__notifications"><i class="fas fa-bell"></i><span class = "num-of-notifications" id="setNumOfNotifications">?</span></a></li>  
 								
 								<!-- Create a menu item Handshake Icon -->
 								 <!-- To have an icon clickable simply place the icon within the <a> tag-->
@@ -163,9 +163,17 @@
 		<div class="notificationPageContainer">
 	
 			<div class = "notificationPageHeading">
-				<h1>Notifications Menu</h1>
+				<div>
+					<h1>Notifications Menu</h1>
+				</div>
+				<div class = "notificationTypes">
+					<button class= "notificatonTypeGeneralBtn"id="notificatonTypeGeneralBtn"> General </button>
+					<button class= "notificationTypeUserBtn" id="notificationTypeUserBtn"> User Specific </button>
+
+				</div>
+				
 			</div>
-			<div class= "notificationPageText">
+			<div class= "notificationPageText" id="notificationPageText">
 				<div class="noneNotifications__heading__msg">
 					<p id="addMeNoneNotificationBody">No notifications have been loaded or are not visible</p>
 				</div>
@@ -663,52 +671,6 @@
 
 	</script>
 
-	<script type="text/javascript">
-		var deleteNotification1Heading = document.getElementById("deleteMeNotification1Heading")
-		var deleteNotification1Body = document.getElementById("deleteMeNotification1Body")
-
-		var deleteNotification2Heading = document.getElementById("deleteMeNotification2Heading")
-		var deleteNotification2Body = document.getElementById("deleteMeNotification2Body")
-
-		var deleteNotification3Heading = document.getElementById("deleteMeNotification3Heading")
-		var deleteNotification3Body = document.getElementById("deleteMeNotification3Body")
-
-		var deleteNotification4Heading = document.getElementById("deleteMeNotification4Heading")
-		var deleteNotification4Body = document.getElementById("deleteMeNotification4Body")
-
-		var deleteNotification5Heading = document.getElementById("deleteMeNotification5Heading")
-		var deleteNotification5Body = document.getElementById("deleteMeNotification5Body")
-		
-		var NoneNotificationHeading = document.getElementById("addMeNoneNotificationHeading")
-		var NoneNotificationBody = document.getElementById("addMeNoneNotificationBody")
-		
-		var setNumOfNotifications = document.getElementById("setNumOfNotifications")
-		var setNumOfNotificationsMobile = document.getElementById("setNumOfNotifications-mobile")
-		
-		$(document).ready(function(){
-			$('.notification__mark__all__read__btn').click(function() {
-				$('.notification__mark__all__read__btn').toggleClass('invisible')
-			
-				deleteNotification1Heading.innerText = ""
-				deleteNotification1Body.innerText = ""
-				deleteNotification2Heading.innerText = ""
-				deleteNotification2Body.innerText = ""
-				deleteNotification3Heading.innerText = ""
-				deleteNotification3Body.innerText = ""
-				deleteNotification4Heading.innerText = ""
-				deleteNotification4Body.innerText = ""
-				deleteNotification5Heading.innerText = ""
-				deleteNotification5Body.innerText = ""
-				NoneNotificationBody.innerText = "All notifications read. No new notifications to display"
-				setNumOfNotifications.innerText = "0"
-				setNumOfNotificationsMobile.innerText = "0"
-
-				
-			})
-	})
-
-	</script>
-
 <!-- Script to make the navbar hide when user scrolls on a small display-->
 <script>
 	/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
@@ -972,6 +934,16 @@
 			$('.navbar-Profile__container').toggleClass('active')
 			
 
+		})
+	})
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#signOutBtn').click(function() {
+			$('.navbar-Profile__container').removeClass('active')
+			
 		})
 	})
 

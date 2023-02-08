@@ -281,7 +281,7 @@ destroying the notification when the drop down menu opens */
   .num-of-notifications.fadeIn,
   .num-of-notifications-mobile.fadeIn{
     opacity: 1;
-    transition: opacity 500ms 0s ease-in-out;
+    transition: opacity 1000ms 0s ease-in-out;
   }
 /* This controls the Notifications bell and text icon for the mobile menu object */
   .mobile__notification__bell {
@@ -407,12 +407,8 @@ destroying the notification when the drop down menu opens */
     display:none
 }
 
-/* This class will contain our notification message bodys*/
-.notification1__heading__msg, 
-.notification2__heading__msg,
-.notification3__heading__msg,
-.notification4__heading__msg,
-.notification5__heading__msg,
+/* This class will contain notification message headings */
+.notification__heading__msg, 
 .noneNotifications__heading__msg {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.575);
