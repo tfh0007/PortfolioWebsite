@@ -249,6 +249,9 @@ destroying the notification when the drop down menu opens */
     */
     
 }
+.navbar__links {
+    cursor: pointer;
+}
 
 /* This class will contain our number of notifications as a badge */
 .num-of-notifications {
@@ -338,11 +341,7 @@ destroying the notification when the drop down menu opens */
 
     display: flex;
     flex-direction: column;
-
-    padding-left: 2ch;
-    padding-right: 2ch;
     padding-bottom: 2ch;
-    padding-top: 2ch;
     /* We want the items to stay in the center of the container */
     
 
@@ -359,7 +358,7 @@ destroying the notification when the drop down menu opens */
     z-index: 5000;
     opacity: 0.85;
     overflow-y: scroll;
-    border: solid black 15px;
+    border: solid black 10px;
     border-radius: 30px;
 
     transform: translateY(-150%);
@@ -370,57 +369,14 @@ destroying the notification when the drop down menu opens */
     
 }
 
-
-  .notification__closeWindowBtn__container {
-    display: flex;
-    justify-content: right;
-}
-/* This class will contain the notification window close button */
-.notification__closeWindowBtn
-  {
-  background: transparent;
-  color: rgb(255, 255, 255);
-  border: none;
-  font-size: 2.7rem;
-  cursor: pointer;
-
   
-  }
 
-  .notification__heading__and__close__btn__container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    
-    
-  }
-
-  /* This class will contain the heading info and Mark all as seen button in the notifications window */
-.notificationPageHeading {
-    position: absolute;
-    left: 18%;
-    display: flex;
-    flex-direction: column;
-    
-    
-
-}
 .notificationPageHeading h1 {
     display: flex;
     justify-content: center;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     color: white;
     
-}
-
-/* This class will contain the Mark all as seen button container in the notifications window */
-.notificationPageHeading .notifications__close__button {
-
-    display: flex;
-    justify-content: left;
-    border: none;
-    
-    margin-bottom: -10px;
 }
 
 
@@ -445,12 +401,6 @@ destroying the notification when the drop down menu opens */
     
     color: white;
     cursor: pointer;
-}
-
-
-/* Controls the position of the main text in the notification window */
-.notificationPageText {
-    margin-top: 90px;
 }
 
 .notification__mark__all__read__btn.invisible {
@@ -518,7 +468,8 @@ header {
 }
 
 /*This navbar represents the container for our navbar */
-.navbar {
+.navbar,
+.navbar-Profile {
     display: flex;   
 
     /* The border for the navbar will extend to show everything contained within even when we use a transition to push content off screen
@@ -554,6 +505,7 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
     
     /* Applying this property gives some space between the left of the screen and my logo */
     padding-left: 1.5ch;
+    padding-right: 1.5ch;
     font-size: 1.2rem;
     background-color: #02C294; 
 
@@ -649,23 +601,26 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
      
     
 }
-
-
-
-
-/* This will be a line below our navbar__menu-middle*/
-.navbar__menu-mobile::after {
-    content: "";
-    outline: dashed gray;
-    width: 90%;  
-
-}
 /* This box contains the links that should be centered on the right of the screen */
 .navbar__item-center {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
+
+    /*Borders for testing can be removed now
+    border: solid 1ch;
+    border-color: lightgreen;
+    */
+
+
+}
+
+.navbar__item-center2 {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
 
     /*Borders for testing can be removed now
     border: solid 1ch;
@@ -727,6 +682,87 @@ For Mobile this will be hidden */
 
 }
 
+
+/* Navbar for the user profile */
+.navbar-Profile__container {
+    /* Applying this property wil place the logo and menu right next to each other */
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+    margin-left: 25px;
+    z-index: 5000;
+    padding: 1ch;
+    
+    flex-direction: row-reverse;
+    /* Applying this property will space the logo and menu as far apart as possible */
+    
+    font-size: 1.2rem;
+    transform: translateY(-1170px);
+    transition: transform 400ms ease-in-out, background 650ms ease-in-out, max-height 0ms ease-in-out 600ms;
+
+}
+/* Check if backdrop is supported and if it is make the background transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur2em)) {
+    .navbar-Profile__container {
+      background-color: rgba(0, 0, 0, 0.068);
+      -webkit-backdrop-filter: blur(2em);
+      backdrop-filter: blur(2em);
+    }
+  }
+/* Lets create a state for calling .navbar-Profile__container once the menu button is pressed */
+.navbar-Profile__container.active {
+    max-height: 1000px;
+
+    transform: translateY(8px);
+ /*Lets blur and dim the content behind our menu when it is active */
+ background: transparent;
+ border-radius: 20px;
+    
+ /* We need to use a fail safe here incase our current browser does not support backdrop effect */
+ background-color: rgba(0, 0, 0, 0.726);
+   
+     
+    
+}
+
+#userAndMyLogo {
+    color: white;
+    text-align: center;
+}
+
+#userAndMyLogo p{
+    padding-top: 6px;
+}
+
+.userDisplayName {
+    text-align: center;
+}
+.UserProfileImage {
+    /* center the image */
+    display: block;
+    margin: 0 auto;
+}
+.navbar-Profile__extendedDescription {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+.navbar__Profile-Desktop_div {
+
+    margin: auto;
+	align-items: center;
+}
+.navbar__Profile-Desktop li {
+
+    text-align: left;
+    
+}
+
 /* The menu links are very difficult to see on mobile so we will make them white */
 .fas {
     color: white;
@@ -781,12 +817,6 @@ For Mobile this will be hidden */
     /* Applying this property wil place the logo and menu right next to each other */
     display: flex;
     /* Applying this property will space the logo and menu as far apart as possible */
-
-    
-    /* Applying this property gives some space between the left of the screen and my logo */
-    padding-left: 4ch;
-    padding-right: 4ch;
-    
     font-size: 0.8rem; 
     /* Applying this property puts our logo in the center of the Y main axis  */
     align-items: center; 
@@ -861,26 +891,6 @@ For Desktop this will be visible */
     display: flex;
     
     padding-left: 0px;
-}
-
-/* NOW WE NEED TO GET RID OF THE DASHED LINES THAT WERE DIVIDERS 
-IN THE MOBILE VERSION */
-
-/* This will be a line above our navbar-menu-right*/
-.navbar__menu-right-mobile::before {
-    outline: 0px;
-    outline: none; 
-    display: none;
-
-}
-
-/* This will be a line below our navbar__menu-middle that we put in the Mobile version of the site.
-NOTE: MAKING THE OUTLINE NONE DOES NOT GET RID OF IT. TOOK MY ABOUT 2 HOURS TO FIND THIS MISTAKE... A FAIR WARNING*/
-.navbar__menu-mobile::after {
-    outline: 0px;
-    outline: none;
-    display: none;
-
 }
 
 /* Now our icons are to small so we need to make them bigger. 
@@ -1672,20 +1682,6 @@ transition: transform 350ms ease-in-out;
 
     /* Let's make the top menu bar not fixed for smaller screens in terms of width */
 
-    #navbarThing {
-        
-        position: fixed; /* Make it stick/fixed */
-        top: 0; /* Stay on top */
-        width: 98%; /* Full width */
-        transition: top 0.6s; /* Transition effect when sliding down (and up) */
-        
-    }
-
-    /* At this screen size the menu covers the navagation bar so let's fix that */
-    .navbar__menu-mobile {
-        margin-top: 85px;
-    }
-
 }
 /* The margin needs to be different when the display gets larger */
 @media screen and (min-width: 829px) {
@@ -2362,6 +2358,7 @@ footer {
 #navbar__mobile__link5::before,
 #navbar__mobile__link6::before,
 #navbar__mobile__link7::before,
+#navbar__mobile__link8::before,
 
 #navbar__desktop__link1::before,
 #navbar__desktop__link2::before,
@@ -2369,7 +2366,8 @@ footer {
 #navbar__desktop__link4::before,
 #navbar__desktop__link5::before,
 #navbar__desktop__link6::before,
-#navbar__desktop__link7::before
+#navbar__desktop__link7::before,
+#navbar__desktop__link8::before
  
 {
     content: '';
@@ -2411,6 +2409,7 @@ footer {
 #navbar__desktop__link5:hover::before,
 #navbar__desktop__link6:hover::before,
 #navbar__desktop__link7:hover::before,
+#navbar__desktop__link8:hover::before,
 
 #navbar__desktop__link1:focus::before,
 #navbar__desktop__link2:focus::before,
@@ -2418,7 +2417,8 @@ footer {
 #navbar__desktop__link4:focus::before,
 #navbar__desktop__link5:focus::before,
 #navbar__desktop__link6:focus::before,
-#navbar__desktop__link7:focus::before
+#navbar__desktop__link7:focus::before,
+#navbar__desktop__link8:focus::before
 {
     transform: scaleX(1);
 
@@ -2438,21 +2438,13 @@ footer {
 
 /* Next lets create animation for the close notification button */
 
-.notification__btn,
-.notification__closeWindowBtn
+.notification__btn
  
 {
     transition: color 300ms ease-out;
 }
 .notification__btn:hover,
 .notification__btn:focus,
-
-.notification__closeWindowBtn:hover,
-.notification__closeWindowBtn:focus
-{
-
-    color: rgb(214, 27, 27);
-}
 
 
 /*Next lets create the hover animation for our learn more project description buttons */

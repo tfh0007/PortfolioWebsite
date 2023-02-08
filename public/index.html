@@ -66,18 +66,14 @@
 		<nav class="navbar">
 			<div class="navbar__container" id="navbarThing">
 				<!-- My logo will not be a clickable icon -->
-				<a class="navbar__links" title="Sign Out" id="signOutBtn"><i class="fas fa-sign-out-alt"></i></a>
-					<h1 id="userAndMyLogo">Thomas F Hansknecht</h1>
-					<!-- Create a menu item Notification Icon -->
-					
-					
-					<h2> <button class="menuButton">Menu &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
+				<img src="images/profile.png" class="navbar__links" id="navbar__desktop__Profile" title="User Profile"></a>
+					<h1>Thomas F Hansknecht</h1>
+					<!-- Create a menu item Icon -->
+					<h2> <button class="menuButton" title="Menu"> &nbsp;<i class="fa-fw fa fa-bars"></i></button></h2>
 				</div>
 	<!-- Lets make the mobile menu first-->			
 				<div>
-	
 					<ul class="navbar__menu-mobile">
-						
 						<!-- Create a menu item Notifications -->
 						<li class="mobile__notification__bell">
 							<!-- Span specifies the number of notifications-->
@@ -112,8 +108,7 @@
 							<a href="https://github.com/tfh0007" class="navbar__links"id="navbar__mobile__link7"><i class=" fab fa-github fa-fw"></i>&nbsp; GitHub Profile &nbsp;</a></li>  		
 					</ul>
 				</div>
-	
-	
+
 		<!-- Lets make the Desktop menu second-->
 				<div class="navbar__menu-middle-container">
 					<ul class="navbar__menu-middle-desktop">
@@ -163,36 +158,18 @@
 		</nav>
 		
 	
-		
-	
 	<!-- Lets make a notification page to display all notifications -->
 	
 		<div class="notificationPageContainer">
 	
 			<div class = "notificationPageHeading">
-				<div class="notification__heading__and__close__btn__container">
-					<div class="notification__closeWindowBtn__container"> 
-						<button class="notification__closeWindowBtn" aria-label="Button to close the Notifications Menu"><i class="far fa-times-circle"></i></button>
-	
-					</div>
-						<div class="notification__menu__heading__text">
-						
-							<h1>Notifications Menu</h1>
-						</div>
-				</div>
-				
+				<h1>Notifications Menu</h1>
 			</div>
-		
 			<div class= "notificationPageText">
-	
-				
-	
 				<div class="noneNotifications__heading__msg">
-					<h2 id="addMeNoneNotificationHeading"> Nothing Here </h2>
-					<p id="addMeNoneNotificationBody">No notifications have been loaded nor are visible</p>
+					<p id="addMeNoneNotificationBody">No notifications have been loaded or are not visible</p>
 				</div>
 			</div>	
-	
 		</div>
 		<!-- Right now this only affects one page at a time so stop it for now 
 		<div class="notifications__close__button">
@@ -224,162 +201,58 @@
 	
 	
 	
-	<script
-	src="https://code.jquery.com/jquery-3.6.0.js"></script>
-		
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('#navbar__desktop__notifications').click(function() {
-				  $('.notificationPageContainer').toggleClass('visible')
-				  // We want to make sure the mobile menu is gone in case we switch to mobile version while Notifications Menu is active
-				  $('.navbar__menu-mobile').removeClass('active')
-				  // Makes the process one way, we can change into the class visible but cannot change back
-				  //$('.notificationPageContainer').addClass('visible')
-	
-				})
-			})
-	
-		</script>
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#navbar__mobile__notifications').click(function() {
-			  $('.notificationPageContainer').toggleClass('visible')
-			  // By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
-			  $('.navbar__menu-mobile').removeClass('active')
-	
-	
-			})
-		})
-	
-	</script>
-	
-	<!--Scripts for Navigation -->
-		<!-- We want to toggle states for our mobile menu -->
-			
-			
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('.menuButton').click(function() {
-					$('.navbar').toggleClass('active')
-					$('.navbar__menu-mobile').toggleClass('active')
-					$('.notification__area').toggleClass('moveDown')
-					$('.notificationPageContainer').removeClass('visible')
-	
-				})
-			})
-	
-		</script>
-	
-		<script type="text/javascript">
-			var deleteNotification1Heading = document.getElementById("deleteMeNotification1Heading")
-			var deleteNotification1Body = document.getElementById("deleteMeNotification1Body")
-	
-			var deleteNotification2Heading = document.getElementById("deleteMeNotification2Heading")
-			var deleteNotification2Body = document.getElementById("deleteMeNotification2Body")
-	
-			var deleteNotification3Heading = document.getElementById("deleteMeNotification3Heading")
-			var deleteNotification3Body = document.getElementById("deleteMeNotification3Body")
-	
-			var deleteNotification4Heading = document.getElementById("deleteMeNotification4Heading")
-			var deleteNotification4Body = document.getElementById("deleteMeNotification4Body")
-	
-			var deleteNotification5Heading = document.getElementById("deleteMeNotification5Heading")
-			var deleteNotification5Body = document.getElementById("deleteMeNotification5Body")
-			
-			var NoneNotificationHeading = document.getElementById("addMeNoneNotificationHeading")
-			var NoneNotificationBody = document.getElementById("addMeNoneNotificationBody")
-			
-			var setNumOfNotifications = document.getElementById("setNumOfNotifications")
-			var setNumOfNotificationsMobile = document.getElementById("setNumOfNotifications-mobile")
-			
-			$(document).ready(function(){
-				$('.notification__mark__all__read__btn').click(function() {
-					$('.notification__mark__all__read__btn').toggleClass('invisible')
-				
-					deleteNotification1Heading.innerText = ""
-					deleteNotification1Body.innerText = ""
-					deleteNotification2Heading.innerText = ""
-					deleteNotification2Body.innerText = ""
-					deleteNotification3Heading.innerText = ""
-					deleteNotification3Body.innerText = ""
-					deleteNotification4Heading.innerText = ""
-					deleteNotification4Body.innerText = ""
-					deleteNotification5Heading.innerText = ""
-					deleteNotification5Body.innerText = ""
-					NoneNotificationBody.innerText = "All notifications read. No new notifications to display"
-					setNumOfNotifications.innerText = "0"
-					setNumOfNotificationsMobile.innerText = "0"
-	
-					
-				})
-		})
-	
-		</script>
-	
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('.notification__closeWindowBtn').click(function() {
-					
-						
-	
-	
-				  $('.notificationPageContainer').toggleClass('visible')
-	
-	
-				})
-			})
-	
-		</script>
-	
-	
-	<!-- Script to make the navbar hide when user scrolls on a small display-->
-	<script>
-		/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-		let lastScrollY = window.scrollY
-		window.addEventListener("scroll", () => {
-			/* By using the -15 we are making it so the user has to scroll upwards fast before the menu will come back.
-			By setting the or last scrollY < 800 we are saying that the menu will always appear until we are atleast 
-			800 pixels down on the webpage */
-			if ((lastScrollY - 15 > window.scrollY) || (lastScrollY < 800)) {
-				document.getElementById("navbarThing").style.top = "0";
-			}
-			else {
-				if ((lastScrollY > 800) && (lastScrollY < window.scrollY)){
-				document.getElementById("navbarThing").style.top = "-120px";
-				}
-			}
-			/* Update the current lasScrollY value since it needs to change perodically */
-			lastScrollY = window.scrollY;
-		})
-	
-	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 	</header>
 
-	<div>
-		<h1>...</h1>
-		<button id="navbar-logIn"> Log In</button>
-		<button id="navbar-signUp"> SignUp</button>
-		<button id="navbar-logIn-desktop"> Desktop Login</button>
-		<button id="navbar-signUp-desktop"> Desktop SignUp</button>
-	</div>
+	<nav class="navbar-Profile">
+		<div class="navbar-Profile__container">
+			<div class="navbar-Profile__extendedDescription">
+				<img class="UserProfileImage" width="150px" src="images/anonymous-user-icon.jpg" alt="User Profile Image">
+				<h1 id="userAndMyLogo"></h1>
+			</div>
+			
+			<div class="navbar__Profile-Desktop_div">
+				<ul class="navbar__Profile-Desktop">
+					<!-- Create a menu item Edit Profile. The icon phrase means an icon will be before or after the text-->
+					<li class="navbar__item-center2 icon">
+						<a class="navbar__links" id="editProfileBtn"> <i class="fa-solid fa-user-pen"></i> &nbsp; Edit Profile &nbsp;</a>
+					</li>
+					<!-- Create a menu item Settings -->
+					<li class="navbar__item-center2 icon">
+						<a class="navbar__links" id="settingsBtn"> <i class="fa-solid fa-gear"></i> &nbsp; Settings &nbsp;</a>
+					</li>
+					<!-- Create a menu item Help & Privacy -->
+					<li class="navbar__item-center2 icon">
+						<a class="navbar__links" id="helpAndPrivacyBtn"> <i class="fa-solid fa-circle-question"></i> &nbsp; Help & Privacy &nbsp;</a>
+					</li>
+					<!-- Create a menu item Sign Out -->
+					<li class="navbar__item-center2 icon">
+						<a class="navbar__links" id="signOutBtn"> <i class="fa-solid fa-right-from-bracket"></i> &nbsp; Sign Out &nbsp;</a>
+					</li>
+					<li class="navbar__item-center2 icon">
+						<a class="navbar__links" id="navbar-logIn"> <i class="fa-solid fa-right-to-bracket"></i> &nbsp; Log In &nbsp;</a>
+					</li>
+					<li class="navbar__item-center2 icon">
+						<a class="navbar__links" id="navbar-signUp"> <i class="fa-solid fa-user-plus"></i> &nbsp; SignUp &nbsp;</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<!-- Begin server file -->
   	<!-- The container for User Creation Errors -->
-	  <div id="CreateUserError">
-		<h2 id="CreateUserErrorOccuredTitle"></h2>
-		<h3 id="CreateUserErrorCode"></h3>
-		<h3 id="CreateUserErrorMessage"></h3>
-	</div>
+	  <div id="CreateUserError"></div>
   	
 	<section id="whenSignedOut">
 		<div class= "authenticationChoice-Page">
 			<div class="authenticationChoiceContainer">
 				<button id="authenticationChoiceCloseBtn"><i class="far fa-times-circle"></i></button>
 				<h1> Select Identification Method</h1>
-				<button class ="btn btn-primary" id="signInGoogleBtn"><i class="fa-brands fa-google"></i> &nbsp; Sign in with Google </button>
-				<button class ="btn btn-primary" id="signInMetaBtn"><i class="fa-brands fa-meta"></i> &nbsp; Sign in with Meta </button>
-				<button class ="btn btn-primary" id = "custom-logIn"><i class="fas fa-sign-in-alt"></i>&nbsp; Sign in with Custom Account </button>
+				<button class ="btn btn-primary" id="signInGoogleBtn"> &nbsp; Sign in with Google </button>
+				<button class ="btn btn-primary" id="signInMetaBtn"> &nbsp; Sign in with Meta </button>
+				<button class ="btn btn-primary" id = "custom-logIn">&nbsp; Sign in with Custom Account </button>
 			</div>
 		</div>
 		<div class="logIn-Page">
@@ -394,11 +267,9 @@
 								<label for="logIn-password">Log In Password</label>
 								<input type="password" id="logIn-password" placeholder="********" required>
 							</div>
-							<button id="logInBtn">Sign In</button>
+							<button id="logInBtn" class="btn btn-success">Sign In</button>
+							<button id="logInForgotPasswordBtn" class="btn btn-success"> Forgot Password</button>
 						</form>
-						<div class="containerOflogInForgotPasswordBtn">
-							<button id="logInForgotPasswordBtn">Forgot Password</button>
-						</div>
 					</div>
 				</div>
 				<div class="forgotPasswordContainer">
@@ -411,10 +282,8 @@
 								<input type="email" id="resetPassword-email" placeholder="email@domain.com" required>
 							</div>
 						<button id="triggerResetLinkBtn" class="btn btn-success">Email Reset Link</button>
+						<button id="goBackTologInPage" class="btn btn-success">Go Back</button>
 						</form>
-						<div class="containerOfgoBackTologInPage">
-							<button id="goBackTologInPage" class="btn btn-success">Go Back</button>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -449,7 +318,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="whenSignedIn">
+	<section id="whenSignedIn" hidden="true">
 		<div id="userDetails">
 			<div class="UserThings">
 				<h2>My Items</h2>
@@ -457,20 +326,19 @@
 				</ul>
 				<button id="createThing" class="btn btn-success">Create Random Store Item</button>
 				<button id="deleteThings">Delete all of my Items</button>
-				
 			</div>
 		</div>
 	</section>
 
-	<!-- NOW WE ARE AT PAGE 1-->
+		<!-- NOW WE ARE AT PAGE 1-->
 	<div class= "page1container">
 		<div class = "page1Text">
-		<h1 class= "page1heading">Hi there, I am Thomas Hansknecht</h1>
-		<p class= "page1sentance1">Are you looking for a Computer Scientist?</p>
-		<p class= "page1sentance2">How about a Web Designer?</p>
-		<p class= "page1sentance3">Maybe, a Software Developer?</p>
-		<p class= "page1sentance4"><strong>I am the person you are looking for</strong></p>
-	</div>
+			<h1 class= "page1heading">Hi there, I am Thomas Hansknecht</h1>
+			<p class= "page1sentance1">Are you looking for a Computer Scientist?</p>
+			<p class= "page1sentance2">How about a Web Designer?</p>
+			<p class= "page1sentance3">Maybe, a Software Developer?</p>
+			<p class= "page1sentance4"><strong>I am the person you are looking for</strong></p>
+		</div>
 		<div class ="pictureOfMe__container">
 			<img width="750px" height="950px" loading="lazy" src="images__about/Headshot_IMG_1991Crop.jpg" alt="me in a graduation outfit">
 		</div>
@@ -488,8 +356,8 @@
 			</h2>
 		</div>
 		<div class="extended__Description__Project1">
-				<h1><strong>More About Air Traffic Controller Application</strong></h1>
-				<!-- We want a rotating image banner here-->
+			<h1><strong>More About Air Traffic Controller Application</strong></h1>
+			<!-- We want a rotating image banner here-->
 			<div class = "main-banner2" id = "main-banner2">
 				<div class="imgbanbtn2 imgbanbtn2-prev" id="imgbanbtn2-prev"><i class="fas fa-chevron-circle-left"></i></div>
 				<div class="imgban2" id="imgban6">
@@ -501,50 +369,50 @@
 				<div class="imgbanbtn2 imgbanbtn2-next" id="imgbanbtn2-next"><i class="fas fa-chevron-circle-right"></i></div>
 			</div>
 				<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
-					we can get a bulleted list-->
-				<ul>
-					<li><p class = "extended__Description__text" id="extended__Description__text1">A fully interactive application that allows users to create and view their tickets</p></li>
-					<li><p>The application stores and retrieves customers, tickets, and airports from different databases</p></li>
-					<li><p>The databases were made simple and used consistent formatting</p></li>
-					<li><p>Part of a Software Modeling and Design Semester Long Project</p></li>
-					<li><p>Created as a shared GitHub Project</p></li>
-					<li><p>Designed based on UML diagrams and GRASP design patterns created by a team</p></li>
-				</ul>
-				<h2><strong>What was Learned</strong></h2>
-				<ul>
-					<li><p>Learned about creating menu objects and allowing interaction with them</p></li>
-					<li><p>Used custom Scanner classes to manage the transfer of data between the program and the databases</p></li>
-					<li><p>Created multiple threads to allow for asynchronous operations as well as unique visuals</p></li>
-					<li><p>Managed the development process and instructed team members on solutions</p></li>
-					<li><p>Handled and resolved merge conflicts between various git branches that were created</p></li>
-					<li><p>Used extensive debugging and error checking to find and test for issues with the logic</p></li>
-					<li><p>Used Exception Handling to prevent a user's invalid entries from corrupting the program</p></li>
-					<li><p>Implemented action listeners so the user can interact with objects</p></li>
-					<li><p>Made the experience unique to every user by gathering data on every customer</p></li>
-					<li><p>Used parsers for assigning format to date objects</p></li>
-				</ul>
+				we can get a bulleted list-->
+			<ul>
+				<li><p class = "extended__Description__text" id="extended__Description__text1">A fully interactive application that allows users to create and view their tickets</p></li>
+				<li><p>The application stores and retrieves customers, tickets, and airports from different databases</p></li>
+				<li><p>The databases were made simple and used consistent formatting</p></li>
+				<li><p>Part of a Software Modeling and Design Semester Long Project</p></li>
+				<li><p>Created as a shared GitHub Project</p></li>
+				<li><p>Designed based on UML diagrams and GRASP design patterns created by a team</p></li>
+			</ul>
+			<h2><strong>What was Learned</strong></h2>
+			<ul>
+				<li><p>Learned about creating menu objects and allowing interaction with them</p></li>
+				<li><p>Used custom Scanner classes to manage the transfer of data between the program and the databases</p></li>
+				<li><p>Created multiple threads to allow for asynchronous operations as well as unique visuals</p></li>
+				<li><p>Managed the development process and instructed team members on solutions</p></li>
+				<li><p>Handled and resolved merge conflicts between various git branches that were created</p></li>
+				<li><p>Used extensive debugging and error checking to find and test for issues with the logic</p></li>
+				<li><p>Used Exception Handling to prevent a user's invalid entries from corrupting the program</p></li>
+				<li><p>Implemented action listeners so the user can interact with objects</p></li>
+				<li><p>Made the experience unique to every user by gathering data on every customer</p></li>
+				<li><p>Used parsers for assigning format to date objects</p></li>
+			</ul>
+		</div>
+		<div class="CloseWindow__Section2">
+			<button class="Project__button__2" id="closeWindowBtn__Project2"><i class="fas fa-window-close"></i></button>					
+		</div>
+		<div class= "download_Section2">
+			<h2> 
+				<a style="text-decoration: none" href="https://github.com/tfh0007/Mario-With-A-Gun/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
+			</h2>
+		</div>
+		<div class="extended__Description__Project2">
+			<h1><strong>More About Mario With A Gun</strong></h1>
+			<!-- We want a rotating image banner here-->
+			<div class = "main-banner" id = "main-banner">
+				<div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"><i class="fas fa-chevron-circle-left"></i></div>
+					<div class="imgban" id="imgban3">
+					</div>
+					<div class="imgban" id="imgban2">
+					</div>
+					<div class="imgban" id="imgban1">
+					</div>
+				<div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"><i class="fas fa-chevron-circle-right"></i></div>
 			</div>
-			<div class="CloseWindow__Section2">
-				<button class="Project__button__2" id="closeWindowBtn__Project2"><i class="fas fa-window-close"></i></button>					
-			</div>
-			<div class= "download_Section2">
-				<h2> 
-					<a style="text-decoration: none" href="https://github.com/tfh0007/Mario-With-A-Gun/archive/refs/heads/master.zip"><button class="DownloadButton">Download Source &nbsp;<i class="fa-fw fa fa-download"></i></button></a>
-				</h2>
-			</div>
-			<div class="extended__Description__Project2">
-				<h1><strong>More About Mario With A Gun</strong></h1>
-				<!-- We want a rotating image banner here-->
-				<div class = "main-banner" id = "main-banner">
-					<div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"><i class="fas fa-chevron-circle-left"></i></div>
-						<div class="imgban" id="imgban3">
-						</div>
-						<div class="imgban" id="imgban2">
-						</div>
-						<div class="imgban" id="imgban1">
-						</div>
-					<div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"><i class="fas fa-chevron-circle-right"></i></div>
-				</div>
 			<!-- the tag <ul> creates an unordered list while the tag <li> creates a list item using the two tags together
 				we can get a bulleted list-->
 			<ul>
@@ -683,9 +551,9 @@
 			<h1> If you want to learn more about me, projects I have worked on, or more forms of communication visit my other pages</h1>
 			<div class="page3Words__And__illustration__bottom">
 				<div class="page3LearnMore__text">
-	<!-- The &nbsp; Forces an extra space to become present-->
-	<!-- I am being a little lazy here and just setting the colors for the bullet icons to the same colors I used in the navigation menu on desktop without doing anything to the css style sheet-->
-	<!-- I dimmed the red address card icon becaues it appeared to bright on the page-->
+					<!-- The &nbsp; Forces an extra space to become present-->
+					<!-- I am being a little lazy here and just setting the colors for the bullet icons to the same colors I used in the navigation menu on desktop without doing anything to the css style sheet-->
+					<!-- I dimmed the red address card icon becaues it appeared to bright on the page-->
 					<p> <a href="AboutMe.html"><i class=" fas fa-address-card fa-fw" style="color: rgba(255, 0, 0, 0.739)"></i></a> &nbsp;&nbsp; The About page details my education, goals, and career paths I am looking towards. I also reveal why you should pick me for assistance. There you will also find my Résumé.</p>
 					<p> <a href="Projects.html"><i class=" fas fa-code fa-fw" style="color: rgb(0, 255, 0);"></i></a> &nbsp;&nbsp; More of my projects and the software contributions I have made are detailed under my Projects tab.</p>
 					<p> <a href="ContactMe.html"><i class=" fas fa-phone-alt fa-fw" style="color: rgb(94, 8, 151);"></i></a> &nbsp;&nbsp; Different ways of contacting me such as email and phone are exposed in my Contact page. The contact form earlier on this page can also be found through Contact tab.</p>
@@ -697,8 +565,6 @@
 		</div>
 		<h2 class= "page3__ClosingRemarks"> Thank you for visiting my site. Let's communicate together soon.</h2>
 	</div>
-
-
 	<!-- Now we are at the footer-->
 
 	<footer>
@@ -741,7 +607,129 @@
 		</script>
 	-->
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#navbar__desktop__notifications').click(function() {
+			  // We want to make sure the mobile menu is gone in case we switch to mobile version while Notifications Menu is active
+				  $('.navbar__menu-mobile').removeClass('active')
+				  $('.navbar-Profile__container').removeClass('active')
+				  $('.extended__Description__Project1').removeClass('visible')
+				  $('.extended__Description__Project2').removeClass('visible')
+				  $('.extended__Description__Project3').removeClass('visible')
+				  $('.CloseWindow__Section1').removeClass('visible')
+				  $('.CloseWindow__Section2').removeClass('visible')
+				  $('.CloseWindow__Section3').removeClass('visible')
+				  $('.download_Section1').removeClass('visible')
+				  $('.download_Section2').removeClass('visible')	
+				  $('.download_Section3').removeClass('visible')
+				  $('.notificationPageContainer').toggleClass('visible')
+			  // Makes the process one way, we can change into the class visible but cannot change back
+			  //$('.notificationPageContainer').addClass('visible')
 
+			})
+		})
+
+	</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar__mobile__notifications').click(function() {
+		  // By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
+		  $('.navbar__menu-mobile').removeClass('active')
+		  $('.navbar-Profile__container').removeClass('active')
+		  $('.notificationPageContainer').toggleClass('visible')
+
+
+		})
+	})
+
+</script>
+
+<!--Scripts for Navigation -->
+	<!-- We want to toggle states for our mobile menu -->
+		
+		
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menuButton').click(function() {
+				$('.notificationPageContainer').removeClass('visible')
+				$('.navbar-Profile__container').removeClass('active')
+				$('.navbar').toggleClass('active')
+				$('.navbar__menu-mobile').toggleClass('active')
+				$('.notification__area').toggleClass('moveDown')
+
+			})
+		})
+
+	</script>
+
+	<script type="text/javascript">
+		var deleteNotification1Heading = document.getElementById("deleteMeNotification1Heading")
+		var deleteNotification1Body = document.getElementById("deleteMeNotification1Body")
+
+		var deleteNotification2Heading = document.getElementById("deleteMeNotification2Heading")
+		var deleteNotification2Body = document.getElementById("deleteMeNotification2Body")
+
+		var deleteNotification3Heading = document.getElementById("deleteMeNotification3Heading")
+		var deleteNotification3Body = document.getElementById("deleteMeNotification3Body")
+
+		var deleteNotification4Heading = document.getElementById("deleteMeNotification4Heading")
+		var deleteNotification4Body = document.getElementById("deleteMeNotification4Body")
+
+		var deleteNotification5Heading = document.getElementById("deleteMeNotification5Heading")
+		var deleteNotification5Body = document.getElementById("deleteMeNotification5Body")
+		
+		var NoneNotificationHeading = document.getElementById("addMeNoneNotificationHeading")
+		var NoneNotificationBody = document.getElementById("addMeNoneNotificationBody")
+		
+		var setNumOfNotifications = document.getElementById("setNumOfNotifications")
+		var setNumOfNotificationsMobile = document.getElementById("setNumOfNotifications-mobile")
+		
+		$(document).ready(function(){
+			$('.notification__mark__all__read__btn').click(function() {
+				$('.notification__mark__all__read__btn').toggleClass('invisible')
+			
+				deleteNotification1Heading.innerText = ""
+				deleteNotification1Body.innerText = ""
+				deleteNotification2Heading.innerText = ""
+				deleteNotification2Body.innerText = ""
+				deleteNotification3Heading.innerText = ""
+				deleteNotification3Body.innerText = ""
+				deleteNotification4Heading.innerText = ""
+				deleteNotification4Body.innerText = ""
+				deleteNotification5Heading.innerText = ""
+				deleteNotification5Body.innerText = ""
+				NoneNotificationBody.innerText = "All notifications read. No new notifications to display"
+				setNumOfNotifications.innerText = "0"
+				setNumOfNotificationsMobile.innerText = "0"
+
+				
+			})
+	})
+
+	</script>
+
+<!-- Script to make the navbar hide when user scrolls on a small display-->
+<script>
+	/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+	let lastScrollY = window.scrollY
+	window.addEventListener("scroll", () => {
+		/* By using the -15 we are making it so the user has to scroll upwards fast before the menu will come back.
+		By setting the or last scrollY < 800 we are saying that the menu will always appear until we are atleast 
+		800 pixels down on the webpage */
+		if ((lastScrollY - 15 > window.scrollY) || (lastScrollY < 800)) {
+			document.getElementById("navbarThing").style.top = "0";
+		}
+		else {
+			if ((lastScrollY > 800) && (lastScrollY < window.scrollY)){
+			document.getElementById("navbarThing").style.top = "-120px";
+			}
+		}
+		/* Update the current lasScrollY value since it needs to change perodically */
+		lastScrollY = window.scrollY;
+	})
+
+</script>
 
 	<!--Scripts for page 2-->
 	<!-- We want to display more info about a project when the user clicks the Learn More button -->
@@ -756,11 +744,12 @@
 				$('.download_Section2').removeClass('visible')
 				$('.CloseWindow__Section3').removeClass('visible')
 				$('.download_Section3').removeClass('visible')
-
+				$('.notificationPageContainer').removeClass('visible')
+				$('.navbar-Profile__container').removeClass('active')
+				$('.navbar__menu-mobile').removeClass('active')
 				$('.extended__Description__Project1').toggleClass('visible')
 				$('.CloseWindow__Section1').toggleClass('visible')
 				$('.download_Section1').toggleClass('visible')
-				$('.notificationPageContainer').removeClass('visible')
 			})
 		})
 
@@ -776,11 +765,14 @@
 			$('.download_Section1').removeClass('visible')
 			$('.CloseWindow__Section3').removeClass('visible')
 			$('.download_Section3').removeClass('visible')
+			$('.notificationPageContainer').removeClass('visible')
+			$('.navbar-Profile__container').removeClass('active')
+			$('.navbar__menu-mobile').removeClass('active')
 
 			$('.extended__Description__Project2').toggleClass('visible')
 			$('.CloseWindow__Section2').toggleClass('visible')
 			$('.download_Section2').toggleClass('visible')
-			$('.notificationPageContainer').removeClass('visible')
+			
 			})
 		})
 
@@ -795,11 +787,14 @@
 				$('.download_Section1').removeClass('visible')
 				$('.CloseWindow__Section2').removeClass('visible')
 				$('.download_Section2').removeClass('visible')
+				$('.notificationPageContainer').removeClass('visible')
+				$('.navbar-Profile__container').removeClass('active')
+				$('.navbar__menu-mobile').removeClass('active')
 				
 				$('.extended__Description__Project3').toggleClass('visible')
 				$('.CloseWindow__Section3').toggleClass('visible')
 				$('.download_Section3').toggleClass('visible')
-				$('.notificationPageContainer').removeClass('visible')
+				
 			})
 		})
 	</script>
@@ -829,13 +824,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#navbar-logIn').click(function() {
-			$('.authenticationChoice-Page').toggleClass('visible')
 			$('.logIn-Container').removeClass('hide')
 			$('.forgotPasswordContainer').removeClass('show')
 			$('.forgotPasswordContainer').addClass('minimize')
 			$('.navbar__menu-mobile').removeClass('active')
 			$('.logIn-Page').removeClass('visible')
 			$('.signUp-Page').removeClass('visible')
+			$('.navbar-Profile__container').removeClass('active')
+			$('.authenticationChoice-Page').toggleClass('visible')
 			
 		})
 	})
@@ -845,12 +841,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#navbar-logIn-desktop').click(function() {
-			$('.authenticationChoice-Page').toggleClass('visible')
 			$('.logIn-Container').removeClass('hide')
 			$('.forgotPasswordContainer').removeClass('show')
 			$('.forgotPasswordContainer').addClass('minimize')
 			$('.logIn-Page').removeClass('visible')
 			$('.signUp-Page').removeClass('visible')
+			$('.navbar__menu-mobile').removeClass('active')
+			$('.navbar-Profile__container').removeClass('active')
+			$('.authenticationChoice-Page').toggleClass('visible')
 			
 		})
 	})
@@ -860,22 +858,11 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#navbar-signUp').click(function() {
-			$('.signUp-Page').toggleClass('visible')
 			$('.navbar__menu-mobile').removeClass('active')
 			$('.authenticationChoice-Page').removeClass('visible')
 			$('.logIn-Page').removeClass('visible')
-			
-		})
-	})
-
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#navbar-signUp-desktop').click(function() {
+			$('.navbar-Profile__container').removeClass('active')
 			$('.signUp-Page').toggleClass('visible')
-			$('.authenticationChoice-Page').removeClass('visible')
-			$('.logIn-Page').removeClass('visible')
 			
 		})
 	})
@@ -965,6 +952,31 @@
 	})
 
 </script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#navbar__desktop__Profile').click(function() {
+
+			$('.navbar__menu-mobile').removeClass('active')
+			$('.notification__area').removeClass('moveDown')
+			$('.notificationPageContainer').removeClass('visible')
+			$('.extended__Description__Project1').removeClass('visible')
+			$('.extended__Description__Project2').removeClass('visible')
+			$('.extended__Description__Project3').removeClass('visible')
+			$('.CloseWindow__Section1').removeClass('visible')
+			$('.CloseWindow__Section2').removeClass('visible')
+			$('.CloseWindow__Section3').removeClass('visible')
+			$('.download_Section1').removeClass('visible')
+			$('.download_Section2').removeClass('visible')	
+			$('.download_Section3').removeClass('visible')
+			$('.navbar-Profile__container').toggleClass('active')
+			
+
+		})
+	})
+
+</script>
+
 
   </body>
 </html>

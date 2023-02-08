@@ -57,11 +57,11 @@ signupForm.addEventListener('submit', (e) => { // e is the event object
         const errorCode = error.code;
         const errorMessage = error.message;
         const DisplayErrorCode = document.getElementById('CreateUserErrorCode');
-        const DisplayErrorMessage = document.getElementById('CreateUserErrorMessage');
+        const DisplayErrorMessage = document.getElementById('CreateUserError');
         const DisplayErrorOccuredTitle = document.getElementById('CreateUserErrorOccuredTitle');
         //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
         //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
-        DisplayErrorMessage.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Uh Oh your account was not created... ` + errorMessage + `..Try again... <i class="fas fa-exclamation-triangle"></i>`;
+        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
         document.getElementById("CreateUserError").style.transform = "translateY(0%)";
         setTimeout(() => {  
             document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
@@ -90,12 +90,10 @@ logInForm.addEventListener('submit', (e) => { // e is the event object
     .catch((error) => { // We need to present any errors to the user
         const errorCode = error.code;
         const errorMessage = error.message;
-        const DisplayErrorCode = document.getElementById('CreateUserErrorCode');
-        const DisplayErrorMessage = document.getElementById('CreateUserErrorMessage');
-        const DisplayErrorOccuredTitle = document.getElementById('CreateUserErrorOccuredTitle');
+        const DisplayErrorMessage = document.getElementById('CreateUserError');
         //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
         //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
-        DisplayErrorMessage.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Uh Oh your account was not found... `  + errorMessage + `..Try again... <i class="fas fa-exclamation-triangle"></i>`;
+        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
         document.getElementById("CreateUserError").style.transform = "translateY(0%)";
         setTimeout(() => {  
             document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
@@ -126,12 +124,10 @@ ResetForm.addEventListener('submit', (f) => { // f is the event object
     .catch((error) => { // We need to present any errors to the user
         const errorCode = error.code;
         const errorMessage = error.message;
-        const DisplayErrorCode = document.getElementById('CreateUserErrorCode');
-        const DisplayErrorMessage = document.getElementById('CreateUserErrorMessage');
-        const DisplayErrorOccuredTitle = document.getElementById('CreateUserErrorOccuredTitle');
+        const DisplayErrorMessage = document.getElementById('CreateUserError');
         //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
         //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
-        DisplayErrorMessage.innerHTML = "Oh no the email reset link was not sent... " + errorMessage + "..Try again...";
+        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
         document.getElementById("CreateUserError").style.transform = "translateY(0%)";
         setTimeout(() => {  
             document.getElementById("CreateUserError").style.transform = "translateY(-150%)";

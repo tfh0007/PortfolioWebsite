@@ -19,12 +19,6 @@
 
 
 
-#navbar-signUp-desktop,
-#navbar-logIn-desktop,
-
-
-
-
 #navbar__desktop__link9 {
     margin-left: -1ch;
 }
@@ -36,28 +30,33 @@
 
 #CreateUserError {
     position: fixed;
+    /* center the element */
+    right: 0;
+    left: 0;
+    top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    /* give it dimensions */
+    min-height: 4em;
+    width: fit-content;
     border: solid rgb(251, 80, 80) 10px;
     border-radius: 20px;
     background: rgb(251, 80, 80);
-    top: 0px;
-    width: 98%;
-    font-size: 1.8rem;
-    left: 0.5%;
     
+    font-size: 1.4rem;
     transform: translateY(-150%);
     transition: transform 200ms 0ms;
     z-index: 5502;
 
 }
 
+.fa-exclamation-triangle {
+    color: yellow;
+}
 
-
-
-
-#navbar-signUp,
-#navbar-logIn {
-    margin-left: 2ch;
-    font-size: 1.4rem;
+#errorMessageHeading {
+    margin: 0 auto;
+    text-align: center;
 }
 
 .logIn-Page,
@@ -260,7 +259,6 @@ transition: background 150ms, transform 300ms 150ms;
     background: crimson;
     border: solid crimson;
     border-radius: 20px;
-    padding: 6px;
 }
 
 
@@ -312,15 +310,6 @@ transition: background 150ms, transform 300ms 150ms;
     
 }
 
-/* The login and password reset form with their respecitve div is messing up formating so lets manually move buttons */
-#goBackTologInPage
-
-{
-    
-    margin-left: 20ch;
-    padding: 4px;
-}
-
 
 
 
@@ -346,23 +335,10 @@ transition: background 150ms, transform 300ms 150ms;
 }
 
 #logInForgotPasswordBtn {
-    margin-left: 13ch;
+    
     border: solid rgb(214, 27, 27) 5px;
     background: rgb(214, 27, 27);
     border-radius: 20px;
-    
-}
-
-.containerOflogInForgotPasswordBtn
-
- {
-    margin-top: -49px;
-    
-}
-
-.containerOfgoBackTologInPage {
-    margin-top: -55px;
-   
     
 }
 
@@ -435,19 +411,6 @@ transition: background 150ms, transform 300ms 150ms;
 
 /* Let's make the top menu bar not fixed for smaller screens in terms of width */
 
-    #navbarThing {
-        
-        position: fixed; /* Make it stick/fixed */
-        top: 0; /* Stay on top */
-        width: 100%; /* Full width */
-        transition: top 0.4s; /* Transition effect when sliding down (and up) */
-        
-    }
-
-    .navbar__menu-mobile {
-        top: 90px;
-    }
-
     .logIn-Container h2,
     .forgotPasswordContainer h2,
     .signUp-Page-Container h2 {
@@ -508,20 +471,10 @@ transition: background 150ms, transform 300ms 150ms;
 }
 
 
-#logInBtn,
-#logInForgotPasswordBtn,
-#triggerResetLinkBtn,
-#goBackTologInPage,
-#signUpBtn,
-#navbar-signUp,
-#navbar-logIn,
-
-
-
-#logInBtn:hover, 
-#logInBtn:focus,
 #logInForgotPasswordBtn:hover, 
 #logInForgotPasswordBtn:focus,
+#logInBtn:hover,
+#logInBtn:focus,
 #triggerResetLinkBtn:hover,
 #triggerResetLinkBtn:focus,
 #goBackTologInPage:hover,
@@ -536,26 +489,10 @@ transform: scale(1.05);
 
 }
 
-#navbar-signUp:hover,
-#navbar-signUp:focus,
-#navbar-logIn:hover,
-#navbar-logIn:focus
-{
-    color: black;
-    transform: scale(1.15);
-    
-    }
-
 
 .fa-sign-out-alt{
     color: red;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-.fa-sign-out-alt:hover {
-    color: white;
-    transform: scale(1.15);
+    font-size: 1.5rem;
 }
 
 

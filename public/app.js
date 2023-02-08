@@ -7,14 +7,14 @@ const whenSignedOut = document.getElementById('whenSignedOut');
 const signInGoogleBtn = document.getElementById('signInGoogleBtn');
 const signInMetaBtn = document.getElementById('signInMetaBtn');
 const signOutBtn = document.getElementById('signOutBtn');
+const editProfileBtn = document.getElementById('editProfileBtn');
+const settingsBtn = document.getElementById('settingsBtn');
 
 
 const userDetails = document.getElementById('userAndMyLogo');
 
 const navbarLoginBtn = document.getElementById('navbar-logIn');
 const navbarSignUpBtn = document.getElementById('navbar-signUp');
-const navbarLoginBtnDesktop = document.getElementById('navbar-logIn-desktop');
-const navbarSignUpBtnDesktop = document.getElementById('navbar-signUp-desktop');
 const mainPageContactFormBtn = document.getElementById('contactFormSubmitBtn');
 
 const numOfNotificationsMobile = document.getElementById('setNumOfNotifications-mobile');
@@ -43,18 +43,18 @@ auth.onAuthStateChanged(user => {
         whenSignedOut.hidden = true;
         navbarLoginBtn.hidden = true;
         navbarSignUpBtn.hidden = true;
-        navbarLoginBtnDesktop.hidden = true;
-        navbarSignUpBtnDesktop.hidden = true;
         signOutBtn.hidden = false;
+        editProfileBtn.hidden = false;
+        settingsBtn.hidden = false;
 
         if (!user.displayName) {
             
             userDetails.innerHTML = `<h3>...Loading...<h3>` // We need to wait for the data to update
-            setTimeout(() => { userDetails.innerHTML = `<h3>Hello ${user.displayName}!</h3> <p>User ID: ${user.uid}</p>`; }, 5000); // This implementation is static and does not update when needed
+            setTimeout(() => { userDetails.innerHTML = `<h3> ${user.displayName}</h3> <p>ID: ${user.uid}</p>`; }, 5000); // This implementation is static and does not update when needed
         }
 
         else {
-            userDetails.innerHTML = `<h3>Hello ${user.displayName}!</h3> <p>User ID: ${user.uid}</p>`;
+            userDetails.innerHTML = `<h3> ${user.displayName}</h3> <p> ID: ${user.uid}</p>`;
         }
         
         
@@ -72,12 +72,12 @@ auth.onAuthStateChanged(user => {
         // not signed in
         whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
-        userDetails.innerHTML = `<h3> Thomas F Hansknecht <h3>`;
+        userDetails.innerHTML = `<h3> Guest <h3> <p> ID: Unregistered </p>`;
         navbarLoginBtn.hidden = false;
         navbarSignUpBtn.hidden = false;
-        navbarLoginBtnDesktop.hidden = false;
-        navbarSignUpBtnDesktop.hidden = false;
         signOutBtn.hidden = true;
+        editProfileBtn.hidden = true;
+        settingsBtn.hidden = true;
         //mainPageContactFormBtn.style.display = "none"; //makes the button invisible and unusable
         //document.getElementById("lockTheContactForm").style['pointer-events'] = 'none';
         //document.getElementById("contactFormLockObj").style['display'] = 'inline'

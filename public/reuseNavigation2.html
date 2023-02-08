@@ -169,6 +169,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 			  $('.notificationPageContainer').toggleClass('visible')
 			  // We want to make sure the mobile menu is gone in case we switch to mobile version while Notifications Menu is active
 			  $('.navbar__menu-mobile').removeClass('active')
+              $('.navbar-Profile__container').removeClass('active')
 			  // Makes the process one way, we can change into the class visible but cannot change back
 			  //$('.notificationPageContainer').addClass('visible')
 
@@ -183,6 +184,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		  $('.notificationPageContainer').toggleClass('visible')
 		  // By using removeClass we guarentee that the class visible is not active. If it is active we toggle it off. If it is not active we do nothing
 		  $('.navbar__menu-mobile').removeClass('active')
+          $('.navbar-Profile__container').removeClass('active')
 
 
 		})
@@ -201,6 +203,7 @@ src="https://code.jquery.com/jquery-3.6.0.js"></script>
 				$('.navbar__menu-mobile').toggleClass('active')
 				$('.notification__area').toggleClass('moveDown')
 				$('.notificationPageContainer').removeClass('visible')
+                $('.navbar-Profile__container').removeClass('active')
 
 			})
 		})
