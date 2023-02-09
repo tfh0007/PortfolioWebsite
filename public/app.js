@@ -48,10 +48,12 @@ GenerateUIErrorMsg(error);
 */
 // FIREBASE NOTIFICATION RETRIEVAL
 const database = firebase.firestore();
-const collectionRef1 = database.collection("General_Notifications");
-const collectionRef2 = database.collection("User_Notifications");
+const GeneralNotificationsCollection = database.collection("General_Notifications");
+const UserNotificationsCollection = database.collection("User_Notifications");
 let generalNotificationsData = null;
-let userNotificationsData = null;
+var userNotificationsData = null;
+var userNotificationDocumentIDs = [];
+var deletedUserNotificationDocumentIDs = new Set();
 
 
 retrieveNotifications();
@@ -77,7 +79,7 @@ function buildNotificationsHtml() {
         notificationPageText.innerHTML = "";
         }
 
-        // need some wait condition here
+        // Need some stop condition here
         if(generalNotificationsLoaded == false) {
             console.log("General Notifications Data Not Loaded Yet");
             return;
@@ -108,7 +110,7 @@ function buildNotificationsHtml() {
             notificationPageText.innerHTML = "";
         }
 
-        // need some wait condition here
+        // Need some stop condition here
         if(userNotificationsLoaded == false) {
             console.log("User Notifications Data Not Loaded Yet"); 
             return;
@@ -122,8 +124,15 @@ function buildNotificationsHtml() {
         elem.replaceWith(elem.cloneNode(true));
         notificationPageText = document.getElementById("notificationPageText");
 
+        // We need to clear out our array of data
+        userNotificationDocumentIDs = [];
+
 
         userNotificationsData.forEach(doc => {
+            // If we already deleted the document from the server but have not updated the local storage to remove it ignore the document
+            if(deletedUserNotificationDocumentIDs.has(doc.id)) {
+                return; // In a for each loop return is equivalent to continue
+            }
             let notificationId = `notification__btn__${notificationIndex}`;
             let notificationContainerId = `notification__Container__${notificationIndex}`;
             let curNotificationIndex = notificationIndex;
@@ -138,6 +147,7 @@ function buildNotificationsHtml() {
                 </div>
             </div>
             `);
+            userNotificationDocumentIDs.push(doc.id);
             // We need to dynamically create button action listners based on the id number of the button
             // We only want to add a click event listener if one does not already exist
             
@@ -165,27 +175,78 @@ function buildNotificationsHtml() {
     console.log('Total Number of Notifications Updated: ', notificationCount);
     numOfNotificationsDesktop.innerHTML = notificationCount;
     numOfNotificationsMobile.innerHTML = notificationCount;
+    numOfNotificationsDesktop.classList.add("fadeIn");
+    numOfNotificationsMobile.classList.add("fadeIn");
 
 }
 
-function deleteNotification(deletionIndex,notificationId) {
-    console.log("Need to delete Notification: " + deletionIndex + " which has Container ID value " + notificationId);
-    // When we delete the button we need to remove the listner
+async function deleteNotification(deletionIndex,notificationId) {
+    
+    // Now it is time to delete this notification both in the UI and in the server
+    // First lets delete from the server
+    var docId = userNotificationDocumentIDs[deletionIndex];
+    console.log("The doc id to delete is " + docId)
+    try {
+        await UserNotificationsCollection.doc(docId).delete();
+        userNotificationCount--;
+
+        // Now it is time to visually delete th notification
+        // The html id for the notification container will be located in the notificationId
+        console.log("Need to graphically remove Notification with ID value: " + notificationId);
+        document.getElementById(notificationId).className = "Delete__Notification";
+        document.getElementById(notificationId).classList.add("delete");
+        element = document.getElementById(notificationId);
+        // Now that we deleted the message we need to look for all messages that are under the current message and move those up
+        await delay(500);
+        element.parentNode.removeChild(element)
+
+        // The element is deleted in the server and visually but we still have a local copy of the element stored so we need to delete that too
+        console.log("Flaging notification document to never be shown again while stored as current local cache");
+        deletedUserNotificationDocumentIDs.add(docId);
+
+        // Updating the Notification count UI to show this notification was deleted
+        let notificationCount = generalNotificationCount + userNotificationCount;
+        console.log('Total Number of Notifications Updated: ', notificationCount);
+        numOfNotificationsDesktop.innerHTML = notificationCount;
+        numOfNotificationsMobile.innerHTML = notificationCount;
+
+    }
+    catch(error) {
+        GenerateUIErrorMsg(error);
+        return;
+    }
+
+
+    
+
+
+
+
+
+
+
+    
+
 }
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
+
 
 
 async function retrieveNotifications() {
 
     try {
         
-        generalNotificationsData = await collectionRef1.get();
+        generalNotificationsData = await GeneralNotificationsCollection.orderBy('CreationDate', 'desc').orderBy('Heading','Body').get();
         generalNotificationsLoaded = true;
         generalNotificationCount = generalNotificationsData.size;
 
         if(currentUser != null) {
-            
+
             // We need to look for user specific entries here
-            userNotificationsData = await collectionRef2.where('uid', '==', currentUser.uid).get();
+            userNotificationsData = await UserNotificationsCollection.orderBy('CreationDate', 'desc').orderBy('Heading','Body','uid').where('uid', '==', currentUser.uid).get();
             userNotificationsLoaded = true;
             userNotificationCount = userNotificationsData.size;
         }
@@ -205,6 +266,10 @@ async function retrieveNotifications() {
         numOfNotificationsMobile.innerHTML = "ERR";
         GenerateUIErrorMsg(error);
     }
+
+    
+
+
 
     buildNotificationsHtml();
 }
@@ -247,6 +312,24 @@ auth.onAuthStateChanged(user => {
         setNotificationType(notificationTypeToLoad);
         // If the user logs in we need to update the total number of notifications
         retrieveNotifications();
+
+        // FOR RIGHT NOW ADD A BUNCH OF DUMMY NOTIFICATIONS WHEN USER LOGS IN AND NO NOTFICATIONS ALREADY EXIST
+        /*
+        if(userNotificationCount == 0) {
+            const entries = Math.floor(Math.random() * 100) + 30;  //returns a random integer from 5 to 50
+            console.log("Generating " + entries + " Random Notifications. Remove this process before production");
+            for(var i = 0; i < entries; i++) {
+                const { serverTimestamp } = firebase.firestore.FieldValue;
+                UserNotificationsCollection.add({
+                    uid: currentUser.uid,
+                    Heading: faker.name.findName(),
+                    Body: faker.lorem.sentence(),
+                    CreationDate: serverTimestamp()
+                });
+            }
+           
+        }
+        */
         
         
         //mainPageContactFormBtn.style.display = "inline"; //makes the buttom visible and usable as an inline style

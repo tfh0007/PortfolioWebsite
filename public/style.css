@@ -205,7 +205,8 @@ destroying the notification when the drop down menu opens */
     }
 
 
-.notification__Container {
+.notification__Container,
+.Delete__Notification {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -219,6 +220,24 @@ destroying the notification when the drop down menu opens */
     padding-bottom: 0.5ch;
     padding-left: 0.5ch;
     padding-right: 0.5ch;
+}
+
+.Delete__Notification.delete {
+    animation-name: deleteNotification;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+
+    
+}
+/* Pretty sure this animation will continue even if it is invisible */
+@keyframes deleteNotification{
+   
+    0%   {background-color: rgba(255, 255, 255, 0.258); transform: translateX(0); transform: translateY(0);border-color: rgba(255, 255, 255, 0.258);}
+    50%  {background-color: rgba(255, 0, 0, 0.654); border-color: rgba(255, 0, 0, 0.654);}
+    100%   {transform: translateX(-150%);}
 }
 
 /* This class will contain our custom warning message heading*/
@@ -276,7 +295,7 @@ destroying the notification when the drop down menu opens */
 .num-of-notifications {
     position: absolute;
     top: -5px;
-    right: -10px;
+    left: 32px;
     padding: 3px 8px;
     border-radius: 50%;
     background: red;
@@ -288,7 +307,7 @@ destroying the notification when the drop down menu opens */
 .num-of-notifications-mobile {
     position: absolute;
     top: 12px;
-    right: -10px;
+    left: 32px;
     padding: 1px 8px;
     border-radius: 50%;
     background: red;

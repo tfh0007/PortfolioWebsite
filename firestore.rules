@@ -13,11 +13,11 @@ service cloud.firestore {
     	allow read: if request.auth.uid == resource.data.uid; // Only lets a user read files if those files contain their specific user id
     }
     match /User_Notifications/{docId} {
-    	allow write: if request.auth.uid == request.resource.data.uid; // allow write only for a specific user and their specific content
+    	allow write: if request.auth.uid == request.resource.data.uid // allow write only for a specific user and their defined resources
     	allow read,delete: if request.auth.uid == resource.data.uid; // Only lets a user read or delete files if those files contain their specific user id
     }
     match /General_Notifications/{docId} {
-    	allow read: if true;
+    	allow read: if true
     }
   }
 }
