@@ -4,6 +4,7 @@ let userNotificationsLoaded = false;
 var currentUser = null;
 let generalNotificationCount = 0;
 let userNotificationCount = 0;
+let userNotificationsSet = new Set();
 
 notificationTypeToLoad = 1; // 1 is for general, 2 is for user specific
 
@@ -25,7 +26,7 @@ const numOfNotificationsDesktop = document.getElementById('setNumOfNotifications
 const showProfileBtn = document.getElementById('navbar__desktop__Profile');
 const notificationTypeUserBtn = document.getElementById("notificationTypeUserBtn");
 const notificatonTypeGeneralBtn = document.getElementById("notificatonTypeGeneralBtn");
-const notificationPageText = document.getElementById("notificationPageText");
+var notificationPageText = document.getElementById("notificationPageText");
 
 /*
 try {
@@ -114,11 +115,22 @@ function buildNotificationsHtml() {
         }
 
         let notificationIndex = 0;
+        userNotificationsSet.clear();
+
+        // We need to delete all the old action listeners everytime we update the text
+        var elem = document.getElementById('notificationPageText');
+        elem.replaceWith(elem.cloneNode(true));
+        notificationPageText = document.getElementById("notificationPageText");
+
+
         userNotificationsData.forEach(doc => {
+            let notificationId = `notification__btn__${notificationIndex}`;
+            let notificationContainerId = `notification__Container__${notificationIndex}`;
+            let curNotificationIndex = notificationIndex;
             notificationPageText.innerHTML += (`
-            <div class = "notification__Container">
+            <div class = "notification__Container" id="${notificationContainerId}">
                 <div class = "notification__icon">
-                    <p> <button class = "notification__btn" id = "notification__btn__${notificationIndex}" > <i class="far fa-times-circle"></i> </button> </p>
+                    <p> <button class = "notification__btn" id = "${notificationId}" > <i class="far fa-times-circle"></i> </button> </p>
                 </div>
                 <div class = "notification__heading__msg">
                     <h1> ${doc.data().Heading} </h1> 
@@ -126,6 +138,26 @@ function buildNotificationsHtml() {
                 </div>
             </div>
             `);
+            // We need to dynamically create button action listners based on the id number of the button
+            // We only want to add a click event listener if one does not already exist
+            
+            if(!userNotificationsSet.has(notificationId)) {
+
+                document.getElementById("notificationPageText").addEventListener("click", e => {
+                const target = e.target.closest("#" + notificationId); // Or any other selector.
+                
+                //console.log("How many times is this read?");
+                
+                if(target){
+                    // We need to keep track of what buttons exist so we do not create duplicate events
+                    userNotificationsSet.add(notificationId);
+                    deleteNotification(curNotificationIndex,notificationContainerId);
+                  // Do something with `target`.
+                }
+              });
+
+            }
+            
             notificationIndex++;
         });
     }
@@ -134,6 +166,11 @@ function buildNotificationsHtml() {
     numOfNotificationsDesktop.innerHTML = notificationCount;
     numOfNotificationsMobile.innerHTML = notificationCount;
 
+}
+
+function deleteNotification(deletionIndex,notificationId) {
+    console.log("Need to delete Notification: " + deletionIndex + " which has Container ID value " + notificationId);
+    // When we delete the button we need to remove the listner
 }
 
 
