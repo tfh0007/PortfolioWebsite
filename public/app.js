@@ -1,4 +1,6 @@
 let isProfileLoaded = false;
+let generalNotificationsLoaded = false;
+let userNotificationsLoaded = false;
 var currentUser = null;
 let generalNotificationCount = 0;
 let userNotificationCount = 0;
@@ -27,7 +29,7 @@ const notificationPageText = document.getElementById("notificationPageText");
 
 /*
 try {
-    const booksRef = firebase.firestore().collection("Global_Notifications");
+    const booksRef = firebase.firestore().collection("General_Notifications");
     console.log("Global Notification Data: ")
     booksRef.get().then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
@@ -39,91 +41,135 @@ try {
     
 }
 catch(error) {
-console.log("Error getting Global Notification data: ", error);
+GenerateUIErrorMsg(error);
 };
 
 */
+// FIREBASE NOTIFICATION RETRIEVAL
+const database = firebase.firestore();
+const collectionRef1 = database.collection("General_Notifications");
+const collectionRef2 = database.collection("User_Notifications");
+let generalNotificationsData = null;
+let userNotificationsData = null;
+
+
 retrieveNotifications();
+
+function startTimer(message) {
+    timer = setInterval(function() { 
+        console.log(message); 
+    }, 1000);
+}
+
+function buildNotificationsHtml() {
+   
+    // Now we ned to look through the data and append the notifications to the html
+    if(notificationTypeToLoad == 1) {
+        if(generalNotificationCount == 0) {
+            notificationPageText.innerHTML = (`
+                <div class = "notification__heading__msg">
+                <h1> No New Notifications To Read </h1> 
+                </div>
+            `);
+        }
+        else {
+        notificationPageText.innerHTML = "";
+        }
+
+        // need some wait condition here
+        if(generalNotificationsLoaded == false) {
+            console.log("General Notifications Data Not Loaded Yet");
+            return;
+        }
+
+        generalNotificationsData.forEach(doc => {
+            notificationPageText.innerHTML += (`
+            <div class = "notification__Container">
+                <div class = "notification__heading__msg">
+                    <h1> ${doc.data().Heading} </h1> 
+                    <p> ${doc.data().Body} </p> 
+                </div>
+            </div>
+            `);
+        });
+    }
+    else if(notificationTypeToLoad == 2) {
+
+        // Now we ned to look through the data and append the notifications to the html
+        if(userNotificationCount == 0) {
+            notificationPageText.innerHTML = (`
+                <div class = "notification__heading__msg">
+                <h1> No New Notifications To Read </h1> 
+                </div>
+            `);
+        }
+        else {
+            notificationPageText.innerHTML = "";
+        }
+
+        // need some wait condition here
+        if(userNotificationsLoaded == false) {
+            console.log("User Notifications Data Not Loaded Yet"); 
+            return;
+        }
+
+        let notificationIndex = 0;
+        userNotificationsData.forEach(doc => {
+            notificationPageText.innerHTML += (`
+            <div class = "notification__Container">
+                <div class = "notification__icon">
+                    <p> <button class = "notification__btn" id = "notification__btn__${notificationIndex}" > <i class="far fa-times-circle"></i> </button> </p>
+                </div>
+                <div class = "notification__heading__msg">
+                    <h1> ${doc.data().Heading} </h1> 
+                    <p> ${doc.data().Body} </p> 
+                </div>
+            </div>
+            `);
+            notificationIndex++;
+        });
+    }
+    let notificationCount = generalNotificationCount + userNotificationCount;
+    console.log('Total Number of Notifications Updated: ', notificationCount);
+    numOfNotificationsDesktop.innerHTML = notificationCount;
+    numOfNotificationsMobile.innerHTML = notificationCount;
+
+}
 
 
 async function retrieveNotifications() {
 
     try {
-        const database = firebase.firestore();
-        const collectionRef1 = database.collection("Global_Notifications");
-        console.log(collectionRef1);
-        const data = await collectionRef1.get();
-        console.log(data);
-        generalNotificationCount = data.size;
-
-
-        // Now we ned to look through the data and append the notifications to the html
-        if(notificationTypeToLoad == 1) {
-            if(generalNotificationCount == 0) {
-                notificationPageText.innerHTML = (`
-                    <div class = "notification__heading__msg">
-                    <h1> No New Notifications To Read </h1> 
-                    </div>
-                `);
-            }
-            else {
-            notificationPageText.innerHTML = "";
-            }
-
-            data.forEach(doc => {
-                notificationPageText.innerHTML += (`
-                <div class = "notification__heading__msg">
-                <h1> ${doc.data().Heading} </h1> 
-                <p> ${doc.data().Body} </p> 
-                </div>
-                `);
-          });
-        }
-
+        
+        generalNotificationsData = await collectionRef1.get();
+        generalNotificationsLoaded = true;
+        generalNotificationCount = generalNotificationsData.size;
 
         if(currentUser != null) {
-            const collectionRef2 = database.collection("User_Notifications");
+            
             // We need to look for user specific entries here
-            const data = await collectionRef2.where('uid', '==', currentUser.uid).get();
-            userNotificationCount = data.size;
-
-            // Now we ned to look through the data and append the notifications to the html
-        if(notificationTypeToLoad == 2) {
-            if(userNotificationCount == 0) {
-                notificationPageText.innerHTML = (`
-                    <div class = "notification__heading__msg">
-                    <h1> No New Notifications To Read </h1> 
-                    </div>
-                `);
-            }
-            else {
-                notificationPageText.innerHTML = "";
-            }
-
-            data.forEach(doc => {
-                notificationPageText.innerHTML += (`
-                    <div class = "notification__heading__msg">
-                    <h1> ${doc.data().Heading} </h1> 
-                    <p> ${doc.data().Body} </p> 
-                    </div>
-                `);
-          });
-        }
+            userNotificationsData = await collectionRef2.where('uid', '==', currentUser.uid).get();
+            userNotificationsLoaded = true;
+            userNotificationCount = userNotificationsData.size;
         }
 
         console.log("Number of General Notifications " + generalNotificationCount);
         console.log("Number of User Specific Notifications " + userNotificationCount);
 
         let notificationCount = generalNotificationCount + userNotificationCount;
-
+        
         console.log('Total Number of Notifications: ', notificationCount);
+
         numOfNotificationsDesktop.innerHTML = notificationCount;
         numOfNotificationsMobile.innerHTML = notificationCount;
     }
     catch(error) {
         numOfNotificationsDesktop.innerHTML = "ERR";
         numOfNotificationsMobile.innerHTML = "ERR";
+        GenerateUIErrorMsg(error);
     }
+
+    buildNotificationsHtml();
 }
 
 
@@ -163,13 +209,8 @@ auth.onAuthStateChanged(user => {
         notificationTypeToLoad = 2; // When user logged in default notification type to user specific
         setNotificationType(notificationTypeToLoad);
         // If the user logs in we need to update the total number of notifications
-        if(userNotificationCount == 0) {
-            retrieveNotifications();
-            let notificationCount = generalNotificationCount + userNotificationCount;
-            console.log('Total Number of Notifications Updated To: ', notificationCount);
-            numOfNotificationsDesktop.innerHTML = notificationCount;
-            numOfNotificationsMobile.innerHTML = notificationCount;
-        }
+        retrieveNotifications();
+        
         
         //mainPageContactFormBtn.style.display = "inline"; //makes the buttom visible and usable as an inline style
         //document.getElementById("lockTheContactForm").style['pointer-events'] = 'all';
@@ -183,11 +224,10 @@ auth.onAuthStateChanged(user => {
         
     } else {
         // not signed in
+        currentUser = null;
         whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
         userDetails.innerHTML = `<h3> Guest <h3> <p> ID: Unregistered </p>`;
-        numOfNotificationsDesktop.innerHTML = "?";
-        numOfNotificationsMobile.innerHTML = "?";
         navbarLoginBtn.hidden = false;
         navbarSignUpBtn.hidden = false;
         signOutBtn.hidden = true;
@@ -197,6 +237,7 @@ auth.onAuthStateChanged(user => {
         notificationTypeUserBtn.hidden = true;
         notificatonTypeGeneralBtn.hidden = true;
         notificationTypeToLoad = 1; // When user logged out default notification type to general
+        userNotificationCount = 0; // When no user is present then no user notifications will exist
         setNotificationType(notificationTypeToLoad);
         //mainPageContactFormBtn.style.display = "none"; //makes the button invisible and unusable
         //document.getElementById("lockTheContactForm").style['pointer-events'] = 'none';
@@ -217,7 +258,7 @@ function setNotificationType(type) {
 
     if(type == 1) {
         notificatonTypeGeneralBtn.classList.add("focus");
-        console.log("Notification Type set to General");
+        // console.log("Notification Type set to General");
         // More work needed to display notifications from server
 
 
@@ -230,7 +271,7 @@ function setNotificationType(type) {
     }
     else if (type == 2) {
         notificationTypeUserBtn.classList.add("focus");
-        console.log("Notification Type set to User Specific");
+        // console.log("Notification Type set to User Specific");
         // More work needed to display notifications from server
 
 
@@ -238,10 +279,24 @@ function setNotificationType(type) {
 
 
     }
-    retrieveNotifications();
+    buildNotificationsHtml();
     console.log("");
 
 }
+
+function GenerateUIErrorMsg(error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const DisplayErrorMessage = document.getElementById('CreateUserError');
+        //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
+        //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
+        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
+        document.getElementById("CreateUserError").style.transform = "translateY(0%)";
+        setTimeout(() => {  
+            document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
+         }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
+}
+
 
 function loadBaseProfileInfo() {
     // console.log("Profile button clicked");
@@ -324,8 +379,6 @@ auth.onAuthStateChanged(user => {
 
             });
 
-
-
     } else {
         // Unsubscribe when the user signs out
         unsubscribe && unsubscribe();
@@ -348,12 +401,12 @@ deleteThings.onclick = () => {
         doc.ref.delete().then(() => {
         console.log("Document successfully deleted!");
         }).catch(function(error) {
-        console.error("Error removing document: ", error);
+            GenerateUIErrorMsg(error);
         });
     });
     })
     .catch(function(error) {
-    console.log("Error getting documents: ", error);
+        GenerateUIErrorMsg(error);
     });
 
     

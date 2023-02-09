@@ -205,19 +205,35 @@ destroying the notification when the drop down menu opens */
     }
 
 
+.notification__Container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    background-color: rgba(255, 255, 255, 0.258);
+    border: transparent 10px rgba(255, 255, 255, 0.258);
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.575);
+    margin: 1.5ch 1.5ch;
+    padding-top: 0.5ch;
+    padding-bottom: 0.5ch;
+    padding-left: 0.5ch;
+    padding-right: 0.5ch;
+}
+
 /* This class will contain our custom warning message heading*/
 .notification__heading__msg h1 {
 
     color: rgba(255, 255, 255, 0.719);
-    padding-left: 2ch;
-    font-size: 2.2rem;
+    padding-left: 1ch;
+    font-size: 1.6rem;
 }
 
 /* This class will contain our custom warning message body*/
 .notification__heading__msg p {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.575);
-    padding-left: 5ch;
+    padding-left: 3ch;
 }
 /* This class will contain our custom warning close button container*/
 .notification__close__button {
@@ -229,11 +245,14 @@ destroying the notification when the drop down menu opens */
 /* This class will contain our custom warning close button item*/
 .notification__btn
 {
+    margin-top: -2ch;
+    margin-left: 1ch;
     cursor: pointer;
     background: transparent;
     border: none;
     font-size: 2.2rem;
     color: rgba(255, 255, 255, 0.664);
+    transition: color 300ms ease-out;
 }
 
 
@@ -353,10 +372,11 @@ destroying the notification when the drop down menu opens */
     position: fixed;
     top: 92px;
     right: 10px;
+    margin-left: 10px;
     max-height: 80.8%;
     max-width: 600px;
     z-index: 5000;
-    opacity: 0.85;
+    opacity: 0.9;
     overflow-y: scroll;
     border: solid black 10px;
     border-radius: 30px;
@@ -408,8 +428,7 @@ destroying the notification when the drop down menu opens */
 }
 
 /* This class will contain notification message headings */
-.notification__heading__msg, 
-.noneNotifications__heading__msg {
+ .noneNotifications__heading__msg {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.575);
     padding-left: 1ch;
@@ -688,6 +707,7 @@ For Mobile this will be hidden */
     left: 0;
     margin-top: 80px;
     margin-left: 25px;
+    margin-right: 25px;
     z-index: 5000;
     padding: 1ch;
     
@@ -2432,25 +2452,17 @@ footer {
     color: white;
 }
 
-/* Next lets create animation for the close notification button */
-
-.notification__btn
- 
-{
-    transition: color 300ms ease-out;
-}
 .notification__btn:hover,
-.notification__btn:focus,
-
-
-/*Next lets create the hover animation for our learn more project description buttons */
+.notification__btn:focus {
+    color: rgb(214, 27, 27);
+}
 
 .Project__button__1,
 .Project__button__2,
 .Project__button__3
 {
+/*Next lets create the hover animation for our learn more project description buttons */
 position: relative;
-
 transition: color 250ms ease-in-out;
 overflow: hidden;
 

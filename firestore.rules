@@ -16,7 +16,7 @@ service cloud.firestore {
     	allow write: if request.auth.uid == request.resource.data.uid; // allow write only for a specific user and their specific content
     	allow read,delete: if request.auth.uid == resource.data.uid; // Only lets a user read files if those files contain their specific user id
     }
-    match /Global_Notifications/{docId} {
+    match /General_Notifications/{docId} {
     	allow read: if true;
     }
   }
