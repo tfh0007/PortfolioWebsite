@@ -259,7 +259,7 @@
 				<button id="logInCloseBtn"><i class="far fa-times-circle"></i></button>
 				<h2>Log In to thomashansknecht.com</h2>
 				<div class="logIn-form-div">
-						<form id="logIn-form">
+						<form id="logIn-form" onsubmit = "return false">
 							<div class="input-fields">
 								<label for="logIn-email">Email Address</label>
 								<input type="email" id="logIn-email" placeholder="email@domain.com" required>
@@ -275,7 +275,7 @@
 					<button id="logInCloseBtn2"><i class="far fa-times-circle"></i></button>
 					<h2>Reset Password to thomashansknecht.com?</h2>
 					<div class="passwordRest-form-div">
-						<form id="passwordReset-form">
+						<form id="passwordReset-form" onsubmit = "return false">
 							<div class="input-fields">
 								<label for="resetPassword-email">Email Address</label>
 								<input type="email" id="resetPassword-email" placeholder="email@domain.com" required>
@@ -292,7 +292,7 @@
 				<div class="signUp-Page-Container">
 					<button id="signUpCloseBtn"><i class="far fa-times-circle"></i></button>
 					<h2>Create account for thomashansknecht.com</h2>
-					<form id="signup-form">
+					<form id="signup-form" onsubmit = "return false">
 						<div class="input-fields-signUp">	
 							<div class="signup-form-left-side">
 								<label for="user-name-first"> First Name<span class="signUp-form-required-text"> *Required* </span> &nbsp; &nbsp; &nbsp; &nbsp;</label>
@@ -526,7 +526,7 @@
 			<!-- The reuired text means text has to be typed into that field -->
 			<!-- We want a way for users of the site to easily be able to contact me-->
 			<!-- Placeholders will show in the actual input box when nothing has been typed-->
-				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe">
+				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe" onsubmit = "return false">
 					<label for="firstname">Your First name:</label>
 					<input class="inputBox" type="text" id="userFirst" name="userFirst" required><br><br>
 					<label for="lastname">Your Last name:</label>

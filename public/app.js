@@ -54,6 +54,7 @@ let generalNotificationsData = null;
 var userNotificationsData = null;
 var userNotificationDocumentIDs = [];
 var deletedUserNotificationDocumentIDs = new Set();
+var userCreatedNotifications = [];
 
 
 retrieveNotifications();
@@ -127,10 +128,59 @@ function buildNotificationsHtml() {
         // We need to clear out our array of data
         userNotificationDocumentIDs = [];
 
+        // May want to show that these are new somehow
+        for(let i=0; i < userCreatedNotifications.length; i++) {
+            console.log(userCreatedNotifications);
+            var stuff = userCreatedNotifications[i];
+            stuff.forEach(doc =>  {
+                if(doc == null || deletedUserNotificationDocumentIDs.has(doc.id)) {
+                    console.warn("Doc was null in user Created Notifications array");
+                    console.log(doc);
+                    return; // In a for each loop return is equivalent to continue
+                }
+                let notificationId = `notification__btn__${notificationIndex}`;
+                let notificationContainerId = `notification__Container__${notificationIndex}`;
+                let curNotificationIndex = notificationIndex;
+                notificationPageText.innerHTML += (`
+                <div class = "notification__Container" id="${notificationContainerId}">
+                    <div class = "notification__icon">
+                        <p> <button class = "notification__btn" id = "${notificationId}" > <i class="far fa-times-circle"></i> </button> </p>
+                    </div>
+                    <div class = "notification__heading__msg">
+                        <h1> ${doc.data().Heading} </h1> 
+                        <p> ${doc.data().Body} </p> 
+                    </div>
+                </div>
+                `);
+                userNotificationDocumentIDs.push(doc.id);
+                // We need to dynamically create button action listners based on the id number of the button
+                // We only want to add a click event listener if one does not already exist
+                
+                if(!userNotificationsSet.has(notificationId)) {
 
+                    document.getElementById("notificationPageText").addEventListener("click", e => {
+                    const target = e.target.closest("#" + notificationId); // Or any other selector.
+                    
+                    //console.log("How many times is this read?");
+                    
+                    if(target){
+                        // We need to keep track of what buttons exist so we do not create duplicate events
+                        userNotificationsSet.add(notificationId);
+                        deleteNotification(curNotificationIndex,notificationContainerId);
+                    // Do something with `target`.
+                    }
+                });
+
+                }
+                
+                notificationIndex++;
+            });
+        };
+
+        // These are the notifications that came directly from the latest database request
         userNotificationsData.forEach(doc => {
             // If we already deleted the document from the server but have not updated the local storage to remove it ignore the document
-            if(deletedUserNotificationDocumentIDs.has(doc.id)) {
+            if(doc == null || deletedUserNotificationDocumentIDs.has(doc.id)) {
                 return; // In a for each loop return is equivalent to continue
             }
             let notificationId = `notification__btn__${notificationIndex}`;
@@ -170,6 +220,29 @@ function buildNotificationsHtml() {
             
             notificationIndex++;
         });
+
+        
+
+        notificationPageText.innerHTML += (`
+                <div id="CreateUserNotificationContainer">
+                    <button class="CreateNewUserNotificationBtn" id="CreateNewUserNotificationBtn"> Create New Notification </button>
+                </div>
+            `);
+            // We need to delete all the old action listeners everytime we update the text
+            var elem = document.getElementById('CreateUserNotificationContainer');
+            elem.replaceWith(elem.cloneNode(true));
+        
+            document.getElementById("CreateUserNotificationContainer").addEventListener("click", e => {
+                const target = e.target.closest("#CreateNewUserNotificationBtn"); // Or any other selector.
+                
+                //console.log("How many times is this read?");
+                
+                if(target){
+                    // We need to keep track of what buttons exist so we do not create duplicate events
+                    addNewUserNotification();
+                  // Do something with `target`.
+                }
+              });
     }
     let notificationCount = generalNotificationCount + userNotificationCount;
     console.log('Total Number of Notifications Updated: ', notificationCount);
@@ -178,6 +251,131 @@ function buildNotificationsHtml() {
     numOfNotificationsDesktop.classList.add("fadeIn");
     numOfNotificationsMobile.classList.add("fadeIn");
 
+}
+
+async function addNewUserNotification() {
+    console.log("Need to add new notification here");
+    var element = document.getElementById("CreateUserNotificationContainer")
+    element.parentNode.removeChild(element)
+    
+    // Now we can add the html for a create new notification form
+    notificationPageText.innerHTML += (`
+    <div class= "New__Notification__Form__Container" id="New__Notification__Form__Container">
+        <form id="New__Notification__Form" onsubmit = "return false">
+            <label for="messageHeading">Message Heading</label>
+            <input class="notificationInputBox" type="text" id="messageHeading" placeholder="Type Something" required>
+            <label for="messageBody">Message Body</label>
+            <textarea class="notificationInputBox" type="text" name="message" rows="6" placeholder="Type Something" id="messageBody" required> </textarea>
+            <div class="notificationTypes">
+                <button id="SubmitNewNotification" class="btn btn-success"> Upload Notification </button>
+                <button id="CancelNewNotification" class="btn btn-success" formnovalidate> Cancel Upload </button>	
+            </div>
+        </form>
+    </div>
+
+    `);
+
+    document.getElementById("SubmitNewNotification").onclick = function() {UploadNewUserNotification(document.getElementById("messageHeading").value,document.getElementById("messageBody").value)};
+    document.getElementById("CancelNewNotification").onclick = function() {CancelUploadNewUserNotification()};
+    
+
+
+}
+
+async function UploadNewUserNotification(heading, body) {
+
+    console.log("Message Heading: " + heading);
+    console.log("Message Body: " + body);
+
+    
+    if(heading == null || heading === "") {
+        console.log("Can't upload notification because heading is null");
+        return;
+    }
+    if(body == null || body === "") {
+        console.log("Can't upload notification because body is null");
+        return;
+    }
+
+    if(currentUser == null) {
+        console.log("Can't upload notification because user is not logged in");
+        return;
+    }
+
+    console.log("Time to upload the new notification");
+
+    
+        const { serverTimestamp } = firebase.firestore.FieldValue;
+            await UserNotificationsCollection.add({
+                uid: currentUser.uid,
+                Heading: heading,
+                Body: body,
+                CreationDate: serverTimestamp()
+            })
+            .then(async function(docRef) {
+                userNotificationCount++;
+                // Updating the Notification count UI to show this notification was added
+                let notificationCount = generalNotificationCount + userNotificationCount;
+                console.log('Total Number of Notifications Updated: ', notificationCount);
+                numOfNotificationsDesktop.innerHTML = notificationCount;
+                numOfNotificationsMobile.innerHTML = notificationCount;
+
+
+                console.log("User Notification Document Added To Database with ID: ", docRef.id);
+                var fullDocument = await UserNotificationsCollection.where(firebase.firestore.FieldPath.documentId(), '==', docRef.id).get()
+                console.log("Full Document after completion: ", fullDocument);
+                userCreatedNotifications.push(fullDocument);
+                 // Now we need to remove the new notification ui and show the added message from the server
+                CancelUploadNewUserNotification()
+                .then(function() {
+                    // Now we need to animate the notification appearing
+                    buildNotificationsHtml();
+                });
+                
+            })
+            .catch(function(error) {
+                GenerateUIErrorMsg(error);
+            });
+            
+            
+           
+    
+    
+
+    
+
+}
+
+async function CancelUploadNewUserNotification() {
+    console.log("Time to cancel the new notification upload");
+
+    document.getElementById("New__Notification__Form__Container").className = "Delete__Notification";
+        document.getElementById("New__Notification__Form__Container").classList.add("delete");
+        element = document.getElementById("New__Notification__Form__Container");
+        // Now that we deleted the message we need to look for all messages that are under the current message and move those up
+        await delay(500);
+        element.parentNode.removeChild(element)
+
+        notificationPageText.innerHTML += (`
+                <div id="CreateUserNotificationContainer">
+                    <button class="CreateNewUserNotificationBtn" id="CreateNewUserNotificationBtn"> Create New Notification </button>
+                </div>
+            `);
+            // We need to delete all the old action listeners everytime we update the text
+            var elem = document.getElementById('CreateUserNotificationContainer');
+            elem.replaceWith(elem.cloneNode(true));
+        
+            document.getElementById("CreateUserNotificationContainer").addEventListener("click", e => {
+                const target = e.target.closest("#CreateNewUserNotificationBtn"); // Or any other selector.
+                
+                //console.log("How many times is this read?");
+                
+                if(target){
+                    // We need to keep track of what buttons exist so we do not create duplicate events
+                    addNewUserNotification();
+                  // Do something with `target`.
+                }
+              });
 }
 
 async function deleteNotification(deletionIndex,notificationId) {
