@@ -517,18 +517,28 @@
 			<!-- The reuired text means text has to be typed into that field -->
 			<!-- We want a way for users of the site to easily be able to contact me-->
 			<!-- Placeholders will show in the actual input box when nothing has been typed-->
-				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe" onsubmit = "return false">
-					<label for="firstname">Your First name:</label>
-					<input class="inputBox" type="text" id="userFirst" name="userFirst" required><br><br>
-					<label for="lastname">Your Last name:</label>
-					<input class="inputBox" type="text" id="userLast" name="userLast" required><br><br>
-					<label for="email">Your Email Address:</label>
-					<input class="inputBox" type="email" id="userEmail" name="userEmail" placeholder="email@domain.com" required><br><br>
-					<label for="comments">Ask Me Anything:</label>
-					<textarea class="inputBox" type="text" name="message" rows="6" cols="50" placeholder="Type Something" id="textBoxArea"></textarea>
-					<input class="submit__btn" type="submit" value="Submit">
-					<div id ="my-form-status"></div>				
-				</form>
+			<!-- Let's make a lock div that blocks the form unless the user is a validated user with a thomashansknecht.com account-->
+				<div class="lockTheContactForm" id="lockTheContactForm">
+					<i class="fas fa-lock" id ="contactFormLockObj" hidden></i>
+					<h2 id="contactFormLockTxt">Account Login Required</h2>
+				
+					<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe" onsubmit = "return false">
+						<label for="firstname">First name:</label>
+						<input class="inputBox" type="text" id="userFirst" name="First Name" required><br><br>
+						<label for="lastname">Last name:</label>
+						<input class="inputBox" type="text" id="userLast" name="Last Name"><br><br>
+						<input class="inputBox" type="text" id="userDisplayName" name="Display Name" hidden>
+						<input class="inputBox" type="email" id="userAccountEmail" name="Account Email" hidden>
+						<input class="inputBox" type="text" id="userUID" name="User UID" hidden>
+						<input class="inputBox" type="text" id="userSubmissionLocation" name="Submission Location From Site" value="Home Page" hidden>
+						<label for="email">Email Address:</label>
+						<input class="inputBox" type="email" id="userEmail" name="Secondary Email" placeholder="email@domain.com"><br><br>
+						<label for="comments">Ask Me Anything:</label>
+						<textarea class="inputBox" type="text" name="message" rows="6" cols="50" placeholder="Type Something" id="textBoxArea" required></textarea>
+						<input class="submit__btn" id="emailSubmissionBtn" type="submit" value="Submit">
+						<div id ="my-form-status"></div>				
+					</form>
+				</div>
 				<!-- By using lazy loading of our ilustrations we speed up preformance of our site-->
 				<div class="page3__image__container">
 					<img width="951" height="428" loading = "lazy" src="images/team_goals_re_4a3t.svg" alt="An illustration explaining how we should unite together">
@@ -761,8 +771,6 @@
 
 	<!-- Scripts for page3--> 
 	<!-- Our custom javascript for handeling the contact form-->
-
-	<script src="javascript/formSubmission.js"> </script>
 
 	<!-- Scripts for SignUp and LogIn for Mobile and Desktop -->
 <script type="text/javascript">

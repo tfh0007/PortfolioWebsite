@@ -26,6 +26,7 @@ const showProfileBtn = document.getElementById('navbar__desktop__Profile');
 const notificationTypeUserBtn = document.getElementById("notificationTypeUserBtn");
 const notificatonTypeGeneralBtn = document.getElementById("notificatonTypeGeneralBtn");
 var notificationPageText = document.getElementById("notificationPageText");
+var emailSubmissionForm = document.getElementById("my-form");
 
 /*
 try {
@@ -57,6 +58,7 @@ var userCreatedNotifications = [];
 
 
 retrieveNotifications();
+setEmailFormStatus();
 
 function startTimer(message) {
     timer = setInterval(function() { 
@@ -278,7 +280,7 @@ async function addNewUserNotification() {
     `);
 
     document.getElementById("SubmitNewNotification").onclick = function() {UploadNewUserNotification(document.getElementById("messageHeading").value,document.getElementById("messageBody").value)};
-    document.getElementById("CancelNewNotification").onclick = function() {CancelUploadNewUserNotification()};
+    document.getElementById("CancelNewNotification").onclick = function() {VisuallyProccessNewUserNotification(false)};
     
 
 
@@ -329,7 +331,7 @@ async function UploadNewUserNotification(heading, body) {
                 // unshift will push elements to the beginning of the array which will reflect queries ordered by creation date/time
                 userCreatedNotifications.unshift(fullDocument);
                  // Now we need to remove the new notification ui and show the added message from the server
-                CancelUploadNewUserNotification()
+                VisuallyProccessNewUserNotification(true)
                 .then(function() {
                     // Now we need to animate the notification appearing
                     notificationPageText.scrollIntoView(({behavior: "smooth", block: "start", inline: "nearest"}))
@@ -352,11 +354,17 @@ async function UploadNewUserNotification(heading, body) {
 
 }
 
-async function CancelUploadNewUserNotification() {
+async function VisuallyProccessNewUserNotification(notificationAccepted) {
     console.log("Time to cancel the new notification upload");
 
     document.getElementById("New__Notification__Form__Container").className = "Delete__Notification";
+
+    if(notificationAccepted == false) {
         document.getElementById("New__Notification__Form__Container").classList.add("delete");
+    }
+    else {
+        document.getElementById("New__Notification__Form__Container").classList.add("approve");
+    }
         element = document.getElementById("New__Notification__Form__Container");
         // Now that we deleted the message we need to look for all messages that are under the current message and move those up
         await delay(500);
@@ -430,6 +438,44 @@ async function deleteNotification(deletionIndex,notificationId) {
 
 
     
+
+}
+
+function setEmailFormStatus() {
+    var elements = emailSubmissionForm.elements;
+
+    if(currentUser == null) {
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].disabled = true;
+        }
+        document.getElementById('contactFormLockObj').style['display'] = "block";
+        document.getElementById('contactFormLockTxt').style['display'] = "block";
+        document.getElementById('emailSubmissionBtn').style['display'] = "none";
+        document.getElementById('userFirst').classList.add('disable');
+        document.getElementById('userLast').classList.add('disable');
+        document.getElementById('userEmail').classList.add('disable');
+        document.getElementById('textBoxArea').classList.add('disable');
+        
+        
+    }
+    else {
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].disabled = false;
+        } 
+        document.getElementById('contactFormLockObj').style['display'] = "none";
+        document.getElementById('contactFormLockTxt').style['display'] = "none";
+        document.getElementById('emailSubmissionBtn').style['display'] = "block";
+        
+        
+        document.getElementById('userFirst').classList.remove('disable');
+        document.getElementById('userLast').classList.remove('disable');
+        document.getElementById('userEmail').classList.remove('disable');
+        document.getElementById('textBoxArea').classList.remove('disable');
+            
+        
+       
+    }
+
 
 }
 
@@ -575,6 +621,7 @@ auth.onAuthStateChanged(user => {
 
 
     }
+    setEmailFormStatus();
 });
 
 function setNotificationType(type) {
@@ -654,4 +701,48 @@ function loadBaseProfileInfo() {
     // console.log("");
     // console.log("");
 }
+
+
+// Handling FormSpree Submissions
+var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+        if(currentUser == null) {
+            const myCustomError = new Error('Contact submissions only allowed when valid user is identified. Please sign in to continue this process.');
+            myCustomError.code = 'auth/user-not-present';
+            GenerateUIErrorMsg(myCustomError);
+            return;
+          }
+      event.preventDefault();
+      
+      document.getElementById("userUID").value = currentUser.uid;
+      document.getElementById("userDisplayName").value = currentUser.displayName;
+      document.getElementById("userAccountEmail").value = currentUser.email;
+      
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.classList.add('success');
+        status.innerHTML = "Thank you for your submission. I look forward to reading your message";
+        form.reset()
+        // We want to have different css formatting for a success or failure of our form
+        
+        
+        
+      }).catch(error => {
+        status.classList.add('error');
+        status.innerHTML = "Oops! There was an issue submitting your form"
+        // We want to have different css formatting for a success or failure of our form
+        
+        
+        
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
 

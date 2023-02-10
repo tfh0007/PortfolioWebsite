@@ -108,9 +108,9 @@
 			<!-- The reuired text means text has to be typed into that field -->
 			<!-- We want a way for users of the site to easily be able to contact me-->
 			<!-- Placeholders will show in the actual input box when nothing has been typed-->
-			
+			<!-- Disable this form for now since we don't want anyone having access until we fix it
 			<div class="Contact__form__body">
-				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe">
+				<form id="my-form" method="post" action="https://formspree.io/f/mrgrqbpe" onsubmit = "return false">
 					<label for="firstname">Your First name:</label>
 					<input class="inputBox" type="text" id="userFirst" name="userFirst" required><br><br>
 					<label for="lastname">Your Last name:</label>
@@ -124,6 +124,8 @@
 					
 				</form>
 			</div>
+
+		-->
 
 			
 
@@ -156,7 +158,7 @@
 
 
 <!-- Scripts for page3--> 
-<!-- Our custom javascript for handeling the contact form-->
+<!-- Our custom javascript for handling the contact form-->
 
 <script src="javascript/formSubmission.js"> </script>
 

@@ -244,6 +244,24 @@ destroying the notification when the drop down menu opens */
     100%   {transform: translateX(-150%);}
 }
 
+.Delete__Notification.approve {
+    animation-name: approveNotification;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+
+    
+}
+/* Pretty sure this animation will continue even if it is invisible */
+@keyframes approveNotification{
+   
+    0%   {background-color: rgba(255, 255, 255, 0.258); transform: translateX(0); transform: translateY(0);border-color: rgba(255, 255, 255, 0.258);}
+    50%  {background-color: rgb(49, 192, 24); border-color: rgb(49, 192, 24);}
+    100%   {transform: translateX(150%);}
+}
+
 
 .New__Notification__Form__Container {
     display: flex;
@@ -2475,6 +2493,12 @@ footer {
 
 #navbar__desktop__link1::before,
 #navbar__desktop__link2::before,
+#helpAndPrivacyBtn::before,
+#navbar-logIn::before,
+#navbar-signUp::before,
+#editProfileBtn::before,
+#settingsBtn::before,
+#signOutBtn::before,
 #navbar__desktop__link3::before,
 #navbar__desktop__link4::before,
 #navbar__desktop__link5::before,
@@ -2517,6 +2541,12 @@ footer {
 
 #navbar__desktop__link1:hover::before,
 #navbar__desktop__link2:hover::before,
+#helpAndPrivacyBtn:hover::before,
+#navbar-logIn:hover::before,
+#navbar-signUp:hover::before,
+#editProfileBtn:hover::before,
+#settingsBtn:hover::before,
+#signOutBtn:hover::before,
 #navbar__desktop__link3:hover::before,
 #navbar__desktop__link4:hover::before,
 #navbar__desktop__link5:hover::before,
@@ -2526,6 +2556,12 @@ footer {
 
 #navbar__desktop__link1:focus::before,
 #navbar__desktop__link2:focus::before,
+#helpAndPrivacyBtn:focus::before,
+#navbar-logIn:focus::before,
+#navbar-signUp:focus::before,
+#editProfileBtn:focus::before,
+#settingsBtn:focus::before,
+#signOutBtn:focus::before,
 #navbar__desktop__link3:focus::before,
 #navbar__desktop__link4:focus::before,
 #navbar__desktop__link5:focus::before,
