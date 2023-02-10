@@ -310,6 +310,20 @@ destroying the notification when the drop down menu opens */
     transition: color 300ms ease-out;
 }
 
+#newNotificationIcon {
+    cursor: default;
+    top: 0;
+    right: 0;
+    margin-top: -2ch;
+    background-color: blue;
+    border: solid blue 5px;
+    border-radius: 15px;
+    color: white;
+    font-size: 1rem;
+    top: 0;
+    
+}
+
 
 
 

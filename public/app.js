@@ -150,6 +150,9 @@ function buildNotificationsHtml() {
                         <h1> ${doc.data().Heading} </h1> 
                         <p> ${doc.data().Body} </p> 
                     </div>
+                    <div class ="new_notification__icon">
+                        <p><button class = "notification__btn" id="newNotificationIcon"> *new* </button></p>
+                    </div>
                 </div>
                 `);
                 userNotificationDocumentIDs.push(doc.id);
@@ -324,12 +327,16 @@ async function UploadNewUserNotification(heading, body) {
                 console.log("User Notification Document Added To Database with ID: ", docRef.id);
                 var fullDocument = await UserNotificationsCollection.where(firebase.firestore.FieldPath.documentId(), '==', docRef.id).get()
                 console.log("Full Document after completion: ", fullDocument);
-                userCreatedNotifications.push(fullDocument);
+                // unshift will push elements to the beginning of the array which will reflect queries ordered by creation date/time
+                userCreatedNotifications.unshift(fullDocument);
                  // Now we need to remove the new notification ui and show the added message from the server
                 CancelUploadNewUserNotification()
                 .then(function() {
                     // Now we need to animate the notification appearing
+                    notificationPageText.scrollIntoView(({behavior: "smooth", block: "start", inline: "nearest"}))
+                        
                     buildNotificationsHtml();
+                    
                 });
                 
             })
