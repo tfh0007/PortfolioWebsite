@@ -564,6 +564,10 @@ auth.onAuthStateChanged(user => {
         notificationTypeToLoad = 1; // When user logged out default notification type to general
         userNotificationCount = 0; // When no user is present then no user notifications will exist
         setNotificationType(notificationTypeToLoad);
+        // We need to clear out the user created and deleted notifications othewise when we log into another account these cached messages will follow
+        userCreatedNotifications = [];
+        deletedUserNotificationDocumentIDs.clear();
+
         //mainPageContactFormBtn.style.display = "none"; //makes the button invisible and unusable
         //document.getElementById("lockTheContactForm").style['pointer-events'] = 'none';
         //document.getElementById("contactFormLockObj").style['display'] = 'inline'
