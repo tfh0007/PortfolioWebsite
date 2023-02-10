@@ -124,20 +124,58 @@ transition: background 150ms, transform 300ms 150ms;
 .authenticationChoiceContainer {
     max-width: 1200px;
     position: absolute;
-    width: 50%;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    background: rgb(197, 197, 197);
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    background: rgb(233, 233, 233);
     border-radius: 30px;
-    padding-bottom: 3%;
-    padding-top: 2%;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 4ch;
+    padding-left: 4ch;
+    padding-right: 4ch;
     
 
 
 }
+
+.authenticationChoiceContainer h1 {
+    margin-left: 1ch;
+}
+
+.btn-primary {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+
+}
+
+#signInGoogleBtn {
+    background-color: #34A853;
+    
+}
+
+#signInMetaBtn {
+    background-color: #3B5998;
+    
+}
+
+#custom-logIn {
+
+    background: linear-gradient(45deg, 
+    rgba(255, 230, 0, 1) 0%, 
+    rgba(250, 0, 255, 0.22) 25%, 
+    rgba(1, 141, 201, 0.456406) 50%, 
+    rgba(255, 186, 53, 0.65) 75%, 
+    rgba(209, 21, 66, 0.807292) 100%);
+    
+
+}
+
+
 .logIn-Container h2,
 .forgotPasswordContainer h2
  {
@@ -150,6 +188,8 @@ transition: background 150ms, transform 300ms 150ms;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    gap: 1.5ch;
+    padding: 1.5ch;
 }
 .notificatonTypeGeneralBtn {
     border: solid rgb(24, 102, 192) 5px;
@@ -257,11 +297,12 @@ transition: background 150ms, transform 300ms 150ms;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: rgb(197, 197, 197);
+    background: rgb(233, 233, 233);
+    padding-left: 2ch;
+    padding-right: 2ch;
 
     border-radius: 30px;
-    padding-bottom: 3%;
-    padding-top: 2%;
+    
 }
 
 .signUp-Page-Container h2 {
@@ -292,15 +333,15 @@ transition: background 150ms, transform 300ms 150ms;
     flex-wrap: wrap;
 }
 
-.signup-form-left-side {
-    padding: 3ch;
-    display: flex;
-    flex-direction: column;
+#signup-form {
+    height: 100%;
+    width: 100%;
 }
 
+.signup-form-left-side,
 .signup-form-right-side {
-    padding: 3ch;
     display: flex;
+    padding: 1ch;
     flex-direction: column;
 }
 
@@ -384,20 +425,34 @@ transition: background 150ms, transform 300ms 150ms;
     transition: transform 300ms;
 }
 
+.identification__Buttons__Container {
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap: 2ch;
+    flex-grow: 1;
+
+}
+
 #logInCloseBtn,
 #logInCloseBtn2,
-#signUpCloseBtn,
-#authenticationChoiceCloseBtn {
-    position: absolute;
+#authenticationChoiceCloseBtn,
+#signUpCloseBtn {
     cursor: pointer;
     background: transparent;
+    float: right;
+    top: 0;
     border: none;
     font-size: 2.2rem;
     color: rgba(0, 0, 0, 0.664);
-    right: 25px;
     font-size: 4rem;
     transition: color 300ms;
+    margin-right: -1ch;
     
+}
+#signUpCloseBtn {
+    margin-right: 0ch;
 }
 
 
@@ -511,7 +566,7 @@ transition: background 150ms, transform 300ms 150ms;
     .logIn-Container,
     .forgotPasswordContainer,
     .signUp-Page-Container {
-        height: 70%;
+        height: 80%;
         overflow-y: scroll;
     }
 

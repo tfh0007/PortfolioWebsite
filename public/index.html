@@ -249,9 +249,11 @@
 			<div class="authenticationChoiceContainer">
 				<button id="authenticationChoiceCloseBtn"><i class="far fa-times-circle"></i></button>
 				<h1> Select Identification Method</h1>
-				<button class ="btn btn-primary" id="signInGoogleBtn"> &nbsp; Sign in with Google </button>
-				<button class ="btn btn-primary" id="signInMetaBtn"> &nbsp; Sign in with Meta </button>
-				<button class ="btn btn-primary" id = "custom-logIn">&nbsp; Sign in with Custom Account </button>
+				<div class="identification__Buttons__Container">
+					<button class ="btn btn-primary" id="signInGoogleBtn"> <i class="fa-brands fa-google"></i> &nbsp; Google </button>
+					<button class ="btn btn-primary" id="signInMetaBtn"> <i class="fa-brands fa-meta"></i> &nbsp; Meta </button>
+					<button class ="btn btn-primary" id = "custom-logIn"><i class="fa-solid fa-briefcase"></i> &nbsp; Domain </button>
+				</div>
 			</div>
 		</div>
 		<div class="logIn-Page">
@@ -291,7 +293,7 @@
 			<div class="signUp-form-div">
 				<div class="signUp-Page-Container">
 					<button id="signUpCloseBtn"><i class="far fa-times-circle"></i></button>
-					<h2>Create account for thomashansknecht.com</h2>
+					<h2>Account for thomashansknecht.com</h2>
 					<form id="signup-form" onsubmit = "return false">
 						<div class="input-fields-signUp">	
 							<div class="signup-form-left-side">
@@ -314,17 +316,6 @@
 						</div>
 					</form>
 				</div>
-			</div>
-		</div>
-	</section>
-	<section id="whenSignedIn" hidden="true">
-		<div id="userDetails">
-			<div class="UserThings">
-				<h2>My Items</h2>
-				<ul id="thingsList">
-				</ul>
-				<button id="createThing" class="btn btn-success">Create Random Store Item</button>
-				<button id="deleteThings">Delete all of my Items</button>
 			</div>
 		</div>
 	</section>

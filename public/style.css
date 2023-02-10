@@ -356,8 +356,9 @@ destroying the notification when the drop down menu opens */
   /* This class will contain our number of notifications on mobile as a badge */
 .num-of-notifications-mobile {
     position: absolute;
-    top: 12px;
-    left: 32px;
+    top: 13px;
+    left: 0;
+    margin-left: -3ch;
     padding: 1px 8px;
     border-radius: 50%;
     background: red;
@@ -422,6 +423,10 @@ destroying the notification when the drop down menu opens */
 
   }
 
+  #navbar__desktop__notifications {
+    margin-left: -6ch;
+  }
+
   /*When the notification button is not clicked we want the notifications to be invisible */
 .notificationPageContainer
 {
@@ -443,7 +448,7 @@ destroying the notification when the drop down menu opens */
     right: 10px;
     margin-left: 10px;
     max-height: 80.8%;
-    max-width: 600px;
+    max-width: 650px;
     z-index: 5000;
     opacity: 0.9;
     overflow-y: scroll;
@@ -606,8 +611,6 @@ so we need to remove the ugly border when the nav bar is inactive and reapply th
   background: none; 
   border: none;
   cursor: pointer;
-  /* Doing this makes the menu more aligned bu also messes up page 1 alignment which needs to be fixed */
-  margin-top: -3px;
 
 }
 
@@ -766,17 +769,22 @@ For Mobile this will be hidden */
 
 }
 
+#navbar__desktop__Profile {
+    margin-top: -0.5ch;
+}
+
 
 /* Navbar for the user profile */
 .navbar-Profile__container {
     /* Applying this property wil place the logo and menu right next to each other */
     position: fixed;
     display: flex;
+    flex-wrap: wrap;
     top: 0;
     left: 0;
-    margin-top: 80px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-top: 86px;
+    margin-left: 15px;
+    margin-right: 15px;
     z-index: 5000;
     padding: 1ch;
     
@@ -831,11 +839,8 @@ For Mobile this will be hidden */
 }
 .navbar-Profile__extendedDescription {
     
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: nowrap;
+    margin: auto;
+	align-items: center;
 }
 .navbar__Profile-Desktop_div {
 
@@ -874,6 +879,10 @@ For Mobile this will be hidden */
 /* On desktop the Notifications Menu is too low so we need to make it start higher */
 .notificationPageContainer {
     top: 80px;
+}
+
+.navbar-Profile__container {
+    margin-top: 73px;
 }
 
  /*This navbar represents the container for our navbar */

@@ -10,7 +10,6 @@ notificationTypeToLoad = 1; // 1 is for general, 2 is for user specific
 
 ///// User Authentication /////
 const auth = firebase.auth();
-const whenSignedIn = document.getElementById('whenSignedIn');
 const whenSignedOut = document.getElementById('whenSignedOut');
 const signInGoogleBtn = document.getElementById('signInGoogleBtn');
 const signInMetaBtn = document.getElementById('signInMetaBtn');
@@ -504,7 +503,6 @@ auth.onAuthStateChanged(user => {
     if (user) {
         // signed in
         currentUser = user;
-        whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
         navbarLoginBtn.hidden = true;
         navbarSignUpBtn.hidden = true;
@@ -550,7 +548,6 @@ auth.onAuthStateChanged(user => {
     } else {
         // not signed in
         currentUser = null;
-        whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
         userDetails.innerHTML = `<h3> Guest <h3> <p> ID: Unregistered </p>`;
         navbarLoginBtn.hidden = false;
@@ -656,88 +653,5 @@ function loadBaseProfileInfo() {
 
     // console.log("");
     // console.log("");
-}
-
-
-
-///// Firestore /////
-
-const db = firebase.firestore();
-
-const createThing = document.getElementById('createThing');
-const thingsList = document.getElementById('thingsList');
-
-
-let thingsRef;
-let unsubscribe;
-
-auth.onAuthStateChanged(user => {
-
-    if (user) {
-
-        // Database Reference
-        thingsRef = db.collection('things')
-
-        createThing.onclick = () => {
-
-            const { serverTimestamp } = firebase.firestore.FieldValue;
-
-            thingsRef.add({
-                uid: user.uid,
-                name: faker.commerce.productName(),
-                createdAt: serverTimestamp()
-            });
-        }
-
-
-        // Query
-        unsubscribe = thingsRef
-            .where('uid', '==', user.uid)
-            .orderBy('createdAt') // Requires a query
-            .onSnapshot(querySnapshot => {
-                
-                // Map results to an array of li elements
-
-                const items = querySnapshot.docs.map(doc => {
-
-                    return `<li>${doc.data().name}</li>`
-
-                });
-
-                thingsList.innerHTML = items.join('');
-
-            });
-
-    } else {
-        // Unsubscribe when the user signs out
-        unsubscribe && unsubscribe();
-    }
-});
-
-///// Delete Data from firestore /////
-const deleteThings = document.getElementById('deleteThings');
-
-deleteThings.onclick = () => {
-
-    let fs = firebase.firestore();
-    let collectionRef = fs.collection("things");
-    let user = auth.currentUser;
-
-    collectionRef.where('uid', '==', user.uid)
-    .get()
-    .then(querySnapshot => {
-    querySnapshot.forEach((doc) => {
-        doc.ref.delete().then(() => {
-        console.log("Document successfully deleted!");
-        }).catch(function(error) {
-            GenerateUIErrorMsg(error);
-        });
-    });
-    })
-    .catch(function(error) {
-        GenerateUIErrorMsg(error);
-    });
-
-    
 }
 
