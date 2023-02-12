@@ -682,7 +682,7 @@ function loadBaseProfileInfo() {
             if (!currentUser.displayName) {
                     
                 userDetails.innerHTML = `<h3>...Loading...<h3>` // We need to wait for the data to update
-                setTimeout(() => { userDetails.innerHTML = `<h3> ${currentUser.displayName}</h3> <p>ID: ${currentUser.uid}</p>`; }, 5000); // This implementation is static and does not update when needed
+                setTimeout(() => { userDetails.innerHTML = `<h3> ${currentUser.displayName}</h3> <p>ID: ${currentUser.uid}</p>`; }, 10000); // This implementation is static and does not update when needed
             }
             else {
                 userDetails.innerHTML = `<h3> ${currentUser.displayName}</h3> <p> ID: ${currentUser.uid}</p>`;
@@ -718,6 +718,8 @@ var form = document.getElementById("my-form");
       document.getElementById("userUID").value = currentUser.uid;
       document.getElementById("userDisplayName").value = currentUser.displayName;
       document.getElementById("userAccountEmail").value = currentUser.email;
+      document.getElementById("userAccountPhone").value = currentUser.phoneNumber;
+      console.log("User phone number is: " + currentUser.phoneNumber);
       
       var status = document.getElementById("my-form-status");
       var data = new FormData(event.target);
@@ -745,4 +747,23 @@ var form = document.getElementById("my-form");
       });
     }
     form.addEventListener("submit", handleSubmit)
+
+
+
+    function loadjscssfile(filename, filetype){
+        if (filetype=="js"){ //if filename is a external JavaScript file
+            var fileref=document.createElement('script')
+            fileref.setAttribute("type","text/javascript")
+            fileref.setAttribute("src", filename)
+        }
+        else if (filetype=="css"){ //if filename is an external CSS file
+            var fileref=document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref!="undefined")
+            document.getElementsByTagName("head")[0].appendChild(fileref)
+    }
+    
 

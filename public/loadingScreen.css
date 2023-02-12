@@ -1,0 +1,249 @@
+.loading__bar__container {
+    width: 100%;
+    height: 85%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-300%);
+    background: linear-gradient(252.44deg, 
+    #FFE600 0%, 
+    rgb(255, 188, 53) 16.67%, 
+    rgb(209, 21, 65) 100%);
+    opacity: 1;
+    z-index: 2400;
+    padding: 100px;
+    transition: all 750ms;
+}
+
+.loading__bar__container.animateIn {
+    transform: translate(-50%,-50%);
+    transition: all 750ms;
+}
+  
+  .Loading__Text h1 {
+    position: fixed;
+    top: 4ch;
+    font-size: 3rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+      
+  }
+  .Loading__Text h2 {
+    position: fixed;
+    top: 7ch;
+    font-size: 2.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      
+  }
+
+
+  .loader {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 160px;
+    margin-left: 25px;
+  }
+  .loader__bar {
+    position: absolute;
+    bottom: 0;
+    width: 25px;
+    height: 100%;
+    background: #fff;
+    transform-origin: center bottom;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  }
+  .loader__bar:nth-child(1) {
+    left: 0px;
+    transform: scale(1, 0.2);
+    animation: barUp1 4s infinite;
+  }
+  .loader__bar:nth-child(2) {
+    left: 40px;
+    transform: scale(1, 0.4);
+    animation: barUp2 4s infinite;
+  }
+  .loader__bar:nth-child(3) {
+    left: 80px;
+    transform: scale(1, 0.6);
+    animation: barUp3 4s infinite;
+  }
+  .loader__bar:nth-child(4) {
+    left: 120px;
+    transform: scale(1, 0.8);
+    animation: barUp4 4s infinite;
+  }
+  .loader__bar:nth-child(5) {
+    left: 160px;
+    transform: scale(1, 1);
+    animation: barUp5 4s infinite;
+  }
+  .loader__ball {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: #111;
+    border-radius: 50%;
+    animation: ball 4s infinite;
+  }
+  
+  .Loading__Text {
+    margin-top: 165px;
+    margin-left: 3.5ch;
+  }
+  
+  
+  @keyframes ball {
+    0% {
+      transform: translate(0, 0);
+    }
+    /* y up and x down */
+    /* Need to find final value of x and y */
+    5% {
+      transform: translate(20px, -46px)
+    }
+    
+    10% {
+      transform: translate(40px, -31px)
+    }
+    
+    17% {
+      transform: translate(60px, -77px)
+    }
+    
+    20% {
+      transform: translate(80px, -62px)
+    }
+    
+    27% {
+      transform: translate(100px, -108px)
+    }
+    30% {
+      transform: translate(120px, -93px)
+    }
+    
+    37% {
+      transform: translate(140px, -139px)
+    }
+    40% {
+      transform: translate(160px, -124px)
+    }
+    
+    50% {
+      transform: translate(160px, 0)
+    }
+    
+    57% {
+      transform: translate(140px, -46px)
+    }
+    60% {
+      transform: translate(120px, -31px)
+    }
+   
+    67% {
+      transform: translate(100px, -77px)
+    }
+    70% {
+      transform: translate(80px, -62px)
+    }
+  
+    77% {
+      transform: translate(60px, -108px)
+    }
+    80% {
+      transform: translate(40px, -93px)
+    }
+  
+    87% {
+      transform: translate(20px, -139px)
+    }
+    90% {
+      transform: translate(0, -124px)
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes barUp1 {
+    0% {
+      transform: scale(1, 0.2);
+    }
+    40% {
+      transform: scale(1, 0.2);
+    }
+    50% {
+      transform: scale(1, 1);
+    }
+    90% {
+      transform: scale(1, 1);
+    }
+    100% {
+      transform: scale(1, 0.2);
+    }
+  }
+  @keyframes barUp2 {
+    0% {
+      transform: scale(1, 0.4);
+    }
+    40% {
+      transform: scale(1, 0.4);
+    }
+    50% {
+      transform: scale(1, 0.8);
+    }
+    90% {
+      transform: scale(1, 0.8);
+    }
+    100% {
+      transform: scale(1, 0.4);
+    }
+  }
+  @keyframes barUp3 {
+    0% {
+      transform: scale(1, 0.6);
+    }
+    100% {
+      transform: scale(1, 0.6);
+    }
+  }
+  @keyframes barUp4 {
+    0% {
+      transform: scale(1, 0.8);
+    }
+    40% {
+      transform: scale(1, 0.8);
+    }
+    50% {
+      transform: scale(1, 0.4);
+    }
+    90% {
+      transform: scale(1, 0.4);
+    }
+    100% {
+      transform: scale(1, 0.8);
+    }
+  }
+  @keyframes barUp5 {
+    0% {
+      transform: scale(1, 1);
+    }
+    40% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1, 0.2);
+    }
+    90% {
+      transform: scale(1, 0.2);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  

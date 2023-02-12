@@ -12,63 +12,173 @@ signupForm.addEventListener('submit', (e) => { // e is the event object
 
     //console.log(userName,userEmail,userPassword); // Used for Testing
 
-    auth.createUserWithEmailAndPassword(userEmail,userPassword).then(credential => {
-        //console.log(credential) // For testing purposes
+    auth.createUserWithEmailAndPassword(userEmail,userPassword)
+    
+    .then(credential => {
+        loadjscssfile("loadingScreen.css", "css") // dynamically load and add this .css file
+        var elemDiv = document.createElement('div');
+        elemDiv.id = "loading__Screen";
+        elemDiv.innerHTML = (`
+        <div class="loading__bar__container" id="loading__bar__container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+  <div class="Loading__Text">
+      <h1> Creating Account </h1>
+      <h2> ... Please Wait ... </h2>
+    </div>
+  
+</div>
+        `)
+        document.body.appendChild(elemDiv);
+        document.getElementById('loading__bar__container').classList.add("animateIn");
+
+
+
+        // console.log("User credentials: " + credential) // For testing purposes
         signupForm.reset() // reset the form information
-        const user = auth.currentUser; // Gather the current user information
-        
-        //location.reload(); // Reload the page so the new display name updates
-            // Database Reference
-        usersRef = db.collection('Users')
         const { serverTimestamp } = firebase.firestore.FieldValue;
-            usersRef.add({
-                uid: user.uid,
-                UserName: userNameFirst + "" + userNameLast,
-                UserEmail: userEmail,
-                userPhone: userPhone,
-                DateJoined: serverTimestamp()
-            })
+        defineUserInformation(userNameFirst,userNameLast,userPhone,serverTimestamp,userEmail);
 
-            
-        user.updateProfile({
-            displayName: userNameFirst
-            
-        })
-
-        userNtfRef = db.collection('UserNotifications')
-            userNtfRef.add({
-                uid: user.uid,
-                MessageHeading: `<i class="fas fa-check"></i> Congratulations`,
-                MessageBody: `Your account for thomashansknecht.com has been created. We have sent you a verification email to the email address you provided which you should receive within the next few minutes. Note that while verification is not required it is recommended because if you forget/lose your password and do not use a valid email we will be unable to reset your password and you will be permanently locked out of your account without contacting Thomas F Hansknecht directly. To make changes to you account or update/add/remove any user details click on your user profile. Welcome to my website and have fun exploring.`,
-                ReadStatus: false
-            })
-        
-
-        auth.currentUser.sendEmailVerification().then(() => {
-        // Email verification sent!
-        console.log("Email verification sent");
-        });
-
-        
         //setTimeout(() => { window.location.reload(true); }, 5000); // Reload the page after 200ms seconds to allow database time to update first
         
     })
-    .catch((error) => { // We need to present any errors to the user
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const DisplayErrorCode = document.getElementById('CreateUserErrorCode');
-        const DisplayErrorMessage = document.getElementById('CreateUserError');
-        const DisplayErrorOccuredTitle = document.getElementById('CreateUserErrorOccuredTitle');
-        //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
-        //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
-        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
-        document.getElementById("CreateUserError").style.transform = "translateY(0%)";
-        setTimeout(() => {  
-            document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
-         }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
 
-    });    
+
+    
+    
 })
+
+
+async function defineUserInformation(userNameFirst,userNameLast,userPhone,serverTimestamp,userEmail){ 
+        
+    //location.reload(); // Reload the page so the new display name updates
+        // Database Reference
+    usersRef = await database.collection('Users')
+        usersRef.add({
+            uid: currentUser.uid,
+            UserName: userNameFirst + " " + userNameLast,
+            UserEmail: userEmail,
+            userPhone: userPhone,
+            DateJoined: serverTimestamp()
+        })
+        .then(
+            await currentUser.updateProfile({
+                displayName: userNameFirst + " " + userNameLast
+            })
+            .then(
+                createUserWelcomeMessage(serverTimestamp)
+            )
+        )
+        .catch(error => {
+            GenerateUIErrorMsg(error);
+        });
+
+        
+    
+        
+    
+
+    
+
+}
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
+
+
+async function createUserWelcomeMessage(serverTimestamp)
+{
+    
+    // We may need to try a few times to send the new user welcome message since the user's full profile may not be loaded yet
+    // Lets try to send the message 5 times
+    
+    let attemptsSoFar = 0;
+    var userWelcomeMessageSent = false;
+    
+    while(userWelcomeMessageSent == false && attemptsSoFar < 5) {
+
+        if(currentUser.uid != null && currentUser.displayName != null && currentUser.email != null) {
+        
+            userNtfRef = database.collection('User_Notifications')
+                userNtfRef.add({
+                    uid: currentUser.uid,
+                    Heading: `<i class="fas fa-check" style="color:green;"></i> Welcome ${currentUser.displayName},`,
+                    Body: `<p>Your account for thomashansknecht.com has been created. I have sent a verification email to ${currentUser.email} which should be received soon. Note that while verification is not required it is recommended. To make changes to you account or update/add/remove any user details click on your user profile. Welcome to my website and have fun exploring.</p>`,
+                    CreationDate: serverTimestamp() 
+                })
+                .then(async function(docRef) {
+                    userWelcomeMessageSent = true;
+                    userNotificationCount++;
+                    // Updating the Notification count UI to show this notification was added
+                    let notificationCount = generalNotificationCount + userNotificationCount;
+                    console.log('Total Number of Notifications Updated: ', notificationCount);
+                    numOfNotificationsDesktop.innerHTML = notificationCount;
+                    numOfNotificationsMobile.innerHTML = notificationCount;
+    
+    
+                    console.log("User Notification Document Added To Database with ID: ", docRef.id);
+                    var fullDocument = await UserNotificationsCollection.where(firebase.firestore.FieldPath.documentId(), '==', docRef.id).get()
+                    console.log("Full Document after completion: ", fullDocument);
+                    // unshift will push elements to the beginning of the array which will reflect queries ordered by creation date/time
+                    userCreatedNotifications.unshift(fullDocument);
+                    await delay(5000);
+                    document.getElementById('loading__bar__container').classList.remove("animateIn");
+                    await delay(1000);
+                    removejscssfile("loadingScreen.css", "css"), //remove all occurences "somestyle.css" on page
+                    buildNotificationsHtml(),
+                    
+                    document.getElementById('notificationPageContainer').classList.add('visible');
+                    notificationPageText.scrollIntoView(({behavior: "smooth", block: "start", inline: "nearest"}))
+                    
+                    
+                    
+                     // Now we need to remove the new notification ui and show the added message from the server
+                    // Now we need to animate the notification appearing
+
+                    // Now we can remove the loading screen
+                    
+                       
+                        
+                    
+                });
+        };
+
+        attemptsSoFar++;
+        if(userWelcomeMessageSent == false) {
+            console.warn("Welcome Message failed to generate " + attemptsSoFar + " times so far");
+        };
+
+        await delay(2000);
+    };
+    
+    
+    // auth.currentUser.sendEmailVerification().then(() => {
+    // Email verification sent!
+    // console.log("Email verification sent");
+    // });
+
+}
+
+function removejscssfile(filename, filetype){
+    var targetelement=(filetype=="js")? "script" : (filetype=="css")? "link" : "none" //determine element type to create nodelist from
+    var targetattr=(filetype=="js")? "src" : (filetype=="css")? "href" : "none" //determine corresponding attribute to test for
+    var allsuspects=document.getElementsByTagName(targetelement)
+    for (var i=allsuspects.length; i>=0; i--){ //search backwards within nodelist for matching elements to remove
+    if (allsuspects[i] && allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(filename)!=-1)
+        allsuspects[i].parentNode.removeChild(allsuspects[i]) //remove element by calling parentNode.removeChild()
+    }
+}
+ 
+
+
+
 
 // Customer Log In
 const logInForm = document.querySelector('#logIn-form'); // This is our sign up form
@@ -88,16 +198,7 @@ logInForm.addEventListener('submit', (e) => { // e is the event object
     })
 
     .catch((error) => { // We need to present any errors to the user
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const DisplayErrorMessage = document.getElementById('CreateUserError');
-        //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
-        //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
-        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
-        document.getElementById("CreateUserError").style.transform = "translateY(0%)";
-        setTimeout(() => {  
-            document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
-         }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
+        GenerateUIErrorMsg(error);
 
     });    
 })
@@ -122,20 +223,23 @@ ResetForm.addEventListener('submit', (f) => { // f is the event object
     })
 
     .catch((error) => { // We need to present any errors to the user
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const DisplayErrorMessage = document.getElementById('CreateUserError');
-        //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
-        //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
-        DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
-        document.getElementById("CreateUserError").style.transform = "translateY(0%)";
-        setTimeout(() => {  
-            document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
-         }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
-
+        GenerateUIErrorMsg(error);
     });
 
 })
+
+function GenerateUIErrorMsg(error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    const DisplayErrorMessage = document.getElementById('CreateUserError');
+    //DisplayErrorOccuredTitle.innerHTML = "Uh Oh your account was not created"
+    //DisplayErrorCode.innerHTML = "Error Code: " + errorCode;
+    DisplayErrorMessage.innerHTML = `<h2 id="errorMessageHeading"><i class="fas fa-exclamation-triangle"></i> &nbsp; ${errorCode} &nbsp; <i class="fas fa-exclamation-triangle"></i></h2> <p> ${errorMessage} </p>`;
+    document.getElementById("CreateUserError").style.transform = "translateY(0%)";
+    setTimeout(() => {  
+        document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
+     }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
+}
 
 
     
