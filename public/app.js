@@ -543,6 +543,388 @@ signOutBtn.onclick = () => auth.signOut();
 showProfileBtn.onclick = function() {loadBaseProfileInfo()};
 notificatonTypeGeneralBtn.onclick = function() {setNotificationType(1)};
 notificationTypeUserBtn.onclick = function() {setNotificationType(2)};
+editProfileBtn.onclick = function() {ActivateEditUserProfileMenu()};
+
+
+
+async function ActivateEditUserProfileMenu() {
+    console.log("Time to show the edit profile settings");
+    document.getElementById('navbar-Profile__container').classList.remove("active");
+    var elemDiv = document.createElement('div');
+        elemDiv.id = "editProfileScreen";
+        elemDiv.className = "editProfileScreen";
+        elemDiv.innerHTML = (`
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="account-profile-bootstrap/css/style.css">
+        <section class="py-5 my-5">
+		<div class="editUserProfileContainer" id="editUserProfileContainer">
+            <button id="editProfileCloseMenuBtn" class="notification__btn" title="Close Menu" aria-label="Close Menu"><i style="color:black;" class="far fa-times-circle"></i></button>
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav border-right">
+					<div class="p-4">
+						<div class="img-circle text-center mb-3">
+							<img src="images/anonymous-user-icon.jpg" alt="Image" class="shadow">
+						</div>
+						<h4 class="text-center">${currentUser.displayName} </h4>
+					</div>
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="account-tab" data-toggle="pill" role="tab" aria-controls="account" aria-selected="true">
+							<i class="fa fa-home text-center mr-1"></i> 
+							Account
+						</a>
+						<a class="nav-link" id="password-tab" data-toggle="pill" role="tab" aria-controls="password" aria-selected="false">
+							<i class="fa fa-key text-center mr-1"></i> 
+							Password
+						</a>
+						<a class="nav-link" id="security-tab" data-toggle="pill" role="tab" aria-controls="security" aria-selected="false">
+							<i class="fa fa-user text-center mr-1"></i> 
+							Security
+						</a>
+						<a class="nav-link" id="permissions-tab" data-toggle="pill" role="tab" aria-controls="permissions" aria-selected="false">
+                            <i class="fa-solid fa-plug"></i>
+							Permissions
+						</a>
+						<a class="nav-link" id="notification-tab" data-toggle="pill" role="tab" aria-controls="notification" aria-selected="false">
+							<i class="fa fa-bell text-center mr-1"></i> 
+							Notification
+						</a>
+					</div>
+				</div>
+				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+						<h3 class="mb-4">Account Settings</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>First Name</label>
+									  <input type="text" class="form-control" value="${currentUser.displayName.split(' ')[0]}">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Last Name</label>
+									  <input type="text" class="form-control" value="${currentUser.displayName.split(' ')[1]}">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Email</label>
+									  <input type="text" class="form-control" value="${currentUser.email}">
+								</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="form-group">
+									  <label>Phone number</label>
+									  <input type="text" class="form-control" value="${currentUser.phoneNumber}">
+								</div>
+							</div>
+                            <div class="col-md-12">
+								<div class="form-group">
+									  <label>User ID</label>
+									  <input type="text" class="form-control" value="${currentUser.uid}" readonly>
+								</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="form-group">
+									  <label>Email Verified</label>
+									  <input type="text" class="form-control" value="${currentUser.emailVerified}" readonly>
+								</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="form-group">
+									  <label>User Anonymous</label>
+									  <input type="text" class="form-control" value="${currentUser.isAnonymous}" readonly>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Provider </label>
+									<input type="text" class="form-control" value = "${currentUser.providerId}" readonly>
+								</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="form-group">
+									  <label>Tenant Id </label>
+									<input type="text" class="form-control" value ="${currentUser.tenantId}" readonly>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-dark">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+						<h3 class="mb-4">Password Settings</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Old password</label>
+									  <input type="password" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>New password</label>
+									  <input type="password" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Confirm new password</label>
+									  <input type="password" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-dark">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+						<h3 class="mb-4">Security Settings</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Login</label>
+									  <input type="text" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									  <label>Two-factor auth</label>
+									  <input type="text" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="recovery">
+										<label class="form-check-label" for="recovery">
+										Recovery
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-dark">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="permissions" role="tabpanel" aria-labelledby="permissions-tab">
+						<h3 class="mb-4">Your Server Permissions</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<div class="form-check">
+                                        <label class="form-check-label" for="GeneralAccess"> General Access </label>
+										<input class="form-control" type="text" value="None" id="GeneralAccess" readonly>
+									</div>
+								</div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="ThingsAccess"> Things Access </label>
+                                        <input class="form-control" type="text" value="read,write,delete (only for user specific items)" id="ThingsAccess" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="UsersAccess"> Things Access </label>
+                                        <input class="form-control" type="text" value="read,write (only for user specific items)" id="UsersAccess" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="UserNotificationsAccess"> User Notifications Access </label>
+                                        <input class="form-control" type="text" value="read,write,delete (only for user specific items)" id="UserNotificationsAccess" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="GeneralNotificationsAccess"> General Notifications Access </label>
+                                            <input class="form-control" type="text" value="read only" id="GeneralNotificationsAccess" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+						    </div>
+						<div>
+							<button class="btn btn-dark">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+						<h3 class="mb-4">Notification Settings</h3>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="notification1">
+								<label class="form-check-label" for="notification1">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium accusamus, neque cupiditate quis
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="notification2" >
+								<label class="form-check-label" for="notification2">
+									hic nesciunt repellat perferendis voluptatum totam porro eligendi.
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="notification3" >
+								<label class="form-check-label" for="notification3">
+									commodi fugiat molestiae tempora corporis. Sed dignissimos suscipit
+								</label>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-dark">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>   
+        
+        `)
+        document.body.appendChild(elemDiv);
+
+        /* For whatever reason the hrefs do not work as buttons here so we need to make all the buttons manually */
+        document.getElementById('account-tab').onclick = () => {
+            document.getElementById('account').classList.add('active');
+            document.getElementById('account').classList.add('show');
+            document.getElementById('account-tab').classList.add('active');
+
+            document.getElementById('password').classList.remove('active');
+            document.getElementById('password').classList.remove('show');
+            document.getElementById('password-tab').classList.remove('active');
+
+            document.getElementById('security').classList.remove('active');
+            document.getElementById('security').classList.remove('show');
+            document.getElementById('security-tab').classList.remove('active');
+
+            document.getElementById('permissions').classList.remove('active');
+            document.getElementById('permissions').classList.remove('show');
+            document.getElementById('permissions-tab').classList.remove('active');
+
+            document.getElementById('notification').classList.remove('active');
+            document.getElementById('notification').classList.remove('show');
+            document.getElementById('notification-tab').classList.remove('active');
+        };
+
+        document.getElementById('password-tab').onclick = () => {
+            document.getElementById('password').classList.add('active');
+            document.getElementById('password').classList.add('show');
+            document.getElementById('password-tab').classList.add('active');
+
+            document.getElementById('account').classList.remove('active');
+            document.getElementById('account').classList.remove('show');
+            document.getElementById('account-tab').classList.remove('active');
+
+            document.getElementById('security').classList.remove('active');
+            document.getElementById('security').classList.remove('show');
+            document.getElementById('security-tab').classList.remove('active');
+
+            document.getElementById('permissions').classList.remove('active');
+            document.getElementById('permissions').classList.remove('show');
+            document.getElementById('permissions-tab').classList.remove('active');
+
+            document.getElementById('notification').classList.remove('active');
+            document.getElementById('notification').classList.remove('show');
+            document.getElementById('notification-tab').classList.remove('active');
+        };
+
+        document.getElementById('security-tab').onclick = () => {
+            document.getElementById('security').classList.add('active');
+            document.getElementById('security').classList.add('show');
+            document.getElementById('security-tab').classList.add('active');
+
+            document.getElementById('account').classList.remove('active');
+            document.getElementById('account').classList.remove('show');
+            document.getElementById('account-tab').classList.remove('active');
+
+            document.getElementById('password').classList.remove('active');
+            document.getElementById('password').classList.remove('show');
+            document.getElementById('password-tab').classList.remove('active');
+
+            document.getElementById('permissions').classList.remove('active');
+            document.getElementById('permissions').classList.remove('show');
+            document.getElementById('permissions-tab').classList.remove('active');
+
+            document.getElementById('notification').classList.remove('active');
+            document.getElementById('notification').classList.remove('show');
+            document.getElementById('notification-tab').classList.remove('active');
+        };
+
+        document.getElementById('permissions-tab').onclick = () => {
+            document.getElementById('permissions').classList.add('active');
+            document.getElementById('permissions').classList.add('show');
+            document.getElementById('permissions-tab').classList.add('active');
+
+            document.getElementById('account').classList.remove('active');
+            document.getElementById('account').classList.remove('show');
+            document.getElementById('account-tab').classList.remove('active');
+
+            document.getElementById('password').classList.remove('active');
+            document.getElementById('password').classList.remove('show');
+            document.getElementById('password-tab').classList.remove('active');
+
+            document.getElementById('security').classList.remove('active');
+            document.getElementById('security').classList.remove('show');
+            document.getElementById('security-tab').classList.remove('active');
+
+            document.getElementById('notification').classList.remove('active');
+            document.getElementById('notification').classList.remove('show');
+            document.getElementById('notification-tab').classList.remove('active');
+        };
+
+
+        document.getElementById('notification-tab').onclick = () => {
+            document.getElementById('notification').classList.add('active');
+            document.getElementById('notification').classList.add('show');
+            document.getElementById('notification-tab').classList.add('active');
+
+            document.getElementById('account').classList.remove('active');
+            document.getElementById('account').classList.remove('show');
+            document.getElementById('account-tab').classList.remove('active');
+
+            document.getElementById('password').classList.remove('active');
+            document.getElementById('password').classList.remove('show');
+            document.getElementById('password-tab').classList.remove('active');
+
+            document.getElementById('security').classList.remove('active');
+            document.getElementById('security').classList.remove('show');
+            document.getElementById('security-tab').classList.remove('active');
+
+            document.getElementById('permissions').classList.remove('active');
+            document.getElementById('permissions').classList.remove('show');
+            document.getElementById('permissions-tab').classList.remove('active');
+        };
+
+        document.getElementById('editProfileCloseMenuBtn').onclick = () => {
+            document.getElementById('editProfileScreen').remove();
+        }
+
+        
+        
+
+
+}
+
 
 
 auth.onAuthStateChanged(user => {
