@@ -1,0 +1,16 @@
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\bin\Debug\net5.0\BuildIconFileList.exe
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\bin\Debug\net5.0\BuildIconFileList.deps.json
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\bin\Debug\net5.0\BuildIconFileList.runtimeconfig.json
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\bin\Debug\net5.0\BuildIconFileList.runtimeconfig.dev.json
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\bin\Debug\net5.0\BuildIconFileList.dll
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\bin\Debug\net5.0\BuildIconFileList.pdb
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.csproj.AssemblyReference.cache
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.AssemblyInfoInputs.cache
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.AssemblyInfo.cs
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.dll
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\ref\BuildIconFileList.dll
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.pdb
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\BuildIconFileList.genruntimeconfig.cache
+C:\Users\Thomas\Documents\Basic Website\CS_Code\BuildIconFileList\BuildIconFileList\obj\Debug\net5.0\refint\BuildIconFileList.dll

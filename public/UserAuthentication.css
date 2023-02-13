@@ -28,7 +28,8 @@
 
 
 
-#CreateUserError {
+#CreateUserError,
+#CreateUserSuccess {
     position: fixed;
     /* center the element */
     right: 0;
@@ -49,12 +50,18 @@
     z-index: 5502;
 
 }
+#CreateUserSuccess {
+    border: solid rgb(11, 167, 6) 10px;
+    background: rgb(11, 167, 6);
+    color: white;
+}
 
 .fa-exclamation-triangle {
     color: yellow;
 }
 
-#errorMessageHeading {
+#errorMessageHeading,
+#successMessageHeading {
     margin: 0 auto;
     text-align: center;
 }

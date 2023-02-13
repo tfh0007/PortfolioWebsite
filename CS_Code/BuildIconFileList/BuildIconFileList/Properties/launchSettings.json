@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BuildIconFileList": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Thomas\\Documents\\Basic Website\\public\\ProfileIcons\""
+    }
+  }
+}

@@ -243,6 +243,7 @@
 	<!-- Begin server file -->
   	<!-- The container for User Creation Errors -->
 	  <div id="CreateUserError"></div>
+	  <div id="CreateUserSuccess"></div>
   	
 	<section id="whenSignedOut">
 		<div class= "authenticationChoice-Page">
@@ -306,7 +307,7 @@
 							</div>
 							<div class="signup-form-right-side">
 								<label for="user-phone">Phone Number</label>
-								<input type="tel" id="user-phone" placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="this.setCustomValidity('Phone number must follow format XXX-XXX-XXXX')" oninput="this.setCustomValidity('')">
+								<input type="tel" id="user-phone" placeholder="1112223333">
 								<label for="user-password">Secure Password<span class="signUp-form-required-text"> *Required* </span></label>
 								<!-- The pattern attribute is a form of a regular expression. The ? means does this thing exist. The /d means a digit value. The A-Za means letters that are upper and lower case. For just upper we would use A-Z and for just lower we would use a-z. The , within {x,} means that we can have any length from x to infinity -->
 								<input type="password" id="user-password" placeholder="********" required pattern="(?=.*\d)(?=.*[A-Za]).{6,}" oninvalid="this.setCustomValidity('Password must be at least 6 characters long, contain at least one number, and contain one or more letters')" oninput="this.setCustomValidity('')">

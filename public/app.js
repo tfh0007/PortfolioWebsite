@@ -559,14 +559,14 @@ async function ActivateEditUserProfileMenu() {
         <link rel="stylesheet" type="text/css" href="account-profile-bootstrap/css/style.css">
         <section class="py-5 my-5">
 		<div class="editUserProfileContainer" id="editUserProfileContainer">
-            <button id="editProfileCloseMenuBtn" class="notification__btn" title="Close Menu" aria-label="Close Menu"><i style="color:black;" class="far fa-times-circle"></i></button>
+            <button id="editProfileCloseMenuBtn" title="Close Menu" aria-label="Close Menu"><i style="color:black;" class="far fa-times-circle"></i></button>
 			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
 						<div class="img-circle text-center mb-3">
 							<img src="images/anonymous-user-icon.jpg" alt="Image" class="shadow">
 						</div>
-						<h4 class="text-center">${currentUser.displayName} </h4>
+						<h4 class="text-center" id="userDisplayNameHeading">${currentUser.displayName} </h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" role="tab" aria-controls="account" aria-selected="true">
@@ -598,28 +598,28 @@ async function ActivateEditUserProfileMenu() {
 							<div class="col-md-6">
 								<div class="form-group">
 									  <label>First Name</label>
-									  <input type="text" class="form-control" value="${currentUser.displayName.split(' ')[0]}">
+									  <input type="text" id="userFirstName" class="form-control" value="${currentUser.displayName.split(' ')[0]}">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									  <label>Last Name</label>
-									  <input type="text" class="form-control" value="${currentUser.displayName.split(' ')[1]}">
+									  <input type="text" id="userLastName" class="form-control" value="${currentUser.displayName.split(' ')[1]}">
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<div class="form-group">
 									  <label>Email</label>
-									  <input type="text" class="form-control" value="${currentUser.email}">
+									  <input type="text" id="userEmail2" class="form-control" value="${currentUser.email}">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 									  <label>Phone number</label>
-									  <input type="text" class="form-control" value="${currentUser.phoneNumber}">
+									  <input type="text" id="userPhoneNumber" class="form-control" value="${currentUser.phoneNumber}" readonly>
 								</div>
 							</div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
 								<div class="form-group">
 									  <label>User ID</label>
 									  <input type="text" class="form-control" value="${currentUser.uid}" readonly>
@@ -651,8 +651,8 @@ async function ActivateEditUserProfileMenu() {
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-dark">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button class="btn btn-dark" id="UpdateAccountInfoBtn">Update</button>
+							<button class="btn btn-light" id="CancelUpdateAccountInfoBtn">Cancel</button>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
@@ -660,28 +660,20 @@ async function ActivateEditUserProfileMenu() {
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									  <label>Old password</label>
-									  <input type="password" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
 									  <label>New password</label>
-									  <input type="password" class="form-control">
+									  <input id="newPasswordInput" type="password" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									  <label>Confirm new password</label>
-									  <input type="password" class="form-control">
+									  <input id="newPasswordInput2" type="password" class="form-control">
 								</div>
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-dark">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button class="btn btn-dark" id="updatePasswordBtn">Update</button>
+							<button class="btn btn-light" id="cancelUpdatePasswordBtn">Cancel</button>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
@@ -919,10 +911,143 @@ async function ActivateEditUserProfileMenu() {
             document.getElementById('editProfileScreen').remove();
         }
 
-        
-        
+        document.getElementById('updatePasswordBtn').onclick = () => {
+
+            
+            let passwordInput1 = document.getElementById('newPasswordInput').value;
+            let passwordInput2 = document.getElementById('newPasswordInput2').value;
+            
+            
+            if(!passwordInput1.match(/^(?=.*\d)(?=.*[A-Za]).{6,}$/)) {
+                const myCustomError = new Error('Password must be at least 6 characters long, contain at least one number, and contain one or more letters');
+                myCustomError.code = 'auth/password pattern error';
+                document.getElementById('newPasswordInput').style['border'] = "1px solid #fc0303";
+                
+                GenerateUIErrorMsg(myCustomError);
+                return;
+            }
+            document.getElementById('newPasswordInput').style['border'] = "1px solid #11d131";
 
 
+            if(passwordInput1 !== passwordInput2) {
+                const myCustomError = new Error('Passwords are not the same. User Password could not be changed');
+                myCustomError.code = 'auth/password mismatch error';
+                document.getElementById('newPasswordInput2').style['border'] = "1px solid #fc0303";
+                GenerateUIErrorMsg(myCustomError);
+                return;
+            }
+            document.getElementById('newPasswordInput2').style['border'] = "1px solid #11d131";
+
+            currentUser.updatePassword(passwordInput1)
+            .then(() => {
+                /* Wait a few seconds before changing the green color of the accepted text fields back to the normal gray color */
+                UpdatePasswordInputBoxColor();
+                
+                GenerateUISuccessMsg("Password Change Confirmed","Your User Password has been update successfully.");
+
+            })
+            .catch(function(error) {
+                GenerateUIErrorMsg(error);
+            })
+        };
+
+        document.getElementById('cancelUpdatePasswordBtn').onclick = () => {
+            let passwordInput1 = document.getElementById('newPasswordInput');
+            let passwordInput2 = document.getElementById('newPasswordInput2');
+
+            passwordInput1.value = "";
+            passwordInput2.value = "";
+            document.getElementById('newPasswordInput').style['border'] = "1px solid #ced4da";
+            document.getElementById('newPasswordInput2').style['border'] = "1px solid #ced4da";
+        };
+
+        
+        document.getElementById('UpdateAccountInfoBtn').onclick = () => {
+            UpdateUserData();
+        }
+
+        document.getElementById('CancelUpdateAccountInfoBtn').onclick = () => {
+            document.getElementById('userFirstName').value = currentUser.displayName.split(' ')[0];
+            document.getElementById('userLastName').value = currentUser.displayName.split(' ')[1];
+            document.getElementById('userEmail2').value = currentUser.email;
+            document.getElementById('userPhoneNumber').value = currentUser.phoneNumber;
+        }
+
+
+}
+
+
+async function UpdateUserData(){
+    var updateMessage = "The following have been updated:";
+    let profileUpdated = false;
+    let emailUpdated = false;
+    var newDisplayName = `${document.getElementById('userFirstName').value} ${document.getElementById('userLastName').value}`;
+    if(currentUser.displayName !== newDisplayName)
+      await currentUser.updateProfile({
+      displayName: newDisplayName,
+      
+
+    }).then(() => {
+        updateMessage += " Profile,";
+        profileUpdated = true;
+        userDetails.innerHTML = `<h3>...Loading...<h3>` // We need to wait for the data to update
+            let userDisplayNameHeading = document.getElementById('userDisplayNameHeading');
+
+            /* We may have deleted the account profile menu so ignore if null id value */
+            if(userDisplayNameHeading != null) {
+            userDisplayNameHeading.innerHTML = "Loading...";
+            }
+            /* We may have deleted the account profile menu so ignore if null id value */
+            if(userDisplayNameHeading != null) {
+                setTimeout(() => {userDisplayNameHeading.innerHTML = currentUser.displayName; },3000);
+            }
+        
+        setTimeout(() => { userDetails.innerHTML = `<h3> ${currentUser.displayName}</h3> <p>ID: ${currentUser.uid}</p>`; }, 3000); // This implementation is static and does not update when needed
+        
+    }, function(error) {
+        GenerateUIErrorMsg(error);
+    });
+
+
+
+
+    if(`${document.getElementById('userEmail2').value}` !== currentUser.email) {
+        await currentUser.updateEmail(`${document.getElementById('userEmail2').value}`)
+        .then(() => {
+            emailUpdated = true;
+            updateMessage += " Email,";
+                
+        },function(error) {
+            GenerateUIErrorMsg(error);
+        })
+
+    }
+
+    if(profileUpdated || emailUpdated) {
+        // We need to remove the last comma
+        updateMessage = updateMessage.slice(0,-1);
+        GenerateUISuccessMsg("Account Updated",updateMessage);
+    }
+    
+}
+
+
+async function UpdatePasswordInputBoxColor() {
+
+    await delay(5000);
+    /* We may have deleted the container that holds this information so do nothing when that is the case */
+    try {
+        let passwordInput1Doc = document.getElementById('newPasswordInput');
+        let passwordInput2Doc = document.getElementById('newPasswordInput2');
+
+        passwordInput1Doc.style['border'] = "1px solid #ced4da";
+        passwordInput2Doc.style['border'] = "1px solid #ced4da";
+        passwordInput1Doc.value = "";
+        passwordInput2Doc.value = "";
+    }
+    catch {
+
+    }
 }
 
 
@@ -1050,6 +1175,17 @@ function GenerateUIErrorMsg(error) {
         setTimeout(() => {  
             document.getElementById("CreateUserError").style.transform = "translateY(-150%)";
          }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
+}
+
+function GenerateUISuccessMsg(title,message) {
+    
+    const DisplaySuccessMsg = document.getElementById('CreateUserSuccess');
+
+    DisplaySuccessMsg.innerHTML = `<h2 id="successMessageHeading"> &nbsp; ${title} &nbsp;</h2> <p> ${message} </p>`;
+    document.getElementById("CreateUserSuccess").style.transform = "translateY(0%)";
+    setTimeout(() => {  
+        document.getElementById("CreateUserSuccess").style.transform = "translateY(-150%)";
+     }, 10000); //Using this timeout makes the error message disappear after x miliseconds of being active
 }
 
 
