@@ -75,12 +75,12 @@ namespace BuildIconFileList
         {
             FileInfo fileInfo = new FileInfo(path);
             string imgTag = "";
-            Regex fileRegex = new(".svg$");
-            string startOfPath = path.Substring(path.IndexOf("ProfileIcons\\") + 13);
+            Regex fileRegex = new(".svg$|.png$|.jpg$");
+            string startOfPath = path.Substring(path.IndexOf("ProfileIcons\\"));
             startOfPath = startOfPath.Replace("\\", "/");
             if (fileRegex.IsMatch(path) && !path.Contains("__MACOSX")) {
                 Console.WriteLine(startOfPath + fileInfo.Name);
-                imgTag = ("            <img class=\"iconSelectionImage\" id=\"iconSelectionImage__" + globalImageCount + "\" src=\"" + startOfPath + "\" height=\"150\" style=\"background-color: rgb(220, 220, 220);border:solid 10px rgb(220, 220, 220);\">\r\n");
+                imgTag = ("            <img class=\"iconSelectionImage\" id=\"iconSelectionImage__" + globalImageCount + "\" src=\"" + startOfPath + "\" height=\"140\">\r\n");
                 globalImageCount++;
             }
             

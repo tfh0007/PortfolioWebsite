@@ -5,6 +5,8 @@ var currentUser = null;
 let generalNotificationCount = 0;
 let userNotificationCount = 0;
 let userNotificationsSet = new Set();
+var iconSelected = null;
+var defaultProfileIconURL = "images/anonymous-user-icon.jpg"; 
 
 notificationTypeToLoad = 1; // 1 is for general, 2 is for user specific
 
@@ -15,7 +17,7 @@ const signInGoogleBtn = document.getElementById('signInGoogleBtn');
 const signInMetaBtn = document.getElementById('signInMetaBtn');
 const signOutBtn = document.getElementById('signOutBtn');
 const editProfileBtn = document.getElementById('editProfileBtn');
-const settingsBtn = document.getElementById('settingsBtn');
+// const settingsBtn = document.getElementById('settingsBtn');
 const userDetails = document.getElementById('userAndMyLogo');
 const navbarLoginBtn = document.getElementById('navbar-logIn');
 const navbarSignUpBtn = document.getElementById('navbar-signUp');
@@ -553,6 +555,10 @@ async function ActivateEditUserProfileMenu() {
     var elemDiv = document.createElement('div');
         elemDiv.id = "editProfileScreen";
         elemDiv.className = "editProfileScreen";
+        let profileIconURL = defaultProfileIconURL;
+        if(currentUser.photoURL != null) {
+            profileIconURL = currentUser.photoURL;
+        }
         elemDiv.innerHTML = (`
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -560,17 +566,20 @@ async function ActivateEditUserProfileMenu() {
         <section class="py-5 my-5">
 		<div class="editUserProfileContainer" id="editUserProfileContainer">
             <button id="editProfileCloseMenuBtn" title="Close Menu" aria-label="Close Menu"><i style="color:black;" class="far fa-times-circle"></i></button>
-			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex" id="SettingsContentForUserProfile">
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
 						<div class="img-circle text-center mb-3">
-							<img src="images/anonymous-user-icon.jpg" alt="Image" class="shadow">
+                            <div id="userProfileIconContainer" class="userProfileIconContainer">
+                                <h1> <i class="fa-solid fa-camera"></i> </h1>
+                                <img id="userProfileIcon" src="${profileIconURL}" alt="Image" class="shadow" title="Change Profile Icon">
+                            </div>
 						</div>
 						<h4 class="text-center" id="userDisplayNameHeading">${currentUser.displayName} </h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" role="tab" aria-controls="account" aria-selected="true">
-							<i class="fa fa-home text-center mr-1"></i> 
+                            <i class="fa-regular fa-id-card"></i>
 							Account
 						</a>
 						<a class="nav-link" id="password-tab" data-toggle="pill" role="tab" aria-controls="password" aria-selected="false">
@@ -584,10 +593,6 @@ async function ActivateEditUserProfileMenu() {
 						<a class="nav-link" id="permissions-tab" data-toggle="pill" role="tab" aria-controls="permissions" aria-selected="false">
                             <i class="fa-solid fa-plug"></i>
 							Permissions
-						</a>
-						<a class="nav-link" id="notification-tab" data-toggle="pill" role="tab" aria-controls="notification" aria-selected="false">
-							<i class="fa fa-bell text-center mr-1"></i> 
-							Notification
 						</a>
 					</div>
 				</div>
@@ -679,32 +684,30 @@ async function ActivateEditUserProfileMenu() {
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
 						<h3 class="mb-4">Security Settings</h3>
 						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									  <label>Login</label>
-									  <input type="text" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									  <label>Two-factor auth</label>
-									  <input type="text" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="recovery">
-										<label class="form-check-label" for="recovery">
-										Recovery
-										</label>
-									</div>
-								</div>
-							</div>
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="enable2FactorAuthCheckBox">
+                                            <label class="form-check-label" for="enable2FactorAuthCheckBox">
+                                                Use Two Factor Authentication
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="enablePasswordRecovery">
+                                            <label class="form-check-label" for="recovery">
+                                            Enable Password Recovery
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 						</div>
 						<div>
-							<button class="btn btn-dark">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button class="btn btn-dark" id="securitySettingsUpdate">Update</button>
+							<button class="btn btn-light"id="securitySettingsCancel">Cancel</button>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="permissions" role="tabpanel" aria-labelledby="permissions-tab">
@@ -756,35 +759,75 @@ async function ActivateEditUserProfileMenu() {
 							<button class="btn btn-light">Cancel</button>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
-						<h3 class="mb-4">Notification Settings</h3>
+                    <div class="tab-pane fade" id="userProfileIconUI" role="tabpanel" aria-labelledby="account-tab">
+						<h3 class="mb-4">Profile Icon Selection </h3>
 						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="" id="notification1">
-								<label class="form-check-label" for="notification1">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium accusamus, neque cupiditate quis
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="" id="notification2" >
-								<label class="form-check-label" for="notification2">
-									hic nesciunt repellat perferendis voluptatum totam porro eligendi.
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="" id="notification3" >
-								<label class="form-check-label" for="notification3">
-									commodi fugiat molestiae tempora corporis. Sed dignissimos suscipit
-								</label>
+							<div class="form-check" id="userProfileIconUIContainer">
+                            <img class="iconSelectionImage" id="iconSelectionImage__1" src="ProfileIcons/flatflow/flatflow/SVG Circles/airplane.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__2" src="ProfileIcons/flatflow/flatflow/SVG Circles/beach.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__3" src="ProfileIcons/flatflow/flatflow/SVG Circles/boy.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__4" src="ProfileIcons/flatflow/flatflow/SVG Circles/female.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__5" src="ProfileIcons/flatflow/flatflow/SVG Circles/girl.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__6" src="ProfileIcons/flatflow/flatflow/SVG Circles/male.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__7" src="ProfileIcons/flatflow/flatflow/SVG Circles/malecostume.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__8" src="ProfileIcons/flatflow/flatflow/SVG Circles/matureman1.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__9" src="ProfileIcons/flatflow/flatflow/SVG Circles/matureman2.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__10" src="ProfileIcons/flatflow/flatflow/SVG Circles/maturewoman.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__11" src="ProfileIcons/flatflow/flatflow/SVG Circles/ship.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__12" src="ProfileIcons/flatflow/flatflow/SVG Circles/supportfemale.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__13" src="ProfileIcons/flatflow/flatflow/SVG Circles/supportmale.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__14" src="ProfileIcons/flatflow/flatflow/SVG Circles/unknown2.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__15" src="ProfileIcons/flatflow/flatflow/SVG Circles/unknown_1.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__16" src="ProfileIcons/flatflow/flatflow/SVG Squares/airplane.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__17" src="ProfileIcons/flatflow/flatflow/SVG Squares/anonymous-user-icon.jpg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__18" src="ProfileIcons/flatflow/flatflow/SVG Squares/beach.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__19" src="ProfileIcons/flatflow/flatflow/SVG Squares/boy.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__20" src="ProfileIcons/flatflow/flatflow/SVG Squares/female.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__21" src="ProfileIcons/flatflow/flatflow/SVG Squares/girl.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__22" src="ProfileIcons/flatflow/flatflow/SVG Squares/male.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__23" src="ProfileIcons/flatflow/flatflow/SVG Squares/malecostume.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__24" src="ProfileIcons/flatflow/flatflow/SVG Squares/matureman1.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__25" src="ProfileIcons/flatflow/flatflow/SVG Squares/matureman2.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__26" src="ProfileIcons/flatflow/flatflow/SVG Squares/maturewoman.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__27" src="ProfileIcons/flatflow/flatflow/SVG Squares/ship.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__28" src="ProfileIcons/flatflow/flatflow/SVG Squares/supportfemale.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__29" src="ProfileIcons/flatflow/flatflow/SVG Squares/supportmale.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__30" src="ProfileIcons/flatflow/flatflow/SVG Squares/unknown2.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__31" src="ProfileIcons/flatflow/flatflow/SVG Squares/unknown_1.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__32" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Anchovies.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__33" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Bacon.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__34" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Basil.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__35" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/BBQ Chi┬╖ken.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__36" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Black Olives.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__37" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Capers.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__38" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Cheese Sauce.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__39" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Chicken.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__40" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Chili Pepper.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__41" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Garlick sauce.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__42" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Ham.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__43" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Jalapenos.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__44" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Ketchup.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__45" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Mixed Peppers.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__46" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Mozzarella.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__47" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Mushrooms.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__48" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Pepperoni.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__49" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Pineapple.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__50" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Pizza slice.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__51" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Red Onion.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__52" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Red pepper.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__53" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Salami.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__54" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Sausage.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__55" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Shrimps.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__56" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Sweet Chili Sauce.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__57" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Sweet Corn.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__58" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Tomato.svg" height="140">
+                            <img class="iconSelectionImage" id="iconSelectionImage__59" src="ProfileIcons/pizza-icons-01/pizza-icons-01/svg/Tuna.svg" height="140">
+
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-dark">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button class="btn btn-dark" id="UpdateProfileIconBtn">Update</button>
+							<button class="btn btn-light" id="CancelUpdateProfileIconBtn">Cancel</button>
 						</div>
 					</div>
 				</div>
@@ -813,9 +856,9 @@ async function ActivateEditUserProfileMenu() {
             document.getElementById('permissions').classList.remove('show');
             document.getElementById('permissions-tab').classList.remove('active');
 
-            document.getElementById('notification').classList.remove('active');
-            document.getElementById('notification').classList.remove('show');
-            document.getElementById('notification-tab').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('show');
+            document.getElementById('userProfileIconContainer').classList.remove('active');
         };
 
         document.getElementById('password-tab').onclick = () => {
@@ -835,9 +878,9 @@ async function ActivateEditUserProfileMenu() {
             document.getElementById('permissions').classList.remove('show');
             document.getElementById('permissions-tab').classList.remove('active');
 
-            document.getElementById('notification').classList.remove('active');
-            document.getElementById('notification').classList.remove('show');
-            document.getElementById('notification-tab').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('show');
+            document.getElementById('userProfileIconContainer').classList.remove('active');
         };
 
         document.getElementById('security-tab').onclick = () => {
@@ -857,9 +900,10 @@ async function ActivateEditUserProfileMenu() {
             document.getElementById('permissions').classList.remove('show');
             document.getElementById('permissions-tab').classList.remove('active');
 
-            document.getElementById('notification').classList.remove('active');
-            document.getElementById('notification').classList.remove('show');
-            document.getElementById('notification-tab').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('show');
+            document.getElementById('userProfileIconContainer').classList.remove('active');
+            
         };
 
         document.getElementById('permissions-tab').onclick = () => {
@@ -879,32 +923,9 @@ async function ActivateEditUserProfileMenu() {
             document.getElementById('security').classList.remove('show');
             document.getElementById('security-tab').classList.remove('active');
 
-            document.getElementById('notification').classList.remove('active');
-            document.getElementById('notification').classList.remove('show');
-            document.getElementById('notification-tab').classList.remove('active');
-        };
-
-
-        document.getElementById('notification-tab').onclick = () => {
-            document.getElementById('notification').classList.add('active');
-            document.getElementById('notification').classList.add('show');
-            document.getElementById('notification-tab').classList.add('active');
-
-            document.getElementById('account').classList.remove('active');
-            document.getElementById('account').classList.remove('show');
-            document.getElementById('account-tab').classList.remove('active');
-
-            document.getElementById('password').classList.remove('active');
-            document.getElementById('password').classList.remove('show');
-            document.getElementById('password-tab').classList.remove('active');
-
-            document.getElementById('security').classList.remove('active');
-            document.getElementById('security').classList.remove('show');
-            document.getElementById('security-tab').classList.remove('active');
-
-            document.getElementById('permissions').classList.remove('active');
-            document.getElementById('permissions').classList.remove('show');
-            document.getElementById('permissions-tab').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('active');
+            document.getElementById('userProfileIconUI').classList.remove('show');
+            document.getElementById('userProfileIconContainer').classList.remove('active');
         };
 
         document.getElementById('editProfileCloseMenuBtn').onclick = () => {
@@ -973,7 +994,116 @@ async function ActivateEditUserProfileMenu() {
             document.getElementById('userPhoneNumber').value = currentUser.phoneNumber;
         }
 
+        document.getElementById('userProfileIcon').onclick = () => {
+            ShowUserProfileIconUI();
+            console.log('Time to show change profile icon UI');
+        }
 
+        document.getElementById('CancelUpdateProfileIconBtn').onclick = () => {
+            iconSelected = null;
+            clearIconSelection(null);
+        }
+
+        document.getElementById('UpdateProfileIconBtn').onclick = () => {
+            UpdateProfileIconProcess();
+        }
+        var myCustomError = null;
+        document.getElementById('securitySettingsUpdate').onclick = () => {
+            if(document.getElementById('enable2FactorAuthCheckBox').checked == true && document.getElementById('enablePasswordRecovery').checked == true) {
+                myCustomError = new Error('Two Factor Authentication and Password Recovery have not been fully integrated into this application yet. A notification will be sent once these features are available.');
+            }
+            else if(document.getElementById('enable2FactorAuthCheckBox').checked == true) {
+                myCustomError = new Error('Two Factor Authentication has not been fully integrated into this application yet. A notification will be sent once this feature is available.');
+
+            }
+            else if(document.getElementById('enablePasswordRecovery').checked == true) {
+                myCustomError = new Error('Password Recovery has not been fully integrated into this application yet. A notification will be sent once this feature is available.');
+
+            }
+            if(myCustomError != null) {
+                myCustomError.code = 'auth/feature not avaliable';
+                GenerateUIErrorMsg(myCustomError);
+            }
+            
+            
+        }
+
+
+}
+
+async function UpdateProfileIconProcess() {
+    if(iconSelected == null) {
+        return;
+    }
+    var profileIconSrc = document.getElementById(iconSelected).src;
+
+    if(profileIconSrc == null) {
+        return;
+    }
+
+    await currentUser.updateProfile({
+        photoURL: profileIconSrc,
+
+    }).then(() =>{
+        console.log("Profile image was updated to " + currentUser.photoURL);
+        GenerateUISuccessMsg("Profile Updated","Your Profile Icon has been updated");
+        document.getElementById('userProfileIcon').src = currentUser.photoURL;
+        document.getElementById('UserProfileIcon_Main').src = currentUser.photoURL;
+    }, function(error) {
+        GenerateUIErrorMsg(error);
+    });
+
+}
+
+function ShowUserProfileIconUI() {
+
+            document.getElementById('userProfileIconUI').classList.add('active');
+            document.getElementById('userProfileIconUI').classList.add('show');
+            document.getElementById('userProfileIconContainer').classList.add('active');
+
+            document.getElementById('account').classList.remove('active');
+            document.getElementById('account').classList.remove('show');
+            document.getElementById('account-tab').classList.remove('active');
+
+            document.getElementById('password').classList.remove('active');
+            document.getElementById('password').classList.remove('show');
+            document.getElementById('password-tab').classList.remove('active');
+
+            document.getElementById('permissions').classList.remove('active');
+            document.getElementById('permissions').classList.remove('show');
+            document.getElementById('permissions-tab').classList.remove('active');
+
+            document.getElementById('account').classList.remove('active');
+            document.getElementById('account').classList.remove('show');
+            document.getElementById('account-tab').classList.remove('active');
+
+            document.getElementById('security').classList.remove('active');
+            document.getElementById('security').classList.remove('show');
+            document.getElementById('security-tab').classList.remove('active');
+
+            // Build all the button listners for the icons avalible for selection
+            var a = document.getElementById('userProfileIconUIContainer').getElementsByTagName('img');
+            for (var i = 0; i < a.length; i++) {
+                let elem = a[i];
+                elem.onclick = () => {
+                    document.getElementById(elem.id).classList.add('selected');
+                    console.log(elem.id + " is now selected");
+                    iconSelected = elem.id;
+                    clearIconSelection(iconSelected);
+                }
+            }
+}
+
+function clearIconSelection(iconCurrentlySelected) {
+    var a = document.getElementById('userProfileIconUIContainer').getElementsByTagName('img');
+    for (var i = 0; i < a.length; i++) {
+        var elem = a[i];
+        var elemId = elem.id;
+        if(iconCurrentlySelected != null && elemId === iconCurrentlySelected) {
+            continue;
+        }
+            elem.classList.remove('selected');
+        }
 }
 
 
@@ -1061,9 +1191,14 @@ auth.onAuthStateChanged(user => {
         navbarSignUpBtn.hidden = true;
         signOutBtn.hidden = false;
         editProfileBtn.hidden = false;
-        settingsBtn.hidden = false;
+        // settingsBtn.hidden = false;
         notificationTypeUserBtn.hidden = false;
         notificatonTypeGeneralBtn.hidden = false;
+        // Change the profile icon to the users profile icon
+        if(user.photoURL != null) {
+            document.getElementById('UserProfileIcon_Main').src = user.photoURL;
+        }
+
         notificationTypeToLoad = 2; // When user logged in default notification type to user specific
         setNotificationType(notificationTypeToLoad);
         // If the user logs in we need to update the total number of notifications
@@ -1107,8 +1242,10 @@ auth.onAuthStateChanged(user => {
         navbarSignUpBtn.hidden = false;
         signOutBtn.hidden = true;
         editProfileBtn.hidden = true;
-        settingsBtn.hidden = true;
+        // settingsBtn.hidden = true;
         isProfileLoaded = false;
+        // Update the user profile icon to be the default
+        document.getElementById('UserProfileIcon_Main').src = defaultProfileIconURL;
         notificationTypeUserBtn.hidden = true;
         notificatonTypeGeneralBtn.hidden = true;
         notificationTypeToLoad = 1; // When user logged out default notification type to general

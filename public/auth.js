@@ -59,6 +59,18 @@ async function defineUserInformation(userNameFirst,userNameLast,userPhone,server
         
     //location.reload(); // Reload the page so the new display name updates
         // Database Reference
+
+
+        // THE 58 WILL NEED TO BE CHANGED IF WE EVER ADD OR REMOVE ICON OPTIONS
+        /*
+    var randomIconNumber = Math.floor(Math.random() * 58) + 1;
+    var profileIconURL = defaultProfileIconURL;
+    var randomIcon = document.getElementById('iconSelectionImage__' + randomIconNumber);
+    if(randomIcon != null) {
+        profileIconURL = randomIcon.src;
+    }
+    */
+
     usersRef = await database.collection('Users')
         usersRef.add({
             uid: currentUser.uid,
@@ -69,7 +81,7 @@ async function defineUserInformation(userNameFirst,userNameLast,userPhone,server
         })
         .then(
             await currentUser.updateProfile({
-                displayName: userNameFirst + " " + userNameLast
+                displayName: userNameFirst + " " + userNameLast,
             })
             .then(
                 createUserWelcomeMessage(serverTimestamp)
