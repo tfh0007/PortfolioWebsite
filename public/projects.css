@@ -415,7 +415,7 @@ body {
     max-height: 70vh;
     max-width: 90%;
     z-index: 200;
-    transform: translateX(100%);
+    transform: translateX(150%);
     transition: transform 200ms 300ms ease-in-out;
     
 

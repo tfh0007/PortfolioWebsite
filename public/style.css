@@ -5,6 +5,8 @@ body {
 
     margin:0px;
     height:100%;
+    /* Once the website goes below 500px the UI gets messed up so lets enforce a width of atleast 500px */
+    min-width: 500px;
 
 
     
@@ -1603,7 +1605,7 @@ background-color: #a6b1cef5;
     max-height: 70vh;
     max-width: 90%;
     z-index: 200;
-    transform: translateX(100%);
+    transform: translateX(150%);
     transition: transform 200ms 300ms ease-in-out;
     
 

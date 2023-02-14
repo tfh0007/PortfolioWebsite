@@ -162,7 +162,7 @@ transition: background 150ms, transform 300ms 150ms;
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
-    max-height: 92vh;
+    max-height: 90vh;
     background-color: black;
 
     
@@ -678,12 +678,12 @@ transition: background 150ms, transform 300ms 150ms;
 @media screen and (max-width: 1292px) {
     .lockTheContactForm .fa-lock {
         margin-top: 50px;
-        margin-left: -4px;
+        margin-left: -5px;
     }
 
     .lockTheContactForm h2 {
         margin-top: 370px;
-        margin-left: 0.6ch;
+        margin-left: 10px;
     }
 }
 
@@ -733,7 +733,8 @@ transition: background 150ms, transform 300ms 150ms;
     .forgotPasswordContainer,
     .signUp-Page-Container,
     .authenticationChoiceContainer {
-        height: 92vh;
+        margin-top: 3ch;
+        height: 81vh;
         overflow-y: scroll;
     }
 
