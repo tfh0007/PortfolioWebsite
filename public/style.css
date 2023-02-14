@@ -5,8 +5,6 @@ body {
 
     margin:0px;
     height:100%;
-    /* Once the website goes below 500px the UI gets messed up so lets enforce a width of atleast 500px */
-    min-width: 500px;
 
 
     

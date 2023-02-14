@@ -136,6 +136,7 @@ body {
     align-items: center;
     padding: 3ch;
     font-size: 1.4rem;
+    min-width: 0;
 }
 
 
@@ -148,6 +149,7 @@ body {
     padding: 3ch;
     font-size: 1.4rem;
     max-width: 800px;
+    min-width: 0;
     
 }
 
@@ -330,6 +332,7 @@ body {
     font-size: 1.5rem;
     padding: 2ch;
     align-items: center;
+    min-width: 0;
     
 
 }

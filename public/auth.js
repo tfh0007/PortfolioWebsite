@@ -34,7 +34,10 @@ signupForm.addEventListener('submit', (e) => { // e is the event object
     </div>
   
 </div>
-        `)
+        `), function(error) {
+            GenerateUIErrorMsg(error);
+        }
+
         document.body.appendChild(elemDiv);
         document.getElementById('loading__bar__container').classList.add("animateIn");
 
@@ -135,15 +138,16 @@ async function createUserWelcomeMessage(serverTimestamp)
                     numOfNotificationsMobile.innerHTML = notificationCount;
     
     
-                    console.log("User Notification Document Added To Database with ID: ", docRef.id);
+                    //console.log("User Notification Document Added To Database with ID: ", docRef.id);
                     var fullDocument = await UserNotificationsCollection.where(firebase.firestore.FieldPath.documentId(), '==', docRef.id).get()
-                    console.log("Full Document after completion: ", fullDocument);
+                    //console.log("Full Document after completion: ", fullDocument);
                     // unshift will push elements to the beginning of the array which will reflect queries ordered by creation date/time
                     userCreatedNotifications.unshift(fullDocument);
                     await delay(5000);
                     document.getElementById('loading__bar__container').classList.remove("animateIn");
                     await delay(1000);
                     removejscssfile("loadingScreen.css", "css"), //remove all occurences "somestyle.css" on page
+                    document.getElementById('loading__bar__container').remove;
                     buildNotificationsHtml(),
                     
                     document.getElementById('notificationPageContainer').classList.add('visible');
@@ -226,8 +230,9 @@ ResetForm.addEventListener('submit', (f) => { // f is the event object
     //console.log(resetEmail); // Used for Testing
 
     auth.sendPasswordResetEmail(resetEmail).then(() => {
-        console.log('Password Reset Email Sent')
-        ResetForm.reset() // reset the form information
+        //console.log('Password Reset Email Sent');
+        GenerateUISuccessMsg("Password Reset Request Received","Your Request to Reset Your Password is being processed. Check your email within the next few minutes to finish your request");
+        ResetForm.reset(); // reset the form information
 
        
         //DisplayErrorMessage.innerHTML = "The reset password email was successfully sent to your inbox. You should receive the email within the next few minutes. If you do not receive an email it may be in your spam/junk folder or you did not have an account made/submited the wrong email address.";

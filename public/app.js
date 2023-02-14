@@ -64,7 +64,7 @@ setEmailFormStatus();
 
 function startTimer(message) {
     timer = setInterval(function() { 
-        console.log(message); 
+        //console.log(message); 
     }, 1000);
 }
 
@@ -85,7 +85,7 @@ function buildNotificationsHtml() {
 
         // Need some stop condition here
         if(generalNotificationsLoaded == false) {
-            console.log("General Notifications Data Not Loaded Yet");
+            //console.log("General Notifications Data Not Loaded Yet");
             return;
         }
 
@@ -116,7 +116,7 @@ function buildNotificationsHtml() {
 
         // Need some stop condition here
         if(userNotificationsLoaded == false) {
-            console.log("User Notifications Data Not Loaded Yet"); 
+            //console.log("User Notifications Data Not Loaded Yet"); 
             return;
         }
 
@@ -133,12 +133,12 @@ function buildNotificationsHtml() {
 
         // May want to show that these are new somehow
         for(let i=0; i < userCreatedNotifications.length; i++) {
-            console.log(userCreatedNotifications);
+            //console.log(userCreatedNotifications);
             var stuff = userCreatedNotifications[i];
             stuff.forEach(doc =>  {
                 if(doc == null || deletedUserNotificationDocumentIDs.has(doc.id)) {
                     console.warn("Doc was null in user Created Notifications array");
-                    console.log(doc);
+                    //console.log(doc);
                     return; // In a for each loop return is equivalent to continue
                 }
                 let notificationId = `notification__btn__${notificationIndex}`;
@@ -251,7 +251,7 @@ function buildNotificationsHtml() {
               });
     }
     let notificationCount = generalNotificationCount + userNotificationCount;
-    console.log('Total Number of Notifications Updated: ', notificationCount);
+    //console.log('Total Number of Notifications Updated: ', notificationCount);
     numOfNotificationsDesktop.innerHTML = notificationCount;
     numOfNotificationsMobile.innerHTML = notificationCount;
     numOfNotificationsDesktop.classList.add("fadeIn");
@@ -260,7 +260,7 @@ function buildNotificationsHtml() {
 }
 
 async function addNewUserNotification() {
-    console.log("Need to add new notification here");
+    //console.log("Need to add new notification here");
     var element = document.getElementById("CreateUserNotificationContainer")
     element.parentNode.removeChild(element)
     
@@ -290,25 +290,25 @@ async function addNewUserNotification() {
 
 async function UploadNewUserNotification(heading, body) {
 
-    console.log("Message Heading: " + heading);
-    console.log("Message Body: " + body);
+    //console.log("Message Heading: " + heading);
+    //console.log("Message Body: " + body);
 
     
     if(heading == null || heading === "") {
-        console.log("Can't upload notification because heading is null");
+        //console.log("Can't upload notification because heading is null");
         return;
     }
     if(body == null || body === "") {
-        console.log("Can't upload notification because body is null");
+        //console.log("Can't upload notification because body is null");
         return;
     }
 
     if(currentUser == null) {
-        console.log("Can't upload notification because user is not logged in");
+        //console.log("Can't upload notification because user is not logged in");
         return;
     }
 
-    console.log("Time to upload the new notification");
+    //console.log("Time to upload the new notification");
 
     
         const { serverTimestamp } = firebase.firestore.FieldValue;
@@ -322,14 +322,14 @@ async function UploadNewUserNotification(heading, body) {
                 userNotificationCount++;
                 // Updating the Notification count UI to show this notification was added
                 let notificationCount = generalNotificationCount + userNotificationCount;
-                console.log('Total Number of Notifications Updated: ', notificationCount);
+                //console.log('Total Number of Notifications Updated: ', notificationCount);
                 numOfNotificationsDesktop.innerHTML = notificationCount;
                 numOfNotificationsMobile.innerHTML = notificationCount;
 
 
-                console.log("User Notification Document Added To Database with ID: ", docRef.id);
+                //console.log("User Notification Document Added To Database with ID: ", docRef.id);
                 var fullDocument = await UserNotificationsCollection.where(firebase.firestore.FieldPath.documentId(), '==', docRef.id).get()
-                console.log("Full Document after completion: ", fullDocument);
+                //console.log("Full Document after completion: ", fullDocument);
                 // unshift will push elements to the beginning of the array which will reflect queries ordered by creation date/time
                 userCreatedNotifications.unshift(fullDocument);
                  // Now we need to remove the new notification ui and show the added message from the server
@@ -357,7 +357,7 @@ async function UploadNewUserNotification(heading, body) {
 }
 
 async function VisuallyProccessNewUserNotification(notificationAccepted) {
-    console.log("Time to cancel the new notification upload");
+    //console.log("Time to cancel the new notification upload");
 
     document.getElementById("New__Notification__Form__Container").className = "Delete__Notification";
 
@@ -399,14 +399,14 @@ async function deleteNotification(deletionIndex,notificationId) {
     // Now it is time to delete this notification both in the UI and in the server
     // First lets delete from the server
     var docId = userNotificationDocumentIDs[deletionIndex];
-    console.log("The doc id to delete is " + docId)
+    //console.log("The doc id to delete is " + docId)
     try {
         await UserNotificationsCollection.doc(docId).delete();
         userNotificationCount--;
 
         // Now it is time to visually delete th notification
         // The html id for the notification container will be located in the notificationId
-        console.log("Need to graphically remove Notification with ID value: " + notificationId);
+        //console.log("Need to graphically remove Notification with ID value: " + notificationId);
         document.getElementById(notificationId).className = "Delete__Notification";
         document.getElementById(notificationId).classList.add("delete");
         element = document.getElementById(notificationId);
@@ -415,12 +415,12 @@ async function deleteNotification(deletionIndex,notificationId) {
         element.parentNode.removeChild(element)
 
         // The element is deleted in the server and visually but we still have a local copy of the element stored so we need to delete that too
-        console.log("Flaging notification document to never be shown again while stored as current local cache");
+        //console.log("Flaging notification document to never be shown again while stored as current local cache");
         deletedUserNotificationDocumentIDs.add(docId);
 
         // Updating the Notification count UI to show this notification was deleted
         let notificationCount = generalNotificationCount + userNotificationCount;
-        console.log('Total Number of Notifications Updated: ', notificationCount);
+        //console.log('Total Number of Notifications Updated: ', notificationCount);
         numOfNotificationsDesktop.innerHTML = notificationCount;
         numOfNotificationsMobile.innerHTML = notificationCount;
 
@@ -503,12 +503,12 @@ async function retrieveNotifications() {
             userNotificationCount = userNotificationsData.size;
         }
 
-        console.log("Number of General Notifications " + generalNotificationCount);
-        console.log("Number of User Specific Notifications " + userNotificationCount);
+        //console.log("Number of General Notifications " + generalNotificationCount);
+        //console.log("Number of User Specific Notifications " + userNotificationCount);
 
         let notificationCount = generalNotificationCount + userNotificationCount;
         
-        console.log('Total Number of Notifications: ', notificationCount);
+        //console.log('Total Number of Notifications: ', notificationCount);
 
         numOfNotificationsDesktop.innerHTML = notificationCount;
         numOfNotificationsMobile.innerHTML = notificationCount;
@@ -550,7 +550,7 @@ editProfileBtn.onclick = function() {ActivateEditUserProfileMenu()};
 
 
 async function ActivateEditUserProfileMenu() {
-    console.log("Time to show the edit profile settings");
+    //console.log("Time to show the edit profile settings");
     document.getElementById('navbar-Profile__container').classList.remove("active");
     var elemDiv = document.createElement('div');
         elemDiv.id = "editProfileScreen";
@@ -720,14 +720,6 @@ async function ActivateEditUserProfileMenu() {
 										<input class="form-control" type="text" value="None" id="GeneralAccess" readonly>
 									</div>
 								</div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="ThingsAccess"> Things Access </label>
-                                        <input class="form-control" type="text" value="read,write,delete (only for user specific items)" id="ThingsAccess" readonly>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -998,7 +990,7 @@ async function ActivateEditUserProfileMenu() {
 
         document.getElementById('userProfileIcon').onclick = () => {
             ShowUserProfileIconUI();
-            console.log('Time to show change profile icon UI');
+            //console.log('Time to show change profile icon UI');
         }
 
         document.getElementById('CancelUpdateProfileIconBtn').onclick = () => {
@@ -1047,7 +1039,7 @@ async function UpdateProfileIconProcess() {
         photoURL: profileIconSrc,
 
     }).then(() =>{
-        console.log("Profile image was updated to " + currentUser.photoURL);
+        //console.log("Profile image was updated to " + currentUser.photoURL);
         GenerateUISuccessMsg("Profile Updated","Your Profile Icon has been updated");
         document.getElementById('userProfileIcon').src = currentUser.photoURL;
         document.getElementById('UserProfileIcon_Main').src = currentUser.photoURL;
@@ -1089,7 +1081,7 @@ function ShowUserProfileIconUI() {
                 let elem = a[i];
                 elem.onclick = () => {
                     document.getElementById(elem.id).classList.add('selected');
-                    console.log(elem.id + " is now selected");
+                    //console.log(elem.id + " is now selected");
                     iconSelected = elem.id;
                     clearIconSelection(iconSelected);
                 }
@@ -1299,7 +1291,7 @@ function setNotificationType(type) {
 
     }
     buildNotificationsHtml();
-    console.log("");
+    //console.log("");
 
 }
 
@@ -1376,7 +1368,7 @@ var form = document.getElementById("my-form");
       document.getElementById("userDisplayName").value = currentUser.displayName;
       document.getElementById("userAccountEmail").value = currentUser.email;
       document.getElementById("userAccountPhone").value = currentUser.phoneNumber;
-      console.log("User phone number is: " + currentUser.phoneNumber);
+      //console.log("User phone number is: " + currentUser.phoneNumber);
       
       var status = document.getElementById("my-form-status");
       var data = new FormData(event.target);
