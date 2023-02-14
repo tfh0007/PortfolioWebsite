@@ -20,24 +20,21 @@ signupForm.addEventListener('submit', (e) => { // e is the event object
         elemDiv.id = "loading__Screen";
         elemDiv.innerHTML = (`
         <div class="loading__bar__container" id="loading__bar__container">
-  <div class="loader">
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__ball"></div>
-  </div>
-  <div class="Loading__Text">
-      <h1> Creating Account </h1>
-      <h2> ... Please Wait ... </h2>
-    </div>
-  
-</div>
-        `), function(error) {
-            GenerateUIErrorMsg(error);
-        }
-
+            <div class="loader">
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__ball"></div>
+            </div>
+            <div class="Loading__Text">
+                <h1> Creating Account </h1>
+                <h2> ... Please Wait ... </h2>
+                </div>
+            
+            </div>
+        `)
         document.body.appendChild(elemDiv);
         document.getElementById('loading__bar__container').classList.add("animateIn");
 
@@ -50,12 +47,15 @@ signupForm.addEventListener('submit', (e) => { // e is the event object
 
         //setTimeout(() => { window.location.reload(true); }, 5000); // Reload the page after 200ms seconds to allow database time to update first
         
-    })
+    }).catch(error => {
+        GenerateUIErrorMsg(error);
+    });
+
 
 
     
     
-})
+});
 
 
 async function defineUserInformation(userNameFirst,userNameLast,userPhone,serverTimestamp,userEmail){ 
@@ -101,7 +101,7 @@ async function defineUserInformation(userNameFirst,userNameLast,userPhone,server
 
     
 
-}
+};
 
 function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
@@ -147,7 +147,7 @@ async function createUserWelcomeMessage(serverTimestamp)
                     document.getElementById('loading__bar__container').classList.remove("animateIn");
                     await delay(1000);
                     removejscssfile("loadingScreen.css", "css"), //remove all occurences "somestyle.css" on page
-                    document.getElementById('loading__bar__container').remove;
+                    document.getElementById('loading__Screen').remove();
                     buildNotificationsHtml(),
                     
                     document.getElementById('notificationPageContainer').classList.add('visible');
