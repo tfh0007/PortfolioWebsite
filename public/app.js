@@ -711,7 +711,7 @@ async function ActivateEditUserProfileMenu() {
 						</div>
 					</div>
 					<div class="tab-pane fade" id="permissions" role="tabpanel" aria-labelledby="permissions-tab">
-						<h3 class="mb-4">Your Server Permissions</h3>
+						<h3 class="mb-4">Server Permission Settings</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
@@ -836,6 +836,8 @@ async function ActivateEditUserProfileMenu() {
 	</section>   
         
         `)
+        // Since we are loading a bunch of bootstrap css scripts the UI get messed up for a split second before all the scripts load
+        // This issue does not seem fixable with the current implementation since everytime the boot strap css files load the same event happens
         document.body.appendChild(elemDiv);
 
         /* For whatever reason the hrefs do not work as buttons here so we need to make all the buttons manually */
