@@ -1426,33 +1426,7 @@ So lets fix this issue */
 
 }
 /* The project buttons are the buttons that say learn more under each project */
-.Project__button__1 {
-
-    border: 1.5px solid #000000;
-    border-radius: 20px;
-    background: #3CB928;
-    font-size: 2rem;
-    margin-top: 1.5ch;
-    color: #D61010;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 100;
-}
-
-.Project__button__2 {
-
-    border: 1.5px solid #000000;
-    border-radius: 20px;
-    background: #3CB928;
-    font-size: 2rem;
-    margin-top: 1.5ch;
-    color: #D61010;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 100;
-}
-
-.Project__button__3 {
+.Project__button {
 
     border: 1.5px solid #000000;
     border-radius: 20px;
@@ -1545,14 +1519,14 @@ So lets fix this issue */
     }
     
     /* This id is the close window button in project extended decription */
-    #closeWindowBtn__Project1,
-    #closeWindowBtn__Project2,
-    #closeWindowBtn__Project3
-    {
+    .Project__button__Close {
     background: transparent;
     color: rgb(255, 255, 255);
     border: none;
     font-size: 3.5rem;
+    position: relative;
+    top: 54px;
+    cursor: pointer;
 
     
     }
@@ -1602,7 +1576,7 @@ background-color: #a6b1cef5;
     overflow-y: scroll;
     max-height: 70vh;
     max-width: 90%;
-    z-index: 200;
+    z-index: 205;
     transform: translateX(150%);
     transition: transform 200ms 300ms ease-in-out;
     
@@ -1665,25 +1639,19 @@ transition: transform 350ms ease-in-out;
 /* Lets make a rotating image banner that will show various pictures of the project */
 /* The size of this banner will increase when the display size increases */
 .main-banner {
-    width: 420px;
-    height: 330px;
-
+    width: 80%;
+    padding-bottom: 50%;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
-    position: absolute;
-    max-width: 97%;
+    position: relative;
 }
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 572px) {
-    .main-banner {
-        margin-top: 120px;
-    }
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 573px) {
-    .main-banner {
-        margin-top: 85px;
-    }
+
+#main-banner1 {
+    width: 75%;
+    padding-bottom: 60%;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: relative;
 }
 
 
@@ -1693,12 +1661,6 @@ transition: transform 350ms ease-in-out;
     position: absolute;
     top: 0px;
     transition: all ease-in-out 500ms;
-}
-
-/* We need to make room for the banner container */
-#extended__Description__text2 {
-
-    margin-top: 38ch;
 }
 
 /* This class and id contain our 3rd image for project 2 */
@@ -1726,11 +1688,12 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our buttons for changing the images */
-.imgbanbtn {
+.imgbanbtn-prev,
+.imgbanbtn-next {
     width: 30px;
     height: 40px;
     position: absolute;
-    top: 142px;
+    top: 40%;
     z-index: 2000;
     opacity: 0.3;
     cursor: pointer;
@@ -1740,7 +1703,8 @@ transition: transform 350ms ease-in-out;
 
 }
 
-.imgbanbtn:hover {
+.imgbanbtn-prev:hover,
+.imgbanbtn-next:hover {
    
     opacity: 0.9;
 
@@ -1760,55 +1724,7 @@ transition: transform 350ms ease-in-out;
     font-size: 2.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Lets make a rotating image banner that will show various pictures of the project 1*/
-/* The size of this banner will increase when the display size increases */
-.main-banner2 {
-    width: 600px;
-    height: 370px;
-    
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    position: absolute;
-    max-width: 97%;
-}
-
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 828px) {
-    .main-banner2 {
-        margin-top: 128px;
-        
-    }
-
-
-    /* Let's make the top menu bar not fixed for smaller screens in terms of width */
-
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 829px) {
-    .main-banner2 {
-        margin-top: 85px;
-    }
-}
-
-    /* We need to make room for the banner container */
-    #extended__Description__text1 {
-
-        margin-top: 41.5ch;
-    }
-
-.main-banner2 .imgban2 {
+.main-banner .imgban2 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1817,7 +1733,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 3rd image for project 2 */
-.main-banner2 #imgban6 {
+.main-banner #imgban6 {
     background-image: url(images/AirTrafficImg3.png);
     background-size: cover;
     background-position: center;
@@ -1825,7 +1741,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project 2 */
-.main-banner2 #imgban5 {
+.main-banner #imgban5 {
     background-image: url(images/AirTrafficImg2.png);
     background-size: cover;
     background-position: center;
@@ -1833,94 +1749,14 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project 2 */
-.main-banner2 #imgban4 {
+.main-banner #imgban4 {
     background-image: url(images/AirTrafficImg1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* This class and id contain our buttons for changing the images */
-.imgbanbtn2 {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 163.3px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
-
-
-
-}
-
-.imgbanbtn2:hover {
-
-
-    opacity: 0.9;
-}
-
-.imgbanbtn2-prev {
-
-    left: 5px;
-    font-size: 2.5rem;
-    
-}
-
-.imgbanbtn2-next {
-
-    right: 15px;
-    font-size: 2.5rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Lets make a rotating image banner that will show various pictures of the project 3*/
-/* The size of this banner will increase when the display size increases */
-.main-banner3 {
-    width: 600px;
-    height: 370px;
-    
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    position: absolute;
-    max-width: 97%;
-}
-
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 587px) {
-    .main-banner3 {
-        margin-top: 128px;
-    }
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 588px) {
-    .main-banner3 {
-        margin-top: 85px;
-    }
-}
-
-
-
-    /* We need to make room for the banner container */
-    #extended__Description__text3 {
-
-        margin-top: 41.5ch;
-    }
-
-.main-banner3 .imgban3 {
+.main-banner .imgban3 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1929,7 +1765,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 3rd image for project 2 */
-.main-banner3 #imgban9 {
+.main-banner #imgban9 {
     background-image: url(images/WordSearchImg3.png);
     background-size: cover;
     background-position: center;
@@ -1937,7 +1773,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project 2 */
-.main-banner3 #imgban8 {
+.main-banner #imgban8 {
     background-image: url(images/WordSearchImg2.png);
     background-size: cover;
     background-position: center;
@@ -1945,49 +1781,12 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project 2 */
-.main-banner3 #imgban7 {
+.main-banner #imgban7 {
     background-image: url(images/WordSearchImg1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
-/* This class and id contain our buttons for changing the images */
-.imgbanbtn3 {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 163px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
-    
-
-
-
-}
-
-.imgbanbtn3:hover {
-
-
-    opacity: 0.9;
-}
-
-.imgbanbtn3-prev {
-
-    left: 5px;
-    font-size: 2.5rem;
-    
-}
-
-.imgbanbtn3-next {
-
-    right: 15px;
-    font-size: 2.5rem;
-}
-
-
 
 
 
@@ -2054,25 +1853,6 @@ Projects Can be Found Under the Projects Page" */
         padding-bottom: 5ch;
     }
 
-
-}
-/*Becasue of how our solution operates the buttons will not line up properly on the screen when the project descriptions are not the same length.
-One fix is to move the two buttons down since the last description is longer than the other two descriptions. This issue currently only happens when 
-all three descriptions are visible on the same row so lets fix this formatting. */
-
-/* Another issue happens when three coloumns of projects are visible which is that the top padding of the
-extended__Description__Project1.visible becomes to large so we need to decrease that space */
-
-@media screen and (min-width: 2297px) { 
-    /* The project buttons are the buttons that say learn more under each project */
-    #Learn__More_btn1 {
-        margin-top: 6.6ch;
-    }
-    #Learn__More_btn2 {
-        margin-top: 6.6ch;
-    }
-    
-    
 
 }
 
@@ -2590,10 +2370,7 @@ footer {
     color: rgb(214, 27, 27);
 }
 
-.Project__button__1,
-.Project__button__2,
-.Project__button__3
-{
+.Project__button {
 /*Next lets create the hover animation for our learn more project description buttons */
 position: relative;
 transition: color 250ms ease-in-out;
@@ -2601,13 +2378,8 @@ overflow: hidden;
 
 
 }
-#Learn__More_btn1:hover,
-#Learn__More_btn1:focus,
-#Learn__More_btn2:hover,
-#Learn__More_btn2:focus,
-#Learn__More_btn3:hover,
-#Learn__More_btn3:focus
-{
+.Project__button:hover,
+.Project__button:focus {
 color: white;
 transition: color 250ms ease-in-out;
 overflow: hidden;
@@ -2615,11 +2387,7 @@ overflow: hidden;
 
 }
 
-#Learn__More_btn1::before,
-#Learn__More_btn2::before,
-#Learn__More_btn3::before
-
-{
+.Project__button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -2635,15 +2403,8 @@ overflow: hidden;
     
 }
 
-#Learn__More_btn1:hover::before,
-#Learn__More_btn1:focus::before,
-#Learn__More_btn2:hover::before,
-#Learn__More_btn2:focus::before,
-#Learn__More_btn3:hover::before,
-#Learn__More_btn3:focus::before
-
-
-{
+.Project__button:hover::before,
+.Project__button:focus::before {
 transform: scaleX(1);
 
 }
@@ -2882,10 +2643,7 @@ z-index: 1;
 }
 
 /* Now lets create an animation for the close buttons found in the extended project descriptions */
-#closeWindowBtn__Project1,
-#closeWindowBtn__Project2,
-#closeWindowBtn__Project3 
-{
+.Project__button__Close {
     transform: scale(1);
     border-radius: 100%;
     transition: transform 350ms ease-in-out;
@@ -2895,13 +2653,8 @@ z-index: 1;
 }
 
 
-#closeWindowBtn__Project1:hover,
-#closeWindowBtn__Project1:focus,
-#closeWindowBtn__Project2:hover,
-#closeWindowBtn__Project2:focus,
-#closeWindowBtn__Project3:hover,
-#closeWindowBtn__Project3:focus 
-{
+.Project__button__Close:hover,
+.Project__button__Close:focus {
     transform: scale(1.2);
     
 }

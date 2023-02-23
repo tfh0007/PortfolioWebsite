@@ -103,19 +103,8 @@ body {
 
 }
 
-.large__Project__container1,
-.large__Project__container2,
-.large__Project__container3,
-.large__Project__container4,
-.large__Project__container5,
-.large__Project__container6,
-.large__Project__container7,
-
-.small__Project__container7,
-.small__Project__container8,
-.small__Project__container9,
-.small__Project__container10,
-.small__Project__container11
+.large__Project__container,
+.small__Project__container
  {
     display: flex;
     flex-direction: column;
@@ -130,19 +119,7 @@ body {
 
 }
 /* The project buttons are the buttons that say learn more under each project */
-.Project__button__1,
-.Project__button__2,
-.Project__button__3,
-.Project__button__4,
-.Project__button__5,
-.Project__button__6,
-
-.Project__button__7,
-.Project__button__8,
-.Project__button__9,
-.Project__button__10,
-.Project__button__11,
-.Project__button__12
+.Project__button
 
 {
 
@@ -278,7 +255,8 @@ body {
 .CloseWindow__Section9,
 .CloseWindow__Section10,
 .CloseWindow__Section11,
-.CloseWindow__Section12
+.CloseWindow__Section12,
+.CloseWindow__Section13
 {
     position: fixed;
 
@@ -291,28 +269,6 @@ body {
     transition: transform 150ms ease-in-out;
     }
     
-    /* This id is the close window button in project extended decription */
-    #closeWindowBtn__Project1,
-    #closeWindowBtn__Project2,
-    #closeWindowBtn__Project3,
-    #closeWindowBtn__Project4,
-    #closeWindowBtn__Project5,
-    #closeWindowBtn__Project6,
-
-    #closeWindowBtn__Project7,
-    #closeWindowBtn__Project8,
-    #closeWindowBtn__Project9,
-    #closeWindowBtn__Project10,
-    #closeWindowBtn__Project11,
-    #closeWindowBtn__Project12
-    {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: none;
-    font-size: 3.5rem;
-
-    
-    }
 
    /* This class contains the download section in project extended decription */
 .download_Section1,
@@ -327,7 +283,8 @@ body {
 .download_Section9,
 .download_Section10,
 .download_Section11,
-.download_Section12
+.download_Section12,
+.download_Section13
  {
 
     position: fixed;
@@ -376,20 +333,7 @@ body {
 
 
 /*When a Project learn more button is not pressed we do not want to show any extra details */
-.extended__Description__Project1,
-.extended__Description__Project2,
-.extended__Description__Project3,
-.extended__Description__Project4,
-.extended__Description__Project5,
-.extended__Description__Project6,
-
-
-.extended__Description__Project7,
-.extended__Description__Project8,
-.extended__Description__Project9,
-.extended__Description__Project10,
-.extended__Description__Project11,
-.extended__Description__Project12
+.extended__Description__Project
 {
 
 
@@ -440,7 +384,8 @@ body {
 .download_Section9.visible,
 .download_Section10.visible,
 .download_Section11.visible,
-.download_Section12.visible
+.download_Section12.visible,
+.download_Section13.visible
  {
    
     transform: translateX(-1%);
@@ -461,7 +406,8 @@ body {
 .CloseWindow__Section9.visible,
 .CloseWindow__Section10.visible,
 .CloseWindow__Section11.visible,
-.CloseWindow__Section12.visible
+.CloseWindow__Section12.visible,
+.CloseWindow__Section13.visible
 {
     
     transform: translateX(-1%);
@@ -469,20 +415,7 @@ body {
 }
 
 /*When a Project learn more button is pressed we want an overlay to appear that gives more details on the project */
-.extended__Description__Project1.visible,
-.extended__Description__Project2.visible,
-.extended__Description__Project3.visible,
-.extended__Description__Project4.visible,
-.extended__Description__Project5.visible,
-.extended__Description__Project6.visible,
-
-.extended__Description__Project7.visible,
-.extended__Description__Project8.visible,
-.extended__Description__Project9.visible,
-.extended__Description__Project10.visible,
-.extended__Description__Project11.visible,
-.extended__Description__Project12.visible
-
+.extended__Description__Project.visible
 {
 
 
@@ -493,19 +426,7 @@ transition: transform 350ms ease-in-out;
 
 /* We want to make the Extended descriptions take up significatly less space when the screen is big enough */
 @media screen and (min-width: 850px) {
-    .extended__Description__Project1.visible,
-    .extended__Description__Project2.visible,
-    .extended__Description__Project3.visible,
-    .extended__Description__Project4.visible,
-    .extended__Description__Project5.visible,
-    .extended__Description__Project6.visible,
-    
-    .extended__Description__Project7.visible,
-    .extended__Description__Project8.visible,
-    .extended__Description__Project9.visible,
-    .extended__Description__Project10.visible,
-    .extended__Description__Project11.visible,
-    .extended__Description__Project12.visible
+    .extended__Description__Project.visible
     {
         min-width: 20%;
     }
@@ -513,44 +434,11 @@ transition: transform 350ms ease-in-out;
  
 }
 
-
-/* Lets make a rotating image banner that will show various pictures of the project */
-/* The size of this banner will increase when the display size increases */
-.main-banner {
-    width: 420px;
-    height: 330px;
-
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    position: absolute;
-    max-width: 97%;
-}
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 572px) {
-    .main-banner {
-        margin-top: 120px;
-    }
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 573px) {
-    .main-banner {
-        margin-top: 85px;
-    }
-}
-
-
 .main-banner .imgban {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    transition: all ease-in-out 500ms;
-}
-
-/* We need to make room for the banner container */
-#extended__Description__text2 {
-
-    margin-top: 38ch;
+    background-image: url(images__projects/placeholder.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* This class and id contain our 3rd image for project 2 */
@@ -577,84 +465,7 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
-/* This class and id contain our buttons for changing the images */
-.imgbanbtn {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 142px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
-
-
-}
-
-.imgbanbtn:hover {
-   
-    opacity: 0.9;
-
-    
-}
-
-.imgbanbtn-prev {
-
-    left: 5px;
-    font-size: 2.5rem;
-    
-}
-
-.imgbanbtn-next {
-
-    right: 15px;
-    font-size: 2.5rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Lets make a rotating image banner that will show various pictures of the project 1*/
-/* The size of this banner will increase when the display size increases */
-.main-banner2 {
-    width: 600px;
-    height: 370px;
-    
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    position: absolute;
-    max-width: 97%;
-}
-
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 828px) {
-    .main-banner2 {
-        margin-top: 128px;
-    }
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 829px) {
-    .main-banner2 {
-        margin-top: 85px;
-    }
-}
-
-    /* We need to make room for the banner container */
-    #extended__Description__text1 {
-
-        margin-top: 41.5ch;
-    }
-
-.main-banner2 .imgban2 {
+.main-banner .imgban2 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -663,7 +474,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 3rd image for project 2 */
-.main-banner2 #imgban6 {
+.main-banner #imgban6 {
     background-image: url(images/AirTrafficImg3.png);
     background-size: cover;
     background-position: center;
@@ -671,7 +482,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project 2 */
-.main-banner2 #imgban5 {
+.main-banner #imgban5 {
     background-image: url(images/AirTrafficImg2.png);
     background-size: cover;
     background-position: center;
@@ -679,82 +490,15 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project 2 */
-.main-banner2 #imgban4 {
+.main-banner #imgban4 {
     background-image: url(images/AirTrafficImg1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* This class and id contain our buttons for changing the images */
-.imgbanbtn2 {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 163.3px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
 
-
-
-}
-
-.imgbanbtn2:hover {
-
-
-    opacity: 0.9;
-}
-
-.imgbanbtn2-prev {
-
-    left: 5px;
-    font-size: 2.5rem;
-    
-}
-
-.imgbanbtn2-next {
-
-    right: 15px;
-    font-size: 2.5rem;
-}
-
-
-/* Lets make a rotating image banner that will show various pictures of the project 3*/
-/* The size of this banner will increase when the display size increases */
-.main-banner3 {
-    width: 600px;
-    height: 370px;
-    
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    position: absolute;
-    max-width: 97%;
-}
-
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 587px) {
-    .main-banner3 {
-        margin-top: 128px;
-    }
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 588px) {
-    .main-banner3 {
-        margin-top: 85px;
-    }
-}
-
-
-
-    /* We need to make room for the banner container */
-    #extended__Description__text3 {
-
-        margin-top: 41.5ch;
-    }
-
-.main-banner3 .imgban3 {
+.main-banner .imgban3 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -763,7 +507,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 3rd image for project 2 */
-.main-banner3 #imgban9 {
+.main-banner #imgban9 {
     background-image: url(images/WordSearchImg3.png);
     background-size: cover;
     background-position: center;
@@ -771,7 +515,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project 2 */
-.main-banner3 #imgban8 {
+.main-banner #imgban8 {
     background-image: url(images/WordSearchImg2.png);
     background-size: cover;
     background-position: center;
@@ -779,146 +523,15 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project 2 */
-.main-banner3 #imgban7 {
+.main-banner #imgban7 {
     background-image: url(images/WordSearchImg1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* This class and id contain our buttons for changing the images */
-.imgbanbtn3 {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 163px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
-    
-
-
-
-}
-
-.imgbanbtn3:hover {
-
-
-    opacity: 0.9;
-}
-
-.imgbanbtn3-prev {
-
-    left: 5px;
-    font-size: 2.5rem;
-    
-}
-
-.imgbanbtn3-next {
-
-    right: 15px;
-    font-size: 2.5rem;
-}
-
-
-
-
-
-
-/* Lets make a rotating image banner that will show various pictures of the project 4*/
-/* The size of this banner will increase when the display size increases */
-.main-banner4,
-.main-banner5,
-.main-banner6,
-.main-banner7,
-.main-banner8,
-.main-banner9,
-.main-banner10,
-.main-banner11,
-.main-banner12
-
-{
-    width: 600px;
-    height: 370px;
-    
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    position: absolute;
-    max-width: 97%;
-}
-
-/* The margin needs to be different when the display gets too small */
-@media screen and (max-width: 587px) {
-    .main-banner4,
-    .main-banner5,
-    .main-banner6,
-    .main-banner7,
-    .main-banner8,
-    .main-banner9,
-    .main-banner10,
-    .main-banner11,
-    .main-banner12 
-        {
-        margin-top: 128px;
-    }
-}
-/* The margin needs to be different when the display gets larger */
-@media screen and (min-width: 588px) {
-    .main-banner4,
-    .main-banner5,
-    .main-banner6,
-    .main-banner7,
-    .main-banner8,
-    .main-banner9,
-    .main-banner10,
-    .main-banner11,
-    .main-banner12 
-    
-    {
-        margin-top: 85px;
-    }
-}
-
-
-
-    /* We need to make room for the banner container */
-    #extended__Description__text4,
-    #extended__Description__text5,
-    #extended__Description__text6,
-    #extended__Description__text7,
-    #extended__Description__text8,
-    #extended__Description__text9,
-    #extended__Description__text10,
-    #extended__Description__text11,
-    #extended__Description__text12
-
-    
-    {
-
-        margin-top: 41.5ch;
-    }
-
-.main-banner4 .imgban4,
-.main-banner5 .imgban5,
-.main-banner6 .imgban6,
-.main-banner7 .imgban7,
-.main-banner8 .imgban8,
-.main-banner9 .imgban9,
-.main-banner10 .imgban10,
-.main-banner11 .imgban11,
-.main-banner12 .imgban12
-
-{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    transition: all ease-in-out 500ms;
-}
-
 /* This class and id contain our 3rd image for project */
-.main-banner4 #imgban12 {
+.main-banner #imgban12 {
     background-image: url(images__projects/HomeAutomations3.png);
     background-size: cover;
     background-position: center;
@@ -926,7 +539,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner4 #imgban11 {
+.main-banner #imgban11 {
     background-image: url(images__projects/HomeAutomations2.png);
     background-size: cover;
     background-position: center;
@@ -934,104 +547,18 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner4 #imgban10 {
+.main-banner #imgban10 {
     background-image: url(images__projects/HomeAutomations1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* This class and id contain our buttons for changing the images */
-.imgbanbtn4,
-.imgbanbtn5,
-.imgbanbtn6,
-.imgbanbtn7,
-.imgbanbtn8,
-.imgbanbtn10,
-.imgbanbtn11,
-.imgbanbtn12
- {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 163px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
-    
-
-
-
-}
-
-/* We want a separate button layout for project 9: The Quadratic formula project */
-.imgbanbtn9
-{
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    top: 240px;
-    z-index: 2000;
-    opacity: 0.3;
-    cursor: pointer;
-    transition: opacity 200ms ease-in;
-
-}
-
-.imgbanbtn4:hover,
-.imgbanbtn5:hover,
-.imgbanbtn6:hover,
-.imgbanbtn7:hover,
-.imgbanbtn8:hover,
-.imgbanbtn9:hover,
-.imgbanbtn10:hover,
-.imgbanbtn11:hover,
-.imgbanbtn12:hover
-{
-
-
-    opacity: 0.9;
-}
-
-.imgbanbtn4-prev,
-.imgbanbtn5-prev,
-.imgbanbtn6-prev,
-.imgbanbtn7-prev,
-.imgbanbtn8-prev,
-.imgbanbtn9-prev,
-.imgbanbtn10-prev,
-.imgbanbtn11-prev,
-.imgbanbtn12-prev
-
-{
-
-    left: 5px;
-    font-size: 2.5rem;
-    
-}
-
-.imgbanbtn4-next,
-.imgbanbtn5-next,
-.imgbanbtn6-next,
-.imgbanbtn7-next,
-.imgbanbtn8-next,
-.imgbanbtn9-next,
-.imgbanbtn10-next,
-.imgbanbtn11-next,
-.imgbanbtn12-next
-
-{
-
-    right: 15px;
-    font-size: 2.5rem;
-}
-
 
 
 /* Lets make a rotating image banner that will show various pictures of the project 4*/
 /* This class and id contain our 3rd image for project */
-.main-banner5 #imgban15 {
+.main-banner #imgban15 {
     background-image: url(images__projects/Website3.PNG);
     background-size: cover;
     background-position: center;
@@ -1039,7 +566,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner5 #imgban14 {
+.main-banner #imgban14 {
     background-image: url(images__projects/Website2.png);
     background-size: cover;
     background-position: center;
@@ -1047,7 +574,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner5 #imgban13 {
+.main-banner #imgban13 {
     background-image: url(images__projects/Website1.png);
     background-size: cover;
     background-position: center;
@@ -1056,7 +583,7 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a rotating image banner that will show various pictures of the project 6*/
 /* This class and id contain our 3rd image for project */
-.main-banner6 #imgban18 {
+.main-banner #imgban18 {
     background-image: url(images__projects/MadGabGame3.png);
     background-size: cover;
     background-position: center;
@@ -1064,7 +591,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner6 #imgban17 {
+.main-banner #imgban17 {
     background-image: url(images__projects/MadGabGame2.png);
     background-size: cover;
     background-position: center;
@@ -1072,7 +599,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner6 #imgban16 {
+.main-banner #imgban16 {
     background-image: url(images__projects/MadGabGame1.png);
     background-size: cover;
     background-position: center;
@@ -1082,7 +609,7 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a rotating image banner that will show various pictures of the project 7*/
 /* This class and id contain our 3rd image for project */
-.main-banner7 #imgban21 {
+.main-banner #imgban21 {
     background-image: url(images__projects/GitHubManager3.png);
     background-size: cover;
     background-position: center;
@@ -1090,7 +617,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner7 #imgban20 {
+.main-banner #imgban20 {
     background-image: url(images__projects/GitHubManager2.png);
     background-size: cover;
     background-position: center;
@@ -1098,7 +625,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner7 #imgban19 {
+.main-banner #imgban19 {
     background-image: url(images__projects/GitHubManager1.png);
     background-size: cover;
     background-position: center;
@@ -1108,7 +635,7 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a rotating image banner that will show various pictures of the project 8*/
 /* This class and id contain our 3rd image for project */
-.main-banner8 #imgban24 {
+.main-banner #imgban24 {
     background-image: url(images__projects/AutoCompileKernel3.png);
     background-size: cover;
     background-position: center;
@@ -1116,7 +643,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner8 #imgban23 {
+.main-banner #imgban23 {
     background-image: url(images__projects/AutoCompileKernel2.png);
     background-size: cover;
     background-position: center;
@@ -1124,7 +651,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner8 #imgban22 {
+.main-banner #imgban22 {
     background-image: url(images__projects/AutoCompileKernel1.png);
     background-size: cover;
     background-position: center;
@@ -1136,7 +663,7 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a rotating image banner that will show various pictures of the project 9*/
 /* This class and id contain our 3rd image for project */
-.main-banner9 #imgban27 {
+.main-banner #imgban27 {
     background-image: url(images__projects/QuadraticFormula3.png);
     background-size: cover;
     background-position: center;
@@ -1144,7 +671,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner9 #imgban26 {
+.main-banner #imgban26 {
     background-image: url(images__projects/QuadraticFormula2.png);
     background-size: cover;
     background-position: center;
@@ -1152,7 +679,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner9 #imgban25 {
+.main-banner #imgban25 {
     background-image: url(images__projects/QuadraticFormula1.png);
     background-size: cover;
     background-position: center;
@@ -1161,15 +688,28 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a rotating image banner that will show various pictures of the project 12*/
 /* This class and id contain our 3rd image for project */
-.main-banner12 #imgban34 {
+.main-banner #imgban34 {
     background-image: url(images__projects/ChatVUELinuxInstaller.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.main-banner #imgban35 {
+    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-banner #imgban36 {
+    background-image: url(images__projects/ChatVUEMacInstaller.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* This class and id contain our 2nd image for project */
-.main-banner12 #imgban33 {
+.main-banner #imgban33 {
     background-image: url(images__projects/ChatVUEMacInstaller.png);
     background-size: cover;
     background-position: center;
@@ -1177,7 +717,7 @@ transition: transform 350ms ease-in-out;
 }
 
 /* This class and id contain our 1st image for project */
-.main-banner12 #imgban32 {
+.main-banner #imgban32 {
     background-image: url(images__projects/ChatVUEWindowsInstaller.png);
     background-size: cover;
     background-position: center;
@@ -1188,8 +728,15 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a non rotating image banner that will show 1 picture of project 10*/
 /* This class and id contain our 3rd image for project */
-.main-banner10 #imgban28 {
+.main-banner #imgban28 {
     background-image: url(images__projects/CustomiTunesScriptEdit.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-banner #imgban29 {
+    background-image: url(images__projects/WakeFromSleepScriptEdit.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1197,15 +744,15 @@ transition: transform 350ms ease-in-out;
 
 /* Lets make a non rotating image banner that will show 1 picture of project 10*/
 /* This class and id contain our 3rd image for project */
-.main-banner11 #imgban31 {
+.main-banner #imgban31 {
     background-image: url(images__projects/WakeFromSleepScriptEdit.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 /* For project 10 and 11 where we have one image the text sometimes overlaps with the picture so lets fix this */
-.extended__Description__Project10 h1,
-.extended__Description__Project11 h1
+#extended__Description__Project10 h1,
+#extended__Description__Project11 h1
  {
     margin-top: 14px;
 }
@@ -1213,27 +760,15 @@ transition: transform 350ms ease-in-out;
 /*Project 6 and 7 on mobile the content gets clipped into the picture so lets fix this */
 /*On Mobile sometimes the bottom of the extended description gets clipped slightly so lets fix this */
 @media screen and (max-width: 1000px){
-    
-
-    .extended__Description__Project7 h1,
-    .extended__Description__Project6 h1{
-        padding-bottom: 30px;
+        
+    .extended__Description__Project
+    {
+        padding-bottom: 75px;
     }
 
-    .extended__Description__Project1,
-    .extended__Description__Project2,
-    .extended__Description__Project3,
-    .extended__Description__Project4,
-    .extended__Description__Project5,
-    .extended__Description__Project6,
-    .extended__Description__Project7,
-    .extended__Description__Project8,
-    .extended__Description__Project9,
-    .extended__Description__Project10,
-    .extended__Description__Project11,
-    .extended__Description__Project12
-     {
-        padding-bottom: 75px;
+    #extended__Description__Project7 h1,
+    #extended__Description__Project6 h1{
+        padding-bottom: 30px;
     }
 }
 
@@ -1293,185 +828,22 @@ margin-top: -40px;
 
 }
 
-/* This class is the closing tex at the bottom of page 3*/
+/* This class is the closing text at the bottom of page 3*/
 .Projects__not__mentioned h3 {
     max-width: 800px;
     padding: 10ch 3ch;
 }
 
 
-
-
-
 /* Lets create animations */
-
 /*First lets make animations for our learn more buttons */
-
-
-
-.Project__button__4,
-.Project__button__5,
-.Project__button__6,
-
-.Project__button__7,
-.Project__button__8,
-.Project__button__9,
-.Project__button__10,
-.Project__button__11,
-.Project__button__12
-{
+.Project__button {
 position: relative;
 
 transition: color 250ms ease-in-out;
 overflow: hidden;
 
 
-}
-#Learn__More_btn1__pt2:hover,
-#Learn__More_btn1__pt2:focus,
-#Learn__More_btn2__pt2:hover,
-#Learn__More_btn2__pt2:focus,
-#Learn__More_btn3__pt2:hover,
-#Learn__More_btn3__pt2:focus,
-
-
-#Learn__More_btn4:hover,
-#Learn__More_btn4:focus,
-#Learn__More_btn5:hover,
-#Learn__More_btn5:focus,
-#Learn__More_btn6:hover,
-#Learn__More_btn6:focus,
-
-#Learn__More_btn7:hover,
-#Learn__More_btn7:focus,
-#Learn__More_btn8:hover,
-#Learn__More_btn8:focus,
-#Learn__More_btn9:hover,
-#Learn__More_btn9:focus,
-#Learn__More_btn10:hover,
-#Learn__More_btn10:focus,
-#Learn__More_btn11:hover,
-#Learn__More_btn11:focus,
-#Learn__More_btn12:hover,
-#Learn__More_btn12:focus
-
-{
-color: white;
-transition: color 250ms ease-in-out;
-overflow: hidden;
-
-
-}
-
-#Learn__More_btn1__pt2::before,
-#Learn__More_btn2__pt2::before,
-#Learn__More_btn3__pt2::before,
-
-
-#Learn__More_btn4::before,
-#Learn__More_btn5::before,
-#Learn__More_btn6::before,
-
-#Learn__More_btn7::before,
-#Learn__More_btn8::before,
-#Learn__More_btn9::before,
-#Learn__More_btn10::before,
-#Learn__More_btn11::before,
-#Learn__More_btn12::before
-
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-
-    background-color: rgb(236, 51, 51);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 250ms;
-    
-}
-#Learn__More_btn1__pt2:hover::before,
-#Learn__More_btn1__pt2:focus::before,
-#Learn__More_btn2__pt2:hover::before,
-#Learn__More_btn2__pt2:focus::before,
-#Learn__More_btn3__pt2:hover::before,
-#Learn__More_btn3__pt2:focus::before,
-
-#Learn__More_btn4:hover::before,
-#Learn__More_btn4:focus::before,
-#Learn__More_btn5:hover::before,
-#Learn__More_btn5:focus::before,
-#Learn__More_btn6:hover::before,
-#Learn__More_btn6:focus::before,
-
-#Learn__More_btn7:hover::before,
-#Learn__More_btn7:focus::before,
-#Learn__More_btn8:hover::before,
-#Learn__More_btn8:focus::before,
-#Learn__More_btn9:hover::before,
-#Learn__More_btn9:focus::before,
-
-#Learn__More_btn10:hover::before,
-#Learn__More_btn10:focus::before,
-#Learn__More_btn11:hover::before,
-#Learn__More_btn11:focus::before,
-#Learn__More_btn12:hover::before,
-#Learn__More_btn12:focus::before
-
-
-{
-transform: scaleX(1);
-
-}
-
-/* Now lets create animations for the close exdended description button */
-
-/* Now lets create an animation for the close buttons found in the extended project descriptions */
-#closeWindowBtn__Project4,
-#closeWindowBtn__Project5,
-#closeWindowBtn__Project6,
-
-#closeWindowBtn__Project7,
-#closeWindowBtn__Project8,
-#closeWindowBtn__Project9,
-#closeWindowBtn__Project10,
-#closeWindowBtn__Project11,
-#closeWindowBtn__Project12 
-{
-    transform: scale(1);
-    border-radius: 100%;
-    transition: transform 350ms ease-in-out;
-
-    
-
-}
-
-#closeWindowBtn__Project4:hover,
-#closeWindowBtn__Project4:focus,
-#closeWindowBtn__Project5:hover,
-#closeWindowBtn__Project5:focus,
-#closeWindowBtn__Project6:hover,
-#closeWindowBtn__Project6:focus,
-
-#closeWindowBtn__Project7:hover,
-#closeWindowBtn__Project7:focus,
-#closeWindowBtn__Project8:hover,
-#closeWindowBtn__Project8:focus,
-#closeWindowBtn__Project9:hover,
-#closeWindowBtn__Project9:focus,
-#closeWindowBtn__Project10:hover,
-#closeWindowBtn__Project10:focus,
-#closeWindowBtn__Project11:hover,
-#closeWindowBtn__Project11:focus,
-#closeWindowBtn__Project12:hover,
-#closeWindowBtn__Project12:focus
-{
-    transform: scale(1.2);
-    
 }
 
 
