@@ -8,7 +8,7 @@ function haltFunction() {
 }
 
 function imgBannerController(imgBannerName,imgBannerBtnPrev,imgBannerBtnNext,img1,img2,img3) {
-    console.log("We got into the imgbanner controller code");
+    //console.log("We got into the imgbanner controller code");
     var bannerStatus = 1;
     var startBannerLoop;
     // This will be the time it takes to change images (in miliseconds)
@@ -26,12 +26,14 @@ function imgBannerController(imgBannerName,imgBannerBtnPrev,imgBannerBtnNext,img
 
     // We want the pictures to stop changing when our mouse hovers over the image
     document.getElementById(imgBannerName).onmouseenter = function() {
-        console.log("Pausing image banner: " + imgBannerName);
+        //console.log("Pausing image banner: " + imgBannerName);
+        document.getElementById(imgBannerName).classList.add('focus');
         clearInterval(startBannerLoop);
     }
 
     document.getElementById(imgBannerName).onmouseleave = function() {
-        console.log("Resuming image banner: " + imgBannerName);
+        //console.log("Resuming image banner: " + imgBannerName);
+        document.getElementById(imgBannerName).classList.remove('focus');
         startBannerLoop = setInterval(function() {
             bannerLoop();
         // This specifies how long to wait till the images cycle

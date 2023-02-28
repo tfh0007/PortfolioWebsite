@@ -441,30 +441,6 @@ transition: transform 350ms ease-in-out;
     background-repeat: no-repeat;
 }
 
-/* This class and id contain our 3rd image for project 2 */
-.main-banner #imgban3 {
-    background-image: url(images/MarioGun3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 2nd image for project 2 */
-.main-banner #imgban2 {
-    background-image: url(images/MarioImg2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 1st image for project 2 */
-.main-banner #imgban1 {
-    background-image: url(images/MarioImg1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .main-banner .imgban2 {
     width: 100%;
     height: 100%;
@@ -473,31 +449,6 @@ transition: transform 350ms ease-in-out;
     transition: all ease-in-out 500ms;
 }
 
-/* This class and id contain our 3rd image for project 2 */
-.main-banner #imgban6 {
-    background-image: url(images/AirTrafficImg3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 2nd image for project 2 */
-.main-banner #imgban5 {
-    background-image: url(images/AirTrafficImg2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 1st image for project 2 */
-.main-banner #imgban4 {
-    background-image: url(images/AirTrafficImg1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
 .main-banner .imgban3 {
     width: 100%;
     height: 100%;
@@ -505,251 +456,239 @@ transition: transform 350ms ease-in-out;
     top: 0px;
     transition: all ease-in-out 500ms;
 }
+/* This class and id contain our 1st image for project 2 */
+.main-banner #imgban1 {
+    background-image: url(images/MarioImg1.png);
+    
+}
+/* This class and id contain our 2nd image for project 2 */
+.main-banner #imgban2 {
+    background-image: url(images/MarioImg2.png);
+    
+}
 
 /* This class and id contain our 3rd image for project 2 */
-.main-banner #imgban9 {
-    background-image: url(images/WordSearchImg3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.main-banner #imgban3 {
+    background-image: url(images/MarioGun3.png);
+    
+}
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner #imgban4 {
+    background-image: url(images/AirTrafficImg1.png);
+    
+}
+
+/* This class and id contain our 2nd image for project 2 */
+.main-banner #imgban5 {
+    background-image: url(images/AirTrafficImg2.png);
+    
+}
+/* This class and id contain our 3rd image for project 2 */
+.main-banner #imgban6 {
+    background-image: url(images/AirTrafficImg3.png);
+    
+}
+
+
+
+
+/* This class and id contain our 1st image for project 2 */
+.main-banner #imgban7 {
+    background-image: url(images/WordSearchImg1.png);
+    
 }
 
 /* This class and id contain our 2nd image for project 2 */
 .main-banner #imgban8 {
     background-image: url(images/WordSearchImg2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
-
-/* This class and id contain our 1st image for project 2 */
-.main-banner #imgban7 {
-    background-image: url(images/WordSearchImg1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban12 {
-    background-image: url(images__projects/HomeAutomations3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 2nd image for project */
-.main-banner #imgban11 {
-    background-image: url(images__projects/HomeAutomations2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* This class and id contain our 3rd image for project 2 */
+.main-banner #imgban9 {
+    background-image: url(images/WordSearchImg3.png);
+    
 }
 
 /* This class and id contain our 1st image for project */
 .main-banner #imgban10 {
     background-image: url(images__projects/HomeAutomations1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
-
-/* Lets make a rotating image banner that will show various pictures of the project 4*/
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban15 {
-    background-image: url(images__projects/Website3.PNG);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
 
 /* This class and id contain our 2nd image for project */
-.main-banner #imgban14 {
-    background-image: url(images__projects/Website2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.main-banner #imgban11 {
+    background-image: url(images__projects/HomeAutomations2.png);
+    
 }
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban12 {
+    background-image: url(images__projects/HomeAutomations3.png);
+    
+}
+
+
+
 
 /* This class and id contain our 1st image for project */
 .main-banner #imgban13 {
     background-image: url(images__projects/Website1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
-
-/* Lets make a rotating image banner that will show various pictures of the project 6*/
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban18 {
-    background-image: url(images__projects/MadGabGame3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 /* This class and id contain our 2nd image for project */
-.main-banner #imgban17 {
-    background-image: url(images__projects/MadGabGame2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.main-banner #imgban14 {
+    background-image: url(images__projects/Website2.png);
+    
 }
+/* Lets make a rotating image banner that will show various pictures of the project 4*/
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban15 {
+    background-image: url(images__projects/Website3.PNG);
+    
+}
+
+
 
 /* This class and id contain our 1st image for project */
 .main-banner #imgban16 {
     background-image: url(images__projects/MadGabGame1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+}
+/* This class and id contain our 2nd image for project */
+.main-banner #imgban17 {
+    background-image: url(images__projects/MadGabGame2.png);
+    
+}
+/* Lets make a rotating image banner that will show various pictures of the project 6*/
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban18 {
+    background-image: url(images__projects/MadGabGame3.png);
+    
 }
 
 
+
+
 /* Lets make a rotating image banner that will show various pictures of the project 7*/
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban21 {
-    background-image: url(images__projects/GitHubManager3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* This class and id contain our 1st image for project */
+.main-banner #imgban19 {
+    background-image: url(images__projects/GitHubManager1.png);
+    
 }
 
 /* This class and id contain our 2nd image for project */
 .main-banner #imgban20 {
     background-image: url(images__projects/GitHubManager2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+}
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban21 {
+    background-image: url(images__projects/GitHubManager3.png);
+    
 }
 
-/* This class and id contain our 1st image for project */
-.main-banner #imgban19 {
-    background-image: url(images__projects/GitHubManager1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 
 /* Lets make a rotating image banner that will show various pictures of the project 8*/
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban24 {
-    background-image: url(images__projects/AutoCompileKernel3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* This class and id contain our 1st image for project */
+.main-banner #imgban22 {
+    background-image: url(images__projects/AutoCompileKernel1.png);
+    
 }
 
 /* This class and id contain our 2nd image for project */
 .main-banner #imgban23 {
     background-image: url(images__projects/AutoCompileKernel2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
-
-/* This class and id contain our 1st image for project */
-.main-banner #imgban22 {
-    background-image: url(images__projects/AutoCompileKernel1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban24 {
+    background-image: url(images__projects/AutoCompileKernel3.png);
+    
 }
-
-
 
 
 /* Lets make a rotating image banner that will show various pictures of the project 9*/
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban27 {
-    background-image: url(images__projects/QuadraticFormula3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* This class and id contain our 2nd image for project */
-.main-banner #imgban26 {
-    background-image: url(images__projects/QuadraticFormula2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 /* This class and id contain our 1st image for project */
 .main-banner #imgban25 {
     background-image: url(images__projects/QuadraticFormula1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
-
-/* Lets make a rotating image banner that will show various pictures of the project 12*/
-/* This class and id contain our 3rd image for project */
-.main-banner #imgban34 {
-    background-image: url(images__projects/ChatVUELinuxInstaller.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.main-banner #imgban35 {
-    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.main-banner #imgban36 {
-    background-image: url(images__projects/ChatVUEMacInstaller.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 /* This class and id contain our 2nd image for project */
-.main-banner #imgban33 {
-    background-image: url(images__projects/ChatVUEMacInstaller.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.main-banner #imgban26 {
+    background-image: url(images__projects/QuadraticFormula2.png);
+    
 }
-
-/* This class and id contain our 1st image for project */
-.main-banner #imgban32 {
-    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban27 {
+    background-image: url(images__projects/QuadraticFormula3.png);
+    
 }
-
-
 
 /* Lets make a non rotating image banner that will show 1 picture of project 10*/
 /* This class and id contain our 3rd image for project */
 .main-banner #imgban28 {
     background-image: url(images__projects/CustomiTunesScriptEdit.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
 
 .main-banner #imgban29 {
     background-image: url(images__projects/WakeFromSleepScriptEdit.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
-
 /* Lets make a non rotating image banner that will show 1 picture of project 10*/
 /* This class and id contain our 3rd image for project */
 .main-banner #imgban31 {
     background-image: url(images__projects/WakeFromSleepScriptEdit.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
+
+/* This class and id contain our 1st image for project */
+.main-banner #imgban32 {
+    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
+    
+}
+/* Lets make a rotating image banner that will show various pictures of the project 12*/
+/* This class and id contain our 2nd image for project */
+.main-banner #imgban33 {
+    background-image: url(images__projects/ChatVUEMacInstaller.png);
+    
+}
+/* This class and id contain our 3rd image for project */
+.main-banner #imgban34 {
+    background-image: url(images__projects/ChatVUELinuxInstaller.png);
+    
+}
+
+.main-banner #imgban35 {
+    background-image: url(images__projects/ChatVUEWindowsInstaller.png);
+    
+}
+.main-banner #imgban36 {
+    background-image: url(images__projects/ChatVUEMacInstaller.png);
+    
+}
+
+.main-banner #imgban37 {
+    background-image: url(images__projects/NintendoSwitchAutomation1.jpg);
+    
+}
+
+.main-banner #imgban38 {
+    background-image: url(images__projects/NintendoSwitchAutomationsImage2.PNG);
+    
+}
+
+.main-banner #imgban39 {
+    background-image: url(images__projects/NintendoSwitchAutomations3.PNG);
+    
+}
+
+
+
+
+
+
 /* For project 10 and 11 where we have one image the text sometimes overlaps with the picture so lets fix this */
 #extended__Description__Project10 h1,
 #extended__Description__Project11 h1
